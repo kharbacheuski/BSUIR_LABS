@@ -1,0 +1,18 @@
+[
+  {
+    "idOfPerson": 1,
+    "idOfHisFriend": 2
+  },
+  {
+    "idOfPerson": 1,
+    "idOfHisFriend": 3
+  },
+  {
+    "idOfPerson": 2,
+    "idOfHisFriend": 5
+  },
+  {
+    "idOfPerson": 2,
+    "idOfHisFriend": 4
+  }
+]

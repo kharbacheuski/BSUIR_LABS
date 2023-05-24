@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Address" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAkAAAAAAAAAAAoAAAAAAAAAABAgACAAAAAAAAAAA=</HashCode>
+      <FileName>Addresses.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AllBooks" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAICAAAABAAAgBAAgAAAAAQAAAAAQACAAAAA=</HashCode>
+      <FileName>Addresses.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExceptionClass" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAIAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Exception.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Person" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAAAAAAAAAAAAAAAAAAAAEAFAAAAIAAAAAAAIgA=</HashCode>
+      <FileName>Persons.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PhysicalPerson" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAEAAAAAAAAAAAAAAAAACAAAABAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Persons.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LegalPerson" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAEAAAAAAAAAAAAAAAAAAAACABAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Persons.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AllPersons" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAABAAAAAABAAgAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Persons.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Friend" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAAAAAAAAAAAAAAAAAAABAAAACAAABAAAAAA=</HashCode>
+      <FileName>Persons.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AllFriends" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Persons.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="PersonType" Collapsed="true">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Constants.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,6 @@
+/ECHO start
+/LIST ./
+/CD ./folder
+/LIST ./
+/ECHO end
+/CD ../
