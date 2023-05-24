@@ -1,7 +1,9 @@
 # Вычислительные машины системы и сети (ВМСиС 2021)
 
 ### [Первый семестр (2021)](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/1_term)
+- [ОАИП](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/1_term/ОАИП) (Луцик Ю.А. / Беспалов С.А.)
 ### [Второй семестр (2022)](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/2_term)
+- [ОАИП](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/2_term/ОАИП) (Луцик Ю.А. / Беспалов С.А.)
 ### [Третий семестр (2022)](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/3_term)
 - [ПнаЯВУ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/3_term/C++) (Ковальчук А.М. / Басак Д.В.)
 - [ПнаЯА](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/3_term/Assembler) (Лукьянова И.А. / Туровец)
