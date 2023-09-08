@@ -1,4 +1,4 @@
-# Вычислительные машины системы и сети (ВМСиС 2021)
+# Вычислительные машины системы и сети (КСиС/ВМСиС - 2021)
 
 ### [Первый семестр (2021)](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/1_term)
 - [ОАИП](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/1_term/ОАИП) (Луцик Ю.А. / Беспалов С.А.)
@@ -13,3 +13,11 @@
 - [Java](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/4_term/Java)
 - [Cхемотехника](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/4_term/Схемота) (Байрак / Тарасюк)
 - [ОИнфБ - ОУИС](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/4_term/ОИнфБ-ОУИС) 
+### [Пятый семестр (2023)](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term)
+- [ЖЦРПО](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/ЖЦРПО) (Смирнов Ю.В. / Богдан Е.В.)
+- [ИиУВМ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/ИиУВМ) (Куприянова Д.В. / Селезнев А.И.)
+- [КиДСВТ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/КиДСВТ) (Татур М.М. / Шеменков В.А.)
+- [ОКС](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/ОКС) (Марцинкевич В.А.)
+- [СиФОВМ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/СиФОВМ) (Кобяк И.П.)
+- [Схемота](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/Схемота) (Байрак С.А. / Калютчик А.А.)
+- [ФПрогр](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/ФПрогр) (Герман Ю.О.)
