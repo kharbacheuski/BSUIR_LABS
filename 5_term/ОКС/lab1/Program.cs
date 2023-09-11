@@ -2,20 +2,25 @@
 using System.IO.Ports;
 
 namespace lab1 {
-    internal class ComPorts {
+    internal class Program {
         static void Main(string[] args) {
-            Port node = null;
+            Port port = null;
 
+            
             if (args.Length == 0) {
                 var ports = GetFreeSerialPorts();
 
-                node = new Producer(ports.Item1);
+                Console.WriteLine($"Enter com-port speed");
 
-                StartConsumer(ports.Item2);
+                var speed = Convert.ToInt32(Console.ReadLine());
+
+                port = new Producer(ports.Item1, speed);
+
+                StartConsumer(ports.Item2, speed);
             }
-            else node = new Consumer(args[0]);
+            else port = new Consumer(args[0], Convert.ToInt32(args[1]));
 
-            node.Do();
+            port.Do();
         }
 
         private static (string, string) GetFreeSerialPorts() {
@@ -28,8 +33,8 @@ namespace lab1 {
 
                 if(i % 2 == 0) {
                     try {
-                        var node = new Port(portName);
-                        node.Dispose();
+                        var port = new Port(portName);
+                        port.Dispose();
 
                         break;
                     }
@@ -42,8 +47,8 @@ namespace lab1 {
 
                 if (j % 2 != 0) {
                     try {
-                        var node = new Port(portName);
-                        node.Dispose();
+                        var port = new Port(portName);
+                        port.Dispose();
 
                         break;
                     }
@@ -54,11 +59,11 @@ namespace lab1 {
             return (serialPortNames[i], serialPortNames[j]);
         }
 
-        private static void StartConsumer(string portName) {
+        private static void StartConsumer(string portName, int speed) {
             using (var p = new Process()) {
                 p.StartInfo.FileName = $"D:\\Education\\BGUIR__LABS\\5_term\\ОКС\\lab1\\bin\\Debug\\net7.0\\lab1.exe";
                 p.StartInfo.UseShellExecute = true;
-                p.StartInfo.Arguments = portName;
+                p.StartInfo.Arguments = string.Join(" ", portName, speed);
                 p.Start();
             }
         }

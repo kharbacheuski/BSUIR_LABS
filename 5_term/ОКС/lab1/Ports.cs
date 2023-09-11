@@ -2,37 +2,30 @@
 using System.Text;
 
 namespace lab1 {
-    public class Port : IDisposable
-    {
+    public class Port : IDisposable {
         protected SerialPort serialPort;
 
-        public Port(string serialPortName, Parity parity = Parity.None)
-        {
-            serialPort = new SerialPort(serialPortName, 19200, parity, 8, StopBits.One);
+        public Port(string serialPortName, int speed = 19200) {
+            serialPort = new SerialPort(serialPortName, speed, Parity.None, 8, StopBits.One);
             serialPort.Open();
 
             serialPort.ReadTimeout = 500;
             serialPort.WriteTimeout = 500;
         }
 
-        public void Dispose()
-        {
+        public void Dispose() {
             serialPort.Dispose();
         }
 
-        public virtual void Do()
-        {
-            Console.WriteLine($"Node starting on port {serialPort.PortName}");
-        }
+        public virtual void Do() { }
     }
     public class Consumer : Port {
-        public Consumer(string serialPortName) : base(serialPortName) {
+        public Consumer(string serialPortName, int speed) : base(serialPortName, speed) {
             serialPort.DataReceived += new SerialDataReceivedEventHandler(OutputData);
         }
 
         public override void Do() {
             Console.WriteLine($"Consumer on port {serialPort.PortName}");
-            Console.WriteLine("\n\nMessage: ");
             while (true);
         }
 
@@ -44,20 +37,17 @@ namespace lab1 {
 
             var data = Encoding.ASCII.GetString(valueBuffer);
 
-            Console.Write(data);
+            Console.WriteLine($"Message = {data} ({data.Length} bytes)");
         }
     }
-    public class Producer : Port
-    {
-        public Producer(string serialPortName, Parity parity = Parity.None) : base(serialPortName, parity) { }
+    public class Producer : Port {
+        public Producer(string serialPortName, int speed) : base(serialPortName, speed) { }
 
-        public override void Do()
-        {
+        public override void Do() {
             Console.WriteLine($"Producer on port {serialPort.PortName}");
-            Console.WriteLine("\n\nWrite message: ");
 
-            while (true)
-            {
+            while (true) {
+                Console.Write("\n\nWrite message: ");
                 var data = Console.ReadLine();
 
                 var bytes = Encoding.ASCII.GetBytes(data);
@@ -65,8 +55,6 @@ namespace lab1 {
                 var valueBytes = bytes.Append((byte)0).ToArray();
 
                 serialPort.Write(valueBytes, 0, valueBytes.Length);
-
-                Console.WriteLine($"{valueBytes.Length} bytes sended");
             }
         }
     }
