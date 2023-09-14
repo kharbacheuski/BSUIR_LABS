@@ -11,7 +11,7 @@ object Main234 {
 
         numberString = scala.io.StdIn.readLine()
 
-        if (numberString.length() < 10) {
+        if (numberString.length() != 10) {
             println("Incorrect number");
             sys.exit(0)  
         }
