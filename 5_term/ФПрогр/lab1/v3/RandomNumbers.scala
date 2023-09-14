@@ -4,8 +4,8 @@ object Gen {
     def main(args: Array[String]): Unit = {
         print("Enter the number: ")
 
-        var z = "";
-        var a, b, c, w = 0l 
+        var a, b, z = "";
+        var c, w = 0l 
         var rez: Float = 0.0
 
         z = scala.io.StdIn.readLine()
@@ -16,22 +16,25 @@ object Gen {
         }
 
         for (i <- 1 to 3) {
-            a = z.substring(0, 5).toLong 
-            b = z.substring(5, 10).toLong
-            w = (b.toString() + a.toString()).toLong;
+            a = z.substring(0, 5)
+            b = z.substring(5, 10)
+            w = (b + a).toLong;
 
-            c = (z.toLong)*w
+            c = ((z.toLong)*w).toLong
 
-            z.toString()
+            if(c == 0l) {
+                println("Incorrect number");
+                sys.exit(0);
+            }
+            if(c < 0l) {
+                c *= -1;
+            }
 
             rez = c.toString().substring(0,3).toFloat / 1000
 
             println(rez); 
 
             z = c.toString()
-
-            z = z.substring(1,z.length()-1)
-            z = "011"+z
         }
     }
 }
