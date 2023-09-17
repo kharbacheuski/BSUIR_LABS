@@ -1,3 +1,4 @@
+import scala.compiletime.ops.boolean
 // Генератор случайных чисел 
 
 object Gen {
@@ -10,10 +11,12 @@ object Gen {
 
         z = scala.io.StdIn.readLine()
 
-        if (z.length() < 10) {
+        if (z.length() < 10)  {
             println("Incorrect number");
             sys.exit(0)  
         }
+
+        var rezList = new Array[Float](3);
 
         for (i <- 1 to 3) {
             a = z.substring(0, 5)
@@ -32,10 +35,26 @@ object Gen {
 
             rez = c.toString().substring(0,3).toFloat / 1000
 
+            rezList(i-1) = rez
+
             println(rez); 
 
             z = c.toString()
         }
+
+        var isRepeated: Boolean = false
+
+        for(i <- 0 to 2) {
+            for(j <- i+1 to 2) {
+                if(rezList(i) == rezList(j)) {
+                    isRepeated = true
+                }
+            }
+        }
+
+        if(isRepeated) 
+            println("Random numbers are repeated");
+        else println("Random numbers are not repeated");
     }
 }
 
