@@ -18,6 +18,6 @@
 - [ИиУВМ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/ИиУВМ) (Куприянова Д.В. / Селезнев А.И.)
 - [КиДСВТ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/КиДСВТ) (Татур М.М. / Шеменков В.А.)
 - [ОКС](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/ОКС) (Марцинкевич В.А.)
-- [СиФОВМ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/СиФОВМ) (Кобяк И.П.)
+- [СиФОВМ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/SiFOVM) (Кобяк И.П.)
 - [Схемота](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/Схемота) (Байрак С.А. / Калютчик А.А.)
 - [ФПрогр](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/ФПрогр) (Герман Ю.О.)
