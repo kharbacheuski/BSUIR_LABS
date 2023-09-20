@@ -1,5 +1,6 @@
 ﻿using System.IO.Ports;
 using System.Text;
+using lab1;
 
 namespace lab1 {
     public class Port : IDisposable {
@@ -29,15 +30,18 @@ namespace lab1 {
             while (true);
         }
 
-        private void OutputData(object sender, SerialDataReceivedEventArgs e) {
+        private void OutputData(object sender, SerialDataReceivedEventArgs e) 
+        {
             var buffer = new byte[1024];
             serialPort.Read(buffer, 0, 1024);
 
-            var valueBuffer = buffer.TakeWhile(b => b != 0).ToArray();
+            var bitStaffing = new BitStaffing();
 
-            var data = Encoding.ASCII.GetString(valueBuffer);
+            var recievePackage = bitStaffing.Deserialize(buffer);
 
-            Console.WriteLine($"Message = {data} ({data.Length} bytes)");
+            var dataString = bitStaffing.DecodeData(recievePackage.data);
+
+            Console.WriteLine($"Message = {dataString} ({dataString.Length} bytes)");
         }
     }
     public class Producer : Port {
@@ -50,11 +54,18 @@ namespace lab1 {
                 Console.Write("\n\nWrite message: ");
                 var data = Console.ReadLine();
 
-                var bytes = Encoding.ASCII.GetBytes(data);
+                var package = new Package();
+                var bitStaffing = new BitStaffing();
 
-                var valueBytes = bytes.Append((byte)0).ToArray();
+                package.flag = (byte)128;
+                package.data = bitStaffing.EncodeData(data);
+                package.length = package.data.Length;
 
-                serialPort.Write(valueBytes, 0, valueBytes.Length);
+                var packageBytes = bitStaffing.Serialize(package);
+
+                Console.WriteLine("I send " + Encoding.ASCII.GetString(package.data));
+
+                serialPort.Write(packageBytes, 0, packageBytes.Length);
             }
         }
     }
