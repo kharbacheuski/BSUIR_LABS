@@ -57,7 +57,9 @@ namespace lab1 {
         public string DecodeData(byte[] data) 
         {
             var dataBitsString = BytesToBitString(data);
-            
+
+            Console.WriteLine("recieve  encoding " + dataBitsString);
+
             var decodedBitsString = dataBitsString.Replace(stringEncoded, stringInitiator);
 
             var bytes = BitStringToBytes(decodedBitsString);
