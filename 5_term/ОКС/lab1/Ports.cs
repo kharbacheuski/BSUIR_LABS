@@ -3,10 +3,12 @@ using System.Text;
 using lab1;
 
 namespace lab1 {
-    public class Port : IDisposable {
+    public class Port : IDisposable 
+    {
         protected SerialPort serialPort;
 
-        public Port(string serialPortName, int speed = 19200) {
+        public Port(string serialPortName, int speed = 19200) 
+        {
             serialPort = new SerialPort(serialPortName, speed, Parity.None, 8, StopBits.One);
             serialPort.Open();
 
@@ -14,18 +16,22 @@ namespace lab1 {
             serialPort.WriteTimeout = 500;
         }
 
-        public void Dispose() {
+        public void Dispose() 
+        {
             serialPort.Dispose();
         }
 
         public virtual void Do() { }
     }
-    public class Consumer : Port {
-        public Consumer(string serialPortName, int speed) : base(serialPortName, speed) {
+    public class Consumer : Port 
+    {
+        public Consumer(string serialPortName, int speed) : base(serialPortName, speed) 
+        {
             serialPort.DataReceived += new SerialDataReceivedEventHandler(OutputData);
         }
 
-        public override void Do() {
+        public override void Do() 
+        {
             Console.WriteLine($"Consumer on port {serialPort.PortName}");
             while (true);
         }
@@ -37,31 +43,33 @@ namespace lab1 {
 
             var bitStaffing = new BitStaffing();
 
-            var recievePackage = bitStaffing.Deserialize(buffer);
+            var recievePackage = new Package().Deserialize(buffer);
 
-            var dataString = bitStaffing.DecodeData(recievePackage.data);
+            string dataString = bitStaffing.DecodeData(recievePackage.data);
 
-            Console.WriteLine($"Message = {dataString} ({dataString.Length} bytes)");
+            Console.WriteLine($"Message = {dataString}");
         }
     }
-    public class Producer : Port {
+    public class Producer : Port 
+    {
         public Producer(string serialPortName, int speed) : base(serialPortName, speed) { }
 
-        public override void Do() {
+        public override void Do() 
+        {
             Console.WriteLine($"Producer on port {serialPort.PortName}");
 
-            while (true) {
+            while (true) 
+            {
                 Console.Write("\n\nWrite message: ");
                 var data = Console.ReadLine();
 
                 var package = new Package();
                 var bitStaffing = new BitStaffing();
 
-                package.flag = (byte)128;
                 package.data = bitStaffing.EncodeData(data);
                 package.length = package.data.Length;
 
-                var packageBytes = bitStaffing.Serialize(package);
+                var packageBytes = package.Serialize();
 
                 Console.WriteLine("I send " + Encoding.ASCII.GetString(package.data));
 
