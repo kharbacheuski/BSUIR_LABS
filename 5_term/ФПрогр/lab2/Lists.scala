@@ -10,10 +10,11 @@ object Main {
         val flteredList = arr.filter(item => item <= 5 && item >= 0)
         println("Answer: " + sum(flteredList))
     }
+
     // 2
     def sumOfElementsByIndexes(arr: List[Int]) = {
         print("Input indexes: ")
-        val indexes = scala.io.StdIn.readLine().split(" ").map(_.toInt).toList
+        val indexes = scala.io.StdIn.readLine().split(" ").map(item => item.toInt).toList
 
         var listForSum = indexes.map(i => arr.apply(i))
 
@@ -28,7 +29,7 @@ object Main {
             else {
                 var newMinIndex: Int = index
 
-                if(arr.apply(index) > arr.apply(currentIndex))
+                if(arr(index) > arr(currentIndex))
                     newMinIndex = currentIndex
 
                 calculate(arr, currentIndex + 1, newMinIndex)
@@ -74,6 +75,28 @@ object Main {
         println("Answer: " + calculate(arr, num, 0))
     }
 
+    // add
+    def sumOfElementsInRange10(arr: List[Int]) = {
+        val flteredList = arr.filter(item => item <= 10)
+        println("Answer: " + sum(flteredList))
+    }
+
+    def isSortedLow(arr: List[Int]): Unit = {
+        if(arr.length == 1) println("sorted low")
+        else if(arr(1) < arr(0)) isSortedLow(arr.tail)
+        else println("not sorted low")
+    }
+    def isSortedHigh(arr: List[Int]): Unit = {
+        if(arr.length == 1) println("sorted high")
+        else if(arr(1) > arr(0)) isSortedHigh(arr.tail)
+        else println("not sorted high")
+    }
+
+    def isSorted(arr: List[Int]): Unit = {
+        isSortedHigh(arr)
+        isSortedLow(arr)
+    }
+
     def main(args: Array[String]): Unit = {
 
         println("1 - Sum of array range [0, 5]")
@@ -81,12 +104,18 @@ object Main {
         println("3 - Index of min element")
         println("4 - Are all elements less than")
         println("5 - Count of elements that less than")
+        println("6 - Sum of array range [-, 10]")
         println("0 - exit")
 
         print("Input list: ")
-        var stringArrayOfInts = scala.io.StdIn.readLine().split(" ").map(item => item.toInt).toList
+        var stringArrayOfInts = scala.io.StdIn.readLine();
 
-        val list = List(stringArrayOfInts: _*)
+        if(stringArrayOfInts.length == 0) {
+            println("Error: list is empty")
+            sys.exit(0);
+        }
+
+        val list = stringArrayOfInts.split(" ").map(item => item.toInt).toList
 
         var action = 1;
 
@@ -100,6 +129,8 @@ object Main {
             case 3 => indexOfMin(list)
             case 4 => areAllLessThan(list)
             case 5 => countOfElementsThatLessThan(list)
+            case 6 => sumOfElementsInRange10(list)
+            case 7 => isSorted(list)
             case 0 => {
                 action = 0
                 println("Exit...")
