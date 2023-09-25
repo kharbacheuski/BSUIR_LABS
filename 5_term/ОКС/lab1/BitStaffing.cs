@@ -14,11 +14,11 @@ namespace lab1 {
         {
             var dataBitsString = DataOperations.BytesToBitString(data);
             
-            Console.WriteLine("before encoding " + dataBitsString);
+            Console.WriteLine("before staffing: " + dataBitsString);
 
             var encodedBitsString = dataBitsString.Replace(stringInitiator, stringEncoded);
 
-            Console.WriteLine("after  encoding " + encodedBitsString);
+            Console.WriteLine("after  staffing: " + encodedBitsString);
 
             var bytes = DataOperations.BitStringToBytes(encodedBitsString);
 

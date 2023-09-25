@@ -45,7 +45,7 @@ namespace lab1 {
             var packages = new List<Package>();
 
             var hammingsCode = new HammingCode();
-
+            var bitStaffing = new BitStaffing();
 
             try
             {
@@ -67,10 +67,11 @@ namespace lab1 {
 
                 var bytesArray = recievedDataBytes.ToArray();
 
-                var bitStaffing = new BitStaffing();
-                string dataString= Encoding.ASCII.GetString(bitStaffing.DecodeData(bytesArray));
 
-                Console.WriteLine($"Message = {Encoding.ASCII.GetBytes(dataString)}");
+                var decodeHamming = hammingsCode.Decode(bytesArray);
+                string decodeStaffing = Encoding.ASCII.GetString(bitStaffing.DecodeData(decodeHamming));
+
+                Console.WriteLine($"Message = {decodeStaffing}");
             }
         }
     }
@@ -90,19 +91,21 @@ namespace lab1 {
                 var bitStaffing = new BitStaffing();
                 var hammingsCode = new HammingCode();
 
-                // var dataBytes = bitStaffing.EncodeData(Encoding.ASCII.GetBytes(data));
-                var dataBytes = hammingsCode.Encode(Encoding.ASCII.GetBytes(data));
+                var hammingBytes = hammingsCode.Encode(Encoding.ASCII.GetBytes(data));
+                var staffingBytes = bitStaffing.EncodeData(hammingBytes);
 
-                int dataLength = 10;
+                var package = new Package();
+
+                int dataLength = package.length;
                 var countOfPackage = Math.Ceiling((double)data.Length / (double)dataLength);
 
                 Console.WriteLine($"\n\nPackages count: {countOfPackage}");
 
                 for (int i = 0; i < countOfPackage; i++)
                 {
-                    var partOfData = dataBytes.Skip(i * dataLength).Take(dataLength).ToArray();
+                    var partOfData = staffingBytes.Skip(i * dataLength).Take(dataLength).ToArray();
 
-                    var package = new Package();
+                    package = new Package();
 
                     package.data = partOfData;
                     package.length = package.data.Length;

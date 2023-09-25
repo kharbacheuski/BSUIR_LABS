@@ -11,7 +11,7 @@ namespace lab1
         public byte flag = (byte)128;
         public byte[] destinationAddress;
         public byte[] sourceAddress;
-        public int length = 4;
+        public int length = 10;
         public byte[] data;
         public byte FCS;
 
