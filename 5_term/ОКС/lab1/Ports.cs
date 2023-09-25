@@ -53,8 +53,6 @@ namespace lab1 {
                 {
                     var recievePackage = new Package().Deserialize(buffer);
                     packages.Add(recievePackage);
-
-                    hammingsCode.Decode(recievePackage.data);
                 }
             }
             catch (TimeoutException)
@@ -67,11 +65,10 @@ namespace lab1 {
 
                 var bytesArray = recievedDataBytes.ToArray();
 
+                var decodeStaffing = bitStaffing.DecodeData(bytesArray);
+                var decodeHamming = hammingsCode.Decode(decodeStaffing, packages[0].FCS);
 
-                var decodeHamming = hammingsCode.Decode(bytesArray);
-                string decodeStaffing = Encoding.ASCII.GetString(bitStaffing.DecodeData(decodeHamming));
-
-                Console.WriteLine($"Message = {decodeStaffing}");
+                Console.WriteLine($"Message = {decodeHamming}");
             }
         }
     }
@@ -109,6 +106,7 @@ namespace lab1 {
 
                     package.data = partOfData;
                     package.length = package.data.Length;
+                    package.FCS = hammingsCode.GetFCS(hammingBytes);
 
                     var packageBytes = package.Serialize();
 

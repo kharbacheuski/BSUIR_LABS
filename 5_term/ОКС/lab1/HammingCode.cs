@@ -21,6 +21,18 @@ namespace lab1
             return positions;
         }
 
+        public byte GetFCS(byte[] data) // isEven
+        {
+            var str = DataOperations.BytesToBitString(data);
+            var parity = 0;
+            foreach (var item in str)
+            {
+                parity += item - 48;
+            }
+
+            return (byte)Convert.ToInt32(parity % 2 == 0);
+        }
+
         public byte[] DeleteHammingCodes(byte[] recivedDataBytes)
         {
             var str = DataOperations.BytesToBitString(recivedDataBytes);
@@ -87,9 +99,16 @@ namespace lab1
             return bytes;
         }
 
-        public byte[] FixError(byte[] data, int errorIndex)
+        public byte[] FixError(byte[] data, int errorIndex, byte FCS)
         {
-            Console.WriteLine($"Data are damage in index {errorIndex}, try to fix");
+            int countOfErrors = 1;
+
+            if (GetFCS(data) == FCS) // если четность совпадает, то изменилось 2 бита (две ошибки)
+            {
+                countOfErrors = 2;
+            }
+
+            Console.WriteLine($"Data are damage. Detected {countOfErrors} errors. Try to fix...");
 
             var str = DataOperations.BytesToBitString(data);
 
@@ -105,21 +124,32 @@ namespace lab1
         public byte[] EmulateError(byte[] data)
         {
             var str = DataOperations.BytesToBitString(data);
+
+            Random r = new Random();
+            int randomIndex = r.Next(0, str.Length - 1);
+            int secondRandomIndex = r.Next(0, str.Length - 1);
+
             StringBuilder damageString = new StringBuilder(str);
 
-            damageString[8] = damageString[8] == '1' ? '0' : '1'; // меняем значение какого-то бита на противоположное
+            var temp = damageString[randomIndex];
+            damageString[randomIndex] = '0'; // меняем значение какого-то бита на 1 (шанс - 50%)
+
+            if(temp == '1')
+            {
+                damageString[secondRandomIndex] = '0';
+            }
 
             return DataOperations.BitStringToBytes(damageString.ToString());
         }
 
-        public byte[] Decode(byte[] data)
+        public byte[] Decode(byte[] data, byte FCS)
         {
             var dataWithErrorBytes = EmulateError(data); // добавляем в данные ошибку
 
             var dataWithErrorString = DataOperations.BytesToBitString(dataWithErrorBytes); // строка данные с ошибкой
             var dataWithError = DeleteHammingCodes(dataWithErrorBytes); // байты данные с ошибкой без кодов хеминга
 
-            Console.WriteLine($"Data with error: {Encoding.ASCII.GetString(dataWithError)}");
+            Console.WriteLine($"Data with error:         {Encoding.ASCII.GetString(dataWithError)}");
 
             var encodedWithErrorString = DataOperations.BytesToBitString(Encode(dataWithError)); // данные с ошибкой закодированные (с кодами хеминга)
 
@@ -127,7 +157,7 @@ namespace lab1
             int counter = 0;
 
             Console.WriteLine($"Recive bit with error:   {dataWithErrorString}");
-            Console.WriteLine($"Decoded bit with error:   {DataOperations.BytesToBitString(dataWithError)}");
+            Console.WriteLine($"Decoded bit with error:  {DataOperations.BytesToBitString(dataWithError)}");
             Console.WriteLine($"Encoding bit with error: {encodedWithErrorString}");
 
             foreach (int pos in positions)
@@ -140,15 +170,15 @@ namespace lab1
 
             if (counter == 0)
             {
-                Console.WriteLine($"Data recieve correct!");
+                Console.WriteLine($"Recieve data is correct!");
 
                 return DeleteHammingCodes(data);
             }
             else
             {
-                var afterFix = FixError(dataWithErrorBytes, counter+1);
+                var afterFix = FixError(dataWithErrorBytes, counter+1, FCS);
 
-                Console.WriteLine($"After fix: {DataOperations.BytesToBitString(afterFix)}");
+                Console.WriteLine($"Data after fix:      {DataOperations.BytesToBitString(afterFix)}");
 
                 return afterFix;
             }
