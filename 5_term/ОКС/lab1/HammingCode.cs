@@ -25,9 +25,10 @@ namespace lab1
         {
             var str = DataOperations.BytesToBitString(data);
             var parity = 0;
+
             foreach (var item in str)
             {
-                parity += item - 48;
+                parity += item == '1' ? 1 : 0;
             }
 
             return (byte)Convert.ToInt32(parity % 2 == 0);
@@ -99,26 +100,30 @@ namespace lab1
             return bytes;
         }
 
-        public byte[] FixError(byte[] data, int errorIndex, byte FCS)
+        public byte[] FixError(byte[] data, int errorIndex, int countOfErrors)
         {
-            int countOfErrors = 1;
+            Console.WriteLine($"Data are damage! Detected {countOfErrors} errors.");
 
-            if (GetFCS(data) == FCS) // если четность совпадает, то изменилось 2 бита (две ошибки)
+            if(countOfErrors == 1)
             {
-                countOfErrors = 2;
+                Console.WriteLine($"{errorIndex} index is wrong. Try to fix...");
+
+                var str = DataOperations.BytesToBitString(data);
+
+                StringBuilder damageString = new StringBuilder(str);
+
+                damageString[errorIndex] = damageString[errorIndex] == '1' ? '0' : '1'; // заменяем поломанный бит на противоположный
+
+                var withoutHammingsCodeString = DeleteHammingCodes(DataOperations.BitStringToBytes(damageString.ToString())); // удаляем коды хеминга
+
+                return withoutHammingsCodeString; // возвращаем правильную строку
             }
+            else
+            {
+                Console.WriteLine($"We cant fix this...");
 
-            Console.WriteLine($"Data are damage. Detected {countOfErrors} errors. Try to fix...");
-
-            var str = DataOperations.BytesToBitString(data);
-
-            StringBuilder damageString = new StringBuilder(str);
-
-            damageString[errorIndex] = damageString[errorIndex] == '1' ? '0' : '1'; // заменяем поломанный бит на противоположный
-
-            var withoutHammingsCodeString = DeleteHammingCodes(DataOperations.BitStringToBytes(damageString.ToString())); // удаляем коды хеминга
-
-            return withoutHammingsCodeString; // возвращаем правильную строку
+                return data;
+            }
         }
 
         public byte[] EmulateError(byte[] data)
@@ -126,8 +131,8 @@ namespace lab1
             var str = DataOperations.BytesToBitString(data);
 
             Random r = new Random();
-            int randomIndex = r.Next(0, str.Length - 1);
-            int secondRandomIndex = r.Next(0, str.Length - 1);
+            int randomIndex = r.Next(0, str.Length - 2);
+            int secondRandomIndex = r.Next(0, str.Length - 2);
 
             StringBuilder damageString = new StringBuilder(str);
 
@@ -136,39 +141,47 @@ namespace lab1
 
             if(temp == '1')
             {
-                damageString[secondRandomIndex] = '0';
-            }
+                damageString[secondRandomIndex] = '0'; // еще один бит - шанс 25%
+            } 
 
             return DataOperations.BitStringToBytes(damageString.ToString());
+        }
+
+        public int GetCountOfErrors(byte[] data, byte FCS)
+        {
+            int countOfErrors = 1;
+
+            if (GetFCS(data) == FCS) // если четность совпадает, то изменилось 2 бита (две ошибки)
+            {
+                countOfErrors = 2;
+            }
+
+            return countOfErrors;
         }
 
         public byte[] Decode(byte[] data, byte FCS)
         {
             var dataWithErrorBytes = EmulateError(data); // добавляем в данные ошибку
 
+            int countOfErrors = GetCountOfErrors(dataWithErrorBytes, FCS);
+
             var dataWithErrorString = DataOperations.BytesToBitString(dataWithErrorBytes); // строка данные с ошибкой
+
             var dataWithError = DeleteHammingCodes(dataWithErrorBytes); // байты данные с ошибкой без кодов хеминга
-
-            Console.WriteLine($"Data with error:         {Encoding.ASCII.GetString(dataWithError)}");
-
             var encodedWithErrorString = DataOperations.BytesToBitString(Encode(dataWithError)); // данные с ошибкой закодированные (с кодами хеминга)
 
             var positions = GetHammingCodePositionIndexes(data.Length*8);
-            int counter = 0;
-
-            Console.WriteLine($"Recive bit with error:   {dataWithErrorString}");
-            Console.WriteLine($"Decoded bit with error:  {DataOperations.BytesToBitString(dataWithError)}");
-            Console.WriteLine($"Encoding bit with error: {encodedWithErrorString}");
+            int errorPosition = 0;
 
             foreach (int pos in positions)
             {
                 if (dataWithErrorString[pos] != encodedWithErrorString[pos]) // сравниваем пришедшую строку с ошибкой и вновь закодированную строку с ошибкой
                 {
-                    counter += pos;
-                }
+                    errorPosition += pos + 1;
+                } 
             }
 
-            if (counter == 0)
+            if (errorPosition == 0)
             {
                 Console.WriteLine($"Recieve data is correct!");
 
@@ -176,9 +189,7 @@ namespace lab1
             }
             else
             {
-                var afterFix = FixError(dataWithErrorBytes, counter+1, FCS);
-
-                Console.WriteLine($"Data after fix:      {DataOperations.BytesToBitString(afterFix)}");
+                var afterFix = FixError(dataWithErrorBytes, errorPosition - 1, countOfErrors);
 
                 return afterFix;
             }

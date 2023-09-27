@@ -68,7 +68,7 @@ namespace lab1 {
                 var decodeStaffing = bitStaffing.DecodeData(bytesArray);
                 var decodeHamming = hammingsCode.Decode(decodeStaffing, packages[0].FCS);
 
-                Console.WriteLine($"Message = {decodeHamming}");
+                Console.WriteLine($"Message = {Encoding.ASCII.GetString(decodeHamming)}");
             }
         }
     }
@@ -94,7 +94,7 @@ namespace lab1 {
                 var package = new Package();
 
                 int dataLength = package.length;
-                var countOfPackage = Math.Ceiling((double)data.Length / (double)dataLength);
+                var countOfPackage = Math.Ceiling(data.Length / (double)dataLength);
 
                 Console.WriteLine($"\n\nPackages count: {countOfPackage}");
 

@@ -13,12 +13,8 @@ namespace lab1 {
         public byte[] EncodeData(byte[] data) 
         {
             var dataBitsString = DataOperations.BytesToBitString(data);
-            
-            Console.WriteLine("before staffing: " + dataBitsString);
 
             var encodedBitsString = dataBitsString.Replace(stringInitiator, stringEncoded);
-
-            Console.WriteLine("after  staffing: " + encodedBitsString);
 
             var bytes = DataOperations.BitStringToBytes(encodedBitsString);
 
@@ -28,8 +24,6 @@ namespace lab1 {
         public byte[] DecodeData(byte[] data) 
         {
             var dataBitsString = DataOperations.BytesToBitString(data);
-
-            Console.WriteLine("recieve  encoding " + dataBitsString);
 
             var decodedBitsString = dataBitsString.Replace(stringEncoded, stringInitiator);
 
