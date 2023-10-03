@@ -1,8 +1,8 @@
-Project Information  d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Project Informationd:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 
 MAX+plus II Compiler Report File
 Version 10.0 9/14/2000
-Compiled: 09/27/2023 14:33:45
+Compiled: 10/03/2023 18:17:28
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -42,7 +42,7 @@ User Pins:                 12       8        0
 
 
 
-Project Information  d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Project Informationd:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 
 ** FILE HIERARCHY **
 
@@ -68,7 +68,7 @@ Project Information  d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
 |74138:4|
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ***** Logic for device 'lab1' compiled without errors.
@@ -122,7 +122,7 @@ RESERVED = Unused I/O pin, which MUST be left unconnected.
 
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ** RESOURCE USAGE **
@@ -158,7 +158,7 @@ Synthesized logic cells:                         8/  64   ( 12%)
 
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ** INPUTS **
@@ -189,7 +189,7 @@ t = Turbo logic cell
 r = Fitter-inserted logic cell
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ** OUTPUTS **
@@ -216,7 +216,7 @@ t = Turbo logic cell
 r = Fitter-inserted logic cell
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ** BURIED LOGIC **
@@ -275,7 +275,7 @@ t = Turbo logic cell
 r = Fitter-inserted logic cell
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -313,7 +313,7 @@ LC21 -> - * | * - - - | <-- |regandtries:10|~20~1~3~2
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -377,7 +377,7 @@ LC55 -> - - - - - - - - * - * - - - | * * - - | <-- |regandtries:10|rwreg:45|Q3
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -433,7 +433,7 @@ LC24 -> - - - - - - - - - - - - * * * * | - - * - | <-- |regandtries:8|rwreg:45|
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -489,7 +489,7 @@ LC31 -> - - - - - - - - - - - - * * * * | - - - * | <-- |regandtries:10|rwreg:45
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 lab1
 
 ** EQUATIONS **
@@ -937,7 +937,7 @@ _LC058   = LCELL( _EQ048 $  GND);
 
 
 
-Project Information  d:\education\bguir__labs\5_term\sifovm\labs\lab1\lab1.rpt
+Project Informationd:\education\bguir__labs\5_term\sifovm\labs\lab1\lab\lab1.rpt
 
 ** COMPILATION SETTINGS & TIMES **
 
@@ -1026,4 +1026,4 @@ Compilation Times
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 3,612K
+Peak memory allocated during compilation  = 4,487K

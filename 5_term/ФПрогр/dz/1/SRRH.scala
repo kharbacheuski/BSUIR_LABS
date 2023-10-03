@@ -32,7 +32,7 @@ object Main {
 
         if(degree == 0) degree = 2
 
-        rez = log(pow(first*second, degree))/pow(10, 2);
+        rez = log(pow(first*second, degree));
 
         println(s"rez = $rez");
 
@@ -51,7 +51,6 @@ object Main {
             sys.exit(0)  
         }
 
-
         var results: Array[Double] = Array(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0); 
 
         var i = 0;
@@ -59,7 +58,6 @@ object Main {
 
         while (i < 10 && maxIterationsCount > 0) {
             var rez = getRandomNumber(base);
-            base = newBase(rez).toString();
 
             val index = (rez * 10).toInt
 

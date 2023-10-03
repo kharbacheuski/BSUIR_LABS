@@ -1,0 +1,1464 @@
+Project Information                                       c:\sifo\rzu_\rzu.rpt
+
+MAX+plus II Compiler Report File
+Version 10.0 9/14/2000
+Compiled: 04/26/2013 11:54:10
+
+Copyright (C) 1988-2000 Altera Corporation
+Any megafunction design, and related net list (encrypted or decrypted),
+support information, device programming or simulation file, and any other
+associated documentation or information provided by Altera or a partner
+under Altera's Megafunction Partnership Program may be used only to
+program PLD devices (but not masked PLD devices) from Altera.  Any other
+use of such megafunction design, net list, support information, device
+programming or simulation file, or any other related documentation or
+information is prohibited for any other purpose, including, but not
+limited to modification, reverse engineering, de-compiling, or use with
+any other silicon devices, unless such use is explicitly licensed under
+a separate agreement with Altera or a megafunction partner.  Title to
+the intellectual property, including patents, copyrights, trademarks,
+trade secrets, or maskworks, embodied in any such megafunction design,
+net list, support information, device programming or simulation file, or
+any other related documentation or information provided by Altera or a
+megafunction partner, remains with Altera, the megafunction partner, or
+their respective licensors.  No other licenses, including any licenses
+needed under any third party's intellectual property, are provided herein.
+
+
+
+***** Project compilation was successful
+
+
+
+
+** DEVICE SUMMARY **
+
+Chip/                     Input   Output   Bidir         Shareable
+POF       Device          Pins    Pins     Pins     LCs  Expanders  % Utilized
+
+rzu       EPM7096LC68-7    14       8        0      96      0           100%
+
+User Pins:                 14       8        0  
+
+
+
+Project Information                                       c:\sifo\rzu_\rzu.rpt
+
+** FILE HIERARCHY **
+
+
+
+|16dmux:54|
+|16dmux:6|
+|register2:60|
+|register2:68|
+|register2:59|
+|register2:67|
+|register2:58|
+|register2:66|
+|register2:57|
+|register2:65|
+|register2:56|
+|register2:64|
+|register2:55|
+|register2:63|
+|register2:49|
+|register2:62|
+|register2:46|
+|register2:61|
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+***** Logic for device 'rzu' compiled without errors.
+
+
+
+
+Device: EPM7096LC68-7
+
+Device Options:
+    Turbo Bit                                    = ON
+    Security Bit                                 = OFF
+    MultiVolt I/O                              = OFF
+
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** ERROR SUMMARY **
+
+Info: Chip 'rzu' in device 'EPM7096LC68-7' has less than 10% of logic cells available for future logic changes -- if your project is likely to change, Altera recommends using a larger device
+                    R     R                       R        R  R  
+                    E     E                       E        E  E  
+                    S     S     V                 S        S  S  
+                    E     E     C                 E     V  E  E  
+                    R     R     C                 R     C  R  R  
+              s  s  V  G  V  Q  I  G  G  G  G  G  V  Q  C  V  V  
+              A  A  E  N  E  B  N  N  N  N  N  N  E  A  I  E  E  
+              0  2  D  D  D  1  T  D  D  D  D  D  D  2  O  D  D  
+            -----------------------------------------------------_ 
+          /   9  8  7  6  5  4  3  2  1 68 67 66 65 64 63 62 61   | 
+RESERVED | 10                                                  60 | QA3 
+   VCCIO | 11                                                  59 | QB3 
+RESERVED | 12                                                  58 | GND 
+     QA1 | 13                                                  57 | QB2 
+     sB1 | 14                                                  56 | wr 
+       c | 15                                                  55 | QB0 
+     GND | 16                                                  54 | RESERVED 
+     DI3 | 17                                                  53 | VCCIO 
+     DI1 | 18                  EPM7096LC68-7                   52 | RESERVED 
+     DI0 | 19                                                  51 | RESERVED 
+RESERVED | 20                                                  50 | QA0 
+   VCCIO | 21                                                  49 | RESERVED 
+     sB3 | 22                                                  48 | GND 
+     sB2 | 23                                                  47 | RESERVED 
+     sB0 | 24                                                  46 | RESERVED 
+     DI2 | 25                                                  45 | RESERVED 
+     GND | 26                                                  44 | RESERVED 
+         |_  27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43  _| 
+           ------------------------------------------------------ 
+              R  R  R  s  V  R  s  G  V  R  R  G  R  R  R  R  V  
+              E  E  E  A  C  E  A  N  C  E  E  N  E  E  E  E  C  
+              S  S  S  3  C  S  1  D  C  S  S  D  S  S  S  S  C  
+              E  E  E     I  E        I  E  E     E  E  E  E  I  
+              R  R  R     O  R        N  R  R     R  R  R  R  O  
+              V  V  V        V        T  V  V     V  V  V  V     
+              E  E  E        E           E  E     E  E  E  E     
+              D  D  D        D           D  D     D  D  D  D     
+
+
+N.C. = No Connect. This pin has no internal connection to the device.
+VCCINT = Dedicated power pin, which MUST be connected to VCC (5.0 volts).
+VCCIO = Dedicated power pin, which MUST be connected to VCC (5.0 volts).
+GND = Dedicated ground pin or unused dedicated input, which MUST be connected to GND.
+RESERVED = Unused I/O pin, which MUST be left unconnected.
+
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** RESOURCE USAGE **
+
+                                                Shareable     External
+Logic Array Block     Logic Cells   I/O Pins    Expanders   Interconnect
+
+A:     LC1 - LC16    16/16(100%)   4/ 8( 50%)   6/16( 37%)  36/36(100%) 
+B:    LC17 - LC32    16/16(100%)   7/ 8( 87%)  10/16( 62%)  36/36(100%) 
+C:    LC33 - LC48    16/16(100%)   4/ 8( 50%)   2/16( 12%)  17/36( 47%) 
+D:    LC49 - LC64    16/16(100%)   0/ 8(  0%)   2/16( 12%)  17/36( 47%) 
+E:    LC65 - LC80    16/16(100%)   2/ 8( 25%)   2/16( 12%)  24/36( 66%) 
+F:    LC81 - LC96    16/16(100%)   5/ 8( 62%)   2/16( 12%)  31/36( 86%) 
+
+
+Total dedicated input pins used:                 0/4      (  0%)
+Total I/O pins used:                            22/48     ( 45%)
+Total logic cells used:                         96/96     (100%)
+Total shareable expanders used:                  0/96     (  0%)
+Total Turbo logic cells used:                   96/96     (100%)
+Total shareable expanders not available (n/a):  24/96     ( 25%)
+Average fan-in:                                  7.58
+Total fan-in:                                   728
+
+Total input pins required:                      14
+Total output pins required:                      8
+Total bidirectional pins required:               0
+Total logic cells required:                     96
+Total flipflops required:                       64
+Total product terms required:                  280
+Total logic cells lending parallel expanders:    0
+Total shareable expanders in database:           0
+
+Synthesized logic cells:                        24/  96   ( 25%)
+
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** INPUTS **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+  15   (29)  (B)      INPUT               0      0   0    0    0    0   64  c
+  19   (24)  (B)      INPUT               0      0   0    0    0    0   16  DI0
+  18   (25)  (B)      INPUT               0      0   0    0    0    0   16  DI1
+  25   (45)  (C)      INPUT               0      0   0    0    0    0   16  DI2
+  17   (27)  (B)      INPUT               0      0   0    0    0    0   16  DI3
+   9    (8)  (A)      INPUT               0      0   0    0    0    4   12  sA0
+  33   (33)  (C)      INPUT               0      0   0    0    0    4   12  sA1
+   8    (9)  (A)      INPUT               0      0   0    0    0    4   12  sA2
+  30   (37)  (C)      INPUT               0      0   0    0    0    4   12  sA3
+  24   (48)  (C)      INPUT               0      0   0    0    0    4   76  sB0
+  14   (32)  (B)      INPUT               0      0   0    0    0    4   76  sB1
+  23   (17)  (B)      INPUT               0      0   0    0    0    4   76  sB2
+  22   (19)  (B)      INPUT               0      0   0    0    0    4   76  sB3
+  56   (81)  (F)      INPUT               0      0   0    0    0    0   64  wr
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** OUTPUTS **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+  50     72    E     OUTPUT      t        0      0   0    4    4    0    0  QA0
+  13      1    A     OUTPUT      t        0      0   0    4    4    0    0  QA1
+  64     94    F     OUTPUT      t        0      0   0    4    4    0    0  QA2
+  60     88    F     OUTPUT      t        0      0   0    4    4    0    0  QA3
+  55     80    E     OUTPUT      t        0      0   0    4    4    0    0  QB0
+   4     16    A     OUTPUT      t        0      0   0    4    4    0    0  QB1
+  57     84    F     OUTPUT      t        0      0   0    4    4    0    0  QB2
+  59     86    F     OUTPUT      t        0      0   0    4    4    0    0  QB3
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** BURIED LOGIC **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+ (44)    61    D       DFFE      t        0      0   0    7    0    0    2  |register2:46|:23
+ (14)    32    B       DFFE      t        0      0   0    7    0    0    2  |register2:46|:24
+ (39)    53    D       DFFE      t        0      0   0    7    0    0    2  |register2:46|:25
+   -     38    C       DFFE      t        0      0   0    7    0    0    2  |register2:46|:26
+   -     55    D       DFFE      t        0      0   0    7    0    0    2  |register2:49|:23
+   -     26    B       DFFE      t        0      0   0    7    0    0    2  |register2:49|:24
+   -     58    D       DFFE      t        0      0   0    7    0    0    2  |register2:49|:25
+ (24)    48    C       DFFE      t        0      0   0    7    0    0    2  |register2:49|:26
+ (42)    59    D       DFFE      t        0      0   0    7    0    0    2  |register2:55|:23
+   -     78    E       DFFE      t        0      0   0    7    0    0    2  |register2:55|:24
+   -     62    D       DFFE      t        0      0   0    7    0    0    2  |register2:55|:25
+   -     34    C       DFFE      t        0      0   0    7    0    0    2  |register2:55|:26
+   -     60    D       DFFE      t        0      0   0    7    0    0    2  |register2:56|:23
+   -     74    E       DFFE      t        0      0   0    7    0    0    2  |register2:56|:24
+ (41)    57    D       DFFE      t        0      0   0    7    0    0    2  |register2:56|:25
+   -     42    C       DFFE      t        0      0   0    7    0    0    2  |register2:56|:26
+ (61)    89    F       DFFE      t        0      0   0    7    0    0    2  |register2:57|:23
+   -     66    E       DFFE      t        0      0   0    7    0    0    2  |register2:57|:24
+ (37)    51    D       DFFE      t        0      0   0    7    0    0    2  |register2:57|:25
+ (32)    35    C       DFFE      t        0      0   0    7    0    0    2  |register2:57|:26
+ (56)    81    F       DFFE      t        0      0   0    7    0    0    2  |register2:58|:23
+ (46)    65    E       DFFE      t        0      0   0    7    0    0    2  |register2:58|:24
+ (36)    49    D       DFFE      t        0      0   0    7    0    0    2  |register2:58|:25
+ (33)    33    C       DFFE      t        0      0   0    7    0    0    2  |register2:58|:26
+   -     95    F       DFFE      t        0      0   0    7    0    0    2  |register2:59|:23
+ (47)    67    E       DFFE      t        0      0   0    7    0    0    2  |register2:59|:24
+   -     50    D       DFFE      t        0      0   0    7    0    0    2  |register2:59|:25
+   -     44    C       DFFE      t        0      0   0    7    0    0    2  |register2:59|:26
+   -     90    F        OR2    s t        1      0   1    4    5    1    0  |register2:60|~14~1~31~2
+ (51)    73    E        OR2    s t        1      0   1    4    5    1    0  |register2:60|~14~1~31~3
+ (40)    56    D        OR2    s t        1      0   1    4    5    1    0  |register2:60|~14~1~31~4
+ (30)    37    C        OR2    s t        1      0   1    4    5    1    0  |register2:60|~15~1~31~2
+ (22)    19    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~15~1~31~3
+   -      5    A        OR2    s t        1      0   1    4    5    1    0  |register2:60|~15~1~31~4
+   -      3    A        OR2    s t        1      0   1    4    5    1    0  |register2:60|~16~1~31~2
+   -      2    A        OR2    s t        1      0   1    4    5    1    0  |register2:60|~16~1~31~3
+   -     18    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~16~1~31~4
+   -     30    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~17~1~31~2
+ (19)    24    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~17~1~31~3
+   -     23    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~17~1~31~4
+   -     83    F       DFFE      t        0      0   0    7    0    0    2  |register2:60|:23
+   -     79    E       DFFE      t        0      0   0    7    0    0    2  |register2:60|:24
+   -     63    D       DFFE      t        0      0   0    7    0    0    2  |register2:60|:25
+   -     36    C       DFFE      t        0      0   0    7    0    0    2  |register2:60|:26
+ (65)    96    F        OR2    s t        1      0   1    4    5    1    0  |register2:60|~28~1~31~2
+ (49)    69    E        OR2    s t        1      0   1    4    5    1    0  |register2:60|~28~1~31~3
+ (45)    64    D        OR2    s t        1      0   1    4    5    1    0  |register2:60|~28~1~31~4
+   -     39    C        OR2    s t        1      0   1    4    5    1    0  |register2:60|~29~1~31~2
+   -     31    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~29~1~31~3
+   -     10    A        OR2    s t        1      0   1    4    5    1    0  |register2:60|~29~1~31~4
+   -     15    A        OR2    s t        1      0   1    4    5    1    0  |register2:60|~30~1~31~2
+   -     13    A        OR2    s t        1      0   1    4    5    1    0  |register2:60|~30~1~31~3
+   -     20    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~30~1~31~4
+ (15)    29    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~31~1~31~2
+   -     28    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~31~1~31~3
+ (23)    17    B        OR2    s t        1      0   1    4    5    1    0  |register2:60|~31~1~31~4
+   -     87    F       DFFE      t        0      0   0    7    0    2    0  |register2:61|:23
+ (18)    25    B       DFFE      t        0      0   0    7    0    2    0  |register2:61|:24
+ (28)    41    C       DFFE      t        0      0   0    7    0    2    0  |register2:61|:25
+ (29)    40    C       DFFE      t        0      0   0    7    0    2    0  |register2:61|:26
+   -     85    F       DFFE      t        0      0   0    7    0    0    2  |register2:62|:23
+   -     71    E       DFFE      t        0      0   0    7    0    0    2  |register2:62|:24
+   -     52    D       DFFE      t        0      0   0    7    0    0    2  |register2:62|:25
+   -     70    E       DFFE      t        0      0   0    7    0    0    2  |register2:62|:26
+   -     91    F       DFFE      t        0      0   0    7    0    0    2  |register2:63|:23
+ (52)    75    E       DFFE      t        0      0   0    7    0    0    2  |register2:63|:24
+   -     46    C       DFFE      t        0      0   0    7    0    0    2  |register2:63|:25
+   -     68    E       DFFE      t        0      0   0    7    0    0    2  |register2:63|:26
+   -     93    F       DFFE      t        0      0   0    7    0    0    2  |register2:64|:23
+ (20)    21    B       DFFE      t        0      0   0    7    0    0    2  |register2:64|:24
+   -     82    F       DFFE      t        0      0   0    7    0    0    2  |register2:64|:25
+ (27)    43    C       DFFE      t        0      0   0    7    0    0    2  |register2:64|:26
+ (62)    92    F       DFFE      t        0      0   0    7    0    0    2  |register2:65|:23
+ (17)    27    B       DFFE      t        0      0   0    7    0    0    2  |register2:65|:24
+   -     47    C       DFFE      t        0      0   0    7    0    0    2  |register2:65|:25
+ (54)    77    E       DFFE      t        0      0   0    7    0    0    2  |register2:65|:26
+   -     54    D       DFFE      t        0      0   0    7    0    0    2  |register2:66|:23
+   -     22    B       DFFE      t        0      0   0    7    0    0    2  |register2:66|:24
+ (25)    45    C       DFFE      t        0      0   0    7    0    0    2  |register2:66|:25
+   -     76    E       DFFE      t        0      0   0    7    0    0    2  |register2:66|:26
+  (9)     8    A       DFFE      t        0      0   0    7    0    0    2  |register2:67|:23
+  (8)     9    A       DFFE      t        0      0   0    7    0    0    2  |register2:67|:24
+   -      7    A       DFFE      t        0      0   0    7    0    0    2  |register2:67|:25
+ (10)     6    A       DFFE      t        0      0   0    7    0    0    2  |register2:67|:26
+ (12)     4    A       DFFE      t        0      0   0    7    0    0    2  |register2:68|:23
+  (5)    14    A       DFFE      t        0      0   0    7    0    0    2  |register2:68|:24
+  (7)    12    A       DFFE      t        0      0   0    7    0    0    2  |register2:68|:25
+   -     11    A       DFFE      t        0      0   0    7    0    0    2  |register2:68|:26
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** LOGIC CELL INTERCONNECTIONS **
+
+Logic Array Block 'A':
+
+                                         Logic cells placed in LAB 'A'
+        +------------------------------- LC1 QA1
+        | +----------------------------- LC16 QB1
+        | | +--------------------------- LC5 |register2:60|~15~1~31~4
+        | | | +------------------------- LC3 |register2:60|~16~1~31~2
+        | | | | +----------------------- LC2 |register2:60|~16~1~31~3
+        | | | | | +--------------------- LC10 |register2:60|~29~1~31~4
+        | | | | | | +------------------- LC15 |register2:60|~30~1~31~2
+        | | | | | | | +----------------- LC13 |register2:60|~30~1~31~3
+        | | | | | | | | +--------------- LC8 |register2:67|:23
+        | | | | | | | | | +------------- LC9 |register2:67|:24
+        | | | | | | | | | | +----------- LC7 |register2:67|:25
+        | | | | | | | | | | | +--------- LC6 |register2:67|:26
+        | | | | | | | | | | | | +------- LC4 |register2:68|:23
+        | | | | | | | | | | | | | +----- LC14 |register2:68|:24
+        | | | | | | | | | | | | | | +--- LC12 |register2:68|:25
+        | | | | | | | | | | | | | | | +- LC11 |register2:68|:26
+        | | | | | | | | | | | | | | | | 
+        | | | | | | | | | | | | | | | |   Other LABs fed by signals
+        | | | | | | | | | | | | | | | |   that feed LAB 'A'
+LC      | | | | | | | | | | | | | | | | | A B C D E F |     Logic cells that feed LAB 'A':
+LC5  -> * - - - - - - - - - - - - - - - | * - - - - - | <-- |register2:60|~15~1~31~4
+LC10 -> - * - - - - - - - - - - - - - - | * - - - - - | <-- |register2:60|~29~1~31~4
+LC9  -> - - * - - * - - - - - - - - - - | * - - - - - | <-- |register2:67|:24
+LC14 -> - - * - - * - - - - - - - - - - | * - - - - - | <-- |register2:68|:24
+
+Pin
+15   -> - - - - - - - - * * * * * * * * | * * * * * * | <-- c
+19   -> - - - - - - - - * - - - * - - - | * - - * - * | <-- DI0
+18   -> - - - - - - - - - * - - - * - - | * * - - * - | <-- DI1
+25   -> - - - - - - - - - - * - - - * - | * - * * - * | <-- DI2
+17   -> - - - - - - - - - - - * - - - * | * - * - * - | <-- DI3
+9    -> * - * * * - - - - - - - - - - - | * * * * * * | <-- sA0
+33   -> * - * * * - - - - - - - - - - - | * * * * * * | <-- sA1
+8    -> * - * * * - - - - - - - - - - - | * * * * * * | <-- sA2
+30   -> * - * * * - - - - - - - - - - - | * * * * * * | <-- sA3
+24   -> - * - - - * * * * * * * * * * * | * * * * * * | <-- sB0
+14   -> - * - - - * * * * * * * * * * * | * * * * * * | <-- sB1
+23   -> - * - - - * * * * * * * * * * * | * * * * * * | <-- sB2
+22   -> - * - - - * * * * * * * * * * * | * * * * * * | <-- sB3
+56   -> - - - - - - - - * * * * * * * * | * * * * * * | <-- wr
+LC53 -> - - - * - - * - - - - - - - - - | * - - - - - | <-- |register2:46|:25
+LC58 -> - - - * - - * - - - - - - - - - | * - - - - - | <-- |register2:49|:25
+LC62 -> - - - - * - - * - - - - - - - - | * - - - - - | <-- |register2:55|:25
+LC57 -> - - - - * - - * - - - - - - - - | * - - - - - | <-- |register2:56|:25
+LC51 -> - - - - * - - * - - - - - - - - | * - - - - - | <-- |register2:57|:25
+LC49 -> - - - - * - - * - - - - - - - - | * - - - - - | <-- |register2:58|:25
+LC50 -> - - - - * - - * - - - - - - - - | * - - - - - | <-- |register2:59|:25
+LC37 -> * - - - - - - - - - - - - - - - | * - - - - - | <-- |register2:60|~15~1~31~2
+LC19 -> * - - - - - - - - - - - - - - - | * - - - - - | <-- |register2:60|~15~1~31~3
+LC79 -> - - * - - * - - - - - - - - - - | * - - - - - | <-- |register2:60|:24
+LC39 -> - * - - - - - - - - - - - - - - | * - - - - - | <-- |register2:60|~29~1~31~2
+LC31 -> - * - - - - - - - - - - - - - - | * - - - - - | <-- |register2:60|~29~1~31~3
+LC25 -> * * - - - - - - - - - - - - - - | * - - - - - | <-- |register2:61|:24
+LC52 -> - - - * - - * - - - - - - - - - | * - - - - - | <-- |register2:62|:25
+LC46 -> - - - * - - * - - - - - - - - - | * - - - - - | <-- |register2:63|:25
+LC21 -> - - * - - * - - - - - - - - - - | * - - - - - | <-- |register2:64|:24
+LC47 -> - - - * - - * - - - - - - - - - | * - - - - - | <-- |register2:65|:25
+LC22 -> - - * - - * - - - - - - - - - - | * - - - - - | <-- |register2:66|:24
+
+
+* = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
+- = The logic cell or pin is not an input to the logic cell (or LAB).
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** LOGIC CELL INTERCONNECTIONS **
+
+Logic Array Block 'B':
+
+                                         Logic cells placed in LAB 'B'
+        +------------------------------- LC32 |register2:46|:24
+        | +----------------------------- LC26 |register2:49|:24
+        | | +--------------------------- LC19 |register2:60|~15~1~31~3
+        | | | +------------------------- LC18 |register2:60|~16~1~31~4
+        | | | | +----------------------- LC30 |register2:60|~17~1~31~2
+        | | | | | +--------------------- LC24 |register2:60|~17~1~31~3
+        | | | | | | +------------------- LC23 |register2:60|~17~1~31~4
+        | | | | | | | +----------------- LC31 |register2:60|~29~1~31~3
+        | | | | | | | | +--------------- LC20 |register2:60|~30~1~31~4
+        | | | | | | | | | +------------- LC29 |register2:60|~31~1~31~2
+        | | | | | | | | | | +----------- LC28 |register2:60|~31~1~31~3
+        | | | | | | | | | | | +--------- LC17 |register2:60|~31~1~31~4
+        | | | | | | | | | | | | +------- LC25 |register2:61|:24
+        | | | | | | | | | | | | | +----- LC21 |register2:64|:24
+        | | | | | | | | | | | | | | +--- LC27 |register2:65|:24
+        | | | | | | | | | | | | | | | +- LC22 |register2:66|:24
+        | | | | | | | | | | | | | | | | 
+        | | | | | | | | | | | | | | | |   Other LABs fed by signals
+        | | | | | | | | | | | | | | | |   that feed LAB 'B'
+LC      | | | | | | | | | | | | | | | | | A B C D E F |     Logic cells that feed LAB 'B':
+
+Pin
+15   -> * * - - - - - - - - - - * * * * | * * * * * * | <-- c
+18   -> * * - - - - - - - - - - * * * * | * * - - * - | <-- DI1
+9    -> - - * * * * * - - - - - - - - - | * * * * * * | <-- sA0
+33   -> - - * * * * * - - - - - - - - - | * * * * * * | <-- sA1
+8    -> - - * * * * * - - - - - - - - - | * * * * * * | <-- sA2
+30   -> - - * * * * * - - - - - - - - - | * * * * * * | <-- sA3
+24   -> * * - - - - - * * * * * * * * * | * * * * * * | <-- sB0
+14   -> * * - - - - - * * * * * * * * * | * * * * * * | <-- sB1
+23   -> * * - - - - - * * * * * * * * * | * * * * * * | <-- sB2
+22   -> * * - - - - - * * * * * * * * * | * * * * * * | <-- sB3
+56   -> * * - - - - - - - - - - * * * * | * * * * * * | <-- wr
+LC38 -> - - - - * - - - - * - - - - - - | - * - - - - | <-- |register2:46|:26
+LC48 -> - - - - * - - - - * - - - - - - | - * - - - - | <-- |register2:49|:26
+LC78 -> - - * - - - - * - - - - - - - - | - * - - - - | <-- |register2:55|:24
+LC34 -> - - - - - * - - - - * - - - - - | - * - - - - | <-- |register2:55|:26
+LC74 -> - - * - - - - * - - - - - - - - | - * - - - - | <-- |register2:56|:24
+LC42 -> - - - - - * - - - - * - - - - - | - * - - - - | <-- |register2:56|:26
+LC66 -> - - * - - - - * - - - - - - - - | - * - - - - | <-- |register2:57|:24
+LC35 -> - - - - - * - - - - * - - - - - | - * - - - - | <-- |register2:57|:26
+LC65 -> - - * - - - - * - - - - - - - - | - * - - - - | <-- |register2:58|:24
+LC33 -> - - - - - * - - - - * - - - - - | - * - - - - | <-- |register2:58|:26
+LC67 -> - - * - - - - * - - - - - - - - | - * - - - - | <-- |register2:59|:24
+LC44 -> - - - - - * - - - - * - - - - - | - * - - - - | <-- |register2:59|:26
+LC63 -> - - - * - - - - * - - - - - - - | - * - - - - | <-- |register2:60|:25
+LC36 -> - - - - - - * - - - - * - - - - | - * - - - - | <-- |register2:60|:26
+LC70 -> - - - - * - - - - * - - - - - - | - * - - - - | <-- |register2:62|:26
+LC68 -> - - - - * - - - - * - - - - - - | - * - - - - | <-- |register2:63|:26
+LC82 -> - - - * - - - - * - - - - - - - | - * - - - - | <-- |register2:64|:25
+LC43 -> - - - - - - * - - - - * - - - - | - * - - - - | <-- |register2:64|:26
+LC77 -> - - - - * - - - - * - - - - - - | - * - - - - | <-- |register2:65|:26
+LC45 -> - - - * - - - - * - - - - - - - | - * - - - - | <-- |register2:66|:25
+LC76 -> - - - - - - * - - - - * - - - - | - * - - - - | <-- |register2:66|:26
+LC7  -> - - - * - - - - * - - - - - - - | - * - - - - | <-- |register2:67|:25
+LC6  -> - - - - - - * - - - - * - - - - | - * - - - - | <-- |register2:67|:26
+LC12 -> - - - * - - - - * - - - - - - - | - * - - - - | <-- |register2:68|:25
+LC11 -> - - - - - - * - - - - * - - - - | - * - - - - | <-- |register2:68|:26
+
+
+* = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
+- = The logic cell or pin is not an input to the logic cell (or LAB).
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** LOGIC CELL INTERCONNECTIONS **
+
+Logic Array Block 'C':
+
+                                         Logic cells placed in LAB 'C'
+        +------------------------------- LC38 |register2:46|:26
+        | +----------------------------- LC48 |register2:49|:26
+        | | +--------------------------- LC34 |register2:55|:26
+        | | | +------------------------- LC42 |register2:56|:26
+        | | | | +----------------------- LC35 |register2:57|:26
+        | | | | | +--------------------- LC33 |register2:58|:26
+        | | | | | | +------------------- LC44 |register2:59|:26
+        | | | | | | | +----------------- LC37 |register2:60|~15~1~31~2
+        | | | | | | | | +--------------- LC36 |register2:60|:26
+        | | | | | | | | | +------------- LC39 |register2:60|~29~1~31~2
+        | | | | | | | | | | +----------- LC41 |register2:61|:25
+        | | | | | | | | | | | +--------- LC40 |register2:61|:26
+        | | | | | | | | | | | | +------- LC46 |register2:63|:25
+        | | | | | | | | | | | | | +----- LC43 |register2:64|:26
+        | | | | | | | | | | | | | | +--- LC47 |register2:65|:25
+        | | | | | | | | | | | | | | | +- LC45 |register2:66|:25
+        | | | | | | | | | | | | | | | | 
+        | | | | | | | | | | | | | | | |   Other LABs fed by signals
+        | | | | | | | | | | | | | | | |   that feed LAB 'C'
+LC      | | | | | | | | | | | | | | | | | A B C D E F |     Logic cells that feed LAB 'C':
+
+Pin
+15   -> * * * * * * * - * - * * * * * * | * * * * * * | <-- c
+25   -> - - - - - - - - - - * - * - * * | * - * * - * | <-- DI2
+17   -> * * * * * * * - * - - * - * - - | * - * - * - | <-- DI3
+9    -> - - - - - - - * - - - - - - - - | * * * * * * | <-- sA0
+33   -> - - - - - - - * - - - - - - - - | * * * * * * | <-- sA1
+8    -> - - - - - - - * - - - - - - - - | * * * * * * | <-- sA2
+30   -> - - - - - - - * - - - - - - - - | * * * * * * | <-- sA3
+24   -> * * * * * * * - * * * * * * * * | * * * * * * | <-- sB0
+14   -> * * * * * * * - * * * * * * * * | * * * * * * | <-- sB1
+23   -> * * * * * * * - * * * * * * * * | * * * * * * | <-- sB2
+22   -> * * * * * * * - * * * * * * * * | * * * * * * | <-- sB3
+56   -> * * * * * * * - * - * * * * * * | * * * * * * | <-- wr
+LC32 -> - - - - - - - * - * - - - - - - | - - * - - - | <-- |register2:46|:24
+LC26 -> - - - - - - - * - * - - - - - - | - - * - - - | <-- |register2:49|:24
+LC71 -> - - - - - - - * - * - - - - - - | - - * - - - | <-- |register2:62|:24
+LC75 -> - - - - - - - * - * - - - - - - | - - * - - - | <-- |register2:63|:24
+LC27 -> - - - - - - - * - * - - - - - - | - - * - - - | <-- |register2:65|:24
+
+
+* = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
+- = The logic cell or pin is not an input to the logic cell (or LAB).
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** LOGIC CELL INTERCONNECTIONS **
+
+Logic Array Block 'D':
+
+                                         Logic cells placed in LAB 'D'
+        +------------------------------- LC61 |register2:46|:23
+        | +----------------------------- LC53 |register2:46|:25
+        | | +--------------------------- LC55 |register2:49|:23
+        | | | +------------------------- LC58 |register2:49|:25
+        | | | | +----------------------- LC59 |register2:55|:23
+        | | | | | +--------------------- LC62 |register2:55|:25
+        | | | | | | +------------------- LC60 |register2:56|:23
+        | | | | | | | +----------------- LC57 |register2:56|:25
+        | | | | | | | | +--------------- LC51 |register2:57|:25
+        | | | | | | | | | +------------- LC49 |register2:58|:25
+        | | | | | | | | | | +----------- LC50 |register2:59|:25
+        | | | | | | | | | | | +--------- LC56 |register2:60|~14~1~31~4
+        | | | | | | | | | | | | +------- LC63 |register2:60|:25
+        | | | | | | | | | | | | | +----- LC64 |register2:60|~28~1~31~4
+        | | | | | | | | | | | | | | +--- LC52 |register2:62|:25
+        | | | | | | | | | | | | | | | +- LC54 |register2:66|:23
+        | | | | | | | | | | | | | | | | 
+        | | | | | | | | | | | | | | | |   Other LABs fed by signals
+        | | | | | | | | | | | | | | | |   that feed LAB 'D'
+LC      | | | | | | | | | | | | | | | | | A B C D E F |     Logic cells that feed LAB 'D':
+LC54 -> - - - - - - - - - - - * - * - - | - - - * - - | <-- |register2:66|:23
+
+Pin
+15   -> * * * * * * * * * * * - * - * * | * * * * * * | <-- c
+19   -> * - * - * - * - - - - - - - - * | * - - * - * | <-- DI0
+25   -> - * - * - * - * * * * - * - * - | * - * * - * | <-- DI2
+9    -> - - - - - - - - - - - * - - - - | * * * * * * | <-- sA0
+33   -> - - - - - - - - - - - * - - - - | * * * * * * | <-- sA1
+8    -> - - - - - - - - - - - * - - - - | * * * * * * | <-- sA2
+30   -> - - - - - - - - - - - * - - - - | * * * * * * | <-- sA3
+24   -> * * * * * * * * * * * - * * * * | * * * * * * | <-- sB0
+14   -> * * * * * * * * * * * - * * * * | * * * * * * | <-- sB1
+23   -> * * * * * * * * * * * - * * * * | * * * * * * | <-- sB2
+22   -> * * * * * * * * * * * - * * * * | * * * * * * | <-- sB3
+56   -> * * * * * * * * * * * - * - * * | * * * * * * | <-- wr
+LC83 -> - - - - - - - - - - - * - * - - | - - - * - - | <-- |register2:60|:23
+LC93 -> - - - - - - - - - - - * - * - - | - - - * - - | <-- |register2:64|:23
+LC8  -> - - - - - - - - - - - * - * - - | - - - * - - | <-- |register2:67|:23
+LC4  -> - - - - - - - - - - - * - * - - | - - - * - - | <-- |register2:68|:23
+
+
+* = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
+- = The logic cell or pin is not an input to the logic cell (or LAB).
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** LOGIC CELL INTERCONNECTIONS **
+
+Logic Array Block 'E':
+
+                                         Logic cells placed in LAB 'E'
+        +------------------------------- LC72 QA0
+        | +----------------------------- LC80 QB0
+        | | +--------------------------- LC78 |register2:55|:24
+        | | | +------------------------- LC74 |register2:56|:24
+        | | | | +----------------------- LC66 |register2:57|:24
+        | | | | | +--------------------- LC65 |register2:58|:24
+        | | | | | | +------------------- LC67 |register2:59|:24
+        | | | | | | | +----------------- LC73 |register2:60|~14~1~31~3
+        | | | | | | | | +--------------- LC79 |register2:60|:24
+        | | | | | | | | | +------------- LC69 |register2:60|~28~1~31~3
+        | | | | | | | | | | +----------- LC71 |register2:62|:24
+        | | | | | | | | | | | +--------- LC70 |register2:62|:26
+        | | | | | | | | | | | | +------- LC75 |register2:63|:24
+        | | | | | | | | | | | | | +----- LC68 |register2:63|:26
+        | | | | | | | | | | | | | | +--- LC77 |register2:65|:26
+        | | | | | | | | | | | | | | | +- LC76 |register2:66|:26
+        | | | | | | | | | | | | | | | | 
+        | | | | | | | | | | | | | | | |   Other LABs fed by signals
+        | | | | | | | | | | | | | | | |   that feed LAB 'E'
+LC      | | | | | | | | | | | | | | | | | A B C D E F |     Logic cells that feed LAB 'E':
+LC73 -> * - - - - - - - - - - - - - - - | - - - - * - | <-- |register2:60|~14~1~31~3
+LC69 -> - * - - - - - - - - - - - - - - | - - - - * - | <-- |register2:60|~28~1~31~3
+
+Pin
+15   -> - - * * * * * - * - * * * * * * | * * * * * * | <-- c
+18   -> - - * * * * * - * - * - * - - - | * * - - * - | <-- DI1
+17   -> - - - - - - - - - - - * - * * * | * - * - * - | <-- DI3
+9    -> * - - - - - - * - - - - - - - - | * * * * * * | <-- sA0
+33   -> * - - - - - - * - - - - - - - - | * * * * * * | <-- sA1
+8    -> * - - - - - - * - - - - - - - - | * * * * * * | <-- sA2
+30   -> * - - - - - - * - - - - - - - - | * * * * * * | <-- sA3
+24   -> - * * * * * * - * * * * * * * * | * * * * * * | <-- sB0
+14   -> - * * * * * * - * * * * * * * * | * * * * * * | <-- sB1
+23   -> - * * * * * * - * * * * * * * * | * * * * * * | <-- sB2
+22   -> - * * * * * * - * * * * * * * * | * * * * * * | <-- sB3
+56   -> - - * * * * * - * - * * * * * * | * * * * * * | <-- wr
+LC59 -> - - - - - - - * - * - - - - - - | - - - - * - | <-- |register2:55|:23
+LC60 -> - - - - - - - * - * - - - - - - | - - - - * - | <-- |register2:56|:23
+LC89 -> - - - - - - - * - * - - - - - - | - - - - * - | <-- |register2:57|:23
+LC81 -> - - - - - - - * - * - - - - - - | - - - - * - | <-- |register2:58|:23
+LC95 -> - - - - - - - * - * - - - - - - | - - - - * - | <-- |register2:59|:23
+LC90 -> * - - - - - - - - - - - - - - - | - - - - * - | <-- |register2:60|~14~1~31~2
+LC56 -> * - - - - - - - - - - - - - - - | - - - - * - | <-- |register2:60|~14~1~31~4
+LC96 -> - * - - - - - - - - - - - - - - | - - - - * - | <-- |register2:60|~28~1~31~2
+LC64 -> - * - - - - - - - - - - - - - - | - - - - * - | <-- |register2:60|~28~1~31~4
+LC87 -> * * - - - - - - - - - - - - - - | - - - - * - | <-- |register2:61|:23
+
+
+* = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
+- = The logic cell or pin is not an input to the logic cell (or LAB).
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** LOGIC CELL INTERCONNECTIONS **
+
+Logic Array Block 'F':
+
+                                         Logic cells placed in LAB 'F'
+        +------------------------------- LC94 QA2
+        | +----------------------------- LC88 QA3
+        | | +--------------------------- LC84 QB2
+        | | | +------------------------- LC86 QB3
+        | | | | +----------------------- LC89 |register2:57|:23
+        | | | | | +--------------------- LC81 |register2:58|:23
+        | | | | | | +------------------- LC95 |register2:59|:23
+        | | | | | | | +----------------- LC90 |register2:60|~14~1~31~2
+        | | | | | | | | +--------------- LC83 |register2:60|:23
+        | | | | | | | | | +------------- LC96 |register2:60|~28~1~31~2
+        | | | | | | | | | | +----------- LC87 |register2:61|:23
+        | | | | | | | | | | | +--------- LC85 |register2:62|:23
+        | | | | | | | | | | | | +------- LC91 |register2:63|:23
+        | | | | | | | | | | | | | +----- LC93 |register2:64|:23
+        | | | | | | | | | | | | | | +--- LC82 |register2:64|:25
+        | | | | | | | | | | | | | | | +- LC92 |register2:65|:23
+        | | | | | | | | | | | | | | | | 
+        | | | | | | | | | | | | | | | |   Other LABs fed by signals
+        | | | | | | | | | | | | | | | |   that feed LAB 'F'
+LC      | | | | | | | | | | | | | | | | | A B C D E F |     Logic cells that feed LAB 'F':
+LC85 -> - - - - - - - * - * - - - - - - | - - - - - * | <-- |register2:62|:23
+LC91 -> - - - - - - - * - * - - - - - - | - - - - - * | <-- |register2:63|:23
+LC92 -> - - - - - - - * - * - - - - - - | - - - - - * | <-- |register2:65|:23
+
+Pin
+15   -> - - - - * * * - * - * * * * * * | * * * * * * | <-- c
+19   -> - - - - * * * - * - * * * * - * | * - - * - * | <-- DI0
+25   -> - - - - - - - - - - - - - - * - | * - * * - * | <-- DI2
+9    -> * * - - - - - * - - - - - - - - | * * * * * * | <-- sA0
+33   -> * * - - - - - * - - - - - - - - | * * * * * * | <-- sA1
+8    -> * * - - - - - * - - - - - - - - | * * * * * * | <-- sA2
+30   -> * * - - - - - * - - - - - - - - | * * * * * * | <-- sA3
+24   -> - - * * * * * - * * * * * * * * | * * * * * * | <-- sB0
+14   -> - - * * * * * - * * * * * * * * | * * * * * * | <-- sB1
+23   -> - - * * * * * - * * * * * * * * | * * * * * * | <-- sB2
+22   -> - - * * * * * - * * * * * * * * | * * * * * * | <-- sB3
+56   -> - - - - * * * - * - * * * * * * | * * * * * * | <-- wr
+LC61 -> - - - - - - - * - * - - - - - - | - - - - - * | <-- |register2:46|:23
+LC55 -> - - - - - - - * - * - - - - - - | - - - - - * | <-- |register2:49|:23
+LC3  -> * - - - - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~16~1~31~2
+LC2  -> * - - - - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~16~1~31~3
+LC18 -> * - - - - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~16~1~31~4
+LC30 -> - * - - - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~17~1~31~2
+LC24 -> - * - - - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~17~1~31~3
+LC23 -> - * - - - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~17~1~31~4
+LC15 -> - - * - - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~30~1~31~2
+LC13 -> - - * - - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~30~1~31~3
+LC20 -> - - * - - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~30~1~31~4
+LC29 -> - - - * - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~31~1~31~2
+LC28 -> - - - * - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~31~1~31~3
+LC17 -> - - - * - - - - - - - - - - - - | - - - - - * | <-- |register2:60|~31~1~31~4
+LC41 -> * - * - - - - - - - - - - - - - | - - - - - * | <-- |register2:61|:25
+LC40 -> - * - * - - - - - - - - - - - - | - - - - - * | <-- |register2:61|:26
+
+
+* = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
+- = The logic cell or pin is not an input to the logic cell (or LAB).
+
+
+Device-Specific Information:                              c:\sifo\rzu_\rzu.rpt
+rzu
+
+** EQUATIONS **
+
+c        : INPUT;
+DI0      : INPUT;
+DI1      : INPUT;
+DI2      : INPUT;
+DI3      : INPUT;
+sA0      : INPUT;
+sA1      : INPUT;
+sA2      : INPUT;
+sA3      : INPUT;
+sB0      : INPUT;
+sB1      : INPUT;
+sB2      : INPUT;
+sB3      : INPUT;
+wr       : INPUT;
+
+-- Node name is 'QA0' = '|register2:60|~14~1~31' 
+-- Equation name is 'QA0', type is output 
+ QA0     = LCELL( _EQ001 $  _EQ002);
+  _EQ001 =  _LC090
+         #  _LC073
+         #  _LC056;
+  _EQ002 =  _LC087 &  sA0 &  sA1 &  sA2 & !sA3;
+
+-- Node name is 'QA1' = '|register2:60|~15~1~31' 
+-- Equation name is 'QA1', type is output 
+ QA1     = LCELL( _EQ003 $  _EQ004);
+  _EQ003 =  _LC037
+         #  _LC019
+         #  _LC005;
+  _EQ004 =  _LC025 &  sA0 &  sA1 &  sA2 & !sA3;
+
+-- Node name is 'QA2' = '|register2:60|~16~1~31' 
+-- Equation name is 'QA2', type is output 
+ QA2     = LCELL( _EQ005 $  _EQ006);
+  _EQ005 =  _LC003
+         #  _LC002
+         #  _LC018;
+  _EQ006 =  _LC041 &  sA0 &  sA1 &  sA2 & !sA3;
+
+-- Node name is 'QA3' = '|register2:60|~17~1~31' 
+-- Equation name is 'QA3', type is output 
+ QA3     = LCELL( _EQ007 $  _EQ008);
+  _EQ007 =  _LC030
+         #  _LC024
+         #  _LC023;
+  _EQ008 =  _LC040 &  sA0 &  sA1 &  sA2 & !sA3;
+
+-- Node name is 'QB0' = '|register2:60|~28~1~31' 
+-- Equation name is 'QB0', type is output 
+ QB0     = LCELL( _EQ009 $  _EQ010);
+  _EQ009 =  _LC096
+         #  _LC069
+         #  _LC064;
+  _EQ010 =  _LC087 &  sB0 &  sB1 &  sB2 & !sB3;
+
+-- Node name is 'QB1' = '|register2:60|~29~1~31' 
+-- Equation name is 'QB1', type is output 
+ QB1     = LCELL( _EQ011 $  _EQ012);
+  _EQ011 =  _LC039
+         #  _LC031
+         #  _LC010;
+  _EQ012 =  _LC025 &  sB0 &  sB1 &  sB2 & !sB3;
+
+-- Node name is 'QB2' = '|register2:60|~30~1~31' 
+-- Equation name is 'QB2', type is output 
+ QB2     = LCELL( _EQ013 $  _EQ014);
+  _EQ013 =  _LC015
+         #  _LC013
+         #  _LC020;
+  _EQ014 =  _LC041 &  sB0 &  sB1 &  sB2 & !sB3;
+
+-- Node name is 'QB3' = '|register2:60|~31~1~31' 
+-- Equation name is 'QB3', type is output 
+ QB3     = LCELL( _EQ015 $  _EQ016);
+  _EQ015 =  _LC029
+         #  _LC028
+         #  _LC017;
+  _EQ016 =  _LC040 &  sB0 &  sB1 &  sB2 & !sB3;
+
+-- Node name is '|register2:46|:23' 
+-- Equation name is '_LC061', type is buried 
+_LC061   = DFFE( DI0 $  GND,  _EQ017,  VCC,  VCC,  VCC);
+  _EQ017 =  c &  sB0 &  sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:46|:24' 
+-- Equation name is '_LC032', type is buried 
+_LC032   = DFFE( DI1 $  GND,  _EQ018,  VCC,  VCC,  VCC);
+  _EQ018 =  c &  sB0 &  sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:46|:25' 
+-- Equation name is '_LC053', type is buried 
+_LC053   = DFFE( DI2 $  GND,  _EQ019,  VCC,  VCC,  VCC);
+  _EQ019 =  c &  sB0 &  sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:46|:26' 
+-- Equation name is '_LC038', type is buried 
+_LC038   = DFFE( DI3 $  GND,  _EQ020,  VCC,  VCC,  VCC);
+  _EQ020 =  c &  sB0 &  sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:49|:23' 
+-- Equation name is '_LC055', type is buried 
+_LC055   = DFFE( DI0 $  GND,  _EQ021,  VCC,  VCC,  VCC);
+  _EQ021 =  c & !sB0 &  sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:49|:24' 
+-- Equation name is '_LC026', type is buried 
+_LC026   = DFFE( DI1 $  GND,  _EQ022,  VCC,  VCC,  VCC);
+  _EQ022 =  c & !sB0 &  sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:49|:25' 
+-- Equation name is '_LC058', type is buried 
+_LC058   = DFFE( DI2 $  GND,  _EQ023,  VCC,  VCC,  VCC);
+  _EQ023 =  c & !sB0 &  sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:49|:26' 
+-- Equation name is '_LC048', type is buried 
+_LC048   = DFFE( DI3 $  GND,  _EQ024,  VCC,  VCC,  VCC);
+  _EQ024 =  c & !sB0 &  sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:55|:23' 
+-- Equation name is '_LC059', type is buried 
+_LC059   = DFFE( DI0 $  GND,  _EQ025,  VCC,  VCC,  VCC);
+  _EQ025 =  c &  sB0 & !sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:55|:24' 
+-- Equation name is '_LC078', type is buried 
+_LC078   = DFFE( DI1 $  GND,  _EQ026,  VCC,  VCC,  VCC);
+  _EQ026 =  c &  sB0 & !sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:55|:25' 
+-- Equation name is '_LC062', type is buried 
+_LC062   = DFFE( DI2 $  GND,  _EQ027,  VCC,  VCC,  VCC);
+  _EQ027 =  c &  sB0 & !sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:55|:26' 
+-- Equation name is '_LC034', type is buried 
+_LC034   = DFFE( DI3 $  GND,  _EQ028,  VCC,  VCC,  VCC);
+  _EQ028 =  c &  sB0 & !sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:56|:23' 
+-- Equation name is '_LC060', type is buried 
+_LC060   = DFFE( DI0 $  GND,  _EQ029,  VCC,  VCC,  VCC);
+  _EQ029 =  c & !sB0 & !sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:56|:24' 
+-- Equation name is '_LC074', type is buried 
+_LC074   = DFFE( DI1 $  GND,  _EQ030,  VCC,  VCC,  VCC);
+  _EQ030 =  c & !sB0 & !sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:56|:25' 
+-- Equation name is '_LC057', type is buried 
+_LC057   = DFFE( DI2 $  GND,  _EQ031,  VCC,  VCC,  VCC);
+  _EQ031 =  c & !sB0 & !sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:56|:26' 
+-- Equation name is '_LC042', type is buried 
+_LC042   = DFFE( DI3 $  GND,  _EQ032,  VCC,  VCC,  VCC);
+  _EQ032 =  c & !sB0 & !sB1 &  sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:57|:23' 
+-- Equation name is '_LC089', type is buried 
+_LC089   = DFFE( DI0 $  GND,  _EQ033,  VCC,  VCC,  VCC);
+  _EQ033 =  c &  sB0 &  sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:57|:24' 
+-- Equation name is '_LC066', type is buried 
+_LC066   = DFFE( DI1 $  GND,  _EQ034,  VCC,  VCC,  VCC);
+  _EQ034 =  c &  sB0 &  sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:57|:25' 
+-- Equation name is '_LC051', type is buried 
+_LC051   = DFFE( DI2 $  GND,  _EQ035,  VCC,  VCC,  VCC);
+  _EQ035 =  c &  sB0 &  sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:57|:26' 
+-- Equation name is '_LC035', type is buried 
+_LC035   = DFFE( DI3 $  GND,  _EQ036,  VCC,  VCC,  VCC);
+  _EQ036 =  c &  sB0 &  sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:58|:23' 
+-- Equation name is '_LC081', type is buried 
+_LC081   = DFFE( DI0 $  GND,  _EQ037,  VCC,  VCC,  VCC);
+  _EQ037 =  c & !sB0 &  sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:58|:24' 
+-- Equation name is '_LC065', type is buried 
+_LC065   = DFFE( DI1 $  GND,  _EQ038,  VCC,  VCC,  VCC);
+  _EQ038 =  c & !sB0 &  sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:58|:25' 
+-- Equation name is '_LC049', type is buried 
+_LC049   = DFFE( DI2 $  GND,  _EQ039,  VCC,  VCC,  VCC);
+  _EQ039 =  c & !sB0 &  sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:58|:26' 
+-- Equation name is '_LC033', type is buried 
+_LC033   = DFFE( DI3 $  GND,  _EQ040,  VCC,  VCC,  VCC);
+  _EQ040 =  c & !sB0 &  sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:59|:23' 
+-- Equation name is '_LC095', type is buried 
+_LC095   = DFFE( DI0 $  GND,  _EQ041,  VCC,  VCC,  VCC);
+  _EQ041 =  c &  sB0 & !sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:59|:24' 
+-- Equation name is '_LC067', type is buried 
+_LC067   = DFFE( DI1 $  GND,  _EQ042,  VCC,  VCC,  VCC);
+  _EQ042 =  c &  sB0 & !sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:59|:25' 
+-- Equation name is '_LC050', type is buried 
+_LC050   = DFFE( DI2 $  GND,  _EQ043,  VCC,  VCC,  VCC);
+  _EQ043 =  c &  sB0 & !sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:59|:26' 
+-- Equation name is '_LC044', type is buried 
+_LC044   = DFFE( DI3 $  GND,  _EQ044,  VCC,  VCC,  VCC);
+  _EQ044 =  c &  sB0 & !sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:60|~14~1~31~2' 
+-- Equation name is '_LC090', type is buried 
+-- synthesized logic cell 
+_LC090   = LCELL( _EQ045 $  GND);
+  _EQ045 =  _LC061 &  sA0 &  sA1 &  sA2 &  sA3
+         #  _LC085 & !sA0 &  sA1 &  sA2 & !sA3
+         #  _LC055 & !sA0 &  sA1 &  sA2 &  sA3
+         #  _LC091 &  sA0 & !sA1 &  sA2 & !sA3
+         #  _LC092 &  sA0 &  sA1 & !sA2 & !sA3;
+
+-- Node name is '|register2:60|~14~1~31~3' 
+-- Equation name is '_LC073', type is buried 
+-- synthesized logic cell 
+_LC073   = LCELL( _EQ046 $  GND);
+  _EQ046 =  _LC059 &  sA0 & !sA1 &  sA2 &  sA3
+         #  _LC089 &  sA0 &  sA1 & !sA2 &  sA3
+         #  _LC060 & !sA0 & !sA1 &  sA2 &  sA3
+         #  _LC081 & !sA0 &  sA1 & !sA2 &  sA3
+         #  _LC095 &  sA0 & !sA1 & !sA2 &  sA3;
+
+-- Node name is '|register2:60|~14~1~31~4' 
+-- Equation name is '_LC056', type is buried 
+-- synthesized logic cell 
+_LC056   = LCELL( _EQ047 $  GND);
+  _EQ047 =  _LC093 & !sA0 & !sA1 &  sA2 & !sA3
+         #  _LC054 & !sA0 &  sA1 & !sA2 & !sA3
+         #  _LC008 &  sA0 & !sA1 & !sA2 & !sA3
+         #  _LC004 & !sA0 & !sA1 & !sA2 & !sA3
+         #  _LC083 & !sA0 & !sA1 & !sA2 &  sA3;
+
+-- Node name is '|register2:60|~15~1~31~2' 
+-- Equation name is '_LC037', type is buried 
+-- synthesized logic cell 
+_LC037   = LCELL( _EQ048 $  GND);
+  _EQ048 =  _LC032 &  sA0 &  sA1 &  sA2 &  sA3
+         #  _LC071 & !sA0 &  sA1 &  sA2 & !sA3
+         #  _LC026 & !sA0 &  sA1 &  sA2 &  sA3
+         #  _LC075 &  sA0 & !sA1 &  sA2 & !sA3
+         #  _LC027 &  sA0 &  sA1 & !sA2 & !sA3;
+
+-- Node name is '|register2:60|~15~1~31~3' 
+-- Equation name is '_LC019', type is buried 
+-- synthesized logic cell 
+_LC019   = LCELL( _EQ049 $  GND);
+  _EQ049 =  _LC078 &  sA0 & !sA1 &  sA2 &  sA3
+         #  _LC066 &  sA0 &  sA1 & !sA2 &  sA3
+         #  _LC074 & !sA0 & !sA1 &  sA2 &  sA3
+         #  _LC065 & !sA0 &  sA1 & !sA2 &  sA3
+         #  _LC067 &  sA0 & !sA1 & !sA2 &  sA3;
+
+-- Node name is '|register2:60|~15~1~31~4' 
+-- Equation name is '_LC005', type is buried 
+-- synthesized logic cell 
+_LC005   = LCELL( _EQ050 $  GND);
+  _EQ050 =  _LC021 & !sA0 & !sA1 &  sA2 & !sA3
+         #  _LC022 & !sA0 &  sA1 & !sA2 & !sA3
+         #  _LC009 &  sA0 & !sA1 & !sA2 & !sA3
+         #  _LC014 & !sA0 & !sA1 & !sA2 & !sA3
+         #  _LC079 & !sA0 & !sA1 & !sA2 &  sA3;
+
+-- Node name is '|register2:60|~16~1~31~2' 
+-- Equation name is '_LC003', type is buried 
+-- synthesized logic cell 
+_LC003   = LCELL( _EQ051 $  GND);
+  _EQ051 =  _LC053 &  sA0 &  sA1 &  sA2 &  sA3
+         #  _LC052 & !sA0 &  sA1 &  sA2 & !sA3
+         #  _LC058 & !sA0 &  sA1 &  sA2 &  sA3
+         #  _LC046 &  sA0 & !sA1 &  sA2 & !sA3
+         #  _LC047 &  sA0 &  sA1 & !sA2 & !sA3;
+
+-- Node name is '|register2:60|~16~1~31~3' 
+-- Equation name is '_LC002', type is buried 
+-- synthesized logic cell 
+_LC002   = LCELL( _EQ052 $  GND);
+  _EQ052 =  _LC062 &  sA0 & !sA1 &  sA2 &  sA3
+         #  _LC051 &  sA0 &  sA1 & !sA2 &  sA3
+         #  _LC057 & !sA0 & !sA1 &  sA2 &  sA3
+         #  _LC049 & !sA0 &  sA1 & !sA2 &  sA3
+         #  _LC050 &  sA0 & !sA1 & !sA2 &  sA3;
+
+-- Node name is '|register2:60|~16~1~31~4' 
+-- Equation name is '_LC018', type is buried 
+-- synthesized logic cell 
+_LC018   = LCELL( _EQ053 $  GND);
+  _EQ053 =  _LC082 & !sA0 & !sA1 &  sA2 & !sA3
+         #  _LC045 & !sA0 &  sA1 & !sA2 & !sA3
+         #  _LC007 &  sA0 & !sA1 & !sA2 & !sA3
+         #  _LC012 & !sA0 & !sA1 & !sA2 & !sA3
+         #  _LC063 & !sA0 & !sA1 & !sA2 &  sA3;
+
+-- Node name is '|register2:60|~17~1~31~2' 
+-- Equation name is '_LC030', type is buried 
+-- synthesized logic cell 
+_LC030   = LCELL( _EQ054 $  GND);
+  _EQ054 =  _LC038 &  sA0 &  sA1 &  sA2 &  sA3
+         #  _LC070 & !sA0 &  sA1 &  sA2 & !sA3
+         #  _LC048 & !sA0 &  sA1 &  sA2 &  sA3
+         #  _LC068 &  sA0 & !sA1 &  sA2 & !sA3
+         #  _LC077 &  sA0 &  sA1 & !sA2 & !sA3;
+
+-- Node name is '|register2:60|~17~1~31~3' 
+-- Equation name is '_LC024', type is buried 
+-- synthesized logic cell 
+_LC024   = LCELL( _EQ055 $  GND);
+  _EQ055 =  _LC034 &  sA0 & !sA1 &  sA2 &  sA3
+         #  _LC035 &  sA0 &  sA1 & !sA2 &  sA3
+         #  _LC042 & !sA0 & !sA1 &  sA2 &  sA3
+         #  _LC033 & !sA0 &  sA1 & !sA2 &  sA3
+         #  _LC044 &  sA0 & !sA1 & !sA2 &  sA3;
+
+-- Node name is '|register2:60|~17~1~31~4' 
+-- Equation name is '_LC023', type is buried 
+-- synthesized logic cell 
+_LC023   = LCELL( _EQ056 $  GND);
+  _EQ056 =  _LC043 & !sA0 & !sA1 &  sA2 & !sA3
+         #  _LC076 & !sA0 &  sA1 & !sA2 & !sA3
+         #  _LC006 &  sA0 & !sA1 & !sA2 & !sA3
+         #  _LC011 & !sA0 & !sA1 & !sA2 & !sA3
+         #  _LC036 & !sA0 & !sA1 & !sA2 &  sA3;
+
+-- Node name is '|register2:60|:23' 
+-- Equation name is '_LC083', type is buried 
+_LC083   = DFFE( DI0 $  GND,  _EQ057,  VCC,  VCC,  VCC);
+  _EQ057 =  c & !sB0 & !sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:60|:24' 
+-- Equation name is '_LC079', type is buried 
+_LC079   = DFFE( DI1 $  GND,  _EQ058,  VCC,  VCC,  VCC);
+  _EQ058 =  c & !sB0 & !sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:60|:25' 
+-- Equation name is '_LC063', type is buried 
+_LC063   = DFFE( DI2 $  GND,  _EQ059,  VCC,  VCC,  VCC);
+  _EQ059 =  c & !sB0 & !sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:60|:26' 
+-- Equation name is '_LC036', type is buried 
+_LC036   = DFFE( DI3 $  GND,  _EQ060,  VCC,  VCC,  VCC);
+  _EQ060 =  c & !sB0 & !sB1 & !sB2 &  sB3 & !wr;
+
+-- Node name is '|register2:60|~28~1~31~2' 
+-- Equation name is '_LC096', type is buried 
+-- synthesized logic cell 
+_LC096   = LCELL( _EQ061 $  GND);
+  _EQ061 =  _LC061 &  sB0 &  sB1 &  sB2 &  sB3
+         #  _LC085 & !sB0 &  sB1 &  sB2 & !sB3
+         #  _LC055 & !sB0 &  sB1 &  sB2 &  sB3
+         #  _LC091 &  sB0 & !sB1 &  sB2 & !sB3
+         #  _LC092 &  sB0 &  sB1 & !sB2 & !sB3;
+
+-- Node name is '|register2:60|~28~1~31~3' 
+-- Equation name is '_LC069', type is buried 
+-- synthesized logic cell 
+_LC069   = LCELL( _EQ062 $  GND);
+  _EQ062 =  _LC059 &  sB0 & !sB1 &  sB2 &  sB3
+         #  _LC089 &  sB0 &  sB1 & !sB2 &  sB3
+         #  _LC060 & !sB0 & !sB1 &  sB2 &  sB3
+         #  _LC081 & !sB0 &  sB1 & !sB2 &  sB3
+         #  _LC095 &  sB0 & !sB1 & !sB2 &  sB3;
+
+-- Node name is '|register2:60|~28~1~31~4' 
+-- Equation name is '_LC064', type is buried 
+-- synthesized logic cell 
+_LC064   = LCELL( _EQ063 $  GND);
+  _EQ063 =  _LC093 & !sB0 & !sB1 &  sB2 & !sB3
+         #  _LC054 & !sB0 &  sB1 & !sB2 & !sB3
+         #  _LC008 &  sB0 & !sB1 & !sB2 & !sB3
+         #  _LC083 & !sB0 & !sB1 & !sB2 &  sB3
+         #  _LC004 & !sB0 & !sB1 & !sB2 & !sB3;
+
+-- Node name is '|register2:60|~29~1~31~2' 
+-- Equation name is '_LC039', type is buried 
+-- synthesized logic cell 
+_LC039   = LCELL( _EQ064 $  GND);
+  _EQ064 =  _LC032 &  sB0 &  sB1 &  sB2 &  sB3
+         #  _LC071 & !sB0 &  sB1 &  sB2 & !sB3
+         #  _LC026 & !sB0 &  sB1 &  sB2 &  sB3
+         #  _LC075 &  sB0 & !sB1 &  sB2 & !sB3
+         #  _LC027 &  sB0 &  sB1 & !sB2 & !sB3;
+
+-- Node name is '|register2:60|~29~1~31~3' 
+-- Equation name is '_LC031', type is buried 
+-- synthesized logic cell 
+_LC031   = LCELL( _EQ065 $  GND);
+  _EQ065 =  _LC078 &  sB0 & !sB1 &  sB2 &  sB3
+         #  _LC066 &  sB0 &  sB1 & !sB2 &  sB3
+         #  _LC074 & !sB0 & !sB1 &  sB2 &  sB3
+         #  _LC065 & !sB0 &  sB1 & !sB2 &  sB3
+         #  _LC067 &  sB0 & !sB1 & !sB2 &  sB3;
+
+-- Node name is '|register2:60|~29~1~31~4' 
+-- Equation name is '_LC010', type is buried 
+-- synthesized logic cell 
+_LC010   = LCELL( _EQ066 $  GND);
+  _EQ066 =  _LC021 & !sB0 & !sB1 &  sB2 & !sB3
+         #  _LC022 & !sB0 &  sB1 & !sB2 & !sB3
+         #  _LC009 &  sB0 & !sB1 & !sB2 & !sB3
+         #  _LC079 & !sB0 & !sB1 & !sB2 &  sB3
+         #  _LC014 & !sB0 & !sB1 & !sB2 & !sB3;
+
+-- Node name is '|register2:60|~30~1~31~2' 
+-- Equation name is '_LC015', type is buried 
+-- synthesized logic cell 
+_LC015   = LCELL( _EQ067 $  GND);
+  _EQ067 =  _LC053 &  sB0 &  sB1 &  sB2 &  sB3
+         #  _LC052 & !sB0 &  sB1 &  sB2 & !sB3
+         #  _LC058 & !sB0 &  sB1 &  sB2 &  sB3
+         #  _LC046 &  sB0 & !sB1 &  sB2 & !sB3
+         #  _LC047 &  sB0 &  sB1 & !sB2 & !sB3;
+
+-- Node name is '|register2:60|~30~1~31~3' 
+-- Equation name is '_LC013', type is buried 
+-- synthesized logic cell 
+_LC013   = LCELL( _EQ068 $  GND);
+  _EQ068 =  _LC062 &  sB0 & !sB1 &  sB2 &  sB3
+         #  _LC051 &  sB0 &  sB1 & !sB2 &  sB3
+         #  _LC057 & !sB0 & !sB1 &  sB2 &  sB3
+         #  _LC049 & !sB0 &  sB1 & !sB2 &  sB3
+         #  _LC050 &  sB0 & !sB1 & !sB2 &  sB3;
+
+-- Node name is '|register2:60|~30~1~31~4' 
+-- Equation name is '_LC020', type is buried 
+-- synthesized logic cell 
+_LC020   = LCELL( _EQ069 $  GND);
+  _EQ069 =  _LC082 & !sB0 & !sB1 &  sB2 & !sB3
+         #  _LC045 & !sB0 &  sB1 & !sB2 & !sB3
+         #  _LC007 &  sB0 & !sB1 & !sB2 & !sB3
+         #  _LC063 & !sB0 & !sB1 & !sB2 &  sB3
+         #  _LC012 & !sB0 & !sB1 & !sB2 & !sB3;
+
+-- Node name is '|register2:60|~31~1~31~2' 
+-- Equation name is '_LC029', type is buried 
+-- synthesized logic cell 
+_LC029   = LCELL( _EQ070 $  GND);
+  _EQ070 =  _LC038 &  sB0 &  sB1 &  sB2 &  sB3
+         #  _LC070 & !sB0 &  sB1 &  sB2 & !sB3
+         #  _LC048 & !sB0 &  sB1 &  sB2 &  sB3
+         #  _LC068 &  sB0 & !sB1 &  sB2 & !sB3
+         #  _LC077 &  sB0 &  sB1 & !sB2 & !sB3;
+
+-- Node name is '|register2:60|~31~1~31~3' 
+-- Equation name is '_LC028', type is buried 
+-- synthesized logic cell 
+_LC028   = LCELL( _EQ071 $  GND);
+  _EQ071 =  _LC034 &  sB0 & !sB1 &  sB2 &  sB3
+         #  _LC035 &  sB0 &  sB1 & !sB2 &  sB3
+         #  _LC042 & !sB0 & !sB1 &  sB2 &  sB3
+         #  _LC033 & !sB0 &  sB1 & !sB2 &  sB3
+         #  _LC044 &  sB0 & !sB1 & !sB2 &  sB3;
+
+-- Node name is '|register2:60|~31~1~31~4' 
+-- Equation name is '_LC017', type is buried 
+-- synthesized logic cell 
+_LC017   = LCELL( _EQ072 $  GND);
+  _EQ072 =  _LC043 & !sB0 & !sB1 &  sB2 & !sB3
+         #  _LC076 & !sB0 &  sB1 & !sB2 & !sB3
+         #  _LC006 &  sB0 & !sB1 & !sB2 & !sB3
+         #  _LC036 & !sB0 & !sB1 & !sB2 &  sB3
+         #  _LC011 & !sB0 & !sB1 & !sB2 & !sB3;
+
+-- Node name is '|register2:61|:23' 
+-- Equation name is '_LC087', type is buried 
+_LC087   = DFFE( DI0 $  GND,  _EQ073,  VCC,  VCC,  VCC);
+  _EQ073 =  c &  sB0 &  sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:61|:24' 
+-- Equation name is '_LC025', type is buried 
+_LC025   = DFFE( DI1 $  GND,  _EQ074,  VCC,  VCC,  VCC);
+  _EQ074 =  c &  sB0 &  sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:61|:25' 
+-- Equation name is '_LC041', type is buried 
+_LC041   = DFFE( DI2 $  GND,  _EQ075,  VCC,  VCC,  VCC);
+  _EQ075 =  c &  sB0 &  sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:61|:26' 
+-- Equation name is '_LC040', type is buried 
+_LC040   = DFFE( DI3 $  GND,  _EQ076,  VCC,  VCC,  VCC);
+  _EQ076 =  c &  sB0 &  sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:62|:23' 
+-- Equation name is '_LC085', type is buried 
+_LC085   = DFFE( DI0 $  GND,  _EQ077,  VCC,  VCC,  VCC);
+  _EQ077 =  c & !sB0 &  sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:62|:24' 
+-- Equation name is '_LC071', type is buried 
+_LC071   = DFFE( DI1 $  GND,  _EQ078,  VCC,  VCC,  VCC);
+  _EQ078 =  c & !sB0 &  sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:62|:25' 
+-- Equation name is '_LC052', type is buried 
+_LC052   = DFFE( DI2 $  GND,  _EQ079,  VCC,  VCC,  VCC);
+  _EQ079 =  c & !sB0 &  sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:62|:26' 
+-- Equation name is '_LC070', type is buried 
+_LC070   = DFFE( DI3 $  GND,  _EQ080,  VCC,  VCC,  VCC);
+  _EQ080 =  c & !sB0 &  sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:63|:23' 
+-- Equation name is '_LC091', type is buried 
+_LC091   = DFFE( DI0 $  GND,  _EQ081,  VCC,  VCC,  VCC);
+  _EQ081 =  c &  sB0 & !sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:63|:24' 
+-- Equation name is '_LC075', type is buried 
+_LC075   = DFFE( DI1 $  GND,  _EQ082,  VCC,  VCC,  VCC);
+  _EQ082 =  c &  sB0 & !sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:63|:25' 
+-- Equation name is '_LC046', type is buried 
+_LC046   = DFFE( DI2 $  GND,  _EQ083,  VCC,  VCC,  VCC);
+  _EQ083 =  c &  sB0 & !sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:63|:26' 
+-- Equation name is '_LC068', type is buried 
+_LC068   = DFFE( DI3 $  GND,  _EQ084,  VCC,  VCC,  VCC);
+  _EQ084 =  c &  sB0 & !sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:64|:23' 
+-- Equation name is '_LC093', type is buried 
+_LC093   = DFFE( DI0 $  GND,  _EQ085,  VCC,  VCC,  VCC);
+  _EQ085 =  c & !sB0 & !sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:64|:24' 
+-- Equation name is '_LC021', type is buried 
+_LC021   = DFFE( DI1 $  GND,  _EQ086,  VCC,  VCC,  VCC);
+  _EQ086 =  c & !sB0 & !sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:64|:25' 
+-- Equation name is '_LC082', type is buried 
+_LC082   = DFFE( DI2 $  GND,  _EQ087,  VCC,  VCC,  VCC);
+  _EQ087 =  c & !sB0 & !sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:64|:26' 
+-- Equation name is '_LC043', type is buried 
+_LC043   = DFFE( DI3 $  GND,  _EQ088,  VCC,  VCC,  VCC);
+  _EQ088 =  c & !sB0 & !sB1 &  sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:65|:23' 
+-- Equation name is '_LC092', type is buried 
+_LC092   = DFFE( DI0 $  GND,  _EQ089,  VCC,  VCC,  VCC);
+  _EQ089 =  c &  sB0 &  sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:65|:24' 
+-- Equation name is '_LC027', type is buried 
+_LC027   = DFFE( DI1 $  GND,  _EQ090,  VCC,  VCC,  VCC);
+  _EQ090 =  c &  sB0 &  sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:65|:25' 
+-- Equation name is '_LC047', type is buried 
+_LC047   = DFFE( DI2 $  GND,  _EQ091,  VCC,  VCC,  VCC);
+  _EQ091 =  c &  sB0 &  sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:65|:26' 
+-- Equation name is '_LC077', type is buried 
+_LC077   = DFFE( DI3 $  GND,  _EQ092,  VCC,  VCC,  VCC);
+  _EQ092 =  c &  sB0 &  sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:66|:23' 
+-- Equation name is '_LC054', type is buried 
+_LC054   = DFFE( DI0 $  GND,  _EQ093,  VCC,  VCC,  VCC);
+  _EQ093 =  c & !sB0 &  sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:66|:24' 
+-- Equation name is '_LC022', type is buried 
+_LC022   = DFFE( DI1 $  GND,  _EQ094,  VCC,  VCC,  VCC);
+  _EQ094 =  c & !sB0 &  sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:66|:25' 
+-- Equation name is '_LC045', type is buried 
+_LC045   = DFFE( DI2 $  GND,  _EQ095,  VCC,  VCC,  VCC);
+  _EQ095 =  c & !sB0 &  sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:66|:26' 
+-- Equation name is '_LC076', type is buried 
+_LC076   = DFFE( DI3 $  GND,  _EQ096,  VCC,  VCC,  VCC);
+  _EQ096 =  c & !sB0 &  sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:67|:23' 
+-- Equation name is '_LC008', type is buried 
+_LC008   = DFFE( DI0 $  GND,  _EQ097,  VCC,  VCC,  VCC);
+  _EQ097 =  c &  sB0 & !sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:67|:24' 
+-- Equation name is '_LC009', type is buried 
+_LC009   = DFFE( DI1 $  GND,  _EQ098,  VCC,  VCC,  VCC);
+  _EQ098 =  c &  sB0 & !sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:67|:25' 
+-- Equation name is '_LC007', type is buried 
+_LC007   = DFFE( DI2 $  GND,  _EQ099,  VCC,  VCC,  VCC);
+  _EQ099 =  c &  sB0 & !sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:67|:26' 
+-- Equation name is '_LC006', type is buried 
+_LC006   = DFFE( DI3 $  GND,  _EQ100,  VCC,  VCC,  VCC);
+  _EQ100 =  c &  sB0 & !sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:68|:23' 
+-- Equation name is '_LC004', type is buried 
+_LC004   = DFFE( DI0 $  GND,  _EQ101,  VCC,  VCC,  VCC);
+  _EQ101 =  c & !sB0 & !sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:68|:24' 
+-- Equation name is '_LC014', type is buried 
+_LC014   = DFFE( DI1 $  GND,  _EQ102,  VCC,  VCC,  VCC);
+  _EQ102 =  c & !sB0 & !sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:68|:25' 
+-- Equation name is '_LC012', type is buried 
+_LC012   = DFFE( DI2 $  GND,  _EQ103,  VCC,  VCC,  VCC);
+  _EQ103 =  c & !sB0 & !sB1 & !sB2 & !sB3 & !wr;
+
+-- Node name is '|register2:68|:26' 
+-- Equation name is '_LC011', type is buried 
+_LC011   = DFFE( DI3 $  GND,  _EQ104,  VCC,  VCC,  VCC);
+  _EQ104 =  c & !sB0 & !sB1 & !sB2 & !sB3 & !wr;
+
+
+
+--     Shareable expanders that are duplicated in multiple LABs:
+--     (none)
+
+
+
+
+Project Information                                       c:\sifo\rzu_\rzu.rpt
+
+** COMPILATION SETTINGS & TIMES **
+
+Processing Menu Commands
+------------------------
+
+Design Doctor                             = off
+
+Logic Synthesis:
+
+   Synthesis Type Used                    = Multi-Level
+
+   Default Synthesis Style                = NORMAL
+
+      Logic option settings in 'NORMAL' style for 'MAX7000' family
+
+      DECOMPOSE_GATES                     = on
+      DUPLICATE_LOGIC_EXTRACTION          = on
+      MINIMIZATION                        = full
+      MULTI_LEVEL_FACTORING               = on
+      NOT_GATE_PUSH_BACK                  = on
+      PARALLEL_EXPANDERS                  = off
+      REDUCE_LOGIC                        = on
+      REFACTORIZATION                     = on
+      REGISTER_OPTIMIZATION               = on
+      RESYNTHESIZE_NETWORK                = on
+      SLOW_SLEW_RATE                      = off
+      SOFT_BUFFER_INSERTION               = on
+      SUBFACTOR_EXTRACTION                = on
+      TURBO_BIT                           = on
+      XOR_SYNTHESIS                       = on
+      IGNORE_SOFT_BUFFERS                 = off
+      USE_LPM_FOR_AHDL_OPERATORS          = off
+
+   Other logic synthesis settings:
+
+      Automatic Global Clock              = on
+      Automatic Global Clear              = on
+      Automatic Global Preset             = on
+      Automatic Global Output Enable      = on
+      Automatic Fast I/O                  = off
+      Automatic Register Packing          = off
+      Automatic Open-Drain Pins           = on
+      Automatic Implement in EAB          = off
+      One-Hot State Machine Encoding      = off
+      Optimize                            = 5
+
+Default Timing Specifications: None
+
+Cut All Bidir Feedback Timing Paths       = on
+Cut All Clear & Preset Timing Paths       = on
+
+Ignore Timing Assignments                 = off
+
+Functional SNF Extractor                  = off
+
+Linked SNF Extractor                      = off
+Timing SNF Extractor                      = on
+Optimize Timing SNF                       = off
+Generate AHDL TDO File                    = off
+Fitter Settings                           = ADVANCED
+Smart Recompile                           = off
+Total Recompile                           = off
+
+Interfaces Menu Commands
+------------------------
+
+EDIF Netlist Writer                       = off
+Verilog Netlist Writer                    = off
+VHDL Netlist Writer                       = off
+
+Compilation Times
+-----------------
+
+   Compiler Netlist Extractor             00:00:00
+   Database Builder                       00:00:00
+   Logic Synthesizer                      00:00:01
+   Partitioner                            00:00:00
+   Fitter                                 00:00:00
+   Timing SNF Extractor                   00:00:00
+   Assembler                              00:00:00
+   --------------------------             --------
+   Total Time                             00:00:01
+
+
+Memory Allocated
+-----------------
+
+Peak memory allocated during compilation  = 5,721K

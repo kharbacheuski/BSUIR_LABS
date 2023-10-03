@@ -24,11 +24,11 @@ HIF003
 --
 FILES
 {
-	rwreg.gdf
+	regandtries.gdf
 	{
-		rwreg [] []
+		regandtries [] []
 		{
-			2 [] [];
+			1 [] [];
 		}
 	}
 	74138.gdf
@@ -38,11 +38,11 @@ FILES
 			3 [] [];
 		}
 	}
-	regandtries.gdf
+	rwreg.gdf
 	{
-		regandtries [] []
+		rwreg [] []
 		{
-			1 [] [];
+			2 [] [];
 		}
 	}
 	lab1.gdf
@@ -57,29 +57,7 @@ TREE
 {
 	lab1::(0,0):(0): lab1.gdf
 	{
-		74138::(0,0):(4): 74138.gdf;
-		74138::(0,0):(3): 74138.gdf;
-		regandtries::(0,0):(1): regandtries.gdf
-		{
-			rwreg:2:(0,0):(45): rwreg.gdf;
-		}
-		regandtries::(0,0):(2): regandtries.gdf
-		{
-			rwreg:2:(0,0):(45): rwreg.gdf;
-		}
-		regandtries::(0,0):(5): regandtries.gdf
-		{
-			rwreg:2:(0,0):(45): rwreg.gdf;
-		}
-		regandtries::(0,0):(6): regandtries.gdf
-		{
-			rwreg:2:(0,0):(45): rwreg.gdf;
-		}
-		regandtries::(0,0):(7): regandtries.gdf
-		{
-			rwreg:2:(0,0):(45): rwreg.gdf;
-		}
-		regandtries::(0,0):(8): regandtries.gdf
+		regandtries::(0,0):(10): regandtries.gdf
 		{
 			rwreg:2:(0,0):(45): rwreg.gdf;
 		}
@@ -87,9 +65,31 @@ TREE
 		{
 			rwreg:2:(0,0):(45): rwreg.gdf;
 		}
-		regandtries::(0,0):(10): regandtries.gdf
+		regandtries::(0,0):(8): regandtries.gdf
 		{
 			rwreg:2:(0,0):(45): rwreg.gdf;
 		}
+		regandtries::(0,0):(7): regandtries.gdf
+		{
+			rwreg:2:(0,0):(45): rwreg.gdf;
+		}
+		regandtries::(0,0):(6): regandtries.gdf
+		{
+			rwreg:2:(0,0):(45): rwreg.gdf;
+		}
+		regandtries::(0,0):(5): regandtries.gdf
+		{
+			rwreg:2:(0,0):(45): rwreg.gdf;
+		}
+		regandtries::(0,0):(2): regandtries.gdf
+		{
+			rwreg:2:(0,0):(45): rwreg.gdf;
+		}
+		regandtries::(0,0):(1): regandtries.gdf
+		{
+			rwreg:2:(0,0):(45): rwreg.gdf;
+		}
+		74138::(0,0):(3): 74138.gdf;
+		74138::(0,0):(4): 74138.gdf;
 	}
 }
