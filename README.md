@@ -21,3 +21,4 @@
 - [СиФОВМ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/SiFOVM) (Кобяк И.П.)
 - [Схемота](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/Схемота) (Байрак С.А. / Калютчик А.А.)
 - [ФПрогр](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/ФПрогр) (Герман Ю.О.)
+- [МППиУ](https://github.com/CyrilHorbacheuski/BGUIR__LABS/tree/main/5_term/МППиУ) (Смирнов И.В. / Слюсарь Т.Л.)
