@@ -7,6 +7,7 @@ namespace lab1 {
     public class Port : IDisposable 
     {
         protected SerialPort serialPort;
+        protected int portNumber;
 
         public Port(string serialPortName, int speed = 19200) 
         {
@@ -15,6 +16,7 @@ namespace lab1 {
 
             serialPort.ReadTimeout = 200;
             serialPort.WriteTimeout = 500;
+            portNumber = serialPortName[3] - 48;
         }
 
         public void Dispose() 
@@ -39,42 +41,50 @@ namespace lab1 {
 
         private void OutputData(object sender, SerialDataReceivedEventArgs e) 
         {
-            var packageSize = 24;
-            var buffer = new byte[packageSize];
-    
             var packages = new List<Package>();
 
             var hammingsCode = new HammingCode();
             var bitStaffing = new BitStaffing();
+            var csma = new CSMA();
+            byte[] buffer;
 
-            try
+            int packagesCount = 1;
+
+            do
             {
-                while(serialPort.Read(buffer, 0, packageSize) != 0)
-                {
-                    var recievePackage = new Package().Deserialize(buffer);
-                    packages.Add(recievePackage);
-                }
-            }
-            catch (TimeoutException)
+                buffer = csma.Read(serialPort);
+
+                Console.WriteLine($"Package {packagesCount++} recived");
+
+                var recievePackage = new Package().Deserialize(buffer);
+                packages.Add(recievePackage);
+                buffer = new byte[2];
+
+            } while (buffer.Length == 24);
+
+
+            List<byte> recievedDataBytes = new List<byte> { };
+
+            for(int i = 0; i < packages.Count; i++)
             {
-                List<byte> recievedDataBytes = new List<byte> { };
-                for(int i = 0; i < packages.Count; i++)
-                {
-                    recievedDataBytes.AddRange(packages[i].data);
-                }
-
-                var bytesArray = recievedDataBytes.ToArray();
-
-                var decodeStaffing = bitStaffing.DecodeData(bytesArray);
-                var decodeHamming = hammingsCode.Decode(decodeStaffing, packages[0].FCS);
-
-                Console.WriteLine($"Message = {Encoding.ASCII.GetString(decodeHamming)}");
+                recievedDataBytes.AddRange(packages[i].data);
             }
+
+            var bytesArray = recievedDataBytes.ToArray();
+
+            var decodeStaffing = bitStaffing.DecodeData(bytesArray);
+            var decodeHamming = hammingsCode.Decode(decodeStaffing, packages[0].FCS);
+
+            Console.WriteLine($"Message = {Encoding.ASCII.GetString(decodeHamming)}");
         }
     }
     public class Producer : Port 
     {
-        public Producer(string serialPortName, int speed) : base(serialPortName, speed) { }
+        protected int destinationAddress;
+
+        public Producer(string serialPortName, int speed, string destSerialPortName) : base(serialPortName, speed) {
+            destinationAddress = destSerialPortName[3] - 48;
+        }
 
         public override void Do() 
         {
@@ -87,6 +97,7 @@ namespace lab1 {
 
                 var bitStaffing = new BitStaffing();
                 var hammingsCode = new HammingCode();
+                var csma = new CSMA();
 
                 var hammingBytes = hammingsCode.Encode(Encoding.ASCII.GetBytes(data));
                 var staffingBytes = bitStaffing.EncodeData(hammingBytes);
@@ -104,15 +115,17 @@ namespace lab1 {
 
                     package = new Package();
 
-                    package.data = partOfData;
+                    package.data = partOfData; 
+                    package.destinationAddress = destinationAddress;
+                    package.sourceAddress = portNumber;
                     package.length = package.data.Length;
                     package.FCS = hammingsCode.GetFCS(hammingBytes);
 
                     var packageBytes = package.Serialize();
 
-                    Console.WriteLine("\nI send " + Encoding.ASCII.GetString(package.data));
+                    Console.WriteLine("\nI send " + Encoding.ASCII.GetString(package.data) + ". Bytes length - " + packageBytes.Length);
 
-                    serialPort.Write(packageBytes, 0, packageBytes.Length);
+                    csma.Send(serialPort, packageBytes);
                 }
             }
         }

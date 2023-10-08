@@ -26,6 +26,18 @@ object Main {
         return array.map(word => word.reverse).mkString(" ")   
     }
 
+    def removeSpaces(text: String) = {
+        var pattern = "[ ]".r
+        val answer = pattern.replaceAllIn(text, "")
+        println(answer) 
+    }
+
+    def tttt(text: String) = {
+        var pattern = "[t]".r
+        val answer = pattern.replaceAllIn(text, m => m.toString()*4)
+        println(answer) 
+    }
+
     def main(args: Array[String]): Unit = {
 
         println("0 - All vowels")
@@ -37,6 +49,9 @@ object Main {
         println("6 - Doubled letters")
         println("7 - Remove letter 'y'")
         println("8 - Add 'with hartness'")
+
+        println("9 - Remove spaces")
+        println("10 - 4 t")
         println("else - Exit\n\n")
 
         print("Enter text: ")
@@ -63,7 +78,11 @@ object Main {
                 println("[" + findWords() + "]")
             }
             case 3 => {
-                val answer = "A big round ball fall to the ground".replaceAll("the", "a")
+                var pattern = "the".r;
+                var str = "A big round ball fall to the ground"
+
+                val answer = pattern.replaceAllIn(str, "a")
+
                 println(answer)
             }
             case 4 => {
@@ -73,17 +92,26 @@ object Main {
                 print(msg.replaceAll("[aeiouyAEIOUY]", ""))
             }
             case 6 => {
-                var answer: StringBuilder = StringBuilder();
-                msg.map(ch => answer.append(ch.toString() + ch.toString()))
-                print(answer.toString())
+                val pattern = "[A-Za-z]".r
+
+                var answer = pattern.replaceAllIn(msg, m => m.toString() + m.toString())
+
+                print(answer)
             }
             case 7 => {
-                print(msg.replaceAll("y", ""))
+                val pattern = "y".r
+                val answer = pattern.replaceAllIn(msg, "")
+
+                print(answer)
             }
             case 8 => {
                 val insertion = "with hartness "
-                print(msg.substring(0, 6) + insertion + msg.substring(6, msg.length))
+                val answer = msg.substring(0, 6) + insertion + msg.substring(6, msg.length)
+
+                print(answer)
             }
+            case 9 => removeSpaces(text)
+            case 10 => tttt(text)
             case default => {
                 action = -1
                 println("Exit...")

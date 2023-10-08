@@ -3,11 +3,11 @@ import scala.math._
 
 object M {
 
-  def getRandomNumber(mult: Long, oldBase: Double): List[Double] = {
-    val plus = log(mult)*100
+  def getRandomNumber(enter: Long, oldBase: Double): List[Double] = {
+    val plus = log(enter)*100
     val mod = pow(plus, 3)
 
-    var one = oldBase * mult;
+    var one = oldBase * enter;
     var two = one + plus;
     var newBase = two % mod;
 
@@ -21,11 +21,11 @@ object M {
     var i = 0;
 
     print("Enter first number: ")
-    val mult = scala.io.StdIn.readLong()
+    val enter = scala.io.StdIn.readLong()
     var base: Double = 12345.67;
 
     while(i < 10) {
-      val answ = getRandomNumber(mult, base)
+      val answ = getRandomNumber(enter, base)
       
       base = answ.apply(1)
       val index = (answ.apply(0) * 10).toInt

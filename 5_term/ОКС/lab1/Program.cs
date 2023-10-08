@@ -16,7 +16,7 @@ namespace lab1 {
 
                 var speed = Convert.ToInt32(Console.ReadLine());
 
-                port = new Producer(ports.Item1, speed);
+                port = new Producer(ports.Item1, speed, ports.Item2);
 
                 StartConsumer(ports.Item2, speed);
             }

@@ -9,38 +9,35 @@ namespace lab1
     public class Package
     {
         public byte flag = (byte)128;
-        public byte[] destinationAddress;
-        public byte[] sourceAddress;
+        public int destinationAddress;
+        public int sourceAddress;
         public int length = 10;
         public byte[] data;
         public byte FCS;
-
-        public Package()
-        {
-            destinationAddress = new byte[4];
-            sourceAddress = new byte[4];
-        }
 
         public byte[] Serialize()
         {
             List<byte> dataBytes = new List<byte> { };
 
-            dataBytes.Add(this.flag);
-            dataBytes.AddRange(this.destinationAddress);
-            dataBytes.AddRange(this.sourceAddress);
-            dataBytes.AddRange(BitConverter.GetBytes(this.length));
-            dataBytes.AddRange(this.data);
-            dataBytes.Add(this.FCS);
+            dataBytes.Add(flag);
+            dataBytes.AddRange(BitConverter.GetBytes(destinationAddress));
+            dataBytes.AddRange(BitConverter.GetBytes(sourceAddress));
+            dataBytes.AddRange(BitConverter.GetBytes(length));
+            dataBytes.AddRange(data);
+            dataBytes.Add(FCS);
 
             return dataBytes.ToArray();
         }
 
         public Package Deserialize(byte[] dataBytes)
         {
-            this.flag = dataBytes[0];
-            this.length = BitConverter.ToInt32(dataBytes, 9);
-            this.data = new byte[this.length];
-            Array.Copy(dataBytes, 13, this.data, 0, this.length);
+            flag = dataBytes[0];
+            destinationAddress = BitConverter.ToInt32(dataBytes, 1);
+            sourceAddress = BitConverter.ToInt32(dataBytes, 5); ;
+            length = BitConverter.ToInt32(dataBytes, 9);
+            data = new byte[length];
+            Array.Copy(dataBytes, 13, data, 0, length);
+            FCS = dataBytes[dataBytes.Length - 1];
 
             return this;
         }
