@@ -94,7 +94,7 @@ object Main {
             case 6 => {
                 val pattern = "[A-Za-z]".r
 
-                var answer = pattern.replaceAllIn(msg, m => m.toString() + m.toString())
+                var answer = pattern.replaceAllIn(msg, m => m.toString()*2)
 
                 print(answer)
             }
