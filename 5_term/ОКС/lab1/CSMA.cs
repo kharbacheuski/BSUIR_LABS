@@ -24,10 +24,11 @@ namespace lab1
                     waitFree();
 
                     serialPort.Write(new byte[] { item }, 0, 1);
+                    Console.WriteLine("Sended byte: " + DataOperations.BytesToBitString(new byte[] { item }));
 
                     if (randomChance()) {
-                        Console.WriteLine("Collision detected, jam sended");
                         serialPort.Write(new byte[] { JAM_SIGNAL }, 0, 1);
+                        Console.WriteLine("Collision detected, sended jam byte: " + DataOperations.BytesToBitString(new byte[] { JAM_SIGNAL }));
 
                         delaySending();
                     }
@@ -52,6 +53,8 @@ namespace lab1
 
                 if (b[0] == END_OF_MESSAGE) break;
 
+                Console.WriteLine("Readed byte: " + DataOperations.BytesToBitString(b));
+
                 if (b[0] == JAM_SIGNAL)
                 {
                     Console.WriteLine("Jam detected");
@@ -72,7 +75,7 @@ namespace lab1
 
         private bool randomChance()
         {
-            return random.Next(100) > 95;
+            return random.Next(100) > 50;
         }
         private void delaySending() => Thread.Sleep(random.Next(1000));
     }

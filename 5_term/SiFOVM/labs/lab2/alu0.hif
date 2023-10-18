@@ -24,23 +24,9 @@ HIF003
 --
 FILES
 {
-	add1.vhd
+	alu0.gdf
 	{
-		add1 [] [U1147235.DLS]
-		{
-			1 [] [];
-		}
-	}
-	add2.vhd
-	{
-		add2 [] [U1147235.DLS]
-		{
-			2 [] [];
-		}
-	}
-	adder_2.vhd
-	{
-		adder_2 [] [U1147235.DLS]
+		alu0 [] []
 		{
 			0 [] [];
 		}
@@ -48,9 +34,12 @@ FILES
 }
 TREE
 {
-	adder_2::(0,0):(0): adder_2.vhd
+	alu0::(0,0):(0): alu0.gdf
 	{
-		add2:2:(22,11):(10,circ2): add2.vhd;
-		add1:1:(20,11):(9,circ1): add1.vhd;
+		alu0::(0,0):(1): alu0.gdf
+		{
+			lab1::(0,0):(2): lab1.gdf;
+		}
+		lab1::(0,0):(2): lab1.gdf;
 	}
 }

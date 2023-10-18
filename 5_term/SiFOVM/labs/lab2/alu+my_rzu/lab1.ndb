@@ -1,0 +1,394 @@
+NDB006
+The number of symbol table entries is: 19
+The length of the symbol table is: 363
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+.	|regandtries:10|
+?	|regandtries:10|rwreg:45|
+Y	|regandtries:9|
+i	|regandtries:9|rwreg:45|
+"$	|regandtries:8|
+"4	|regandtries:8|rwreg:45|
+"M	|regandtries:7|
+"]	|regandtries:7|rwreg:45|
+"v	|regandtries:6|
+#(	|regandtries:6|rwreg:45|
+#A	|regandtries:5|
+#Q	|regandtries:5|rwreg:45|
+#j	|regandtries:2|
+#z	|regandtries:2|rwreg:45|
+$5	|regandtries:1|
+$E	|regandtries:1|rwreg:45|
+$^	|74138:3|
+$h	|74138:4|
+
+The number of name info structs is : 364
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	Ky&|	!	40	"Z	"[	"\	"]	"{	"|	"}	"~	#>	#?	#@	#A	#_	#`	#a	#b	$"	$#	$$	$%	$C	$D	$E	$F	$d	$e	$f	$g	w	x	y	z	"$	")	".	"3	.	/	0	1	A1	y
+#	Ky&|	!	40	"Z	"[	"\	"]	"{	"|	"}	"~	#>	#?	#@	#A	#_	#`	#a	#b	$"	$#	$$	$%	$C	$D	$E	$F	$d	$e	$f	$g	w	x	y	z	"$	")	".	"3	.	/	0	1	A2	x
+$	Ky&|	!	40	"Z	"[	"\	"]	"{	"|	"}	"~	#>	#?	#@	#A	#_	#`	#a	#b	$"	$#	$$	$%	$C	$D	$E	$F	$d	$e	$f	$g	w	x	y	z	"$	")	".	"3	.	/	0	1	A3	w
+%	Ky&|	!	8	"8	"=	"B	"G	2	3	4	5	B1	t
+&	Ky&|	!	8	"8	"=	"B	"G	2	3	4	5	B2	u
+'	Ky&|	!	8	"8	"=	"B	"G	2	3	4	5	B3	v
+(	Ky&|	!	32	"Z	"[	"\	"]	"{	"|	"}	"~	#>	#?	#@	#A	#_	#`	#a	#b	$"	$#	$$	$%	$C	$D	$E	$F	$d	$e	$f	$g	w	x	y	z	C	z
+)	Ky&|	!	8	"]	"~	#A	#b	$%	$F	$g	z	D0	s
+*	Ky&|	!	8	"\	"}	#@	#a	$$	$E	$f	y	D1	r
++	Ky&|	!	8	"[	"|	#?	#`	$#	$D	$e	x	D2	q
+,	Ky&|	!	8	"Z	"{	#>	#_	$"	$C	$d	w	D3	p
+-	Ky&|	!	32	"Z	"[	"\	"]	"{	"|	"}	"~	#>	#?	#@	#A	#_	#`	#a	#b	$"	$#	$$	$%	$C	$D	$E	$F	$d	$e	$f	$g	w	x	y	z	R	o
+.	XUi[	!	3	1	4	RGA0	~
+/	XUi[	!	3	1	3	RGA1	}
+0	XUi[	!	3	1	2	RGA2	|
+1	XUi[	!	3	1	1	RGA3	{
+2	XUi[	!	3	1	4	RGB0	"$
+3	XUi[	!	3	1	3	RGB1	"#
+4	XUi[	!	3	1	2	RGB2	""
+5	XUi[	!	3	1	1	RGB3	"!
+6	IGdW	$^	:1	)A
+7	IGdW	$^	:10	)D
+8	IGdW	$^	:11	)E
+9	IGdW	$^	:12	)F
+:	IGdW	$^	:13	)G
+;	IGdW	$^	:14	)H
+<	IVOQ	$^	F	:15	)I
+=	IVOQ	$^	G	:16	)J
+>	IVOQ	$^	H	:17	)K
+?	IVOQ	$^	I	:18	)L
+@	IVOQ	$^	J	:19	)M
+A	IVOQ	$^	K	:20	)N
+B	IVOQ	$^	L	:21	)O
+C	IVOQ	$^	M	:22	)P
+D	IGdW	$^	:8	)B
+E	IGdW	$^	:9	)C
+F	INu}	$^	<	Y0N	)I
+G	INu}	$^	=	Y1N	)J
+H	INu}	$^	>	Y2N	)K
+I	INu}	$^	?	Y3N	)L
+J	INu}	$^	@	Y4N	)M
+K	INu}	$^	A	Y5N	)N
+L	INu}	$^	B	Y6N	)O
+M	INu}	$^	C	Y7N	)P
+N	IGdW	$h	:1	)d
+O	IGdW	$h	:10	)g
+P	IGdW	$h	:11	)h
+Q	IGdW	$h	:12	)i
+R	IGdW	$h	:13	)j
+S	IGdW	$h	:14	)k
+T	IVOQ	$h	^	:15	)l
+U	IVOQ	$h	_	:16	)m
+V	IVOQ	$h	`	:17	)n
+W	IVOQ	$h	a	:18	)o
+X	IVOQ	$h	b	:19	)p
+Y	IVOQ	$h	c	:20	)q
+Z	IVOQ	$h	d	:21	)r
+[	IVOQ	$h	e	:22	)s
+\	IGdW	$h	:8	)e
+]	IGdW	$h	:9	)f
+^	INu}	$h	T	Y0N	)l
+_	INu}	$h	U	Y1N	)m
+`	INu}	$h	V	Y2N	)n
+a	INu}	$h	W	Y3N	)o
+b	INu}	$h	X	Y4N	)p
+c	INu}	$h	Y	Y5N	)q
+d	INu}	$h	Z	Y6N	)r
+e	INu}	$h	[	Y7N	)s
+f	IVOQ	.	r	:13	$C
+g	IVOQ	.	q	:14	$B
+h	IVOQ	.	p	:16	$D
+i	IVOQ	.	o	:17	$E
+j	IVOQ	.	v	:20	$I
+k	IVOQ	.	u	:21	$H
+l	IVOQ	.	t	:22	$G
+m	IVOQ	.	s	:23	$F
+n	IGdW	.	:32	$J
+o	INu}	.	i	RGA0	$E
+p	INu}	.	h	RGA1	$D
+q	INu}	.	g	RGA2	$B
+r	INu}	.	f	RGA3	$C
+s	INu}	.	m	RGB0	$F
+t	INu}	.	l	RGB1	$G
+u	INu}	.	k	RGB2	$H
+v	INu}	.	j	RGB3	$I
+w	V34_	?	~	4	"$	"8	1	5	1	12	:10	$]
+x	V34_	?	}	4	")	"=	0	4	1	12	:11	$^
+y	V34_	?	|	4	".	"B	/	3	1	12	:12	$_
+z	V34_	?	{	4	"3	"G	.	2	1	12	:13	$\
+{	INvO	?	z	Q0	$\
+|	INvO	?	y	Q1	$_
+}	INvO	?	x	Q2	$^
+~	INvO	?	w	Q3	$]
+"!	IGdW	.	~13~1~1	)t
+""	IGdW	.	~13~1~2	)u
+"#	IGdW	.	~13~1~3	*&
+"$	P|i%	.	1	1	1	~13~1~3~2	4?
+"%	IGdW	.	~13~2	*'
+"&	IGdW	.	~14~1~1	)v
+"'	IGdW	.	~14~1~2	)w
+"(	IGdW	.	~14~1~3	*/
+")	P|i%	.	1	0	1	~14~1~3~2	47
+"*	IGdW	.	~14~2	*0
+"+	IGdW	.	~16~1~1	)x
+",	IGdW	.	~16~1~2	)y
+"-	IGdW	.	~16~1~3	*8
+".	P|i%	.	1	/	1	~16~1~3~2	4/
+"/	IGdW	.	~16~2	*9
+"0	IGdW	.	~17~1~1	)z
+"1	IGdW	.	~17~1~2	){
+"2	IGdW	.	~17~1~3	*A
+"3	P|i%	.	1	.	1	~17~1~3~2	4'
+"4	IGdW	.	~17~2	*B
+"5	IGdW	.	~20~1~1	)|
+"6	IGdW	.	~20~1~2	)}
+"7	IGdW	.	~20~1~3	*J
+"8	P|i%	.	1	5	1	~20~1~3~2	4C
+"9	IGdW	.	~20~2	*K
+":	IGdW	.	~21~1~1	)~
+";	IGdW	.	~21~1~2	*!
+"<	IGdW	.	~21~1~3	*S
+"=	P|i%	.	1	4	1	~21~1~3~2	4;
+">	IGdW	.	~21~2	*T
+"?	IGdW	.	~22~1~1	*"
+"@	IGdW	.	~22~1~2	*#
+"A	IGdW	.	~22~1~3	*\
+"B	P|i%	.	1	3	1	~22~1~3~2	43
+"C	IGdW	.	~22~2	*]
+"D	IGdW	.	~23~1~1	*$
+"E	IGdW	.	~23~1~2	*%
+"F	IGdW	.	~23~1~3	*e
+"G	P|i%	.	1	2	1	~23~1~3~2	4+
+"H	IGdW	.	~23~2	*f
+"I	IVOQ	$5	"U	:13	(q
+"J	IVOQ	$5	"T	:14	(p
+"K	IVOQ	$5	"S	:16	(r
+"L	IVOQ	$5	"R	:17	(s
+"M	IVOQ	$5	"Y	:20	(w
+"N	IVOQ	$5	"X	:21	(v
+"O	IVOQ	$5	"W	:22	(u
+"P	IVOQ	$5	"V	:23	(t
+"Q	IGdW	$5	:32	(x
+"R	INu}	$5	"L	RGA0	(s
+"S	INu}	$5	"K	RGA1	(r
+"T	INu}	$5	"J	RGA2	(p
+"U	INu}	$5	"I	RGA3	(q
+"V	INu}	$5	"P	RGB0	(t
+"W	INu}	$5	"O	RGB1	(u
+"X	INu}	$5	"N	RGB2	(v
+"Y	INu}	$5	"M	RGB3	(w
+"Z	V34_	$E	"a	4	"$	"8	1	5	1	11	:10	),
+"[	V34_	$E	"`	4	")	"=	0	4	1	11	:11	)-
+"\	V34_	$E	"_	4	".	"B	/	3	1	11	:12	).
+"]	V34_	$E	"^	4	"3	"G	.	2	1	11	:13	)+
+"^	INvO	$E	"]	Q0	)+
+"_	INvO	$E	"\	Q1	).
+"`	INvO	$E	"[	Q2	)-
+"a	INvO	$E	"Z	Q3	),
+"b	IGdW	$5	~13~1	*.
+"c	IGdW	$5	~14~1	*7
+"d	IGdW	$5	~16~1	*@
+"e	IGdW	$5	~17~1	*I
+"f	IGdW	$5	~20~1	*R
+"g	IGdW	$5	~21~1	*[
+"h	IGdW	$5	~22~1	*d
+"i	IGdW	$5	~23~1	*m
+"j	IVOQ	#j	"v	:13	(5
+"k	IVOQ	#j	"u	:14	(4
+"l	IVOQ	#j	"t	:16	(6
+"m	IVOQ	#j	"s	:17	(7
+"n	IVOQ	#j	"z	:20	(;
+"o	IVOQ	#j	"y	:21	(:
+"p	IVOQ	#j	"x	:22	(9
+"q	IVOQ	#j	"w	:23	(8
+"r	IGdW	#j	:32	(<
+"s	INu}	#j	"m	RGA0	(7
+"t	INu}	#j	"l	RGA1	(6
+"u	INu}	#j	"k	RGA2	(4
+"v	INu}	#j	"j	RGA3	(5
+"w	INu}	#j	"q	RGB0	(8
+"x	INu}	#j	"p	RGB1	(9
+"y	INu}	#j	"o	RGB2	(:
+"z	INu}	#j	"n	RGB3	(;
+"{	V34_	#z	#$	4	"$	"8	1	5	1	10	:10	(N
+"|	V34_	#z	##	4	")	"=	0	4	1	10	:11	(O
+"}	V34_	#z	#"	4	".	"B	/	3	1	10	:12	(P
+"~	V34_	#z	#!	4	"3	"G	.	2	1	10	:13	(M
+#!	INvO	#z	"~	Q0	(M
+#"	INvO	#z	"}	Q1	(P
+##	INvO	#z	"|	Q2	(O
+#$	INvO	#z	"{	Q3	(N
+#%	IGdW	#j	~13~1	*-
+#&	IGdW	#j	~14~1	*6
+#'	IGdW	#j	~16~1	*?
+#(	IGdW	#j	~17~1	*H
+#)	IGdW	#j	~20~1	*Q
+#*	IGdW	#j	~21~1	*Z
+#+	IGdW	#j	~22~1	*c
+#,	IGdW	#j	~23~1	*l
+#-	IVOQ	#A	#9	:13	'W
+#.	IVOQ	#A	#8	:14	'V
+#/	IVOQ	#A	#7	:16	'X
+#0	IVOQ	#A	#6	:17	'Y
+#1	IVOQ	#A	#=	:20	']
+#2	IVOQ	#A	#<	:21	'\
+#3	IVOQ	#A	#;	:22	'[
+#4	IVOQ	#A	#:	:23	'Z
+#5	IGdW	#A	:32	'^
+#6	INu}	#A	#0	RGA0	'Y
+#7	INu}	#A	#/	RGA1	'X
+#8	INu}	#A	#.	RGA2	'V
+#9	INu}	#A	#-	RGA3	'W
+#:	INu}	#A	#4	RGB0	'Z
+#;	INu}	#A	#3	RGB1	'[
+#<	INu}	#A	#2	RGB2	'\
+#=	INu}	#A	#1	RGB3	']
+#>	V34_	#Q	#E	4	"$	"8	1	5	1	9	:10	'p
+#?	V34_	#Q	#D	4	")	"=	0	4	1	9	:11	'q
+#@	V34_	#Q	#C	4	".	"B	/	3	1	9	:12	'r
+#A	V34_	#Q	#B	4	"3	"G	.	2	1	9	:13	'o
+#B	INvO	#Q	#A	Q0	'o
+#C	INvO	#Q	#@	Q1	'r
+#D	INvO	#Q	#?	Q2	'q
+#E	INvO	#Q	#>	Q3	'p
+#F	IGdW	#A	~13~1	*,
+#G	IGdW	#A	~14~1	*5
+#H	IGdW	#A	~16~1	*>
+#I	IGdW	#A	~17~1	*G
+#J	IGdW	#A	~20~1	*P
+#K	IGdW	#A	~21~1	*Y
+#L	IGdW	#A	~22~1	*b
+#M	IGdW	#A	~23~1	*k
+#N	IVOQ	"v	#Z	:13	&y
+#O	IVOQ	"v	#Y	:14	&x
+#P	IVOQ	"v	#X	:16	&z
+#Q	IVOQ	"v	#W	:17	&{
+#R	IVOQ	"v	#^	:20	'!
+#S	IVOQ	"v	#]	:21	&~
+#T	IVOQ	"v	#\	:22	&}
+#U	IVOQ	"v	#[	:23	&|
+#V	IGdW	"v	:32	'"
+#W	INu}	"v	#Q	RGA0	&{
+#X	INu}	"v	#P	RGA1	&z
+#Y	INu}	"v	#O	RGA2	&x
+#Z	INu}	"v	#N	RGA3	&y
+#[	INu}	"v	#U	RGB0	&|
+#\	INu}	"v	#T	RGB1	&}
+#]	INu}	"v	#S	RGB2	&~
+#^	INu}	"v	#R	RGB3	'!
+#_	V34_	#(	#f	4	"$	"8	1	5	1	8	:10	'4
+#`	V34_	#(	#e	4	")	"=	0	4	1	8	:11	'5
+#a	V34_	#(	#d	4	".	"B	/	3	1	8	:12	'6
+#b	V34_	#(	#c	4	"3	"G	.	2	1	8	:13	'3
+#c	INvO	#(	#b	Q0	'3
+#d	INvO	#(	#a	Q1	'6
+#e	INvO	#(	#`	Q2	'5
+#f	INvO	#(	#_	Q3	'4
+#g	IGdW	"v	~13~1	*+
+#h	IGdW	"v	~14~1	*4
+#i	IGdW	"v	~16~1	*=
+#j	IGdW	"v	~17~1	*F
+#k	IGdW	"v	~20~1	*O
+#l	IGdW	"v	~21~1	*X
+#m	IGdW	"v	~22~1	*a
+#n	IGdW	"v	~23~1	*j
+#o	IVOQ	"M	#{	:13	&=
+#p	IVOQ	"M	#z	:14	&<
+#q	IVOQ	"M	#y	:16	&>
+#r	IVOQ	"M	#x	:17	&?
+#s	IVOQ	"M	$!	:20	&C
+#t	IVOQ	"M	#~	:21	&B
+#u	IVOQ	"M	#}	:22	&A
+#v	IVOQ	"M	#|	:23	&@
+#w	IGdW	"M	:32	&D
+#x	INu}	"M	#r	RGA0	&?
+#y	INu}	"M	#q	RGA1	&>
+#z	INu}	"M	#p	RGA2	&<
+#{	INu}	"M	#o	RGA3	&=
+#|	INu}	"M	#v	RGB0	&@
+#}	INu}	"M	#u	RGB1	&A
+#~	INu}	"M	#t	RGB2	&B
+$!	INu}	"M	#s	RGB3	&C
+$"	V34_	"]	$)	4	"$	"8	1	5	1	7	:10	&V
+$#	V34_	"]	$(	4	")	"=	0	4	1	7	:11	&W
+$$	V34_	"]	$'	4	".	"B	/	3	1	7	:12	&X
+$%	V34_	"]	$&	4	"3	"G	.	2	1	7	:13	&U
+$&	INvO	"]	$%	Q0	&U
+$'	INvO	"]	$$	Q1	&X
+$(	INvO	"]	$#	Q2	&W
+$)	INvO	"]	$"	Q3	&V
+$*	IGdW	"M	~13~1	**
+$+	IGdW	"M	~14~1	*3
+$,	IGdW	"M	~16~1	*<
+$-	IGdW	"M	~17~1	*E
+$.	IGdW	"M	~20~1	*N
+$/	IGdW	"M	~21~1	*W
+$0	IGdW	"M	~22~1	*`
+$1	IGdW	"M	~23~1	*i
+$2	IVOQ	"$	$>	:13	%_
+$3	IVOQ	"$	$=	:14	%^
+$4	IVOQ	"$	$<	:16	%`
+$5	IVOQ	"$	$;	:17	%a
+$6	IVOQ	"$	$B	:20	%e
+$7	IVOQ	"$	$A	:21	%d
+$8	IVOQ	"$	$@	:22	%c
+$9	IVOQ	"$	$?	:23	%b
+$:	IGdW	"$	:32	%f
+$;	INu}	"$	$5	RGA0	%a
+$<	INu}	"$	$4	RGA1	%`
+$=	INu}	"$	$3	RGA2	%^
+$>	INu}	"$	$2	RGA3	%_
+$?	INu}	"$	$9	RGB0	%b
+$@	INu}	"$	$8	RGB1	%c
+$A	INu}	"$	$7	RGB2	%d
+$B	INu}	"$	$6	RGB3	%e
+$C	V34_	"4	$J	4	"$	"8	1	5	1	6	:10	%x
+$D	V34_	"4	$I	4	")	"=	0	4	1	6	:11	%y
+$E	V34_	"4	$H	4	".	"B	/	3	1	6	:12	%z
+$F	V34_	"4	$G	4	"3	"G	.	2	1	6	:13	%w
+$G	INvO	"4	$F	Q0	%w
+$H	INvO	"4	$E	Q1	%z
+$I	INvO	"4	$D	Q2	%y
+$J	INvO	"4	$C	Q3	%x
+$K	IGdW	"$	~13~1	*)
+$L	IGdW	"$	~14~1	*2
+$M	IGdW	"$	~16~1	*;
+$N	IGdW	"$	~17~1	*D
+$O	IGdW	"$	~20~1	*M
+$P	IGdW	"$	~21~1	*V
+$Q	IGdW	"$	~22~1	*_
+$R	IGdW	"$	~23~1	*h
+$S	IVOQ	Y	$_	:13	%#
+$T	IVOQ	Y	$^	:14	%"
+$U	IVOQ	Y	$]	:16	%$
+$V	IVOQ	Y	$\	:17	%%
+$W	IVOQ	Y	$c	:20	%)
+$X	IVOQ	Y	$b	:21	%(
+$Y	IVOQ	Y	$a	:22	%'
+$Z	IVOQ	Y	$`	:23	%&
+$[	IGdW	Y	:32	%*
+$\	INu}	Y	$V	RGA0	%%
+$]	INu}	Y	$U	RGA1	%$
+$^	INu}	Y	$T	RGA2	%"
+$_	INu}	Y	$S	RGA3	%#
+$`	INu}	Y	$Z	RGB0	%&
+$a	INu}	Y	$Y	RGB1	%'
+$b	INu}	Y	$X	RGB2	%(
+$c	INu}	Y	$W	RGB3	%)
+$d	V34_	i	$k	4	"$	"8	1	5	1	5	:10	%<
+$e	V34_	i	$j	4	")	"=	0	4	1	5	:11	%=
+$f	V34_	i	$i	4	".	"B	/	3	1	5	:12	%>
+$g	V34_	i	$h	4	"3	"G	.	2	1	5	:13	%;
+$h	INvO	i	$g	Q0	%;
+$i	INvO	i	$f	Q1	%>
+$j	INvO	i	$e	Q2	%=
+$k	INvO	i	$d	Q3	%<
+$l	IGdW	Y	~13~1	*(
+$m	IGdW	Y	~14~1	*1
+$n	IGdW	Y	~16~1	*:
+$o	IGdW	Y	~17~1	*C
+$p	IGdW	Y	~20~1	*L
+$q	IGdW	Y	~21~1	*U
+$r	IGdW	Y	~22~1	*^
+$s	IGdW	Y	~23~1	*g

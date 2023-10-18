@@ -24,23 +24,16 @@ HIF003
 --
 FILES
 {
-	add1.vhd
+	rwreg.gdf
 	{
-		add1 [] [U1147235.DLS]
+		rwreg [] []
 		{
 			1 [] [];
 		}
 	}
-	add2.vhd
+	refandtries.gdf
 	{
-		add2 [] [U1147235.DLS]
-		{
-			2 [] [];
-		}
-	}
-	adder_2.vhd
-	{
-		adder_2 [] [U1147235.DLS]
+		refandtries [] []
 		{
 			0 [] [];
 		}
@@ -48,9 +41,8 @@ FILES
 }
 TREE
 {
-	adder_2::(0,0):(0): adder_2.vhd
+	refandtries::(0,0):(0): refandtries.gdf
 	{
-		add2:2:(22,11):(10,circ2): add2.vhd;
-		add1:1:(20,11):(9,circ1): add1.vhd;
+		rwreg::(0,0):(45): rwreg.gdf;
 	}
 }

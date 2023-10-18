@@ -1,8 +1,8 @@
-Project Information                                      c:\sifo\alu0\alu0.rpt
+Project Informationd:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 
 MAX+plus II Compiler Report File
 Version 10.0 9/14/2000
-Compiled: 03/15/2013 12:57:34
+Compiled: 10/17/2023 17:44:33
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -43,7 +43,7 @@ User Pins:                 12       8        0
 
 
 
-Project Information                                      c:\sifo\alu0\alu0.rpt
+Project Informationd:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 
 ** FILE HIERARCHY **
 
@@ -99,7 +99,7 @@ Project Information                                      c:\sifo\alu0\alu0.rpt
 |lpm_add_sub:449|altshift:oflow_ext_latency_ffs|
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ***** Logic for device 'alu0' compiled without errors.
@@ -161,7 +161,7 @@ RESERVED = Unused I/O pin, which MUST be left unconnected.
 
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ** RESOURCE USAGE **
@@ -199,7 +199,7 @@ Synthesized logic cells:                        12/  96   ( 12%)
 
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ** INPUTS **
@@ -230,7 +230,7 @@ t = Turbo logic cell
 r = Fitter-inserted logic cell
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ** OUTPUTS **
@@ -257,7 +257,7 @@ t = Turbo logic cell
 r = Fitter-inserted logic cell
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ** BURIED LOGIC **
@@ -328,7 +328,7 @@ t = Turbo logic cell
 r = Fitter-inserted logic cell
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -390,7 +390,7 @@ LC79 -> - * - - - - - - - - - - - - - * | - - * - - - | <-- ~836~1
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -450,7 +450,7 @@ LC33 -> - - - - - - - - - - - * - - | - - - * * - | <-- ~839~1
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -507,7 +507,7 @@ LC33 -> - - - - - - - - - - - - - * | - - - * * - | <-- ~839~1
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -553,7 +553,7 @@ Pin
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:                             c:\sifo\alu0\alu0.rpt
+Device-Specific Information:d:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 alu0
 
 ** EQUATIONS **
@@ -1109,7 +1109,7 @@ _LC033   = LCELL( _EQ068 $  GND);
 
 
 
-Project Information                                      c:\sifo\alu0\alu0.rpt
+Project Informationd:\education\bguir__labs\5_term\sifovm\labs\lab2\alu0\alu0.rpt
 
 ** COMPILATION SETTINGS & TIMES **
 
@@ -1184,11 +1184,11 @@ VHDL Netlist Writer                       = off
 Compilation Times
 -----------------
 
-   Compiler Netlist Extractor             00:00:01
+   Compiler Netlist Extractor             00:00:00
    Database Builder                       00:00:00
    Logic Synthesizer                      00:00:00
    Partitioner                            00:00:00
-   Fitter                                 00:00:00
+   Fitter                                 00:00:01
    Timing SNF Extractor                   00:00:00
    Assembler                              00:00:00
    --------------------------             --------
@@ -1198,4 +1198,4 @@ Compilation Times
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 6,019K
+Peak memory allocated during compilation  = 4,801K

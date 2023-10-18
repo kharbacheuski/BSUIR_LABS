@@ -58,7 +58,7 @@ namespace lab1 {
 
                 var recievePackage = new Package().Deserialize(buffer);
                 packages.Add(recievePackage);
-                buffer = new byte[2];
+                // buffer = new byte[2];
 
             } while (buffer.Length == 24);
 
