@@ -71,7 +71,7 @@ TREE
 {
 	rzu_alu::(0,0):(0): rzu_alu.gdf
 	{
-		alu0:5:(0,0):(16): alu0.gdf
+		alu0::(0,0):(16): alu0.gdf
 		{
 			alu0:5:(0,0):(1): alu0.gdf
 			{

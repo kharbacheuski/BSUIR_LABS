@@ -134,6 +134,7 @@ int main() {
 	setlocale(LC_ALL, "Russian");
 
 	HWND hWnd = GetConsoleWindow();
+	ShowWindow(hWnd, SW_SHOW);
 
 	bool isSecretMode = false;
 	char answer = 'n';
@@ -157,9 +158,13 @@ int main() {
 		Sleep(100);
 		GetKEY();
 
-		if (shift) {
-			if(isSecretMode) ShowWindow(hWnd, SW_HIDE);
+		if (isSecretMode) {
+			ShowWindow(hWnd, SW_HIDE);
+			Sleep(1000);
+			capture();
+		}
 
+		if (shift) {
 			capture();
 		}
 		if (ctrl) {

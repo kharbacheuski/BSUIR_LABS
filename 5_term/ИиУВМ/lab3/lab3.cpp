@@ -5,13 +5,13 @@
 #include <iostream>
 #include <string.h>
 
-#define IDENTIFY_DEVICE 		0xEC
-#define IDENTIFY_PACKET_DEVICE	0xA1
+#define IDENTIFY_DEVICE 		0xEC // get identity device ATA command
+#define IDENTIFY_PACKET_DEVICE	0xA1 // get identity packet device ATA command
 
-const int dataRegister[2] = {0x1F0, 0x170};
-const int DH_register[2] = {0x1F6, 0x176};
-const int StateCommandRegister[2] = {0x1F7, 0x177};
-const int altStateRegister[2] = {0x3F6, 0x376};
+const int dataRegister[2] = {0x1F0, 0x170}; // data registers
+const int DH_register[2] = {0x1F6, 0x176}; // number of device and head (bit 4: 0 - master, 1 - slave)
+const int StateCommandRegister[2] = {0x1F7, 0x177}; // states register, device busy (bit 7) or ready (bit 6), errors (bit 0) a.o.
+const int altStateRegister[2] = {0x3F6, 0x376}; // like StateCommandRegister, but reading this registers not changed device state 
 
 unsigned short data[256];
 
@@ -64,6 +64,7 @@ void  waitDeviceBusy(int channelNum)
 bool getDeviceInfo(int devNum, int channelNum)
 {  
     const int commands[2] = {IDENTIFY_PACKET_DEVICE, IDENTIFY_DEVICE};
+
     for (int i = 0; i < 2; i++)
     {
         waitDeviceBusy(channelNum);
@@ -71,7 +72,7 @@ bool getDeviceInfo(int devNum, int channelNum)
         unsigned char regData = (devNum << 4) + (7 << 5); //111X0000
         _outp(DH_register[channelNum], regData); //device in DH
 
-        if(!waitReady(channelNum))  return false;      
+        if(!waitReady(channelNum)) return false;      
 
         _outp(StateCommandRegister[channelNum], commands[i]);
 
@@ -114,6 +115,11 @@ void showTable()
 		printf("        ");	
 
 	std::cout <<"|";
+
+    // DMA - Direct Memory Access
+    // The PIO (Programmed Input/Output) transfer modes 0, 1, and 2, with different timing characteristics and transfer rates;
+    // The single-word DMA (Direct Memory Access) transfer modes 0, 1, and 2;
+    // The multi-word DMA transfer mode 0;
 
 	
     printf("[%s%s", (data[64] & 1) ? "+" : "-" ,"] PIO 3    |" );

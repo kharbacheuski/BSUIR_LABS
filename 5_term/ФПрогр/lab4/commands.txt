@@ -1,0 +1,69 @@
+val conf = new org.apache.spark.SparkConf()
+val lines = spark.read.textFile("D:\\unik\\sem5\\fprog\\lab4\\example.txt")
+val words = lines.map(line => line.split(" "))
+val longestSentence = lines.filter(line => line.split(" ").length >= 3).first()
+val longestSentence2 = lines.foreach(line => println(line))
+
+// повторение
+val lines = spark.read.textFile("D:\\unik\\sem5\\fprog\\lab4\\example.txt")
+val wordsRDD = lines.flatMap(line => line.split("\\W+"))
+lowercasedWords = wordsRDD.map(w => w.toLowerCase())
+
+val stopWords = Set("a", "an", "the", "and", "but", "or", "for", "of")
+var filteredWords = lowercasedWords.filter(w => !stopWords.contains(w))
+
+filteredWords.collect().foreach(println)
+
+val startsWithS = wordsRDD.filter(w => w.startsWith("s"))
+startsWithS.collect().foreach(println)
+
+// RegExp
+val pattern = "^s.*r*k$"
+val wordsByPattern = filteredWords.filter(w => w.matches(pattern))
+wordsByPattern.collect().foreach(println)
+
+//v1
+val lines = spark.read.textFile("D:\\unik\\sem5\\fprog\\lab4\\var1.txt")
+val words = lines.flatMap(line => line.split("\\W+"))
+
+//z1
+val lines = spark.read.textFile("D:\\unik\\sem5\\fprog\\lab4\\var1.txt")
+val words = lines.flatMap(line => line.split("\\W+"))
+val stopWords = Set("a", "an", "the", "and", "but", "or", "for", "of")
+val notStopWords = words.filter(w => !stopWords.contains(w))
+notStopWords.collect().foreach(println)
+
+//z2
+val lines = spark.read.textFile("D:\\unik\\sem5\\fprog\\lab4\\var1.txt")
+val words = lines.flatMap(line => line.split("\\W+"))
+val pattern = "^.*t.*$"
+val containsT = words.filter(w => w.matches(pattern))
+containsT.collect().foreach(println)
+
+//z3
+val lines = spark.read.textFile("D:\\unik\\sem5\\fprog\\lab4\\var1.txt")
+val words = lines.flatMap(line => line.split("\\W+"))
+val pattern = "^.*ing$"
+val endsWithIng = words.filter(w => w.matches(pattern))
+endsWithIng.collect().foreach(println)
+
+//z4
+val lines = spark.read.textFile("D:\\unik\\sem5\\fprog\\lab4\\var1.txt")
+val words = lines.flatMap(line => line.split("\\W+"))
+val pattern = "^.a.*$"
+val secondIsA = words.filter(w => w.matches(pattern))
+secondIsA.collect().foreach(println)
+
+//z5
+val lines = spark.read.textFile("D:\\unik\\sem5\\fprog\\lab4\\var1.txt")
+val words = lines.flatMap(line => line.split("\\W+"))
+val pattern = "^.*s$"
+val lastIsS = words.filter(w => w.matches(pattern))
+lastIsS.collect().foreach(println)
+
+//z6
+val lines = spark.read.textFile("D:\\unik\\sem5\\fprog\\lab4\\var1.txt")
+val words = lines.flatMap(line => line.split("\\W+"))
+val wordsWithIndex = words.withColumn("index", monotonically_increasing_id())
+val wordsOnEvenPos = wordsWithIndex.filter(w => w.getLong(1) % 2 == 0)
+wordsOnEvenPos.collect().foreach(x => println.get(0))
