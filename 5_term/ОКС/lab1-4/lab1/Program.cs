@@ -72,7 +72,7 @@ namespace lab1 {
         {
             using (var p = new Process()) 
             {
-                p.StartInfo.FileName = $"D:\\Education\\BGUIR__LABS\\5_term\\ОКС\\lab1\\bin\\Debug\\net7.0\\lab1.exe";
+                p.StartInfo.FileName = $"D:\\Education\\BGUIR__LABS\\5_term\\ОКС\\lab1-4\\lab1\\bin\\Debug\\net7.0\\lab1.exe";
                 p.StartInfo.UseShellExecute = true;
                 p.StartInfo.Arguments = string.Join(" ", portName, speed);
                 p.Start();
