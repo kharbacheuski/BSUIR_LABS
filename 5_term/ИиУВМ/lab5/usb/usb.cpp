@@ -7,6 +7,7 @@
 #include <thread>
 #include <functional>
 #include <vector>
+#include <map>
 #include <chrono>
 #include <Cfgmgr32.h>
 #pragma comment(lib, "setupapi.lib")
@@ -14,7 +15,7 @@
 using namespace std;
 
 vector<wstring> devices;
-vector<DWORD> devicesINST;
+map<wstring, DWORD> devicesINST;
 
 CONFIGRET EjectVolume(DEVINST devInst)
 {
@@ -39,7 +40,7 @@ int printUSBDevicesInfo(bool isPrint = false, bool isInitial = false)
 		return NULL;
 	}
 
-	if (isInitial) {
+	if (isInitial && devices.size()) {
 		devices.clear();
 		devicesINST.clear();
 	}
@@ -92,16 +93,16 @@ int printUSBDevicesInfo(bool isPrint = false, bool isInitial = false)
 		wstring venAndDevId(deviceID);
 
 		if (isPrint) {
-			std::wcout << L"Name: " << deviceName << endl;
-			std::wcout << L"Vendor ID: " << venAndDevId.substr(8, 4).c_str() << endl;
-			std::wcout << L"Device ID: " << venAndDevId.substr(17, 4).c_str() << endl << endl;
+			std::wcout << L"\n\t\t\tName: " << deviceName << endl;
+			std::wcout << L"\t\t\tVendor ID: " << venAndDevId.substr(8, 4).c_str() << endl;
+			std::wcout << L"\t\t\tDevice ID: " << venAndDevId.substr(17, 4).c_str() << endl << endl;
 		}
 
 		if (isInitial) {
 			wstring devId = venAndDevId.substr(17, 4);
 
-			devices.push_back(devId);
-			devicesINST.push_back(DeviceInfoData.DevInst);
+			devices.push_back(deviceName);
+			devicesINST[devId] = DeviceInfoData.DevInst;
 		}
 	}
 
@@ -110,19 +111,61 @@ int printUSBDevicesInfo(bool isPrint = false, bool isInitial = false)
 	return i;
 }
 
+int findElement(vector<wstring> v, wstring value) {
+	auto it = find(v.begin(), v.end(), value);
+
+	if (it != v.end()) {
+		int index = it - v.begin();
+		return index;
+	}
+	else return -1;
+}
+
+wstring findConnectedDevice(vector<wstring> tmp) {
+	for (int i = 0; i < devices.size(); i++) {
+		int index = findElement(tmp, devices[i]);
+
+		if (index == -1) {
+			return devices[i];
+		}
+	}
+}
+
+wstring findDisconnectedDevice(vector<wstring> tmp) {
+	for (int i = 0; i < tmp.size(); i++) {
+		int index = findElement(devices, tmp[i]);
+
+		if (index == -1) {
+			return tmp[i];
+		}
+	}
+}
+
 void checkDevices() {
-	int devicesCount = printUSBDevicesInfo(true, true);
+	int devicesCount = printUSBDevicesInfo(false, true);
 
 	while (1) {
 		devicesCount = printUSBDevicesInfo(false, false);
 
 		if (devicesCount > devices.size()) {
+			vector<wstring> tmp = devices;
+
 			printUSBDevicesInfo(false, true);
-			wcout << "\nDevice " << devices[devices.size() - 1] << " connected\n";
+
+			wstring connectedDevice = findConnectedDevice(tmp);
+
+			wcout << "\nDevice " << connectedDevice << " connected\n";
 		}
 		else if (devicesCount < devices.size()) {
-			wcout << "\nDevice " << devices[devices.size() - 1] << " disconnect\n";
+			vector<wstring> tmp = devices; 
+
+			wstring disconnectedDevice;
+
 			printUSBDevicesInfo(false, true);
+
+			disconnectedDevice = findDisconnectedDevice(tmp);
+			
+			wcout << "\nDevice " << disconnectedDevice << " disconnected\n";
 		}
 	}
 }
@@ -146,16 +189,32 @@ void localization() {
 }
 
 
-void ejectDeviceLoop() {
-	Sleep(500);
-	int deviceNumber;
+void ejectDevice() {
+	string deviceId;
+
+	cout << "\nEnter deviceId that should be unconnect: ";
+	cin >> deviceId;
+
+	CONFIGRET result = EjectVolume(devicesINST[wstring(deviceId.begin(), deviceId.end())]);
+}
+
+void menu() {
+	char key = '0';
+
+	cout << "\n\t\t\t================== Menu ==================\n";
+	cout << "\n\t\t\t[i] - Print connected devices information";
+	cout << "\n\t\t\t[e] - Eject connected device\n";
+	cout << "\n\t\t\t==========================================\n\n";
 
 	while (1) {
-		cout << "\nEnter device that should be unconnect: ";
-		cin >> deviceNumber;
+		cout << "\n\nEnter action (i/e): ";
+		cin >> key;
 
-		CONFIGRET result = EjectVolume(devicesINST[deviceNumber - 1]);
-		cout << endl << result;
+		switch (key) {
+			case 'i': printUSBDevicesInfo(true, false); break;
+			case 'e': ejectDevice(); break;
+			default: break;
+		}
 	}
 }
 
@@ -163,8 +222,7 @@ int main() {
 	localization();
 
 	interval(checkDevices, 500);
-
-	ejectDeviceLoop();
+	menu();
 
 	return 0;
 }
