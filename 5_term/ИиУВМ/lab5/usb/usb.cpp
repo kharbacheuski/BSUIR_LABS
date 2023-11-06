@@ -6,17 +6,26 @@
 #include <clocale>
 #include <thread>
 #include <functional>
-#include <tchar.h>
-#include <stdio.h>
-#include <stringapiset.h>
-#include <stdlib.h>
 #include <vector>
 #include <chrono>
+#include <Cfgmgr32.h>
 #pragma comment(lib, "setupapi.lib")
 
 using namespace std;
 
 vector<wstring> devices;
+vector<DWORD> devicesINST;
+
+CONFIGRET EjectVolume(DEVINST devInst)
+{
+	CONFIGRET result = CM_Request_Device_EjectW(devInst, nullptr, nullptr, NULL, NULL);
+
+	if (result != CR_SUCCESS) {
+		std::wcout << L"Error: ejecting denied." << endl;
+	}
+
+	return result;
+}
 
 int printUSBDevicesInfo(bool isPrint = false, bool isInitial = false)
 {
@@ -32,10 +41,11 @@ int printUSBDevicesInfo(bool isPrint = false, bool isInitial = false)
 
 	if (isInitial) {
 		devices.clear();
+		devicesINST.clear();
 	}
 
 	int i = 0;
-	for (i = 0; ; i++)
+	for (; ; i++)
 	{
 		DeviceInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
 
@@ -88,10 +98,10 @@ int printUSBDevicesInfo(bool isPrint = false, bool isInitial = false)
 		}
 
 		if (isInitial) {
-
 			wstring devId = venAndDevId.substr(17, 4);
 
 			devices.push_back(devId);
+			devicesINST.push_back(DeviceInfoData.DevInst);
 		}
 	}
 
@@ -129,18 +139,32 @@ void interval(std::function<void(void)> func, unsigned int interval) {
 	}).detach();
 }
 
-
-int main() {
+void localization() {
 	setlocale(LC_ALL, "Russian");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+}
 
-	interval(checkDevices, 2000);
 
-	cout << "\nEnter device that should be unconnect: \n\n";
-
+void ejectDeviceLoop() {
+	Sleep(500);
 	int deviceNumber;
-	cin >> deviceNumber;
+
+	while (1) {
+		cout << "\nEnter device that should be unconnect: ";
+		cin >> deviceNumber;
+
+		CONFIGRET result = EjectVolume(devicesINST[deviceNumber - 1]);
+		cout << endl << result;
+	}
+}
+
+int main() {
+	localization();
+
+	interval(checkDevices, 500);
+
+	ejectDeviceLoop();
 
 	return 0;
 }
