@@ -29,16 +29,13 @@ namespace lab1 {
 
             writePort.ReadTimeout = 200;
             writePort.WriteTimeout = 500;
-
-            Console.WriteLine($"Consumer on port {serialPortRead}");
-            Console.WriteLine($"Producer on port {serialPortWrite}");
         }
 
         private void OutputData(object sender, SerialDataReceivedEventArgs e) 
         {
-            var buffer = new byte[18];
+            var buffer = new byte[20];
 
-            readPort.Read(buffer, 0, 18);
+            readPort.Read(buffer, 0, 20);
 
             var recievedPackage = TokenRingPackage.Deserialize(buffer);
             TokenRingPackage packageToSend = recievedPackage;
@@ -128,10 +125,10 @@ namespace lab1 {
 
             var bytesArray = dataBytes.ToArray();
 
-            var decodeStaffing = bitStaffing.DecodeData(bytesArray);
-            var decodeHamming = hammingsCode.Decode(decodeStaffing, packages.First().FCS);
+            //var decodeStaffing = bitStaffing.DecodeData(bytesArray);
+            //var decodeHamming = hammingsCode.Decode(decodeStaffing, packages.First().FCS);
 
-            Console.WriteLine($"Message = {Encoding.ASCII.GetString(decodeHamming)}");
+            Console.WriteLine($"Message = {Encoding.ASCII.GetString(bytesArray)}");
         }
 
         public void InputData()
@@ -143,11 +140,13 @@ namespace lab1 {
                 Console.Write("\n\nWrite message: ");
                 var data = Console.ReadLine();
 
-                var bitStaffing = new BitStaffing();
-                var hammingsCode = new HammingCode();
+                //var bitStaffing = new BitStaffing();
+                //var hammingsCode = new HammingCode();
 
-                var hammingBytes = hammingsCode.Encode(Encoding.ASCII.GetBytes(data));
-                var staffingBytes = bitStaffing.EncodeData(hammingBytes);
+                //var hammingBytes = hammingsCode.Encode(Encoding.ASCII.GetBytes(data));
+                //var staffingBytes = bitStaffing.EncodeData(hammingBytes);
+
+                var staffingBytes = Encoding.UTF8.GetBytes(data);
 
                 int dataLength = 10;
                 var countOfPackage = Math.Ceiling(data.Length / (double)dataLength);
@@ -156,14 +155,15 @@ namespace lab1 {
 
                 for (int i = 0; i < countOfPackage; i++)
                 {
-                    var partOfData = staffingBytes.Skip(i * dataLength).Take(dataLength).ToArray();
+                    var partOfData = new byte[10];
+
+                    Array.Copy(staffingBytes.Skip(i * dataLength).Take(dataLength).ToArray(), partOfData, staffingBytes.Skip(i * dataLength).Take(dataLength).ToArray().Length);
 
                     var package = new Package();
                     package.data = partOfData;
                     package.destinationAddress = (byte)target;
                     package.sourceAddress = (byte)writePort.GetPortNumber();
-                    package.length = package.data.Length;
-                    package.FCS = hammingsCode.GetFCS(hammingBytes);
+                    //package.FCS = hammingsCode.GetFCS(hammingBytes);
 
                     if (i == countOfPackage - 1)
                         package.flag = 37;
@@ -192,15 +192,16 @@ namespace lab1 {
             while (true)
             {
                 var accessControl = new AccessControl();
+                var frameStatus = new FrameStatus();
                 accessControl.monitorBit = true;
                 accessControl.tokenBit = true;
 
-                var _package = new Package { destinationAddress = 0 };
-                var tokenPackage = new TokenRingPackage { AC =  accessControl, FS = new FrameStatus(), package = _package };
+                var _package = new Package();
+                var tokenPackage = new TokenRingPackage { AC =  accessControl, FS = frameStatus, package = _package };
 
                 WritePackage(tokenPackage);
 
-                Thread.Sleep(500000);
+                Thread.Sleep(5000);
             }
         }
 
@@ -209,9 +210,6 @@ namespace lab1 {
             var packageBytes = package.Serialize();
 
             writePort.Write(packageBytes, 0, packageBytes.Length);
-
-            if (!package.AC.tokenBit)
-                Console.WriteLine($"{packageBytes.Length} bytes sended");
         }
 
         public void Dispose()

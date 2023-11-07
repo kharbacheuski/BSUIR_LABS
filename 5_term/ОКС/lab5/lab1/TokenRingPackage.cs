@@ -9,7 +9,7 @@ namespace lab1
 
         public byte[] Serialize()
         {
-            var bytes = new List<byte>();
+            var bytes = new List<byte> { };
             var innerPackageBytes = package.Serialize();
 
             bytes.Add(AC.ToByte());
@@ -25,8 +25,8 @@ namespace lab1
             var innerPackage = new Package().Deserialize(dataBytes.Skip(2).ToArray());
             
             var package = new TokenRingPackage();
-            package.package = innerPackage;
 
+            package.package = innerPackage;
             package.AC = AccessControl.FromByte(dataBytes[0]);
             package.FS = FrameStatus.FromByte(dataBytes[1]);
 
