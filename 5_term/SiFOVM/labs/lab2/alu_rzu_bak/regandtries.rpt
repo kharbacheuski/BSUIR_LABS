@@ -1,0 +1,528 @@
+Project Information              d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+
+MAX+plus II Compiler Report File
+Version 10.0 9/14/2000
+Compiled: 11/08/2023 16:20:30
+
+Copyright (C) 1988-2000 Altera Corporation
+Any megafunction design, and related net list (encrypted or decrypted),
+support information, device programming or simulation file, and any other
+associated documentation or information provided by Altera or a partner
+under Altera's Megafunction Partnership Program may be used only to
+program PLD devices (but not masked PLD devices) from Altera.  Any other
+use of such megafunction design, net list, support information, device
+programming or simulation file, or any other related documentation or
+information is prohibited for any other purpose, including, but not
+limited to modification, reverse engineering, de-compiling, or use with
+any other silicon devices, unless such use is explicitly licensed under
+a separate agreement with Altera or a megafunction partner.  Title to
+the intellectual property, including patents, copyrights, trademarks,
+trade secrets, or maskworks, embodied in any such megafunction design,
+net list, support information, device programming or simulation file, or
+any other related documentation or information provided by Altera or a
+megafunction partner, remains with Altera, the megafunction partner, or
+their respective licensors.  No other licenses, including any licenses
+needed under any third party's intellectual property, are provided herein.
+
+
+
+***** Project compilation was successful
+
+
+
+
+** DEVICE SUMMARY **
+
+Chip/                     Input Output Bidir  Memory  Memory  			 LCs
+POF       Device          Pins  Pins   Pins   Bits % Utilized  LCs  % Utilized
+
+regandtries
+      EPF10K10ATC100-1     9      8      0    0         0  %    9        1  %
+
+User Pins:                 9      8      0  
+
+
+
+Project Information              d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+
+** FILE HIERARCHY **
+
+
+
+|rwreg:64|
+
+
+Device-Specific Information:     d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+regandtries
+
+***** Logic for device 'regandtries' compiled without errors.
+
+
+
+
+Device: EPF10K10ATC100-1
+
+FLEX 10K Configuration Scheme: Passive Serial
+
+Device Options:
+    User-Supplied Start-Up Clock               = OFF
+    Auto-Restart Configuration on Frame Error  = OFF
+    Release Clears Before Tri-States           = OFF
+    Enable Chip_Wide Reset                     = OFF
+    Enable Chip-Wide Output Enable             = OFF
+    Enable INIT_DONE Output                    = OFF
+    JTAG User Code                             = 7f
+    MultiVolt I/O                              = OFF
+
+                                                                   
+                                                                   
+                  R R R R   R             R R R R   R R R R R R    
+                  E E E E   E             E E E E   E E E E E E    
+                  S S S S   S           V S S S S   S S S S S S ^  
+                  E E E E   E           C E E E E V E E E E E E D  
+                # R R R R   R R         C R R R R C R R R R R R A  
+                T V V V V G V G G       I V V V V C V V V V V V T  
+                C E E E E N E B N   A   N E E E E I E E E E E E A  
+                K D D D D D D 0 D R 0 C T D D D D O D D D D D D 0  
+              ----------------------------------------------------_ 
+             / 100  98  96  94  92  90  88  86  84  82  80  78  76   |_ 
+            /     99  97  95  93  91  89  87  85  83  81  79  77    | 
+^CONF_DONE |  1                                                    75 | ^DCLK 
+     ^nCEO |  2                                                    74 | ^nCE 
+      #TDO |  3                                                    73 | #TDI 
+     VCCIO |  4                                                    72 | GND 
+  RESERVED |  5                                                    71 | RESERVED 
+  RESERVED |  6                                                    70 | RESERVED 
+  RESERVED |  7                                                    69 | RESERVED 
+  RESERVED |  8                                                    68 | RESERVED 
+  RESERVED |  9                                                    67 | VCCIO 
+  RESERVED | 10                                                    66 | VCCINT 
+       GND | 11                                                    65 | RESERVED 
+       GND | 12                                                    64 | RESERVED 
+  RESERVED | 13                 EPF10K10ATC100-1                   63 | RESERVED 
+  RESERVED | 14                                                    62 | RESERVED 
+  RESERVED | 15                                                    61 | RGB3 
+  RESERVED | 16                                                    60 | GND 
+     VCCIO | 17                                                    59 | GND 
+    VCCINT | 18                                                    58 | A1 
+      RGA0 | 19                                                    57 | RGA2 
+        A2 | 20                                                    56 | RESERVED 
+      RGA3 | 21                                                    55 | A3 
+      RGA1 | 22                                                    54 | ^MSEL0 
+      RGB2 | 23                                                    53 | ^MSEL1 
+      #TMS | 24                                                    52 | VCCINT 
+  ^nSTATUS | 25                                                    51 | ^nCONFIG 
+           |      27  29  31  33  35  37  39  41  43  45  47  49  _| 
+            \   26  28  30  32  34  36  38  40  42  44  46  48  50   | 
+             \----------------------------------------------------- 
+                R R G R R R V R R R R V O D O G R R R R G R R V R  
+                E E N E E E C E E E G C E   E N E E E E N E E C E  
+                S S D S S S C S S S B C 1   0 D S S S S D S S C S  
+                E E   E E E I E E E 1 I         E E E E   E E I E  
+                R R   R R R O R R R   N         R R R R   R R O R  
+                V V   V V V   V V V   T         V V V V   V V   V  
+                E E   E E E   E E E             E E E E   E E   E  
+                D D   D D D   D D D             D D D D   D D   D  
+                                                                   
+                                                                   
+
+
+N.C. = No Connect. This pin has no internal connection to the device.
+VCCINT = Dedicated power pin, which MUST be connected to VCC (3.3 volts).
+VCCIO = Dedicated power pin, which MUST be connected to VCC (3.3 volts).
+GND = Dedicated ground pin or unused dedicated input, which MUST be connected to GND.
+RESERVED = Unused I/O pin, which MUST be left unconnected.
+
+^ = Dedicated configuration pin.
++ = Reserved configuration pin, which is tri-stated during user mode.
+* = Reserved configuration pin, which drives out in user mode.
+PDn = Power Down pin. 
+@ = Special-purpose pin. 
+# = JTAG Boundary-Scan Testing/In-System Programming or Configuration Pin. The JTAG inputs TMS and TDI should be tied to VCC and TCK should be tied to GND when not in use.
+& = JTAG pin used for I/O. When used as user I/O, JTAG pins must be kept stable before and during configuration.  JTAG pin stability prevents accidental loading of JTAG instructions.
+$ = Pin has PCI I/O option enabled. Pin is not '5.0 V'-tolerant. 
+
+
+Device-Specific Information:     d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+regandtries
+
+** RESOURCE USAGE **
+
+Logic                Column       Row                                   
+Array                Interconnect Interconnect         Clears/     External  
+Block   Logic Cells  Driven       Driven       Clocks  Presets   Interconnect
+C14      8/ 8(100%)   3/ 8( 37%)   5/ 8( 62%)    1/2    0/2       5/22( 22%)   
+C20      1/ 8( 12%)   0/ 8(  0%)   1/ 8( 12%)    0/2    0/2       3/22( 13%)   
+
+
+Embedded             Column       Row                                   
+Array     Embedded   Interconnect Interconnect         Read/      External  
+Block     Cells      Driven       Driven       Clocks  Write    Interconnect
+
+
+Total dedicated input pins used:                 6/6      (100%)
+Total I/O pins used:                            11/60     ( 18%)
+Total logic cells used:                          9/576    (  1%)
+Total embedded cells used:                       0/24     (  0%)
+Total EABs used:                                 0/3      (  0%)
+Average fan-in:                                 1.22/4    ( 30%)
+Total fan-in:                                  11/2304    (  0%)
+
+Total input pins required:                       9
+Total input I/O cell registers required:         0
+Total output pins required:                      8
+Total output I/O cell registers required:        0
+Total buried I/O cell registers required:        0
+Total bidirectional pins required:               0
+Total reserved pins required                     0
+Total logic cells required:                      9
+Total flipflops required:                        8
+Total packed registers required:                 0
+Total logic cells in carry chains:               0
+Total number of carry chains:                    0
+Total logic cells in cascade chains:             0
+Total number of cascade chains:                  0
+Total single-pin Clock Enables required:         0
+Total single-pin Output Enables required:        0
+
+Synthesized logic cells:                         4/ 576   (  0%)
+
+Logic Cell and Embedded Cell Counts
+
+Column:  01  02  03  04  05  06  07  08  09  10  11  12  EA  13  14  15  16  17  18  19  20  21  22  23  24  Total(LC/EC)
+ A:      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0      0/0  
+ B:      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0      0/0  
+ C:      0   0   0   0   0   0   0   0   0   0   0   0   0   0   8   0   0   0   0   0   1   0   0   0   0      9/0  
+
+Total:   0   0   0   0   0   0   0   0   0   0   0   0   0   0   8   0   0   0   0   0   1   0   0   0   0      9/0  
+
+
+
+Device-Specific Information:     d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+regandtries
+
+** INPUTS **
+
+                                                    Fan-In    Fan-Out
+ Pin     LC     EC   Row  Col  Primitive    Code      INP  FBK  OUT  FBK  Name
+  90      -     -    -    --      INPUT                 0    0    0    2  A0
+  58      -     -    C    --      INPUT                 0    0    0    2  A1
+  20      -     -    C    --      INPUT                 0    0    0    2  A2
+  55      -     -    C    --      INPUT                 0    0    0    2  A3
+  89      -     -    -    --      INPUT                 0    0    0    1  C
+  39      -     -    -    --      INPUT                 0    0    0    1  D
+  40      -     -    -    --      INPUT  G              0    0    0    0  OE0
+  38      -     -    -    --      INPUT  G              0    0    0    0  OE1
+  91      -     -    -    --      INPUT                 0    0    0    1  R
+
+
+Code:
+
+s = Synthesized pin or logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+* = PCI I/O is enabled
+@ = Uses single-pin Clock Enable
+& = Uses single-pin Output Enable
+G = Global Source. Fan-out destinations counted here do not include destinations
+that are driven using global routing resources. Refer to the Auto Global Signals,
+Clock Signals, Clear Signals, Synchronous Load Signals, and Synchronous Clear Signals
+Sections of this Report File for information on which signals' fan-outs are used as
+Clock, Clear, Preset, Output Enable, and synchronous Load signals.
+
+
+Device-Specific Information:     d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+regandtries
+
+** OUTPUTS **
+
+       Fed By Fed By                                Fan-In    Fan-Out
+ Pin     LC     EC   Row  Col  Primitive    Code      INP  FBK  OUT  FBK  Name
+  19      -     -    C    --        TRI                 0    1    0    0  RGA0
+  22      -     -    C    --        TRI                 0    1    0    0  RGA1
+  57      -     -    C    --        TRI                 0    1    0    0  RGA2
+  21      -     -    C    --        TRI                 0    1    0    0  RGA3
+  93      -     -    -    13        TRI                 0    1    0    0  RGB0
+  36      -     -    -    14        TRI                 0    1    0    0  RGB1
+  23      -     -    C    --        TRI                 0    1    0    0  RGB2
+  61      -     -    B    --        TRI                 0    1    0    0  RGB3
+
+
+Code:
+
+s = Synthesized pin or logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+* = PCI I/O is enabled
+@ = Uses single-pin Clock Enable
+& = Uses single-pin Output Enable
+
+
+Device-Specific Information:     d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+regandtries
+
+** BURIED LOGIC **
+
+                                                    Fan-In    Fan-Out
+ IOC     LC     EC   Row  Col  Primitive    Code      INP  FBK  OUT  FBK  Name
+   -      7     -    C    14       DFFE    s           1    1    1    0  |rwreg:64|Q0~1 (|rwreg:64|~14~1~1)
+   -      1     -    C    14       DFFE                1    1    1    0  |rwreg:64|Q0 (|rwreg:64|~14~1)
+   -      4     -    C    14       DFFE    s           1    1    1    0  |rwreg:64|Q1~1 (|rwreg:64|~14~2~1)
+   -      5     -    C    14       DFFE                1    1    1    0  |rwreg:64|Q1 (|rwreg:64|~14~2)
+   -      6     -    C    14       DFFE    s           1    1    1    0  |rwreg:64|Q2~1 (|rwreg:64|~14~3~1)
+   -      2     -    C    14       DFFE                1    1    1    0  |rwreg:64|Q2 (|rwreg:64|~14~3)
+   -      8     -    C    14       DFFE    s           1    1    1    0  |rwreg:64|Q3~1 (|rwreg:64|~14~4~1)
+   -      3     -    C    14       DFFE                1    1    1    0  |rwreg:64|Q3 (|rwreg:64|~14~4)
+   -      2     -    C    20       AND2                3    0    0    8  :32
+
+
+Code:
+
+s = Synthesized pin or logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+* = PCI I/O is enabled
+p = Packed register
+
+
+Device-Specific Information:     d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+regandtries
+
+** FASTTRACK INTERCONNECT UTILIZATION **
+
+Row FastTrack Interconnect:
+
+          Global         Left Half-      Right Half-
+         FastTrack       FastTrack       FastTrack 
+Row     Interconnect    Interconnect    Interconnect    Input Pins     Output Pins     Bidir Pins
+A:       0/ 96(  0%)     0/ 48(  0%)     0/ 48(  0%)    0/16(  0%)      0/16(  0%)     0/16(  0%)
+B:       1/ 96(  1%)     0/ 48(  0%)     0/ 48(  0%)    0/16(  0%)      1/16(  6%)     0/16(  0%)
+C:       4/ 96(  4%)     0/ 48(  0%)     5/ 48( 10%)    3/16( 18%)      5/16( 31%)     0/16(  0%)
+
+
+Column FastTrack Interconnect:
+
+         FastTrack                                 
+Column  Interconnect    Input Pins     Output Pins     Bidir Pins
+01:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+02:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+03:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+04:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+05:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+06:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+07:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+08:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+09:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+10:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+11:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+12:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+13:      1/24(  4%)     0/4(  0%)      1/4( 25%)       0/4(  0%)
+14:      2/24(  8%)     0/4(  0%)      1/4( 25%)       0/4(  0%)
+15:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+16:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+17:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+18:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+19:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+20:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+21:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+22:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+23:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+24:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+EA:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+
+
+Device-Specific Information:     d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+regandtries
+
+** CLOCK SIGNALS **
+
+Type     Fan-out       Name
+LCELL        8         :32
+
+
+Device-Specific Information:     d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+regandtries
+
+** EQUATIONS **
+
+A0       : INPUT;
+A1       : INPUT;
+A2       : INPUT;
+A3       : INPUT;
+C        : INPUT;
+D        : INPUT;
+OE0      : INPUT;
+OE1      : INPUT;
+R        : INPUT;
+
+-- Node name is 'RGA0' 
+-- Equation name is 'RGA0', type is output 
+RGA0     = TRI(_LC1_C14, GLOBAL( OE1));
+
+-- Node name is 'RGA1' 
+-- Equation name is 'RGA1', type is output 
+RGA1     = TRI(_LC5_C14, GLOBAL( OE1));
+
+-- Node name is 'RGA2' 
+-- Equation name is 'RGA2', type is output 
+RGA2     = TRI(_LC2_C14, GLOBAL( OE1));
+
+-- Node name is 'RGA3' 
+-- Equation name is 'RGA3', type is output 
+RGA3     = TRI(_LC3_C14, GLOBAL( OE1));
+
+-- Node name is 'RGB0' 
+-- Equation name is 'RGB0', type is output 
+RGB0     = TRI(_LC7_C14, GLOBAL( OE0));
+
+-- Node name is 'RGB1' 
+-- Equation name is 'RGB1', type is output 
+RGB1     = TRI(_LC4_C14, GLOBAL( OE0));
+
+-- Node name is 'RGB2' 
+-- Equation name is 'RGB2', type is output 
+RGB2     = TRI(_LC6_C14, GLOBAL( OE0));
+
+-- Node name is 'RGB3' 
+-- Equation name is 'RGB3', type is output 
+RGB3     = TRI(_LC8_C14, GLOBAL( OE0));
+
+-- Node name is '|rwreg:64|~14~1~1' = '|rwreg:64|Q0~1' 
+-- Equation name is '_LC7_C14', type is buried 
+-- synthesized logic cell 
+_LC7_C14 = DFFE( A0,  _LC2_C20,  VCC,  VCC,  VCC);
+
+-- Node name is '|rwreg:64|~14~1' = '|rwreg:64|Q0' 
+-- Equation name is '_LC1_C14', type is buried 
+_LC1_C14 = DFFE( A0,  _LC2_C20,  VCC,  VCC,  VCC);
+
+-- Node name is '|rwreg:64|~14~2~1' = '|rwreg:64|Q1~1' 
+-- Equation name is '_LC4_C14', type is buried 
+-- synthesized logic cell 
+_LC4_C14 = DFFE( A1,  _LC2_C20,  VCC,  VCC,  VCC);
+
+-- Node name is '|rwreg:64|~14~2' = '|rwreg:64|Q1' 
+-- Equation name is '_LC5_C14', type is buried 
+_LC5_C14 = DFFE( A1,  _LC2_C20,  VCC,  VCC,  VCC);
+
+-- Node name is '|rwreg:64|~14~3~1' = '|rwreg:64|Q2~1' 
+-- Equation name is '_LC6_C14', type is buried 
+-- synthesized logic cell 
+_LC6_C14 = DFFE( A2,  _LC2_C20,  VCC,  VCC,  VCC);
+
+-- Node name is '|rwreg:64|~14~3' = '|rwreg:64|Q2' 
+-- Equation name is '_LC2_C14', type is buried 
+_LC2_C14 = DFFE( A2,  _LC2_C20,  VCC,  VCC,  VCC);
+
+-- Node name is '|rwreg:64|~14~4~1' = '|rwreg:64|Q3~1' 
+-- Equation name is '_LC8_C14', type is buried 
+-- synthesized logic cell 
+_LC8_C14 = DFFE( A3,  _LC2_C20,  VCC,  VCC,  VCC);
+
+-- Node name is '|rwreg:64|~14~4' = '|rwreg:64|Q3' 
+-- Equation name is '_LC3_C14', type is buried 
+_LC3_C14 = DFFE( A3,  _LC2_C20,  VCC,  VCC,  VCC);
+
+-- Node name is ':32' 
+-- Equation name is '_LC2_C20', type is buried 
+_LC2_C20 = LCELL( _EQ001);
+  _EQ001 =  C &  D &  R;
+
+
+
+Project Information              d:\unik\sem5\sifo\two\alu_rzu\regandtries.rpt
+
+** COMPILATION SETTINGS & TIMES **
+
+Processing Menu Commands
+------------------------
+
+Design Doctor                             = off
+
+Logic Synthesis:
+
+   Synthesis Type Used                    = Multi-Level
+
+   Default Synthesis Style                = NORMAL
+
+      Logic option settings in 'NORMAL' style for 'FLEX10KA' family
+
+      CARRY_CHAIN                         = ignore
+      CARRY_CHAIN_LENGTH                  = 32
+      CASCADE_CHAIN                       = ignore
+      CASCADE_CHAIN_LENGTH                = 2
+      DECOMPOSE_GATES                     = on
+      DUPLICATE_LOGIC_EXTRACTION          = on
+      MINIMIZATION                        = full
+      MULTI_LEVEL_FACTORING               = on
+      NOT_GATE_PUSH_BACK                  = on
+      REDUCE_LOGIC                        = on
+      REFACTORIZATION                     = on
+      REGISTER_OPTIMIZATION               = on
+      RESYNTHESIZE_NETWORK                = on
+      SLOW_SLEW_RATE                      = off
+      SUBFACTOR_EXTRACTION                = on
+      IGNORE_SOFT_BUFFERS                 = on
+      USE_LPM_FOR_AHDL_OPERATORS          = off
+
+   Other logic synthesis settings:
+
+      Automatic Global Clock              = on
+      Automatic Global Clear              = on
+      Automatic Global Preset             = on
+      Automatic Global Output Enable      = on
+      Automatic Fast I/O                  = off
+      Automatic Register Packing          = off
+      Automatic Open-Drain Pins           = on
+      Automatic Implement in EAB          = off
+      Optimize                            = 5
+
+Default Timing Specifications: None
+
+Cut All Bidir Feedback Timing Paths       = on
+Cut All Clear & Preset Timing Paths       = on
+
+Ignore Timing Assignments                 = off
+
+Functional SNF Extractor                  = off
+
+Linked SNF Extractor                      = off
+Timing SNF Extractor                      = on
+Optimize Timing SNF                       = off
+Generate AHDL TDO File                    = off
+Fitter Settings                           = NORMAL
+Use Quartus Fitter                        = on
+Smart Recompile                           = off
+Total Recompile                           = off
+
+Interfaces Menu Commands
+------------------------
+
+EDIF Netlist Writer                       = off
+Verilog Netlist Writer                    = off
+VHDL Netlist Writer                       = off
+
+Compilation Times
+-----------------
+
+   Compiler Netlist Extractor             00:00:00
+   Database Builder                       00:00:00
+   Logic Synthesizer                      00:00:00
+   Partitioner                            00:00:00
+   Fitter                                 00:00:00
+   Timing SNF Extractor                   00:00:00
+   Assembler                              00:00:00
+   --------------------------             --------
+   Total Time                             00:00:00
+
+
+Memory Allocated
+-----------------
+
+Peak memory allocated during compilation  = 25,022K

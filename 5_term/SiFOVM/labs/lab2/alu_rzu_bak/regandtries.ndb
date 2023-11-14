@@ -1,0 +1,55 @@
+NDB006
+The number of symbol table entries is: 2
+The length of the symbol table is: 24
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+.	|rwreg:64|
+
+The number of name info structs is : 42
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	Ky'E	!	8	=	<	?	>	A	@	C	B	:32	"*
+#	Ky&|	!	2	=	<	A0	s
+$	Ky&|	!	2	?	>	A1	r
+%	Ky&|	!	2	A	@	A2	q
+&	Ky&|	!	2	C	B	A3	p
+'	Ky&|	!	1	"	C	o
+(	Ky&|	!	1	"	D	m
+)	(@>U^	!	4	0	1	2	3	OE0	t
+*	(@>U^	!	4	,	-	.	/	OE1	u
++	Ky&|	!	1	"	R	n
+,	IGdq	!	RGA0	}
+-	IGdq	!	RGA1	|
+.	IGdq	!	RGA2	{
+/	IGdq	!	RGA3	z
+0	IGdq	!	RGB0	y
+1	IGdq	!	RGB1	x
+2	IGdq	!	RGB2	w
+3	IGdq	!	RGB3	v
+4	INvO	.	<	Q0	"H
+5	IM}A	.	=	Q0~1	#'
+6	INvO	.	>	Q1	"G
+7	IM}A	.	?	Q1~1	#)
+8	INvO	.	@	Q2	"F
+9	IM}A	.	A	Q2~1	#+
+:	INvO	.	B	Q3	"E
+;	IM}A	.	C	Q3~1	#-
+<	L)p/	.	4	1	,	~14~1	"H
+=	L(w!	.	5	1	0	~14~1~1	#'
+>	L)p/	.	6	1	-	~14~2	"G
+?	L(w!	.	7	1	1	~14~2~1	#)
+@	L)p/	.	8	1	.	~14~3	"F
+A	L(w!	.	9	1	2	~14~3~1	#+
+B	L)p/	.	:	1	/	~14~4	"E
+C	L(w!	.	;	1	3	~14~4~1	#-
+D	IGdW	!	~52~1	"2
+E	IGdW	!	~52~2	"1
+F	IGdW	!	~52~3	"0
+G	IGdW	!	~52~4	"/
+H	IGdW	!	~53~1	".
+I	IGdW	!	~53~2	"-
+J	IGdW	!	~53~3	",
+K	IGdW	!	~53~4	"+

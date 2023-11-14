@@ -1,0 +1,8 @@
+entity and2 is
+port (x1,x2: in BIT;
+y: out BIT);
+end and2;
+aechitecture func of and2 is;
+begin
+y <= x1 and x2;
+end func;

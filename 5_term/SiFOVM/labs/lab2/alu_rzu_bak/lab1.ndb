@@ -1,0 +1,401 @@
+NDB006
+The number of symbol table entries is: 19
+The length of the symbol table is: 361
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+.	|regandtries:10|
+?	|regandtries:10|rwreg:64|
+Y	|regandtries:9|
+i	|regandtries:9|rwreg:64|
+"$	|regandtries:8|
+"4	|regandtries:8|rwreg:64|
+"M	|regandtries:7|
+"]	|regandtries:7|rwreg:64|
+"v	|regandtries:6|
+#(	|regandtries:6|rwreg:64|
+#A	|regandtries:5|
+#Q	|regandtries:5|rwreg:64|
+#j	|regandtries:2|
+#z	|regandtries:2|rwreg:64|
+$5	|regandtries:1|
+$E	|regandtries:1|rwreg:64|
+$^	|dec:39|
+$g	|dec:40|
+
+The number of name info structs is : 371
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	Ky&|	!	3	"`	"O	"q	C	x
+#	Ky&|	!	8	"\	"~	#A	#b	$%	$F	$g	i	D0	w
+$	Ky&|	!	8	"]	#!	#B	#c	$&	$G	$h	j	D1	v
+%	Ky&|	!	8	"^	#"	#C	#d	$'	$H	$i	k	D2	u
+&	Ky&|	!	8	"_	##	#D	#e	$(	$I	$j	l	D3	t
+'	Ky&|	!	17	R	S	K	M	N	#F	#H	#J	#L	#g	#i	#k	#m	$K	$M	$O	$Q	DA0	s
+(	Ky&|	!	17	R	S	K	M	N	#F	#H	#J	#L	#g	#i	#k	#m	$K	$M	$O	$Q	DA1	r
+)	Ky&|	!	17	R	S	K	M	N	#F	#H	#J	#L	#g	#i	#k	#m	$K	$M	$O	$Q	DA2	q
+*	Ky&|	!	20	?	@	8	:	;	#4	#N	#P	#R	#T	#U	#o	#q	#s	#u	$9	$S	$U	$W	$Y	DB0	p
++	Ky&|	!	20	?	@	8	:	;	#4	#N	#P	#R	#T	#U	#o	#q	#s	#u	$9	$S	$U	$W	$Y	DB1	o
+,	Ky&|	!	20	?	@	8	:	;	#4	#N	#P	#R	#T	#U	#o	#q	#s	#u	$9	$S	$U	$W	$Y	DB2	n
+-	Ky&|	!	3	"`	"O	"q	R	m
+.	IGdq	!	RGA0	|
+/	IGdq	!	RGA1	{
+0	IGdq	!	RGA2	z
+1	IGdq	!	RGA3	y
+2	IGdq	!	RGB0	""
+3	IGdq	!	RGB1	"!
+4	IGdq	!	RGB2	~
+5	IGdq	!	RGB3	}
+6	IVOQ	$^	C	:10	)X
+7	IVOQ	$^	D	:11	)W
+8	L)p?	$^	E	5	#v	"4	"<	"D	"L	:12	)V
+9	IVOQ	$^	F	:13	)U
+:	L)p?	$^	G	5	$Z	"3	";	"C	"K	:14	)T
+;	L)p?	$^	H	5	\	"3	";	"C	"K	:15	)S
+<	IGdW	$^	:4	)P
+=	IGdW	$^	:5	)Q
+>	IGdW	$^	:6	)R
+?	L)p?	$^	A	5	"O	"2	":	"B	"J	:7	)Y
+@	L)p?	$^	B	5	"q	"5	"=	"E	"M	:9	)Z
+A	INv_	$^	?	Y0	)Y
+B	INv_	$^	@	Y1	)Z
+C	INu}	$^	6	Y2	)X
+D	INu}	$^	7	Y3	)W
+E	INv_	$^	8	Y4	)V
+F	INu}	$^	9	Y5	)U
+G	INv_	$^	:	Y6	)T
+H	INv_	$^	;	Y7	)S
+I	IVOQ	$g	V	:10	)t
+J	IVOQ	$g	W	:11	)s
+K	L)p?	$g	X	4	r	z	"$	",	:12	)r
+L	IVOQ	$g	Y	:13	)q
+M	L)p?	$g	Z	4	q	y	"#	"+	:14	)p
+N	L)p?	$g	[	4	q	y	"#	"+	:15	)o
+O	IGdW	$g	:4	)l
+P	IGdW	$g	:5	)m
+Q	IGdW	$g	:6	)n
+R	L)p?	$g	T	4	p	x	""	"*	:7	)u
+S	L)p?	$g	U	4	s	{	"%	"-	:9	)v
+T	INv_	$g	R	Y0	)u
+U	INv_	$g	S	Y1	)v
+V	INu}	$g	I	Y2	)t
+W	INu}	$g	J	Y3	)s
+X	INv_	$g	K	Y4	)r
+Y	INu}	$g	L	Y5	)q
+Z	INv_	$g	M	Y6	)p
+[	INv_	$g	N	Y7	)o
+\	Ky'E	.	4	i	j	k	l	:32	$<
+]	INu}	.	m	RGA0	$D
+^	INu}	.	u	RGA1	$C
+_	INu}	.	}	RGA2	$B
+`	INu}	.	"'	RGA3	$A
+a	INu}	.	"/	RGB0	$@
+b	INu}	.	"7	RGB1	$?
+c	INu}	.	"?	RGB2	$>
+d	INu}	.	"G	RGB3	$=
+e	INvO	?	i	Q0	$Z
+f	INvO	?	j	Q1	$Y
+g	INvO	?	k	Q2	$X
+h	INvO	?	l	Q3	$W
+i	L)p/	?	e	2	q	"3	~14~1	$Z
+j	L)p/	?	f	2	y	";	~14~2	$Y
+k	L)p/	?	g	2	"#	"C	~14~3	$X
+l	L)p/	?	h	2	"+	"K	~14~4	$W
+m	IVOQ	.	]	~52~1	$D
+n	IGdW	.	~52~1~1~1	)~
+o	IGdW	.	~52~1~1~2	*!
+p	Ky'E	.	1	.	~52~1~1~3	*E
+q	Kx(k	.	1	r	~52~1~1~3~2	.J
+r	Kx(k	.	1	p	~52~1~1~3~3	.M
+s	Kx(k	.	1	p	~52~1~1~3~4	.Q
+t	IGdW	.	~52~1~2	*F
+u	IVOQ	.	^	~52~2	$C
+v	IGdW	.	~52~2~1~1	)|
+w	IGdW	.	~52~2~1~2	)}
+x	Ky'E	.	1	/	~52~2~1~3	*<
+y	Kx(k	.	1	z	~52~2~1~3~2	.U
+z	Kx(k	.	1	x	~52~2~1~3~3	.W
+{	Kx(k	.	1	x	~52~2~1~3~4	.Z
+|	IGdW	.	~52~2~2	*=
+}	IVOQ	.	_	~52~3	$B
+~	IGdW	.	~52~3~1~1	)z
+"!	IGdW	.	~52~3~1~2	){
+""	Ky'E	.	1	0	~52~3~1~3	*3
+"#	Kx(k	.	1	"$	~52~3~1~3~2	.]
+"$	Kx(k	.	1	""	~52~3~1~3~3	._
+"%	Kx(k	.	1	""	~52~3~1~3~4	.b
+"&	IGdW	.	~52~3~2	*4
+"'	IVOQ	.	`	~52~4	$A
+"(	IGdW	.	~52~4~1~1	)x
+")	Ky'E	.	4	.	/	0	1	~52~4~1~2	)y
+"*	Ky'E	.	1	1	~52~4~1~3	**
+"+	Kx(k	.	1	",	~52~4~1~3~2	.e
+",	Kx(k	.	1	"*	~52~4~1~3~3	.g
+"-	Kx(k	.	1	"*	~52~4~1~3~4	.j
+".	IGdW	.	~52~4~2	*+
+"/	IVOQ	.	a	~53~1	$@
+"0	IGdW	.	~53~1~1~1	*(
+"1	IGdW	.	~53~1~1~2	*)
+"2	Ky'E	.	1	2	~53~1~1~3	*i
+"3	Kx(k	.	1	"4	~53~1~1~3~2	-X
+"4	Kx(k	.	1	"2	~53~1~1~3~3	-_
+"5	Kx(k	.	1	"2	~53~1~1~3~4	-i
+"6	IGdW	.	~53~1~2	*j
+"7	IVOQ	.	b	~53~2	$?
+"8	IGdW	.	~53~2~1~1	*&
+"9	IGdW	.	~53~2~1~2	*'
+":	Ky'E	.	1	3	~53~2~1~3	*`
+";	Kx(k	.	1	"<	~53~2~1~3~2	-r
+"<	Kx(k	.	1	":	~53~2~1~3~3	-v
+"=	Kx(k	.	1	":	~53~2~1~3~4	-|
+">	IGdW	.	~53~2~2	*a
+"?	IVOQ	.	c	~53~3	$>
+"@	IGdW	.	~53~3~1~1	*$
+"A	IGdW	.	~53~3~1~2	*%
+"B	Ky'E	.	1	4	~53~3~1~3	*W
+"C	Kx(k	.	1	"D	~53~3~1~3~2	.%
+"D	Kx(k	.	1	"B	~53~3~1~3~3	.)
+"E	Kx(k	.	1	"B	~53~3~1~3~4	./
+"F	IGdW	.	~53~3~2	*X
+"G	IVOQ	.	d	~53~4	$=
+"H	IGdW	.	~53~4~1~1	*"
+"I	Ky'E	.	4	2	3	4	5	~53~4~1~2	*#
+"J	Ky'E	.	1	5	~53~4~1~3	*N
+"K	Kx(k	.	1	"L	~53~4~1~3~2	.6
+"L	Kx(k	.	1	"J	~53~4~1~3~3	.:
+"M	Kx(k	.	1	"J	~53~4~1~3~4	.@
+"N	IGdW	.	~53~4~2	*O
+"O	Ky'E	$5	4	"\	"]	"^	"_	:32	)!
+"P	INu}	$5	"a	RGA0	))
+"Q	INu}	$5	"c	RGA1	)(
+"R	INu}	$5	"e	RGA2	)'
+"S	INu}	$5	"g	RGA3	)&
+"T	INu}	$5	"i	RGB0	)%
+"U	INu}	$5	"k	RGB1	)$
+"V	INu}	$5	"m	RGB2	)#
+"W	INu}	$5	"o	RGB3	)"
+"X	INvO	$E	"\	Q0	)>
+"Y	INvO	$E	"]	Q1	)=
+"Z	INvO	$E	"^	Q2	)<
+"[	INvO	$E	"_	Q3	);
+"\	L)p/	$E	"X	2	p	"2	~14~1	)>
+"]	L)p/	$E	"Y	2	x	":	~14~2	)=
+"^	L)p/	$E	"Z	2	""	"B	~14~3	)<
+"_	L)p/	$E	"[	2	"*	"J	~14~4	);
+"`	Kx(k	$5	6	#4	#U	#v	$9	$Z	\	~32~1	-Q
+"a	IVOQ	$5	"P	~52~1	))
+"b	IGdW	$5	~52~1~1	*M
+"c	IVOQ	$5	"Q	~52~2	)(
+"d	IGdW	$5	~52~2~1	*D
+"e	IVOQ	$5	"R	~52~3	)'
+"f	IGdW	$5	~52~3~1	*;
+"g	IVOQ	$5	"S	~52~4	)&
+"h	IGdW	$5	~52~4~1	*2
+"i	IVOQ	$5	"T	~53~1	)%
+"j	IGdW	$5	~53~1~1	*q
+"k	IVOQ	$5	"U	~53~2	)$
+"l	IGdW	$5	~53~2~1	*h
+"m	IVOQ	$5	"V	~53~3	)#
+"n	IGdW	$5	~53~3~1	*_
+"o	IVOQ	$5	"W	~53~4	)"
+"p	IGdW	$5	~53~4~1	*V
+"q	Ky'E	#j	4	"~	#!	#"	##	:32	(@
+"r	INu}	#j	#$	RGA0	(H
+"s	INu}	#j	#&	RGA1	(G
+"t	INu}	#j	#(	RGA2	(F
+"u	INu}	#j	#*	RGA3	(E
+"v	INu}	#j	#,	RGB0	(D
+"w	INu}	#j	#.	RGB1	(C
+"x	INu}	#j	#0	RGB2	(B
+"y	INu}	#j	#2	RGB3	(A
+"z	INvO	#z	"~	Q0	(]
+"{	INvO	#z	#!	Q1	(\
+"|	INvO	#z	#"	Q2	([
+"}	INvO	#z	##	Q3	(Z
+"~	L)p/	#z	"z	2	s	"5	~14~1	(]
+#!	L)p/	#z	"{	2	{	"=	~14~2	(\
+#"	L)p/	#z	"|	2	"%	"E	~14~3	([
+##	L)p/	#z	"}	2	"-	"M	~14~4	(Z
+#$	IVOQ	#j	"r	~52~1	(H
+#%	IGdW	#j	~52~1~1	*L
+#&	IVOQ	#j	"s	~52~2	(G
+#'	IGdW	#j	~52~2~1	*C
+#(	IVOQ	#j	"t	~52~3	(F
+#)	IGdW	#j	~52~3~1	*:
+#*	IVOQ	#j	"u	~52~4	(E
+#+	IGdW	#j	~52~4~1	*1
+#,	IVOQ	#j	"v	~53~1	(D
+#-	IGdW	#j	~53~1~1	*p
+#.	IVOQ	#j	"w	~53~2	(C
+#/	IGdW	#j	~53~2~1	*g
+#0	IVOQ	#j	"x	~53~3	(B
+#1	IGdW	#j	~53~3~1	*^
+#2	IVOQ	#j	"y	~53~4	(A
+#3	IGdW	#j	~53~4~1	*U
+#4	Ky'E	#A	4	#A	#B	#C	#D	:32	'_
+#5	INu}	#A	#E	RGA0	'g
+#6	INu}	#A	#G	RGA1	'f
+#7	INu}	#A	#I	RGA2	'e
+#8	INu}	#A	#K	RGA3	'd
+#9	INu}	#A	#M	RGB0	'c
+#:	INu}	#A	#O	RGB1	'b
+#;	INu}	#A	#Q	RGB2	'a
+#<	INu}	#A	#S	RGB3	'`
+#=	INvO	#Q	#A	Q0	'|
+#>	INvO	#Q	#B	Q1	'{
+#?	INvO	#Q	#C	Q2	'z
+#@	INvO	#Q	#D	Q3	'y
+#A	L)p/	#Q	#=	2	#F	#N	~14~1	'|
+#B	L)p/	#Q	#>	2	#H	#P	~14~2	'{
+#C	L)p/	#Q	#?	2	#J	#R	~14~3	'z
+#D	L)p/	#Q	#@	2	#L	#T	~14~4	'y
+#E	IVOQ	#A	#5	~52~1	'g
+#F	Ky'E	#A	1	s	~52~1~1	*K
+#G	IVOQ	#A	#6	~52~2	'f
+#H	Ky'E	#A	1	{	~52~2~1	*B
+#I	IVOQ	#A	#7	~52~3	'e
+#J	Ky'E	#A	1	"%	~52~3~1	*9
+#K	IVOQ	#A	#8	~52~4	'd
+#L	Ky'E	#A	1	"-	~52~4~1	*0
+#M	IVOQ	#A	#9	~53~1	'c
+#N	Ky'E	#A	1	"5	~53~1~1	*o
+#O	IVOQ	#A	#:	~53~2	'b
+#P	Ky'E	#A	1	"=	~53~2~1	*f
+#Q	IVOQ	#A	#;	~53~3	'a
+#R	Ky'E	#A	1	"E	~53~3~1	*]
+#S	IVOQ	#A	#<	~53~4	'`
+#T	Ky'E	#A	1	"M	~53~4~1	*T
+#U	Ky'E	"v	4	#b	#c	#d	#e	:32	&~
+#V	INu}	"v	#f	RGA0	'(
+#W	INu}	"v	#h	RGA1	''
+#X	INu}	"v	#j	RGA2	'&
+#Y	INu}	"v	#l	RGA3	'%
+#Z	INu}	"v	#n	RGB0	'$
+#[	INu}	"v	#p	RGB1	'#
+#\	INu}	"v	#r	RGB2	'"
+#]	INu}	"v	#t	RGB3	'!
+#^	INvO	#(	#b	Q0	'=
+#_	INvO	#(	#c	Q1	'<
+#`	INvO	#(	#d	Q2	';
+#a	INvO	#(	#e	Q3	':
+#b	L)p/	#(	#^	2	#g	#o	~14~1	'=
+#c	L)p/	#(	#_	2	#i	#q	~14~2	'<
+#d	L)p/	#(	#`	2	#k	#s	~14~3	';
+#e	L)p/	#(	#a	2	#m	#u	~14~4	':
+#f	IVOQ	"v	#V	~52~1	'(
+#g	Ky'E	"v	1	s	~52~1~1	*J
+#h	IVOQ	"v	#W	~52~2	''
+#i	Ky'E	"v	1	{	~52~2~1	*A
+#j	IVOQ	"v	#X	~52~3	'&
+#k	Ky'E	"v	1	"%	~52~3~1	*8
+#l	IVOQ	"v	#Y	~52~4	'%
+#m	Ky'E	"v	1	"-	~52~4~1	*/
+#n	IVOQ	"v	#Z	~53~1	'$
+#o	Ky'E	"v	1	"5	~53~1~1	*n
+#p	IVOQ	"v	#[	~53~2	'#
+#q	Ky'E	"v	1	"=	~53~2~1	*e
+#r	IVOQ	"v	#\	~53~3	'"
+#s	Ky'E	"v	1	"E	~53~3~1	*\
+#t	IVOQ	"v	#]	~53~4	'!
+#u	Ky'E	"v	1	"M	~53~4~1	*S
+#v	Ky'E	"M	4	$%	$&	$'	$(	:32	&?
+#w	INu}	"M	$)	RGA0	&G
+#x	INu}	"M	$+	RGA1	&F
+#y	INu}	"M	$-	RGA2	&E
+#z	INu}	"M	$/	RGA3	&D
+#{	INu}	"M	$1	RGB0	&C
+#|	INu}	"M	$3	RGB1	&B
+#}	INu}	"M	$5	RGB2	&A
+#~	INu}	"M	$7	RGB3	&@
+$!	INvO	"]	$%	Q0	&\
+$"	INvO	"]	$&	Q1	&[
+$#	INvO	"]	$'	Q2	&Z
+$$	INvO	"]	$(	Q3	&Y
+$%	L)p/	"]	$!	2	r	"4	~14~1	&\
+$&	L)p/	"]	$"	2	z	"<	~14~2	&[
+$'	L)p/	"]	$#	2	"$	"D	~14~3	&Z
+$(	L)p/	"]	$$	2	",	"L	~14~4	&Y
+$)	IVOQ	"M	#w	~52~1	&G
+$*	IGdW	"M	~52~1~1	*I
+$+	IVOQ	"M	#x	~52~2	&F
+$,	IGdW	"M	~52~2~1	*@
+$-	IVOQ	"M	#y	~52~3	&E
+$.	IGdW	"M	~52~3~1	*7
+$/	IVOQ	"M	#z	~52~4	&D
+$0	IGdW	"M	~52~4~1	*.
+$1	IVOQ	"M	#{	~53~1	&C
+$2	IGdW	"M	~53~1~1	*m
+$3	IVOQ	"M	#|	~53~2	&B
+$4	IGdW	"M	~53~2~1	*d
+$5	IVOQ	"M	#}	~53~3	&A
+$6	IGdW	"M	~53~3~1	*[
+$7	IVOQ	"M	#~	~53~4	&@
+$8	IGdW	"M	~53~4~1	*R
+$9	Ky'E	"$	4	$F	$G	$H	$I	:32	%^
+$:	INu}	"$	$J	RGA0	%f
+$;	INu}	"$	$L	RGA1	%e
+$<	INu}	"$	$N	RGA2	%d
+$=	INu}	"$	$P	RGA3	%c
+$>	INu}	"$	$R	RGB0	%b
+$?	INu}	"$	$T	RGB1	%a
+$@	INu}	"$	$V	RGB2	%`
+$A	INu}	"$	$X	RGB3	%_
+$B	INvO	"4	$F	Q0	%{
+$C	INvO	"4	$G	Q1	%z
+$D	INvO	"4	$H	Q2	%y
+$E	INvO	"4	$I	Q3	%x
+$F	L)p/	"4	$B	2	$K	$S	~14~1	%{
+$G	L)p/	"4	$C	2	$M	$U	~14~2	%z
+$H	L)p/	"4	$D	2	$O	$W	~14~3	%y
+$I	L)p/	"4	$E	2	$Q	$Y	~14~4	%x
+$J	IVOQ	"$	$:	~52~1	%f
+$K	Ky'E	"$	1	r	~52~1~1	*H
+$L	IVOQ	"$	$;	~52~2	%e
+$M	Ky'E	"$	1	z	~52~2~1	*?
+$N	IVOQ	"$	$<	~52~3	%d
+$O	Ky'E	"$	1	"$	~52~3~1	*6
+$P	IVOQ	"$	$=	~52~4	%c
+$Q	Ky'E	"$	1	",	~52~4~1	*-
+$R	IVOQ	"$	$>	~53~1	%b
+$S	Ky'E	"$	1	"4	~53~1~1	*l
+$T	IVOQ	"$	$?	~53~2	%a
+$U	Ky'E	"$	1	"<	~53~2~1	*c
+$V	IVOQ	"$	$@	~53~3	%`
+$W	Ky'E	"$	1	"D	~53~3~1	*Z
+$X	IVOQ	"$	$A	~53~4	%_
+$Y	Ky'E	"$	1	"L	~53~4~1	*Q
+$Z	Ky'E	Y	4	$g	$h	$i	$j	:32	$}
+$[	INu}	Y	$k	RGA0	%'
+$\	INu}	Y	$m	RGA1	%&
+$]	INu}	Y	$o	RGA2	%%
+$^	INu}	Y	$q	RGA3	%$
+$_	INu}	Y	$s	RGB0	%#
+$`	INu}	Y	$u	RGB1	%"
+$a	INu}	Y	$w	RGB2	%!
+$b	INu}	Y	$y	RGB3	$~
+$c	INvO	i	$g	Q0	%<
+$d	INvO	i	$h	Q1	%;
+$e	INvO	i	$i	Q2	%:
+$f	INvO	i	$j	Q3	%9
+$g	L)p/	i	$c	2	q	"3	~14~1	%<
+$h	L)p/	i	$d	2	y	";	~14~2	%;
+$i	L)p/	i	$e	2	"#	"C	~14~3	%:
+$j	L)p/	i	$f	2	"+	"K	~14~4	%9
+$k	IVOQ	Y	$[	~52~1	%'
+$l	IGdW	Y	~52~1~1	*G
+$m	IVOQ	Y	$\	~52~2	%&
+$n	IGdW	Y	~52~2~1	*>
+$o	IVOQ	Y	$]	~52~3	%%
+$p	IGdW	Y	~52~3~1	*5
+$q	IVOQ	Y	$^	~52~4	%$
+$r	IGdW	Y	~52~4~1	*,
+$s	IVOQ	Y	$_	~53~1	%#
+$t	IGdW	Y	~53~1~1	*k
+$u	IVOQ	Y	$`	~53~2	%"
+$v	IGdW	Y	~53~2~1	*b
+$w	IVOQ	Y	$a	~53~3	%!
+$x	IGdW	Y	~53~3~1	*Y
+$y	IVOQ	Y	$b	~53~4	$~
+$z	IGdW	Y	~53~4~1	*P

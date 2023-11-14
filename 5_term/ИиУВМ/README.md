@@ -1,0 +1,4 @@
+# ИиУВМ 
+
+Все лабораторные запускались на Windows 10 64bit в Visual Studio 2022
+Лабораторные 2 и 3 работают ТОЛЬКО ПОД WINDOWS XP (Visual Studio 2008)

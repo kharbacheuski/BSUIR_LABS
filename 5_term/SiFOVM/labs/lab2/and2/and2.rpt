@@ -1,8 +1,8 @@
-Project Information                    d:\unik\sem5\sifo\two\mult_2\mult_2.rpt
+Project Informationd:\education\bguir__labs_latest\bguir__labs\5_term\sifovm\labs\lab2\and2\and2.rpt
 
 MAX+plus II Compiler Report File
 Version 10.0 9/14/2000
-Compiled: 11/14/2023 10:31:02
+Compiled: 11/14/2023 18:20:12
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -29,7 +29,7 @@ needed under any third party's intellectual property, are provided herein.
 ***** Project compilation was successful
 
 
-MULT_2
+AND2
 
 
 ** DEVICE SUMMARY **
@@ -37,26 +37,16 @@ MULT_2
 Chip/                     Input   Output   Bidir         Shareable
 POF       Device          Pins    Pins     Pins     LCs  Expanders  % Utilized
 
-mult_2    EPM7032LC44-6    4        4        0      4       0           12 %
+and2      EPM7032LC44-6    2        1        0      1       0           3  %
 
-User Pins:                 4        4        0  
+User Pins:                 2        1        0  
 
 
 
-Project Information                    d:\unik\sem5\sifo\two\mult_2\mult_2.rpt
+Device-Specific Information:d:\education\bguir__labs_latest\bguir__labs\5_term\sifovm\labs\lab2\and2\and2.rpt
+and2
 
-** FILE HIERARCHY **
-
-
-
-|add1:circ1|
-|add1:circ2|
-
-
-Device-Specific Information:           d:\unik\sem5\sifo\two\mult_2\mult_2.rpt
-mult_2
-
-***** Logic for device 'mult_2' compiled without errors.
+***** Logic for device 'and2' compiled without errors.
 
 
 
@@ -67,18 +57,18 @@ Device Options:
     Turbo Bit                                    = ON
     Security Bit                                 = OFF
 
-                                               
-                                               
-                                               
-                                               
-                                               
-                       V  G  G  G  G  G        
-              s  r  r  C  N  N  N  N  N  t  t  
-              0  1  0  C  D  D  D  D  D  0  3  
+              R                             R  
+              E                             E  
+              S                             S  
+              E                             E  
+              R                             R  
+              V        V  G  G  G  G  G     V  
+              E  x  x  C  N  N  N  N  N     E  
+              D  2  1  C  D  D  D  D  D  y  D  
             -----------------------------------_ 
           /   6  5  4  3  2  1 44 43 42 41 40   | 
-      s1 |  7                                39 | t2 
-RESERVED |  8                                38 | t1 
+RESERVED |  7                                39 | RESERVED 
+RESERVED |  8                                38 | RESERVED 
 RESERVED |  9                                37 | RESERVED 
      GND | 10                                36 | RESERVED 
 RESERVED | 11                                35 | VCC 
@@ -107,33 +97,33 @@ RESERVED = Unused I/O pin, which MUST be left unconnected.
 
 
 
-Device-Specific Information:           d:\unik\sem5\sifo\two\mult_2\mult_2.rpt
-mult_2
+Device-Specific Information:d:\education\bguir__labs_latest\bguir__labs\5_term\sifovm\labs\lab2\and2\and2.rpt
+and2
 
 ** RESOURCE USAGE **
 
                                                 Shareable     External
 Logic Array Block     Logic Cells   I/O Pins    Expanders   Interconnect
 
-A:     LC1 - LC16     0/16(  0%)   4/16( 25%)   0/16(  0%)   0/36(  0%) 
-B:    LC17 - LC32     4/16( 25%)   4/16( 25%)   0/16(  0%)   4/36( 11%) 
+A:     LC1 - LC16     0/16(  0%)   2/16( 12%)   0/16(  0%)   0/36(  0%) 
+B:    LC17 - LC32     1/16(  6%)   1/16(  6%)   0/16(  0%)   2/36(  5%) 
 
 
 Total dedicated input pins used:                 0/4      (  0%)
-Total I/O pins used:                             8/32     ( 25%)
-Total logic cells used:                          4/32     ( 12%)
+Total I/O pins used:                             3/32     (  9%)
+Total logic cells used:                          1/32     (  3%)
 Total shareable expanders used:                  0/32     (  0%)
-Total Turbo logic cells used:                    4/32     ( 12%)
+Total Turbo logic cells used:                    1/32     (  3%)
 Total shareable expanders not available (n/a):   0/32     (  0%)
-Average fan-in:                                  3.50
-Total fan-in:                                    14
+Average fan-in:                                  2.00
+Total fan-in:                                     2
 
-Total input pins required:                       4
-Total output pins required:                      4
+Total input pins required:                       2
+Total output pins required:                      1
 Total bidirectional pins required:               0
-Total logic cells required:                      4
+Total logic cells required:                      1
 Total flipflops required:                        0
-Total product terms required:                    8
+Total product terms required:                    1
 Total logic cells lending parallel expanders:    0
 Total shareable expanders in database:           0
 
@@ -141,18 +131,16 @@ Synthesized logic cells:                         0/  32   (  0%)
 
 
 
-Device-Specific Information:           d:\unik\sem5\sifo\two\mult_2\mult_2.rpt
-mult_2
+Device-Specific Information:d:\education\bguir__labs_latest\bguir__labs\5_term\sifovm\labs\lab2\and2\and2.rpt
+and2
 
 ** INPUTS **
 
                                          Shareable
                                          Expanders     Fan-In    Fan-Out
  Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
-   4    (1)  (A)      INPUT               0      0   0    0    0    4    0  r0
-   5    (2)  (A)      INPUT               0      0   0    0    0    3    0  r1
-   6    (3)  (A)      INPUT               0      0   0    0    0    4    0  s0
-   7    (4)  (A)      INPUT               0      0   0    0    0    3    0  s1
+   4    (1)  (A)      INPUT               0      0   0    0    0    1    0  x1
+   5    (2)  (A)      INPUT               0      0   0    0    0    1    0  x2
 
 
 Code:
@@ -164,18 +152,15 @@ t = Turbo logic cell
 r = Fitter-inserted logic cell
 
 
-Device-Specific Information:           d:\unik\sem5\sifo\two\mult_2\mult_2.rpt
-mult_2
+Device-Specific Information:d:\education\bguir__labs_latest\bguir__labs\5_term\sifovm\labs\lab2\and2\and2.rpt
+and2
 
 ** OUTPUTS **
 
                                          Shareable
                                          Expanders     Fan-In    Fan-Out
  Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
-  41     17    B     OUTPUT      t        0      0   0    2    0    0    0  t0
-  38     20    B     OUTPUT      t        0      0   0    4    0    0    0  t1
-  39     19    B     OUTPUT      t        0      0   0    4    0    0    0  t2
-  40     18    B     OUTPUT      t        0      0   0    4    0    0    0  t3
+  41     17    B     OUTPUT      t        0      0   0    2    0    0    0  y
 
 
 Code:
@@ -187,67 +172,41 @@ t = Turbo logic cell
 r = Fitter-inserted logic cell
 
 
-Device-Specific Information:           d:\unik\sem5\sifo\two\mult_2\mult_2.rpt
-mult_2
+Device-Specific Information:d:\education\bguir__labs_latest\bguir__labs\5_term\sifovm\labs\lab2\and2\and2.rpt
+and2
 
 ** LOGIC CELL INTERCONNECTIONS **
 
 Logic Array Block 'B':
 
-                 Logic cells placed in LAB 'B'
-        +------- LC17 t0
-        | +----- LC20 t1
-        | | +--- LC19 t2
-        | | | +- LC18 t3
-        | | | | 
-        | | | |   Other LABs fed by signals
-        | | | |   that feed LAB 'B'
-LC      | | | | | A B |     Logic cells that feed LAB 'B':
+           Logic cells placed in LAB 'B'
+        +- LC17 y
+        | 
+        |   Other LABs fed by signals
+        |   that feed LAB 'B'
+LC      | | A B |     Logic cells that feed LAB 'B':
 
 Pin
-4    -> * * * * | - * | <-- r0
-5    -> - * * * | - * | <-- r1
-6    -> * * * * | - * | <-- s0
-7    -> - * * * | - * | <-- s1
+4    -> * | - * | <-- x1
+5    -> * | - * | <-- x2
 
 
 * = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:           d:\unik\sem5\sifo\two\mult_2\mult_2.rpt
-mult_2
+Device-Specific Information:d:\education\bguir__labs_latest\bguir__labs\5_term\sifovm\labs\lab2\and2\and2.rpt
+and2
 
 ** EQUATIONS **
 
-r0       : INPUT;
-r1       : INPUT;
-s0       : INPUT;
-s1       : INPUT;
+x1       : INPUT;
+x2       : INPUT;
 
--- Node name is 't0' 
--- Equation name is 't0', location is LC017, type is output.
- t0      = LCELL( _EQ001 $  GND);
-  _EQ001 =  r0 &  s0;
-
--- Node name is 't1' 
--- Equation name is 't1', location is LC020, type is output.
- t1      = LCELL( _EQ002 $  GND);
-  _EQ002 =  r0 & !s0 &  s1
-         #  r0 & !r1 &  s1
-         #  r1 &  s0 & !s1
-         # !r0 &  r1 &  s0;
-
--- Node name is 't2' 
--- Equation name is 't2', location is LC019, type is output.
- t2      = LCELL( _EQ003 $  GND);
-  _EQ003 = !r0 &  r1 &  s1
-         #  r1 & !s0 &  s1;
-
--- Node name is 't3' 
--- Equation name is 't3', location is LC018, type is output.
- t3      = LCELL( _EQ004 $  GND);
-  _EQ004 =  r0 &  r1 &  s0 &  s1;
+-- Node name is 'y' 
+-- Equation name is 'y', location is LC017, type is output.
+ y       = LCELL( _EQ001 $  GND);
+  _EQ001 =  x1 &  x2;
 
 
 
@@ -257,7 +216,7 @@ s1       : INPUT;
 
 
 
-Project Information                    d:\unik\sem5\sifo\two\mult_2\mult_2.rpt
+Project Informationd:\education\bguir__labs_latest\bguir__labs\5_term\sifovm\labs\lab2\and2\and2.rpt
 
 ** COMPILATION SETTINGS & TIMES **
 
@@ -346,4 +305,4 @@ Compilation Times
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 3,608K
+Peak memory allocated during compilation  = 2,683K

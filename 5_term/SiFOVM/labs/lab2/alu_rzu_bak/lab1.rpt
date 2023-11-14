@@ -1,0 +1,1286 @@
+Project Information                     d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+
+MAX+plus II Compiler Report File
+Version 10.0 9/14/2000
+Compiled: 11/08/2023 16:21:01
+
+Copyright (C) 1988-2000 Altera Corporation
+Any megafunction design, and related net list (encrypted or decrypted),
+support information, device programming or simulation file, and any other
+associated documentation or information provided by Altera or a partner
+under Altera's Megafunction Partnership Program may be used only to
+program PLD devices (but not masked PLD devices) from Altera.  Any other
+use of such megafunction design, net list, support information, device
+programming or simulation file, or any other related documentation or
+information is prohibited for any other purpose, including, but not
+limited to modification, reverse engineering, de-compiling, or use with
+any other silicon devices, unless such use is explicitly licensed under
+a separate agreement with Altera or a megafunction partner.  Title to
+the intellectual property, including patents, copyrights, trademarks,
+trade secrets, or maskworks, embodied in any such megafunction design,
+net list, support information, device programming or simulation file, or
+any other related documentation or information provided by Altera or a
+megafunction partner, remains with Altera, the megafunction partner, or
+their respective licensors.  No other licenses, including any licenses
+needed under any third party's intellectual property, are provided herein.
+
+
+
+***** Project compilation was successful
+
+
+
+
+** DEVICE SUMMARY **
+
+Chip/                     Input Output Bidir  Memory  Memory  			 LCs
+POF       Device          Pins  Pins   Pins   Bits % Utilized  LCs  % Utilized
+
+lab1      EPF10K10LC84-3   12     8      0    0         0  %    109      18 %
+
+User Pins:                 12     8      0  
+
+
+
+Project Information                     d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+
+** FILE HIERARCHY **
+
+
+
+|regandtries:10|
+|regandtries:10|rwreg:64|
+|regandtries:9|
+|regandtries:9|rwreg:64|
+|regandtries:8|
+|regandtries:8|rwreg:64|
+|regandtries:7|
+|regandtries:7|rwreg:64|
+|regandtries:6|
+|regandtries:6|rwreg:64|
+|regandtries:5|
+|regandtries:5|rwreg:64|
+|regandtries:2|
+|regandtries:2|rwreg:64|
+|regandtries:1|
+|regandtries:1|rwreg:64|
+|dec:39|
+|dec:40|
+
+
+Device-Specific Information:            d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+lab1
+
+***** Logic for device 'lab1' compiled without errors.
+
+
+
+
+Device: EPF10K10LC84-3
+
+FLEX 10K Configuration Scheme: Passive Serial
+
+Device Options:
+    User-Supplied Start-Up Clock               = OFF
+    Auto-Restart Configuration on Frame Error  = OFF
+    Release Clears Before Tri-States           = OFF
+    Enable Chip_Wide Reset                     = OFF
+    Enable Chip-Wide Output Enable             = OFF
+    Enable INIT_DONE Output                    = OFF
+    JTAG User Code                             = 7f
+
+                                                                         ^     
+                                                                         C     
+                R  R  R  R     R                    R     R  R  R  R     O     
+                E  E  E  E     E                    E     E  E  E  E     N     
+                S  S  S  S     S     V              S  G  S  S  S  S     F     
+                E  E  E  E     E     C              E  N  E  E  E  E     _  ^  
+                R  R  R  R  R  R     C  R           R  D  R  R  R  R  #  D  n  
+                V  V  V  V  G  V     I  G  D        V  I  V  V  V  V  T  O  C  
+                E  E  E  E  A  E     N  B  B  D  D  E  N  E  E  E  E  C  N  E  
+                D  D  D  D  2  D  C  T  1  0  1  0  D  T  D  D  D  D  K  E  O  
+              -----------------------------------------------------------------_ 
+            /  11 10  9  8  7  6  5  4  3  2  1 84 83 82 81 80 79 78 77 76 75   | 
+    ^DATA0 | 12                                                              74 | #TDO 
+     ^DCLK | 13                                                              73 | RESERVED 
+      ^nCE | 14                                                              72 | RESERVED 
+      #TDI | 15                                                              71 | RESERVED 
+  RESERVED | 16                                                              70 | RESERVED 
+  RESERVED | 17                                                              69 | RESERVED 
+  RESERVED | 18                                                              68 | GNDINT 
+  RESERVED | 19                                                              67 | RESERVED 
+    VCCINT | 20                                                              66 | RESERVED 
+  RESERVED | 21                                                              65 | RESERVED 
+  RESERVED | 22                        EPF10K10LC84-3                        64 | RESERVED 
+  RESERVED | 23                                                              63 | VCCINT 
+  RESERVED | 24                                                              62 | D3 
+  RESERVED | 25                                                              61 | DA1 
+    GNDINT | 26                                                              60 | DA2 
+      RGB3 | 27                                                              59 | R 
+      RGB2 | 28                                                              58 | DA0 
+      RGA3 | 29                                                              57 | #TMS 
+      RGA0 | 30                                                              56 | #TRST 
+    ^MSEL0 | 31                                                              55 | ^nSTATUS 
+    ^MSEL1 | 32                                                              54 | RESERVED 
+           |_  33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53  _| 
+             ------------------------------------------------------------------ 
+                V  ^  R  R  R  R  R  V  G  D  D  D  V  G  R  R  R  R  R  R  R  
+                C  n  E  E  G  E  E  C  N  B  2  B  C  N  E  G  E  E  E  E  E  
+                C  C  S  S  B  S  S  C  D  1     2  C  D  S  A  S  S  S  S  S  
+                I  O  E  E  0  E  E  I  I           I  I  E  1  E  E  E  E  E  
+                N  N  R  R     R  R  N  N           N  N  R     R  R  R  R  R  
+                T  F  V  V     V  V  T  T           T  T  V     V  V  V  V  V  
+                   I  E  E     E  E                       E     E  E  E  E  E  
+                   G  D  D     D  D                       D     D  D  D  D  D  
+                                                                               
+                                                                               
+
+
+N.C. = No Connect. This pin has no internal connection to the device.
+VCCINT = Dedicated power pin, which MUST be connected to VCC (5.0 volts).
+VCCIO = Dedicated power pin, which MUST be connected to VCC (5.0 volts).
+GNDINT = Dedicated ground pin or unused dedicated input, which MUST be connected to GND.
+GNDIO = Dedicated ground pin, which MUST be connected to GND.
+RESERVED = Unused I/O pin, which MUST be left unconnected.
+
+^ = Dedicated configuration pin.
++ = Reserved configuration pin, which is tri-stated during user mode.
+* = Reserved configuration pin, which drives out in user mode.
+PDn = Power Down pin. 
+@ = Special-purpose pin. 
+# = JTAG Boundary-Scan Testing/In-System Programming or Configuration Pin. The JTAG inputs TMS and TDI should be tied to VCC and TCK should be tied to GND when not in use.
+& = JTAG pin used for I/O. When used as user I/O, JTAG pins must be kept stable before and during configuration.  JTAG pin stability prevents accidental loading of JTAG instructions.
+
+
+Device-Specific Information:            d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+lab1
+
+** RESOURCE USAGE **
+
+Logic                Column       Row                                   
+Array                Interconnect Interconnect         Clears/     External  
+Block   Logic Cells  Driven       Driven       Clocks  Presets   Interconnect
+B10      1/ 8( 12%)   0/ 8(  0%)   1/ 8( 12%)    0/2    0/2       0/22(  0%)   
+B21      1/ 8( 12%)   0/ 8(  0%)   1/ 8( 12%)    0/2    0/2       0/22(  0%)   
+C1       8/ 8(100%)   0/ 8(  0%)   3/ 8( 37%)    0/2    0/2      11/22( 50%)   
+C2       7/ 8( 87%)   0/ 8(  0%)   6/ 8( 75%)    2/2    0/2       9/22( 40%)   
+C3       8/ 8(100%)   0/ 8(  0%)   7/ 8( 87%)    2/2    0/2       7/22( 31%)   
+C4       8/ 8(100%)   1/ 8( 12%)   2/ 8( 25%)    2/2    0/2      14/22( 63%)   
+C5       8/ 8(100%)   0/ 8(  0%)   6/ 8( 75%)    1/2    0/2      11/22( 50%)   
+C6       8/ 8(100%)   0/ 8(  0%)   2/ 8( 25%)    1/2    0/2      17/22( 77%)   
+C7       8/ 8(100%)   0/ 8(  0%)   2/ 8( 25%)    0/2    0/2      18/22( 81%)   
+C8       8/ 8(100%)   0/ 8(  0%)   3/ 8( 37%)    2/2    0/2      14/22( 63%)   
+C9       8/ 8(100%)   0/ 8(  0%)   7/ 8( 87%)    2/2    0/2       8/22( 36%)   
+C10      8/ 8(100%)   1/ 8( 12%)   1/ 8( 12%)    0/2    0/2      18/22( 81%)   
+C11      8/ 8(100%)   0/ 8(  0%)   7/ 8( 87%)    1/2    0/2      11/22( 50%)   
+C12      7/ 8( 87%)   1/ 8( 12%)   1/ 8( 12%)    0/2    0/2      13/22( 59%)   
+C16      8/ 8(100%)   1/ 8( 12%)   2/ 8( 25%)    2/2    0/2      14/22( 63%)   
+C22      5/ 8( 62%)   0/ 8(  0%)   5/ 8( 62%)    0/2    0/2       3/22( 13%)   
+
+
+Embedded             Column       Row                                   
+Array     Embedded   Interconnect Interconnect         Read/      External  
+Block     Cells      Driven       Driven       Clocks  Write    Interconnect
+
+
+Total dedicated input pins used:                 6/6      (100%)
+Total I/O pins used:                            14/53     ( 26%)
+Total logic cells used:                        109/576    ( 18%)
+Total embedded cells used:                       0/24     (  0%)
+Total EABs used:                                 0/3      (  0%)
+Average fan-in:                                 2.86/4    ( 71%)
+Total fan-in:                                 312/2304    ( 13%)
+
+Total input pins required:                      12
+Total input I/O cell registers required:         0
+Total output pins required:                      8
+Total output I/O cell registers required:        0
+Total buried I/O cell registers required:        0
+Total bidirectional pins required:               0
+Total reserved pins required                     0
+Total logic cells required:                    109
+Total flipflops required:                       32
+Total packed registers required:                 0
+Total logic cells in carry chains:               0
+Total number of carry chains:                    0
+Total logic cells in cascade chains:             0
+Total number of cascade chains:                  0
+Total single-pin Clock Enables required:         0
+Total single-pin Output Enables required:        0
+
+Synthesized logic cells:                        25/ 576   (  4%)
+
+Logic Cell and Embedded Cell Counts
+
+Column:  01  02  03  04  05  06  07  08  09  10  11  12  EA  13  14  15  16  17  18  19  20  21  22  23  24  Total(LC/EC)
+ A:      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0      0/0  
+ B:      0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0      2/0  
+ C:      8   7   8   8   8   8   8   8   8   8   8   7   0   0   0   0   8   0   0   0   0   0   5   0   0    107/0  
+
+Total:   8   7   8   8   8   8   8   8   8   9   8   7   0   0   0   0   8   0   0   0   0   1   5   0   0    109/0  
+
+
+
+Device-Specific Information:            d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+lab1
+
+** INPUTS **
+
+                                                    Fan-In    Fan-Out
+ Pin     LC     EC   Row  Col  Primitive    Code      INP  FBK  OUT  FBK  Name
+   5      -     -    -    05      INPUT                0    0    0    3  C
+  58      -     -    C    --      INPUT                0    0    0   17  DA0
+  61      -     -    C    --      INPUT                0    0    0   17  DA1
+  60      -     -    C    --      INPUT                0    0    0   17  DA2
+   2      -     -    -    --      INPUT                0    0    0   20  DB0
+  42      -     -    -    --      INPUT                0    0    0   20  DB1
+  44      -     -    -    --      INPUT                0    0    0   20  DB2
+  84      -     -    -    --      INPUT                0    0    0    8  D0
+   1      -     -    -    --      INPUT                0    0    0    8  D1
+  43      -     -    -    --      INPUT                0    0    0    8  D2
+  62      -     -    C    --      INPUT                0    0    0    8  D3
+  59      -     -    C    --      INPUT                0    0    0    3  R
+
+
+Code:
+
+s = Synthesized pin or logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+@ = Uses single-pin Clock Enable
+& = Uses single-pin Output Enable
+
+
+Device-Specific Information:            d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+lab1
+
+** OUTPUTS **
+
+       Fed By Fed By                                Fan-In    Fan-Out
+ Pin     LC     EC   Row  Col  Primitive    Code      INP  FBK  OUT  FBK  Name
+  30      -     -    C    --        TRI                0    1    0    0  RGA0
+  48      -     -    -    15        TRI                0    1    0    0  RGA1
+   7      -     -    -    03        TRI                0    1    0    0  RGA2
+  29      -     -    C    --        TRI                0    1    0    0  RGA3
+  37      -     -    -    09        TRI                0    1    0    0  RGB0
+   3      -     -    -    12        TRI                0    1    0    0  RGB1
+  28      -     -    C    --        TRI                0    1    0    0  RGB2
+  27      -     -    C    --        TRI                0    1    0    0  RGB3
+
+
+Code:
+
+s = Synthesized pin or logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+@ = Uses single-pin Clock Enable
+& = Uses single-pin Output Enable
+
+
+Device-Specific Information:            d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+lab1
+
+** BURIED LOGIC **
+
+                                                    Fan-In    Fan-Out
+ IOC     LC     EC   Row  Col  Primitive    Code      INP  FBK  OUT  FBK  Name
+   -      2     -    C    01       AND2                3    0    0    5  |dec:39|Y0 (|dec:39|:7)
+   -      3     -    C    01       AND2                3    0    0    5  |dec:39|Y1 (|dec:39|:9)
+   -      1     -    C    02       AND2                3    0    0    5  |dec:39|Y4 (|dec:39|:12)
+   -      1     -    C    12       AND2                3    0    0    5  |dec:39|Y6 (|dec:39|:14)
+   -      2     -    C    09       AND2                3    0    0    5  |dec:39|Y7 (|dec:39|:15)
+   -      5     -    C    22        OR2        !       3    0    0    4  |dec:40|Y0 (|dec:40|:7)
+   -      6     -    C    22        OR2        !       3    0    0    4  |dec:40|Y1 (|dec:40|:9)
+   -      8     -    C    22        OR2        !       3    0    0    4  |dec:40|Y4 (|dec:40|:12)
+   -      2     -    C    22        OR2        !       3    0    0    4  |dec:40|Y6 (|dec:40|:14)
+   -      3     -    C    22        OR2        !       3    0    0    4  |dec:40|Y7 (|dec:40|:15)
+   -      1     -    C    08       DFFE                1    1    0    2  |regandtries:1|rwreg:64|Q0 (|regandtries:1|rwreg:64|~14~1)
+   -      1     -    C    16       DFFE                1    1    0    2  |regandtries:1|rwreg:64|Q1 (|regandtries:1|rwreg:64|~14~2)
+   -      2     -    C    04       DFFE                1    1    0    2  |regandtries:1|rwreg:64|Q2 (|regandtries:1|rwreg:64|~14~3)
+   -      1     -    C    06       DFFE                1    1    0    2  |regandtries:1|rwreg:64|Q3 (|regandtries:1|rwreg:64|~14~4)
+   -      3     -    C    11       AND2    s           2    0    0    6  |regandtries:1|~32~1
+   -      8     -    C    11       AND2                2    1    0    4  |regandtries:1|:32
+   -      2     -    C    08       DFFE                1    1    0    2  |regandtries:2|rwreg:64|Q0 (|regandtries:2|rwreg:64|~14~1)
+   -      6     -    C    16       DFFE                1    1    0    2  |regandtries:2|rwreg:64|Q1 (|regandtries:2|rwreg:64|~14~2)
+   -      1     -    C    04       DFFE                1    1    0    2  |regandtries:2|rwreg:64|Q2 (|regandtries:2|rwreg:64|~14~3)
+   -      3     -    C    02       DFFE                1    1    0    2  |regandtries:2|rwreg:64|Q3 (|regandtries:2|rwreg:64|~14~4)
+   -      7     -    C    11       AND2                2    1    0    4  |regandtries:2|:32
+   -      6     -    C    09       DFFE                1    1    0    2  |regandtries:5|rwreg:64|Q0 (|regandtries:5|rwreg:64|~14~1)
+   -      8     -    C    09       DFFE                1    1    0    2  |regandtries:5|rwreg:64|Q1 (|regandtries:5|rwreg:64|~14~2)
+   -      4     -    C    09       DFFE                1    1    0    2  |regandtries:5|rwreg:64|Q2 (|regandtries:5|rwreg:64|~14~3)
+   -      1     -    C    09       DFFE                1    1    0    2  |regandtries:5|rwreg:64|Q3 (|regandtries:5|rwreg:64|~14~4)
+   -      7     -    C    09       AND2                3    1    0    4  |regandtries:5|:32
+   -      6     -    C    08        OR2                3    1    0    1  |regandtries:5|~52~1~1
+   -      7     -    C    16        OR2                3    1    0    1  |regandtries:5|~52~2~1
+   -      7     -    C    04        OR2                3    1    0    1  |regandtries:5|~52~3~1
+   -      6     -    C    06        OR2                3    1    0    1  |regandtries:5|~52~4~1
+   -      7     -    C    10        OR2                3    1    0    1  |regandtries:5|~53~1~1
+   -      5     -    C    12        OR2                3    1    0    1  |regandtries:5|~53~2~1
+   -      7     -    C    07        OR2                3    1    0    1  |regandtries:5|~53~3~1
+   -      7     -    C    01        OR2                3    1    0    1  |regandtries:5|~53~4~1
+   -      2     -    C    11       DFFE                1    1    0    2  |regandtries:6|rwreg:64|Q0 (|regandtries:6|rwreg:64|~14~1)
+   -      6     -    C    11       DFFE                1    1    0    2  |regandtries:6|rwreg:64|Q1 (|regandtries:6|rwreg:64|~14~2)
+   -      4     -    C    11       DFFE                1    1    0    2  |regandtries:6|rwreg:64|Q2 (|regandtries:6|rwreg:64|~14~3)
+   -      5     -    C    11       DFFE                1    1    0    2  |regandtries:6|rwreg:64|Q3 (|regandtries:6|rwreg:64|~14~4)
+   -      1     -    C    11       AND2                3    1    0    4  |regandtries:6|:32
+   -      5     -    C    08        OR2                3    1    0    1  |regandtries:6|~52~1~1
+   -      5     -    C    16        OR2                3    1    0    1  |regandtries:6|~52~2~1
+   -      5     -    C    04        OR2                3    1    0    1  |regandtries:6|~52~3~1
+   -      5     -    C    06        OR2                3    1    0    1  |regandtries:6|~52~4~1
+   -      6     -    C    10        OR2                3    1    0    1  |regandtries:6|~53~1~1
+   -      4     -    C    12        OR2                3    1    0    1  |regandtries:6|~53~2~1
+   -      6     -    C    07        OR2                3    1    0    1  |regandtries:6|~53~3~1
+   -      6     -    C    01        OR2                3    1    0    1  |regandtries:6|~53~4~1
+   -      2     -    C    02       DFFE                1    1    0    2  |regandtries:7|rwreg:64|Q0 (|regandtries:7|rwreg:64|~14~1)
+   -      5     -    C    02       DFFE                1    1    0    2  |regandtries:7|rwreg:64|Q1 (|regandtries:7|rwreg:64|~14~2)
+   -      4     -    C    02       DFFE                1    1    0    2  |regandtries:7|rwreg:64|Q2 (|regandtries:7|rwreg:64|~14~3)
+   -      7     -    C    02       DFFE                1    1    0    2  |regandtries:7|rwreg:64|Q3 (|regandtries:7|rwreg:64|~14~4)
+   -      6     -    C    02       AND2                0    2    0    4  |regandtries:7|:32
+   -      1     -    C    03       DFFE                1    1    0    2  |regandtries:8|rwreg:64|Q0 (|regandtries:8|rwreg:64|~14~1)
+   -      7     -    C    03       DFFE                1    1    0    2  |regandtries:8|rwreg:64|Q1 (|regandtries:8|rwreg:64|~14~2)
+   -      3     -    C    09       DFFE                1    1    0    2  |regandtries:8|rwreg:64|Q2 (|regandtries:8|rwreg:64|~14~3)
+   -      2     -    C    03       DFFE                1    1    0    2  |regandtries:8|rwreg:64|Q3 (|regandtries:8|rwreg:64|~14~4)
+   -      5     -    C    09       AND2                3    1    0    4  |regandtries:8|:32
+   -      3     -    C    08        OR2                3    1    0    1  |regandtries:8|~52~1~1
+   -      2     -    C    16        OR2                3    1    0    1  |regandtries:8|~52~2~1
+   -      3     -    C    04        OR2                3    1    0    1  |regandtries:8|~52~3~1
+   -      3     -    C    06        OR2                3    1    0    1  |regandtries:8|~52~4~1
+   -      3     -    C    10        OR2                3    1    0    1  |regandtries:8|~53~1~1
+   -      2     -    C    12        OR2                3    1    0    1  |regandtries:8|~53~2~1
+   -      2     -    C    07        OR2                3    1    0    1  |regandtries:8|~53~3~1
+   -      4     -    C    01        OR2                3    1    0    1  |regandtries:8|~53~4~1
+   -      2     -    C    05       DFFE                1    1    0    2  |regandtries:9|rwreg:64|Q0 (|regandtries:9|rwreg:64|~14~1)
+   -      7     -    C    05       DFFE                1    1    0    2  |regandtries:9|rwreg:64|Q1 (|regandtries:9|rwreg:64|~14~2)
+   -      3     -    C    05       DFFE                1    1    0    2  |regandtries:9|rwreg:64|Q2 (|regandtries:9|rwreg:64|~14~3)
+   -      4     -    C    05       DFFE                1    1    0    2  |regandtries:9|rwreg:64|Q3 (|regandtries:9|rwreg:64|~14~4)
+   -      5     -    C    05       AND2                0    2    0    4  |regandtries:9|:32
+   -      4     -    C    03       DFFE                1    1    0    2  |regandtries:10|rwreg:64|Q0 (|regandtries:10|rwreg:64|~14~1)
+   -      6     -    C    03       DFFE                1    1    0    2  |regandtries:10|rwreg:64|Q1 (|regandtries:10|rwreg:64|~14~2)
+   -      5     -    C    03       DFFE                1    1    0    2  |regandtries:10|rwreg:64|Q2 (|regandtries:10|rwreg:64|~14~3)
+   -      3     -    C    03       DFFE                1    1    0    2  |regandtries:10|rwreg:64|Q3 (|regandtries:10|rwreg:64|~14~4)
+   -      8     -    C    03       AND2                0    2    0    4  |regandtries:10|:32
+   -      2     -    C    10        OR2    s           0    4    0    1  |regandtries:10|~52~1~1~3~2
+   -      4     -    C    08        OR2    s           0    4    0    1  |regandtries:10|~52~1~1~3~3
+   -      8     -    C    08        OR2    s           0    4    0    1  |regandtries:10|~52~1~1~3~4
+   -      7     -    C    08        OR2                0    4    1    0  |regandtries:10|~52~1~1~3
+   -      6     -    C    05        OR2    s           0    4    0    1  |regandtries:10|~52~2~1~3~2
+   -      3     -    C    16        OR2    s           0    4    0    1  |regandtries:10|~52~2~1~3~3
+   -      8     -    C    16        OR2    s           0    4    0    1  |regandtries:10|~52~2~1~3~4
+   -      4     -    C    16        OR2                0    4    1    0  |regandtries:10|~52~2~1~3
+   -      4     -    C    07        OR2    s           0    4    0    1  |regandtries:10|~52~3~1~3~2
+   -      4     -    C    04        OR2    s           0    4    0    1  |regandtries:10|~52~3~1~3~3
+   -      8     -    C    04        OR2    s           0    4    0    1  |regandtries:10|~52~3~1~3~4
+   -      6     -    C    04        OR2                0    4    1    0  |regandtries:10|~52~3~1~3
+   -      1     -    B    10       AND2                0    0    0    0  |regandtries:10|~52~4~1~2
+   -      2     -    C    06        OR2    s           0    4    0    1  |regandtries:10|~52~4~1~3~2
+   -      4     -    C    06        OR2    s           0    4    0    1  |regandtries:10|~52~4~1~3~3
+   -      7     -    C    06        OR2    s           0    4    0    1  |regandtries:10|~52~4~1~3~4
+   -      8     -    C    06        OR2                0    4    1    0  |regandtries:10|~52~4~1~3
+   -      1     -    C    10        OR2    s           0    4    0    1  |regandtries:10|~53~1~1~3~2
+   -      5     -    C    10        OR2    s           0    4    0    1  |regandtries:10|~53~1~1~3~3
+   -      8     -    C    10        OR2    s           0    4    0    1  |regandtries:10|~53~1~1~3~4
+   -      4     -    C    10        OR2                0    4    1    0  |regandtries:10|~53~1~1~3
+   -      8     -    C    05        OR2    s           0    4    0    1  |regandtries:10|~53~2~1~3~2
+   -      3     -    C    12        OR2    s           0    4    0    1  |regandtries:10|~53~2~1~3~3
+   -      7     -    C    12        OR2    s           0    4    0    1  |regandtries:10|~53~2~1~3~4
+   -      6     -    C    12        OR2                0    4    1    0  |regandtries:10|~53~2~1~3
+   -      1     -    C    07        OR2    s           0    4    0    1  |regandtries:10|~53~3~1~3~2
+   -      5     -    C    07        OR2    s           0    4    0    1  |regandtries:10|~53~3~1~3~3
+   -      8     -    C    07        OR2    s           0    4    0    1  |regandtries:10|~53~3~1~3~4
+   -      3     -    C    07        OR2                0    4    1    0  |regandtries:10|~53~3~1~3
+   -      1     -    B    21       AND2                0    0    0    0  |regandtries:10|~53~4~1~2
+   -      1     -    C    05        OR2    s           0    4    0    1  |regandtries:10|~53~4~1~3~2
+   -      5     -    C    01        OR2    s           0    4    0    1  |regandtries:10|~53~4~1~3~3
+   -      8     -    C    01        OR2    s           0    4    0    1  |regandtries:10|~53~4~1~3~4
+   -      1     -    C    01        OR2                0    4    1    0  |regandtries:10|~53~4~1~3
+
+
+Code:
+
+s = Synthesized pin or logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+p = Packed register
+
+
+Device-Specific Information:            d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+lab1
+
+** FASTTRACK INTERCONNECT UTILIZATION **
+
+Row FastTrack Interconnect:
+
+          Global         Left Half-      Right Half-
+         FastTrack       FastTrack       FastTrack 
+Row     Interconnect    Interconnect    Interconnect    Input Pins     Output Pins     Bidir Pins
+A:       0/ 96(  0%)     0/ 48(  0%)     0/ 48(  0%)    0/16(  0%)      0/16(  0%)     0/16(  0%)
+B:       2/ 96(  2%)     0/ 48(  0%)     0/ 48(  0%)    0/16(  0%)      0/16(  0%)     0/16(  0%)
+C:      36/ 96( 37%)    25/ 48( 52%)     0/ 48(  0%)    5/16( 31%)      4/16( 25%)     0/16(  0%)
+
+
+Column FastTrack Interconnect:
+
+         FastTrack                                 
+Column  Interconnect    Input Pins     Output Pins     Bidir Pins
+01:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+02:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+03:      1/24(  4%)     0/4(  0%)      1/4( 25%)       0/4(  0%)
+04:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+05:      1/24(  4%)     1/4( 25%)      0/4(  0%)       0/4(  0%)
+06:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+07:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+08:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+09:      1/24(  4%)     0/4(  0%)      1/4( 25%)       0/4(  0%)
+10:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+11:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+12:      1/24(  4%)     0/4(  0%)      1/4( 25%)       0/4(  0%)
+13:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+14:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+15:      1/24(  4%)     0/4(  0%)      1/4( 25%)       0/4(  0%)
+16:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+17:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+18:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+19:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+20:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+21:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+22:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+23:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+24:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+EA:      0/24(  0%)     0/4(  0%)      0/4(  0%)       0/4(  0%)
+
+
+Device-Specific Information:            d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+lab1
+
+** CLOCK SIGNALS **
+
+Type     Fan-out       Name
+LCELL        4         |regandtries:1|:32
+LCELL        4         |regandtries:2|:32
+LCELL        4         |regandtries:5|:32
+LCELL        4         |regandtries:6|:32
+LCELL        4         |regandtries:7|:32
+LCELL        4         |regandtries:8|:32
+LCELL        4         |regandtries:9|:32
+LCELL        4         |regandtries:10|:32
+
+
+Device-Specific Information:            d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+lab1
+
+** EQUATIONS **
+
+C        : INPUT;
+DA0      : INPUT;
+DA1      : INPUT;
+DA2      : INPUT;
+DB0      : INPUT;
+DB1      : INPUT;
+DB2      : INPUT;
+D0       : INPUT;
+D1       : INPUT;
+D2       : INPUT;
+D3       : INPUT;
+R        : INPUT;
+
+-- Node name is 'RGA0' 
+-- Equation name is 'RGA0', type is output 
+RGA0     = TRI(_LC7_C8,  _LC1_B10);
+
+-- Node name is 'RGA1' 
+-- Equation name is 'RGA1', type is output 
+RGA1     = TRI(_LC4_C16,  _LC1_B10);
+
+-- Node name is 'RGA2' 
+-- Equation name is 'RGA2', type is output 
+RGA2     = TRI(_LC6_C4,  _LC1_B10);
+
+-- Node name is 'RGA3' 
+-- Equation name is 'RGA3', type is output 
+RGA3     = TRI(_LC8_C6,  _LC1_B10);
+
+-- Node name is 'RGB0' 
+-- Equation name is 'RGB0', type is output 
+RGB0     = TRI(_LC4_C10,  _LC1_B21);
+
+-- Node name is 'RGB1' 
+-- Equation name is 'RGB1', type is output 
+RGB1     = TRI(_LC6_C12,  _LC1_B21);
+
+-- Node name is 'RGB2' 
+-- Equation name is 'RGB2', type is output 
+RGB2     = TRI(_LC3_C7,  _LC1_B21);
+
+-- Node name is 'RGB3' 
+-- Equation name is 'RGB3', type is output 
+RGB3     = TRI(_LC1_C1,  _LC1_B21);
+
+-- Node name is '|dec:39|:7' = '|dec:39|Y0' 
+-- Equation name is '_LC2_C1', type is buried 
+_LC2_C1  = LCELL( _EQ001);
+  _EQ001 = !DB0 & !DB1 & !DB2;
+
+-- Node name is '|dec:39|:9' = '|dec:39|Y1' 
+-- Equation name is '_LC3_C1', type is buried 
+_LC3_C1  = LCELL( _EQ002);
+  _EQ002 =  DB0 & !DB1 & !DB2;
+
+-- Node name is '|dec:39|:12' = '|dec:39|Y4' 
+-- Equation name is '_LC1_C2', type is buried 
+_LC1_C2  = LCELL( _EQ003);
+  _EQ003 = !DB0 & !DB1 &  DB2;
+
+-- Node name is '|dec:39|:14' = '|dec:39|Y6' 
+-- Equation name is '_LC1_C12', type is buried 
+_LC1_C12 = LCELL( _EQ004);
+  _EQ004 = !DB0 &  DB1 &  DB2;
+
+-- Node name is '|dec:39|:15' = '|dec:39|Y7' 
+-- Equation name is '_LC2_C9', type is buried 
+_LC2_C9  = LCELL( _EQ005);
+  _EQ005 =  DB0 &  DB1 &  DB2;
+
+-- Node name is '|dec:40|:7' = '|dec:40|Y0' 
+-- Equation name is '_LC5_C22', type is buried 
+!_LC5_C22 = _LC5_C22~NOT;
+_LC5_C22~NOT = LCELL( _EQ006);
+  _EQ006 =  DA1
+         #  DA0
+         #  DA2;
+
+-- Node name is '|dec:40|:9' = '|dec:40|Y1' 
+-- Equation name is '_LC6_C22', type is buried 
+!_LC6_C22 = _LC6_C22~NOT;
+_LC6_C22~NOT = LCELL( _EQ007);
+  _EQ007 =  DA1
+         # !DA0
+         #  DA2;
+
+-- Node name is '|dec:40|:12' = '|dec:40|Y4' 
+-- Equation name is '_LC8_C22', type is buried 
+!_LC8_C22 = _LC8_C22~NOT;
+_LC8_C22~NOT = LCELL( _EQ008);
+  _EQ008 =  DA1
+         #  DA0
+         # !DA2;
+
+-- Node name is '|dec:40|:14' = '|dec:40|Y6' 
+-- Equation name is '_LC2_C22', type is buried 
+!_LC2_C22 = _LC2_C22~NOT;
+_LC2_C22~NOT = LCELL( _EQ009);
+  _EQ009 = !DA1
+         #  DA0
+         # !DA2;
+
+-- Node name is '|dec:40|:15' = '|dec:40|Y7' 
+-- Equation name is '_LC3_C22', type is buried 
+!_LC3_C22 = _LC3_C22~NOT;
+_LC3_C22~NOT = LCELL( _EQ010);
+  _EQ010 = !DA1
+         # !DA0
+         # !DA2;
+
+-- Node name is '|regandtries:1|rwreg:64|~14~1' = '|regandtries:1|rwreg:64|Q0' 
+-- Equation name is '_LC1_C8', type is buried 
+_LC1_C8  = DFFE( D0,  _LC8_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:1|rwreg:64|~14~2' = '|regandtries:1|rwreg:64|Q1' 
+-- Equation name is '_LC1_C16', type is buried 
+_LC1_C16 = DFFE( D1,  _LC8_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:1|rwreg:64|~14~3' = '|regandtries:1|rwreg:64|Q2' 
+-- Equation name is '_LC2_C4', type is buried 
+_LC2_C4  = DFFE( D2,  _LC8_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:1|rwreg:64|~14~4' = '|regandtries:1|rwreg:64|Q3' 
+-- Equation name is '_LC1_C6', type is buried 
+_LC1_C6  = DFFE( D3,  _LC8_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:1|~32~1' 
+-- Equation name is '_LC3_C11', type is buried 
+-- synthesized logic cell 
+_LC3_C11 = LCELL( _EQ011);
+  _EQ011 =  C &  R;
+
+-- Node name is '|regandtries:1|:32' 
+-- Equation name is '_LC8_C11', type is buried 
+_LC8_C11 = LCELL( _EQ012);
+  _EQ012 =  C &  _LC2_C1 &  R;
+
+-- Node name is '|regandtries:2|rwreg:64|~14~1' = '|regandtries:2|rwreg:64|Q0' 
+-- Equation name is '_LC2_C8', type is buried 
+_LC2_C8  = DFFE( D0,  _LC7_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:2|rwreg:64|~14~2' = '|regandtries:2|rwreg:64|Q1' 
+-- Equation name is '_LC6_C16', type is buried 
+_LC6_C16 = DFFE( D1,  _LC7_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:2|rwreg:64|~14~3' = '|regandtries:2|rwreg:64|Q2' 
+-- Equation name is '_LC1_C4', type is buried 
+_LC1_C4  = DFFE( D2,  _LC7_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:2|rwreg:64|~14~4' = '|regandtries:2|rwreg:64|Q3' 
+-- Equation name is '_LC3_C2', type is buried 
+_LC3_C2  = DFFE( D3,  _LC7_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:2|:32' 
+-- Equation name is '_LC7_C11', type is buried 
+_LC7_C11 = LCELL( _EQ013);
+  _EQ013 =  C &  _LC3_C1 &  R;
+
+-- Node name is '|regandtries:5|rwreg:64|~14~1' = '|regandtries:5|rwreg:64|Q0' 
+-- Equation name is '_LC6_C9', type is buried 
+_LC6_C9  = DFFE( D0,  _LC7_C9,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:5|rwreg:64|~14~2' = '|regandtries:5|rwreg:64|Q1' 
+-- Equation name is '_LC8_C9', type is buried 
+_LC8_C9  = DFFE( D1,  _LC7_C9,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:5|rwreg:64|~14~3' = '|regandtries:5|rwreg:64|Q2' 
+-- Equation name is '_LC4_C9', type is buried 
+_LC4_C9  = DFFE( D2,  _LC7_C9,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:5|rwreg:64|~14~4' = '|regandtries:5|rwreg:64|Q3' 
+-- Equation name is '_LC1_C9', type is buried 
+_LC1_C9  = DFFE( D3,  _LC7_C9,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:5|:32' 
+-- Equation name is '_LC7_C9', type is buried 
+_LC7_C9  = LCELL( _EQ014);
+  _EQ014 = !DB0 &  DB1 & !DB2 &  _LC3_C11;
+
+-- Node name is '|regandtries:5|~52~1~1' 
+-- Equation name is '_LC6_C8', type is buried 
+_LC6_C8  = LCELL( _EQ015);
+  _EQ015 = !DA1
+         #  DA0
+         #  DA2
+         #  _LC6_C9;
+
+-- Node name is '|regandtries:5|~52~2~1' 
+-- Equation name is '_LC7_C16', type is buried 
+_LC7_C16 = LCELL( _EQ016);
+  _EQ016 = !DA1
+         #  DA0
+         #  DA2
+         #  _LC8_C9;
+
+-- Node name is '|regandtries:5|~52~3~1' 
+-- Equation name is '_LC7_C4', type is buried 
+_LC7_C4  = LCELL( _EQ017);
+  _EQ017 = !DA1
+         #  DA0
+         #  DA2
+         #  _LC4_C9;
+
+-- Node name is '|regandtries:5|~52~4~1' 
+-- Equation name is '_LC6_C6', type is buried 
+_LC6_C6  = LCELL( _EQ018);
+  _EQ018 = !DA1
+         #  DA0
+         #  DA2
+         #  _LC1_C9;
+
+-- Node name is '|regandtries:5|~53~1~1' 
+-- Equation name is '_LC7_C10', type is buried 
+_LC7_C10 = LCELL( _EQ019);
+  _EQ019 =  _LC6_C9
+         # !DB1
+         #  DB0
+         #  DB2;
+
+-- Node name is '|regandtries:5|~53~2~1' 
+-- Equation name is '_LC5_C12', type is buried 
+_LC5_C12 = LCELL( _EQ020);
+  _EQ020 =  _LC8_C9
+         # !DB1
+         #  DB0
+         #  DB2;
+
+-- Node name is '|regandtries:5|~53~3~1' 
+-- Equation name is '_LC7_C7', type is buried 
+_LC7_C7  = LCELL( _EQ021);
+  _EQ021 =  _LC4_C9
+         # !DB1
+         #  DB0
+         #  DB2;
+
+-- Node name is '|regandtries:5|~53~4~1' 
+-- Equation name is '_LC7_C1', type is buried 
+_LC7_C1  = LCELL( _EQ022);
+  _EQ022 =  _LC1_C9
+         # !DB1
+         #  DB0
+         #  DB2;
+
+-- Node name is '|regandtries:6|rwreg:64|~14~1' = '|regandtries:6|rwreg:64|Q0' 
+-- Equation name is '_LC2_C11', type is buried 
+_LC2_C11 = DFFE( D0,  _LC1_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:6|rwreg:64|~14~2' = '|regandtries:6|rwreg:64|Q1' 
+-- Equation name is '_LC6_C11', type is buried 
+_LC6_C11 = DFFE( D1,  _LC1_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:6|rwreg:64|~14~3' = '|regandtries:6|rwreg:64|Q2' 
+-- Equation name is '_LC4_C11', type is buried 
+_LC4_C11 = DFFE( D2,  _LC1_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:6|rwreg:64|~14~4' = '|regandtries:6|rwreg:64|Q3' 
+-- Equation name is '_LC5_C11', type is buried 
+_LC5_C11 = DFFE( D3,  _LC1_C11,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:6|:32' 
+-- Equation name is '_LC1_C11', type is buried 
+_LC1_C11 = LCELL( _EQ023);
+  _EQ023 =  DB0 &  DB1 & !DB2 &  _LC3_C11;
+
+-- Node name is '|regandtries:6|~52~1~1' 
+-- Equation name is '_LC5_C8', type is buried 
+_LC5_C8  = LCELL( _EQ024);
+  _EQ024 = !DA1
+         # !DA0
+         #  DA2
+         #  _LC2_C11;
+
+-- Node name is '|regandtries:6|~52~2~1' 
+-- Equation name is '_LC5_C16', type is buried 
+_LC5_C16 = LCELL( _EQ025);
+  _EQ025 = !DA1
+         # !DA0
+         #  DA2
+         #  _LC6_C11;
+
+-- Node name is '|regandtries:6|~52~3~1' 
+-- Equation name is '_LC5_C4', type is buried 
+_LC5_C4  = LCELL( _EQ026);
+  _EQ026 = !DA1
+         # !DA0
+         #  DA2
+         #  _LC4_C11;
+
+-- Node name is '|regandtries:6|~52~4~1' 
+-- Equation name is '_LC5_C6', type is buried 
+_LC5_C6  = LCELL( _EQ027);
+  _EQ027 = !DA1
+         # !DA0
+         #  DA2
+         #  _LC5_C11;
+
+-- Node name is '|regandtries:6|~53~1~1' 
+-- Equation name is '_LC6_C10', type is buried 
+_LC6_C10 = LCELL( _EQ028);
+  _EQ028 =  _LC2_C11
+         # !DB1
+         # !DB0
+         #  DB2;
+
+-- Node name is '|regandtries:6|~53~2~1' 
+-- Equation name is '_LC4_C12', type is buried 
+_LC4_C12 = LCELL( _EQ029);
+  _EQ029 =  _LC6_C11
+         # !DB1
+         # !DB0
+         #  DB2;
+
+-- Node name is '|regandtries:6|~53~3~1' 
+-- Equation name is '_LC6_C7', type is buried 
+_LC6_C7  = LCELL( _EQ030);
+  _EQ030 =  _LC4_C11
+         # !DB1
+         # !DB0
+         #  DB2;
+
+-- Node name is '|regandtries:6|~53~4~1' 
+-- Equation name is '_LC6_C1', type is buried 
+_LC6_C1  = LCELL( _EQ031);
+  _EQ031 =  _LC5_C11
+         # !DB1
+         # !DB0
+         #  DB2;
+
+-- Node name is '|regandtries:7|rwreg:64|~14~1' = '|regandtries:7|rwreg:64|Q0' 
+-- Equation name is '_LC2_C2', type is buried 
+_LC2_C2  = DFFE( D0,  _LC6_C2,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:7|rwreg:64|~14~2' = '|regandtries:7|rwreg:64|Q1' 
+-- Equation name is '_LC5_C2', type is buried 
+_LC5_C2  = DFFE( D1,  _LC6_C2,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:7|rwreg:64|~14~3' = '|regandtries:7|rwreg:64|Q2' 
+-- Equation name is '_LC4_C2', type is buried 
+_LC4_C2  = DFFE( D2,  _LC6_C2,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:7|rwreg:64|~14~4' = '|regandtries:7|rwreg:64|Q3' 
+-- Equation name is '_LC7_C2', type is buried 
+_LC7_C2  = DFFE( D3,  _LC6_C2,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:7|:32' 
+-- Equation name is '_LC6_C2', type is buried 
+_LC6_C2  = LCELL( _EQ032);
+  _EQ032 =  _LC1_C2 &  _LC3_C11;
+
+-- Node name is '|regandtries:8|rwreg:64|~14~1' = '|regandtries:8|rwreg:64|Q0' 
+-- Equation name is '_LC1_C3', type is buried 
+_LC1_C3  = DFFE( D0,  _LC5_C9,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:8|rwreg:64|~14~2' = '|regandtries:8|rwreg:64|Q1' 
+-- Equation name is '_LC7_C3', type is buried 
+_LC7_C3  = DFFE( D1,  _LC5_C9,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:8|rwreg:64|~14~3' = '|regandtries:8|rwreg:64|Q2' 
+-- Equation name is '_LC3_C9', type is buried 
+_LC3_C9  = DFFE( D2,  _LC5_C9,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:8|rwreg:64|~14~4' = '|regandtries:8|rwreg:64|Q3' 
+-- Equation name is '_LC2_C3', type is buried 
+_LC2_C3  = DFFE( D3,  _LC5_C9,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:8|:32' 
+-- Equation name is '_LC5_C9', type is buried 
+_LC5_C9  = LCELL( _EQ033);
+  _EQ033 =  DB0 & !DB1 &  DB2 &  _LC3_C11;
+
+-- Node name is '|regandtries:8|~52~1~1' 
+-- Equation name is '_LC3_C8', type is buried 
+_LC3_C8  = LCELL( _EQ034);
+  _EQ034 =  DA1
+         # !DA0
+         # !DA2
+         #  _LC1_C3;
+
+-- Node name is '|regandtries:8|~52~2~1' 
+-- Equation name is '_LC2_C16', type is buried 
+_LC2_C16 = LCELL( _EQ035);
+  _EQ035 =  DA1
+         # !DA0
+         # !DA2
+         #  _LC7_C3;
+
+-- Node name is '|regandtries:8|~52~3~1' 
+-- Equation name is '_LC3_C4', type is buried 
+_LC3_C4  = LCELL( _EQ036);
+  _EQ036 =  DA1
+         # !DA0
+         # !DA2
+         #  _LC3_C9;
+
+-- Node name is '|regandtries:8|~52~4~1' 
+-- Equation name is '_LC3_C6', type is buried 
+_LC3_C6  = LCELL( _EQ037);
+  _EQ037 =  DA1
+         # !DA0
+         # !DA2
+         #  _LC2_C3;
+
+-- Node name is '|regandtries:8|~53~1~1' 
+-- Equation name is '_LC3_C10', type is buried 
+_LC3_C10 = LCELL( _EQ038);
+  _EQ038 =  _LC1_C3
+         #  DB1
+         # !DB0
+         # !DB2;
+
+-- Node name is '|regandtries:8|~53~2~1' 
+-- Equation name is '_LC2_C12', type is buried 
+_LC2_C12 = LCELL( _EQ039);
+  _EQ039 =  _LC7_C3
+         #  DB1
+         # !DB0
+         # !DB2;
+
+-- Node name is '|regandtries:8|~53~3~1' 
+-- Equation name is '_LC2_C7', type is buried 
+_LC2_C7  = LCELL( _EQ040);
+  _EQ040 =  _LC3_C9
+         #  DB1
+         # !DB0
+         # !DB2;
+
+-- Node name is '|regandtries:8|~53~4~1' 
+-- Equation name is '_LC4_C1', type is buried 
+_LC4_C1  = LCELL( _EQ041);
+  _EQ041 =  _LC2_C3
+         #  DB1
+         # !DB0
+         # !DB2;
+
+-- Node name is '|regandtries:9|rwreg:64|~14~1' = '|regandtries:9|rwreg:64|Q0' 
+-- Equation name is '_LC2_C5', type is buried 
+_LC2_C5  = DFFE( D0,  _LC5_C5,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:9|rwreg:64|~14~2' = '|regandtries:9|rwreg:64|Q1' 
+-- Equation name is '_LC7_C5', type is buried 
+_LC7_C5  = DFFE( D1,  _LC5_C5,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:9|rwreg:64|~14~3' = '|regandtries:9|rwreg:64|Q2' 
+-- Equation name is '_LC3_C5', type is buried 
+_LC3_C5  = DFFE( D2,  _LC5_C5,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:9|rwreg:64|~14~4' = '|regandtries:9|rwreg:64|Q3' 
+-- Equation name is '_LC4_C5', type is buried 
+_LC4_C5  = DFFE( D3,  _LC5_C5,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:9|:32' 
+-- Equation name is '_LC5_C5', type is buried 
+_LC5_C5  = LCELL( _EQ042);
+  _EQ042 =  _LC1_C12 &  _LC3_C11;
+
+-- Node name is '|regandtries:10|rwreg:64|~14~1' = '|regandtries:10|rwreg:64|Q0' 
+-- Equation name is '_LC4_C3', type is buried 
+_LC4_C3  = DFFE( D0,  _LC8_C3,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:10|rwreg:64|~14~2' = '|regandtries:10|rwreg:64|Q1' 
+-- Equation name is '_LC6_C3', type is buried 
+_LC6_C3  = DFFE( D1,  _LC8_C3,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:10|rwreg:64|~14~3' = '|regandtries:10|rwreg:64|Q2' 
+-- Equation name is '_LC5_C3', type is buried 
+_LC5_C3  = DFFE( D2,  _LC8_C3,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:10|rwreg:64|~14~4' = '|regandtries:10|rwreg:64|Q3' 
+-- Equation name is '_LC3_C3', type is buried 
+_LC3_C3  = DFFE( D3,  _LC8_C3,  VCC,  VCC,  VCC);
+
+-- Node name is '|regandtries:10|:32' 
+-- Equation name is '_LC8_C3', type is buried 
+_LC8_C3  = LCELL( _EQ043);
+  _EQ043 =  _LC2_C9 &  _LC3_C11;
+
+-- Node name is '|regandtries:10|~52~1~1~3~2' 
+-- Equation name is '_LC2_C10', type is buried 
+-- synthesized logic cell 
+_LC2_C10 = LCELL( _EQ044);
+  _EQ044 = !_LC2_C22 & !_LC3_C22
+         #  _LC2_C5 & !_LC3_C22
+         # !_LC2_C22 &  _LC4_C3
+         #  _LC2_C5 &  _LC4_C3;
+
+-- Node name is '|regandtries:10|~52~1~1~3~3' 
+-- Equation name is '_LC4_C8', type is buried 
+-- synthesized logic cell 
+_LC4_C8  = LCELL( _EQ045);
+  _EQ045 =  _LC2_C10 &  _LC3_C8 & !_LC8_C22
+         #  _LC2_C2 &  _LC2_C10 &  _LC3_C8;
+
+-- Node name is '|regandtries:10|~52~1~1~3~4' 
+-- Equation name is '_LC8_C8', type is buried 
+-- synthesized logic cell 
+_LC8_C8  = LCELL( _EQ046);
+  _EQ046 =  _LC5_C8 &  _LC6_C8 & !_LC6_C22
+         #  _LC2_C8 &  _LC5_C8 &  _LC6_C8;
+
+-- Node name is '|regandtries:10|~52~1~1~3' 
+-- Equation name is '_LC7_C8', type is buried 
+_LC7_C8  = LCELL( _EQ047);
+  _EQ047 =  _LC4_C8 & !_LC5_C22 &  _LC8_C8
+         #  _LC1_C8 &  _LC4_C8 &  _LC8_C8;
+
+-- Node name is '|regandtries:10|~52~2~1~3~2' 
+-- Equation name is '_LC6_C5', type is buried 
+-- synthesized logic cell 
+_LC6_C5  = LCELL( _EQ048);
+  _EQ048 = !_LC2_C22 & !_LC3_C22
+         # !_LC3_C22 &  _LC7_C5
+         # !_LC2_C22 &  _LC6_C3
+         #  _LC6_C3 &  _LC7_C5;
+
+-- Node name is '|regandtries:10|~52~2~1~3~3' 
+-- Equation name is '_LC3_C16', type is buried 
+-- synthesized logic cell 
+_LC3_C16 = LCELL( _EQ049);
+  _EQ049 =  _LC2_C16 &  _LC6_C5 & !_LC8_C22
+         #  _LC2_C16 &  _LC5_C2 &  _LC6_C5;
+
+-- Node name is '|regandtries:10|~52~2~1~3~4' 
+-- Equation name is '_LC8_C16', type is buried 
+-- synthesized logic cell 
+_LC8_C16 = LCELL( _EQ050);
+  _EQ050 =  _LC5_C16 & !_LC6_C22 &  _LC7_C16
+         #  _LC5_C16 &  _LC6_C16 &  _LC7_C16;
+
+-- Node name is '|regandtries:10|~52~2~1~3' 
+-- Equation name is '_LC4_C16', type is buried 
+_LC4_C16 = LCELL( _EQ051);
+  _EQ051 =  _LC3_C16 & !_LC5_C22 &  _LC8_C16
+         #  _LC1_C16 &  _LC3_C16 &  _LC8_C16;
+
+-- Node name is '|regandtries:10|~52~3~1~3~2' 
+-- Equation name is '_LC4_C7', type is buried 
+-- synthesized logic cell 
+_LC4_C7  = LCELL( _EQ052);
+  _EQ052 = !_LC2_C22 & !_LC3_C22
+         #  _LC3_C5 & !_LC3_C22
+         # !_LC2_C22 &  _LC5_C3
+         #  _LC3_C5 &  _LC5_C3;
+
+-- Node name is '|regandtries:10|~52~3~1~3~3' 
+-- Equation name is '_LC4_C4', type is buried 
+-- synthesized logic cell 
+_LC4_C4  = LCELL( _EQ053);
+  _EQ053 =  _LC3_C4 &  _LC4_C7 & !_LC8_C22
+         #  _LC3_C4 &  _LC4_C2 &  _LC4_C7;
+
+-- Node name is '|regandtries:10|~52~3~1~3~4' 
+-- Equation name is '_LC8_C4', type is buried 
+-- synthesized logic cell 
+_LC8_C4  = LCELL( _EQ054);
+  _EQ054 =  _LC5_C4 & !_LC6_C22 &  _LC7_C4
+         #  _LC1_C4 &  _LC5_C4 &  _LC7_C4;
+
+-- Node name is '|regandtries:10|~52~3~1~3' 
+-- Equation name is '_LC6_C4', type is buried 
+_LC6_C4  = LCELL( _EQ055);
+  _EQ055 =  _LC4_C4 & !_LC5_C22 &  _LC8_C4
+         #  _LC2_C4 &  _LC4_C4 &  _LC8_C4;
+
+-- Node name is '|regandtries:10|~52~4~1~2' 
+-- Equation name is '_LC1_B10', type is buried 
+_LC1_B10 = LCELL( VCC);
+
+-- Node name is '|regandtries:10|~52~4~1~3~2' 
+-- Equation name is '_LC2_C6', type is buried 
+-- synthesized logic cell 
+_LC2_C6  = LCELL( _EQ056);
+  _EQ056 = !_LC2_C22 & !_LC3_C22
+         # !_LC3_C22 &  _LC4_C5
+         # !_LC2_C22 &  _LC3_C3
+         #  _LC3_C3 &  _LC4_C5;
+
+-- Node name is '|regandtries:10|~52~4~1~3~3' 
+-- Equation name is '_LC4_C6', type is buried 
+-- synthesized logic cell 
+_LC4_C6  = LCELL( _EQ057);
+  _EQ057 =  _LC2_C6 &  _LC3_C6 & !_LC8_C22
+         #  _LC2_C6 &  _LC3_C6 &  _LC7_C2;
+
+-- Node name is '|regandtries:10|~52~4~1~3~4' 
+-- Equation name is '_LC7_C6', type is buried 
+-- synthesized logic cell 
+_LC7_C6  = LCELL( _EQ058);
+  _EQ058 =  _LC5_C6 &  _LC6_C6 & !_LC6_C22
+         #  _LC3_C2 &  _LC5_C6 &  _LC6_C6;
+
+-- Node name is '|regandtries:10|~52~4~1~3' 
+-- Equation name is '_LC8_C6', type is buried 
+_LC8_C6  = LCELL( _EQ059);
+  _EQ059 =  _LC4_C6 & !_LC5_C22 &  _LC7_C6
+         #  _LC1_C6 &  _LC4_C6 &  _LC7_C6;
+
+-- Node name is '|regandtries:10|~53~1~1~3~2' 
+-- Equation name is '_LC1_C10', type is buried 
+-- synthesized logic cell 
+_LC1_C10 = LCELL( _EQ060);
+  _EQ060 =  _LC2_C5 &  _LC4_C3
+         # !_LC1_C12 &  _LC4_C3
+         #  _LC2_C5 & !_LC2_C9
+         # !_LC1_C12 & !_LC2_C9;
+
+-- Node name is '|regandtries:10|~53~1~1~3~3' 
+-- Equation name is '_LC5_C10', type is buried 
+-- synthesized logic cell 
+_LC5_C10 = LCELL( _EQ061);
+  _EQ061 =  _LC1_C10 &  _LC2_C2 &  _LC3_C10
+         # !_LC1_C2 &  _LC1_C10 &  _LC3_C10;
+
+-- Node name is '|regandtries:10|~53~1~1~3~4' 
+-- Equation name is '_LC8_C10', type is buried 
+-- synthesized logic cell 
+_LC8_C10 = LCELL( _EQ062);
+  _EQ062 =  _LC2_C8 &  _LC6_C10 &  _LC7_C10
+         # !_LC3_C1 &  _LC6_C10 &  _LC7_C10;
+
+-- Node name is '|regandtries:10|~53~1~1~3' 
+-- Equation name is '_LC4_C10', type is buried 
+_LC4_C10 = LCELL( _EQ063);
+  _EQ063 =  _LC1_C8 &  _LC5_C10 &  _LC8_C10
+         # !_LC2_C1 &  _LC5_C10 &  _LC8_C10;
+
+-- Node name is '|regandtries:10|~53~2~1~3~2' 
+-- Equation name is '_LC8_C5', type is buried 
+-- synthesized logic cell 
+_LC8_C5  = LCELL( _EQ064);
+  _EQ064 =  _LC6_C3 &  _LC7_C5
+         # !_LC1_C12 &  _LC6_C3
+         # !_LC2_C9 &  _LC7_C5
+         # !_LC1_C12 & !_LC2_C9;
+
+-- Node name is '|regandtries:10|~53~2~1~3~3' 
+-- Equation name is '_LC3_C12', type is buried 
+-- synthesized logic cell 
+_LC3_C12 = LCELL( _EQ065);
+  _EQ065 =  _LC2_C12 &  _LC5_C2 &  _LC8_C5
+         # !_LC1_C2 &  _LC2_C12 &  _LC8_C5;
+
+-- Node name is '|regandtries:10|~53~2~1~3~4' 
+-- Equation name is '_LC7_C12', type is buried 
+-- synthesized logic cell 
+_LC7_C12 = LCELL( _EQ066);
+  _EQ066 =  _LC4_C12 &  _LC5_C12 &  _LC6_C16
+         # !_LC3_C1 &  _LC4_C12 &  _LC5_C12;
+
+-- Node name is '|regandtries:10|~53~2~1~3' 
+-- Equation name is '_LC6_C12', type is buried 
+_LC6_C12 = LCELL( _EQ067);
+  _EQ067 =  _LC1_C16 &  _LC3_C12 &  _LC7_C12
+         # !_LC2_C1 &  _LC3_C12 &  _LC7_C12;
+
+-- Node name is '|regandtries:10|~53~3~1~3~2' 
+-- Equation name is '_LC1_C7', type is buried 
+-- synthesized logic cell 
+_LC1_C7  = LCELL( _EQ068);
+  _EQ068 =  _LC3_C5 &  _LC5_C3
+         # !_LC1_C12 &  _LC5_C3
+         # !_LC2_C9 &  _LC3_C5
+         # !_LC1_C12 & !_LC2_C9;
+
+-- Node name is '|regandtries:10|~53~3~1~3~3' 
+-- Equation name is '_LC5_C7', type is buried 
+-- synthesized logic cell 
+_LC5_C7  = LCELL( _EQ069);
+  _EQ069 =  _LC1_C7 &  _LC2_C7 &  _LC4_C2
+         # !_LC1_C2 &  _LC1_C7 &  _LC2_C7;
+
+-- Node name is '|regandtries:10|~53~3~1~3~4' 
+-- Equation name is '_LC8_C7', type is buried 
+-- synthesized logic cell 
+_LC8_C7  = LCELL( _EQ070);
+  _EQ070 =  _LC1_C4 &  _LC6_C7 &  _LC7_C7
+         # !_LC3_C1 &  _LC6_C7 &  _LC7_C7;
+
+-- Node name is '|regandtries:10|~53~3~1~3' 
+-- Equation name is '_LC3_C7', type is buried 
+_LC3_C7  = LCELL( _EQ071);
+  _EQ071 =  _LC2_C4 &  _LC5_C7 &  _LC8_C7
+         # !_LC2_C1 &  _LC5_C7 &  _LC8_C7;
+
+-- Node name is '|regandtries:10|~53~4~1~2' 
+-- Equation name is '_LC1_B21', type is buried 
+_LC1_B21 = LCELL( VCC);
+
+-- Node name is '|regandtries:10|~53~4~1~3~2' 
+-- Equation name is '_LC1_C5', type is buried 
+-- synthesized logic cell 
+_LC1_C5  = LCELL( _EQ072);
+  _EQ072 =  _LC3_C3 &  _LC4_C5
+         # !_LC1_C12 &  _LC3_C3
+         # !_LC2_C9 &  _LC4_C5
+         # !_LC1_C12 & !_LC2_C9;
+
+-- Node name is '|regandtries:10|~53~4~1~3~3' 
+-- Equation name is '_LC5_C1', type is buried 
+-- synthesized logic cell 
+_LC5_C1  = LCELL( _EQ073);
+  _EQ073 =  _LC1_C5 &  _LC4_C1 &  _LC7_C2
+         # !_LC1_C2 &  _LC1_C5 &  _LC4_C1;
+
+-- Node name is '|regandtries:10|~53~4~1~3~4' 
+-- Equation name is '_LC8_C1', type is buried 
+-- synthesized logic cell 
+_LC8_C1  = LCELL( _EQ074);
+  _EQ074 =  _LC3_C2 &  _LC6_C1 &  _LC7_C1
+         # !_LC3_C1 &  _LC6_C1 &  _LC7_C1;
+
+-- Node name is '|regandtries:10|~53~4~1~3' 
+-- Equation name is '_LC1_C1', type is buried 
+_LC1_C1  = LCELL( _EQ075);
+  _EQ075 =  _LC1_C6 &  _LC5_C1 &  _LC8_C1
+         # !_LC2_C1 &  _LC5_C1 &  _LC8_C1;
+
+
+
+Project Information                     d:\unik\sem5\sifo\two\alu_rzu\lab1.rpt
+
+** COMPILATION SETTINGS & TIMES **
+
+Processing Menu Commands
+------------------------
+
+Design Doctor                             = off
+
+Logic Synthesis:
+
+   Synthesis Type Used                    = Multi-Level
+
+   Default Synthesis Style                = NORMAL
+
+      Logic option settings in 'NORMAL' style for 'FLEX10K' family
+
+      CARRY_CHAIN                         = ignore
+      CARRY_CHAIN_LENGTH                  = 32
+      CASCADE_CHAIN                       = ignore
+      CASCADE_CHAIN_LENGTH                = 2
+      DECOMPOSE_GATES                     = on
+      DUPLICATE_LOGIC_EXTRACTION          = on
+      MINIMIZATION                        = full
+      MULTI_LEVEL_FACTORING               = on
+      NOT_GATE_PUSH_BACK                  = on
+      REDUCE_LOGIC                        = on
+      REFACTORIZATION                     = on
+      REGISTER_OPTIMIZATION               = on
+      RESYNTHESIZE_NETWORK                = on
+      SLOW_SLEW_RATE                      = off
+      SUBFACTOR_EXTRACTION                = on
+      IGNORE_SOFT_BUFFERS                 = on
+      USE_LPM_FOR_AHDL_OPERATORS          = off
+
+   Other logic synthesis settings:
+
+      Automatic Global Clock              = on
+      Automatic Global Clear              = on
+      Automatic Global Preset             = on
+      Automatic Global Output Enable      = on
+      Automatic Fast I/O                  = off
+      Automatic Register Packing          = off
+      Automatic Open-Drain Pins           = on
+      Automatic Implement in EAB          = off
+      Optimize                            = 5
+
+Default Timing Specifications: None
+
+Cut All Bidir Feedback Timing Paths       = on
+Cut All Clear & Preset Timing Paths       = on
+
+Ignore Timing Assignments                 = off
+
+Functional SNF Extractor                  = off
+
+Linked SNF Extractor                      = off
+Timing SNF Extractor                      = on
+Optimize Timing SNF                       = off
+Generate AHDL TDO File                    = off
+Fitter Settings                           = NORMAL
+Use Quartus Fitter                        = on
+Smart Recompile                           = off
+Total Recompile                           = off
+
+Interfaces Menu Commands
+------------------------
+
+EDIF Netlist Writer                       = off
+Verilog Netlist Writer                    = off
+VHDL Netlist Writer                       = off
+
+Compilation Times
+-----------------
+
+   Compiler Netlist Extractor             00:00:00
+   Database Builder                       00:00:00
+   Logic Synthesizer                      00:00:00
+   Partitioner                            00:00:00
+   Fitter                                 00:00:00
+   Timing SNF Extractor                   00:00:00
+   Assembler                              00:00:00
+   --------------------------             --------
+   Total Time                             00:00:00
+
+
+Memory Allocated
+-----------------
+
+Peak memory allocated during compilation  = 26,275K

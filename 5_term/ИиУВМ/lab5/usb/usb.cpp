@@ -14,7 +14,7 @@
 
 using namespace std;
 
-vector<wstring> devices;
+map<wstring, wstring> devices;
 map<wstring, DWORD> devicesINST;
 
 CONFIGRET EjectVolume(DEVINST devInst)
@@ -101,7 +101,7 @@ int printUSBDevicesInfo(bool isPrint = false, bool isInitial = false)
 		if (isInitial) {
 			wstring devId = venAndDevId.substr(17, 4);
 
-			devices.push_back(deviceName);
+			devices[devId] = deviceName;
 			devicesINST[devId] = DeviceInfoData.DevInst;
 		}
 	}
@@ -121,22 +121,25 @@ int findElement(vector<wstring> v, wstring value) {
 	else return -1;
 }
 
-wstring findConnectedDevice(vector<wstring> tmp) {
-	for (int i = 0; i < devices.size(); i++) {
-		int index = findElement(tmp, devices[i]);
+wstring findConnectedDevice(map<wstring, wstring> tmp) {
+	for (const auto& pair : devices) {
 
-		if (index == -1) {
-			return devices[i];
+		const wstring& key = pair.first;
+		const wstring& value = pair.second;
+
+		if (tmp.find(key) == tmp.end()) {
+			return value;
 		}
 	}
 }
 
-wstring findDisconnectedDevice(vector<wstring> tmp) {
-	for (int i = 0; i < tmp.size(); i++) {
-		int index = findElement(devices, tmp[i]);
+wstring findDisconnectedDevice(map<wstring, wstring> tmp) {
+	for (const auto& pair : tmp) {
+		const wstring& key = pair.first;
+		const wstring& value = pair.second;
 
-		if (index == -1) {
-			return tmp[i];
+		if (devices.find(key) == devices.end()) {
+			return value;
 		}
 	}
 }
@@ -148,7 +151,7 @@ void checkDevices() {
 		devicesCount = printUSBDevicesInfo(false, false);
 
 		if (devicesCount > devices.size()) {
-			vector<wstring> tmp = devices;
+			map<wstring, wstring> tmp = devices;
 
 			printUSBDevicesInfo(false, true);
 
@@ -157,7 +160,7 @@ void checkDevices() {
 			wcout << "\nDevice " << connectedDevice << " connected\n";
 		}
 		else if (devicesCount < devices.size()) {
-			vector<wstring> tmp = devices; 
+			map<wstring, wstring> tmp = devices;
 
 			wstring disconnectedDevice;
 
