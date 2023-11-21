@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "c6ch1N2STwcuusSkQoZ5PynFDA19Uk2LVr83X9cFm8MoauElcMCGbgbga0GmT1AboytJq6qlZBKhul2k2oMAEw==",
+  "success": true,
+  "projectFilePath": "D:\\ed\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Client\\Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\inthehand.net.bluetooth\\4.1.40\\inthehand.net.bluetooth.4.1.40.nupkg.sha512",
+    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\linux.bluetooth\\5.64.0\\linux.bluetooth.5.64.0.nupkg.sha512",
+    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\tmds.dbus\\0.11.0\\tmds.dbus.0.11.0.nupkg.sha512"
+  ],
+  "logs": []
+}

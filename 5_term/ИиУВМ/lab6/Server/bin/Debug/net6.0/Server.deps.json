@@ -1,0 +1,113 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Server/1.0.0": {
+        "dependencies": {
+          "InTheHand.Net.Bluetooth": "4.1.40"
+        },
+        "runtime": {
+          "Server.dll": {}
+        }
+      },
+      "InTheHand.Net.Bluetooth/4.1.40": {
+        "dependencies": {
+          "Linux.Bluetooth": "5.64.0"
+        },
+        "runtime": {
+          "lib/net6.0/InTheHand.Net.Bluetooth.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.40.0"
+          }
+        }
+      },
+      "Linux.Bluetooth/5.64.0": {
+        "dependencies": {
+          "Tmds.DBus": "0.11.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Linux.Bluetooth.dll": {
+            "assemblyVersion": "5.64.0.0",
+            "fileVersion": "5.64.0.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Reflection.Emit/4.7.0": {},
+      "System.Security.Principal.Windows/4.7.0": {},
+      "Tmds.DBus/0.11.0": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
+          "System.Reflection.Emit": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Tmds.DBus.dll": {
+            "assemblyVersion": "0.11.0.0",
+            "fileVersion": "0.11.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InTheHand.Net.Bluetooth/4.1.40": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Hx0NqU4M/r/jMp/TGk5RTfCW9CAUYpI4eMWiNbw18E/ClBeHDW3FU0PV6d9SgT4XAUKQtGjok2ByKu1lp3q7pQ==",
+      "path": "inthehand.net.bluetooth/4.1.40",
+      "hashPath": "inthehand.net.bluetooth.4.1.40.nupkg.sha512"
+    },
+    "Linux.Bluetooth/5.64.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nY/oXDlRWhJJ9F4N7PWpV1CGaaDvzoFL/VPyUbcGlTWysErwFUzXGNxxkO8w4290/qv20IMeYPwVPDwQJjWhvg==",
+      "path": "linux.bluetooth/5.64.0",
+      "hashPath": "linux.bluetooth.5.64.0.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "path": "system.reflection.emit/4.7.0",
+      "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+      "path": "system.security.principal.windows/4.7.0",
+      "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "Tmds.DBus/0.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qv9U/Xc5da34dLofP30dYpHiKTVyGCNXu4UTjzRr+DoN/IX/jK64PaXL2/OepqRJDWeCtnhtW10FTI1VanBxHQ==",
+      "path": "tmds.dbus/0.11.0",
+      "hashPath": "tmds.dbus.0.11.0.nupkg.sha512"
+    }
+  }
+}
