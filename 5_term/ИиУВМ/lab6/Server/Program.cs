@@ -14,6 +14,7 @@ class Program
 
         // Ожидание подключения клиента
         BluetoothClient bluetoothClient = bluetoothListener.AcceptBluetoothClient();
+
         Console.WriteLine("Успешное подключение!");
 
         // Получение потока для отправки файла

@@ -350,19 +350,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\": {}
+    "C:\\Users\\CyberFlex\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ed\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\Documents\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "D:\\ed\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\",
-      "outputPath": "D:\\ed\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Client\\obj\\",
+      "projectPath": "D:\\Documents\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\CyberFlex\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Kiryl.Harbacheuski\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CyberFlex\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -413,7 +413,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

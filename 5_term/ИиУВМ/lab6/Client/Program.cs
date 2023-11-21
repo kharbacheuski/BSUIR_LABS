@@ -2,17 +2,35 @@
 using InTheHand.Net;
 using InTheHand.Net.Bluetooth;
 using InTheHand.Net.Sockets;
+using Linux.Bluetooth;
 
 class Program
 {
+    static void printDevices(BluetoothClient bluetoothClient)
+    {
+        var devices = bluetoothClient.DiscoverDevices();
+
+
+        Console.WriteLine($"[======================   Bluetooth Devices   ======================]\n\n");
+
+
+        foreach (BluetoothDeviceInfo device in devices)
+        {
+            Console.WriteLine($"Name: {device.DeviceName}; Address: {device.DeviceAddress}; Class: {device.ClassOfDevice}\n");
+        }
+
+        Console.WriteLine($"\n[===================================================================]\n\n");
+    }
+
     static void Main()
     {
+        BluetoothClient bluetoothClient = new BluetoothClient();
+
+        printDevices(bluetoothClient);
 
         // Запрос у пользователя Bluetooth-адреса сервера
         Console.Write("Введите Bluetooth-адрес сервера (в формате XX:XX:XX:XX:XX:XX): ");
         string serverAddress = Console.ReadLine();
-
-        BluetoothClient bluetoothClient = new BluetoothClient();
 
         // Установка соединения
         var address = BluetoothAddress.Parse(serverAddress);

@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "KMjFB0E4uKxh5psOhhAC+B9cWWlg92zITRwW4E73NF2N8AKSeP2t7dnwYSSAa5ROdZ2/bqzzm8KQN2OxuGl7tw==",
+  "dgSpecHash": "9t7yMS3r6z4GBFORUlpdMsUetkOLnL+EOW2nl+xZKfSH34zAMnk5KAtwzQAatRbEZI4S0jbKF7P4gasveB+zyw==",
   "success": true,
-  "projectFilePath": "D:\\ed\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Server\\Server.csproj",
+  "projectFilePath": "D:\\Documents\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Server\\Server.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\inthehand.net.bluetooth\\4.1.40\\inthehand.net.bluetooth.4.1.40.nupkg.sha512",
-    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\linux.bluetooth\\5.64.0\\linux.bluetooth.5.64.0.nupkg.sha512",
-    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
-    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
-    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\Kiryl.Harbacheuski\\.nuget\\packages\\tmds.dbus\\0.11.0\\tmds.dbus.0.11.0.nupkg.sha512"
+    "C:\\Users\\CyberFlex\\.nuget\\packages\\inthehand.net.bluetooth\\4.1.40\\inthehand.net.bluetooth.4.1.40.nupkg.sha512",
+    "C:\\Users\\CyberFlex\\.nuget\\packages\\linux.bluetooth\\5.64.0\\linux.bluetooth.5.64.0.nupkg.sha512",
+    "C:\\Users\\CyberFlex\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\CyberFlex\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\CyberFlex\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\CyberFlex\\.nuget\\packages\\tmds.dbus\\0.11.0\\tmds.dbus.0.11.0.nupkg.sha512"
   ],
   "logs": []
 }
