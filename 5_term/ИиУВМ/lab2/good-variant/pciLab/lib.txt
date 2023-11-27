@@ -1,3 +1,0 @@
-LIBCMTD.lib
-MSVCRTD.lib
-MSVCP90D.dll
