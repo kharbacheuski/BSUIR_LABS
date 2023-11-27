@@ -1,0 +1,99 @@
+NDB006
+The number of symbol table entries is: 5
+The length of the symbol table is: 57
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+.	|MUX41:25|
+9	|MUX41:28|
+D	|MUX41:27|
+O	|MUX41:26|
+
+The number of name info structs is : 83
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	Ky&|	!	1	G	A0	p
+#	Ky&|	!	1	V	A1	o
+$	Ky&|	!	1	e	A2	n
+%	Ky&|	!	1	t	A3	m
+&	Ky&|	!	1	F	B0	}
+'	Ky&|	!	1	U	B1	|
+(	Ky&|	!	1	d	B2	{
+)	Ky&|	!	1	s	B3	z
+*	Ky&|	!	1	G	C0	y
++	Ky&|	!	1	V	C1	x
+,	Ky&|	!	1	e	C2	w
+-	Ky&|	!	1	t	C3	v
+.	Ky&|	!	1	F	D0	u
+/	Ky&|	!	1	U	D1	t
+0	Ky&|	!	1	d	D2	s
+1	Ky&|	!	1	s	D3	r
+2	Ky&|	!	4	?	N	]	l	INH	q
+3	IGdq	!	Q0	"%
+4	IGdq	!	Q1	"$
+5	IGdq	!	Q2	"#
+6	IGdq	!	Q3	""
+7	Ky&|	!	4	?	N	]	l	S0	"!
+8	Ky&|	!	8	F	G	U	V	d	e	s	t	S1	~
+9	IGdW	.	:10	"`
+:	IGdW	.	:11	"_
+;	IGdW	.	:2	"b
+<	IGdW	.	:3	"e
+=	IGdW	.	:4	"d
+>	IGdW	.	:5	"c
+?	L)p?	.	C	1	3	:6	"f
+@	IGdW	.	:7	"^
+A	IGdW	.	:8	"]
+B	IGdW	.	:9	"a
+C	INv_	.	?	Q	"f
+D	IM}Q	.	F	Q~1	$8
+E	IM}Q	.	G	Q~2	$=
+F	L(w1	.	D	1	?	~6~1	$8
+G	L(w1	.	E	1	?	~6~2	$=
+H	IGdW	O	:10	#E
+I	IGdW	O	:11	#D
+J	IGdW	O	:2	#G
+K	IGdW	O	:3	#J
+L	IGdW	O	:4	#I
+M	IGdW	O	:5	#H
+N	L)p?	O	R	1	4	:6	#K
+O	IGdW	O	:7	#C
+P	IGdW	O	:8	#B
+Q	IGdW	O	:9	#F
+R	INv_	O	N	Q	#K
+S	IM}Q	O	U	Q~1	$B
+T	IM}Q	O	V	Q~2	$E
+U	L(w1	O	S	1	N	~6~1	$B
+V	L(w1	O	T	1	N	~6~2	$E
+W	IGdW	D	:10	#/
+X	IGdW	D	:11	#.
+Y	IGdW	D	:2	#1
+Z	IGdW	D	:3	#4
+[	IGdW	D	:4	#3
+\	IGdW	D	:5	#2
+]	L)p?	D	a	1	5	:6	#5
+^	IGdW	D	:7	#-
+_	IGdW	D	:8	#,
+`	IGdW	D	:9	#0
+a	INv_	D	]	Q	#5
+b	IM}Q	D	d	Q~1	$J
+c	IM}Q	D	e	Q~2	$M
+d	L(w1	D	b	1	]	~6~1	$J
+e	L(w1	D	c	1	]	~6~2	$M
+f	IGdW	9	:10	"w
+g	IGdW	9	:11	"v
+h	IGdW	9	:2	"y
+i	IGdW	9	:3	"|
+j	IGdW	9	:4	"{
+k	IGdW	9	:5	"z
+l	L)p?	9	p	1	6	:6	"}
+m	IGdW	9	:7	"u
+n	IGdW	9	:8	"t
+o	IGdW	9	:9	"x
+p	INv_	9	l	Q	"}
+q	IM}Q	9	s	Q~1	$R
+r	IM}Q	9	t	Q~2	$U
+s	L(w1	9	q	1	l	~6~1	$R
+t	L(w1	9	r	1	l	~6~2	$U

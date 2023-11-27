@@ -1,0 +1,107 @@
+-- MAX+plus II Compiler Fit File      
+-- Version 10.0 9/14/2000             
+-- Compiled: 11/22/2023 14:29:25      
+
+-- Copyright (C) 1988-2000 Altera Corporation
+-- Any megafunction design, and related net list (encrypted or decrypted),
+-- support information, device programming or simulation file, and any other
+-- associated documentation or information provided by Altera or a partner
+-- under Altera's Megafunction Partnership Program may be used only to
+-- program PLD devices (but not masked PLD devices) from Altera.  Any other
+-- use of such megafunction design, net list, support information, device
+-- programming or simulation file, or any other related documentation or
+-- information is prohibited for any other purpose, including, but not
+-- limited to modification, reverse engineering, de-compiling, or use with
+-- any other silicon devices, unless such use is explicitly licensed under
+-- a separate agreement with Altera or a megafunction partner.  Title to
+-- the intellectual property, including patents, copyrights, trademarks,
+-- trade secrets, or maskworks, embodied in any such megafunction design,
+-- net list, support information, device programming or simulation file, or
+-- any other related documentation or information provided by Altera or a
+-- megafunction partner, remains with Altera, the megafunction partner, or
+-- their respective licensors.  No other licenses, including any licenses
+-- needed under any third party's intellectual property, are provided herein.
+
+CHIP "mux4b1"
+BEGIN
+
+    DEVICE = "EPF10K10ATC100-1";
+
+    "A0"                           : INPUT_PIN  = 90     ;
+    "A1"                           : INPUT_PIN  = 16     ;
+    "A2"                           : INPUT_PIN  = 63     ;
+    "A3"                           : INPUT_PIN  = 5      ;
+    "B0"                           : INPUT_PIN  = 91     ;
+    "B1"                           : INPUT_PIN  = 14     ;
+    "B2"                           : INPUT_PIN  = 44     ;
+    "B3"                           : INPUT_PIN  = 9      ;
+    "C0"                           : INPUT_PIN  = 15     ;
+    "C1"                           : INPUT_PIN  = 65     ;
+    "C2"                           : INPUT_PIN  = 86     ;
+    "C3"                           : INPUT_PIN  = 6      ;
+    "D0"                           : INPUT_PIN  = 39     ;
+    "D1"                           : INPUT_PIN  = 45     ;
+    "D2"                           : INPUT_PIN  = 13     ;
+    "D3"                           : INPUT_PIN  = 7      ;
+    "INH"                          : INPUT_PIN  = 89     ;
+    "S0"                           : INPUT_PIN  = 40     ;
+    "S1"                           : INPUT_PIN  = 38     ;
+    "Q0"                           : OUTPUT_PIN = 62     ;
+    "Q1"                           : OUTPUT_PIN = 64     ;
+    "Q2"                           : OUTPUT_PIN = 61     ;
+    "Q3"                           : OUTPUT_PIN = 68     ;
+    "|MUX41:25|:6"                 : LOCATION   = LC6_B7 ;  -- |MUX41:25|Q
+    "|MUX41:25|~6~1"               : LOCATION   = LC1_A10;  -- |MUX41:25|Q~1
+    "|MUX41:25|~6~2"               : LOCATION   = LC1_B7 ;  -- |MUX41:25|Q~2
+    "|MUX41:26|:6"                 : LOCATION   = LC2_B7 ;  -- |MUX41:26|Q
+    "|MUX41:26|~6~1"               : LOCATION   = LC3_B7 ;  -- |MUX41:26|Q~1
+    "|MUX41:26|~6~2"               : LOCATION   = LC4_B7 ;  -- |MUX41:26|Q~2
+    "|MUX41:27|:6"                 : LOCATION   = LC8_B7 ;  -- |MUX41:27|Q
+    "|MUX41:27|~6~1"               : LOCATION   = LC5_B7 ;  -- |MUX41:27|Q~1
+    "|MUX41:27|~6~2"               : LOCATION   = LC7_B7 ;  -- |MUX41:27|Q~2
+    "|MUX41:28|:6"                 : LOCATION   = LC6_A10;  -- |MUX41:28|Q
+    "|MUX41:28|~6~1"               : LOCATION   = LC2_A10;  -- |MUX41:28|Q~1
+    "|MUX41:28|~6~2"               : LOCATION   = LC3_A10;  -- |MUX41:28|Q~2
+
+END;
+
+INTERNAL_INFO "mux4b1"
+BEGIN
+	DEVICE = EPF10K10ATC100-1;
+    OD4P90  : LORAX = "1:FB4|2:CH0R1,PA19R1C6->LC1_B7||";
+    OH6R1P16 : LORAX = "1:G45R1,PA7R1C6->LC4_B7|";
+    OH11R1P63 : LORAX = "1:G42R1,PA17R1C6->LC7_B7|";
+    OH0R0P5 : LORAX = "1:G10R0,PA11R0C9->LC3_A10|";
+    OD0P91  : LORAX = "1:FB0|2:FH0R0,PA0R0C9->LC1_A10||";
+    OH2R1P14 : LORAX = "1:G46R1,PA4R1C6->LC3_B7|";
+    OV3C9P44 : LORAX = "1:V18C9,HHL26R1,PA9R1C6->LC5_B7|";
+    OH6R0P9 : LORAX = "1:G45R0,PA5R0C9->LC2_A10|";
+    OH4R1P15 : LORAX = "1:G47R1,PA3R1C6->LC1_B7|";
+    OH8R1P65 : LORAX = "1:G13R1,PA0R1C6->LC4_B7|";
+    OV1C8P86 : LORAX = "1:V8C8,HHL1R1,PA2R1C6->LC7_B7|";
+    OH1R0P6 : LORAX = "1:G36R0,PA2R0C9->LC3_A10|";
+    OD5P39  : LORAX = "1:FB5|2:CH1R0,PA7R0C9->LC1_A10||";
+    OV3C8P45 : LORAX = "1:V18C8,HHL40R1,PA15R1C6->LC3_B7|";
+    OH0R1P13 : LORAX = "1:G10R1,PA11R1C6->LC5_B7|";
+    OH2R0P7 : LORAX = "1:G46R0,PA4R0C9->LC2_A10|";
+    OD1P89  : LORAX = "1:FB1|2:FH1R0,PA20R0C9->LC6_A10|,2:FH1R1,PA13R1C6->LC6_B7,->LC2_B7,->LC8_B7||";
+    LC1_A10 : LORAX = "1:MSW1R0C8,V4C8,HHL2R1,PA20R1C6->LC6_B7|";
+    LC6_B7  : LORAX = "1:MSW5R1C6,HHL34R1->OH13R1P62|";
+    LC2_B7  : LORAX = "1:MSW1R1C6,HHL8R1->OH9R1P64|";
+    LC8_B7  : LORAX = "1:MSW7R1C6,HHL46R1->OH15R1P61|";
+    LC6_A10 : LORAX = "1:MSW6R0C8,HHL40R0->OH14R0P68|";
+    OD3P40  : LORAX = "1:FB3|2:FH3R0,PA9R0C9->LC6_A10|,2:FH3R1,PA5R1C6->LC6_B7,->LC2_B7,->LC8_B7||";
+    OD2P38  : LORAX = "1:FB2|2:FH2R0,PA6R0C9->LC1_A10,->LC2_A10,->LC3_A10|,2:FH2R1,PA6R1C6->LC1_B7,->LC3_B7,->LC4_B7,->LC5_B7,->LC7_B7||";
+	LC1_A10 : LORAX2 = "X, OD5P39, OD0P91, OD2P38";
+	LC1_B7  : LORAX2 = "X, OH4R1P15, OD4P90, OD2P38";
+	LC6_B7  : LORAX2 = "OD1P89, OD3P40, LC1_B7, LC1_A10";
+	LC3_B7  : LORAX2 = "X, OV3C8P45, OH2R1P14, OD2P38";
+	LC4_B7  : LORAX2 = "X, OH8R1P65, OH6R1P16, OD2P38";
+	LC2_B7  : LORAX2 = "OD1P89, OD3P40, LC3_B7, LC4_B7";
+	LC5_B7  : LORAX2 = "X, OH0R1P13, OV3C9P44, OD2P38";
+	LC7_B7  : LORAX2 = "X, OV1C8P86, OH11R1P63, OD2P38";
+	LC8_B7  : LORAX2 = "OD1P89, OD3P40, LC5_B7, LC7_B7";
+	LC2_A10 : LORAX2 = "X, OH2R0P7, OH6R0P9, OD2P38";
+	LC3_A10 : LORAX2 = "X, OH1R0P6, OH0R0P5, OD2P38";
+	LC6_A10 : LORAX2 = "OD1P89, OD3P40, LC2_A10, LC3_A10";
+END;

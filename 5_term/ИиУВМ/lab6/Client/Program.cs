@@ -2,7 +2,8 @@
 using InTheHand.Net;
 using InTheHand.Net.Bluetooth;
 using InTheHand.Net.Sockets;
-using Linux.Bluetooth;
+
+// 84:1B:77:17:7E:8C
 
 class Program
 {
@@ -28,29 +29,23 @@ class Program
 
         printDevices(bluetoothClient);
 
-        // Запрос у пользователя Bluetooth-адреса сервера
         Console.Write("Введите Bluetooth-адрес сервера (в формате XX:XX:XX:XX:XX:XX): ");
         string serverAddress = Console.ReadLine();
 
-        // Установка соединения
         var address = BluetoothAddress.Parse(serverAddress);
         bluetoothClient.Connect(address, BluetoothService.SerialPort);
 
         Console.WriteLine("Соединение установлено!");
 
-        // Получение потока для приема файла
         NetworkStream networkStream = bluetoothClient.GetStream();
 
-        // Получение размера файла
         byte[] fileSizeBytes = new byte[sizeof(long)];
         networkStream.Read(fileSizeBytes, 0, fileSizeBytes.Length);
         long fileSize = BitConverter.ToInt64(fileSizeBytes, 0);
 
-        // Получение файла
         string savePath = "D:\\track.wav";
         ReceiveFile(networkStream, fileSize, savePath);
 
-        // Закрытие соединения
         networkStream.Close();
         bluetoothClient.Close();
 

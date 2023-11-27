@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "19wHkELLfzQK+oPVQ5PeumQs1tPfrgQ1pvnMD4v0C9dpIBrPMRKwUW+cwaZPZtWVxrSMZhCbIq9IxbqAfR/Msg==",
+  "dgSpecHash": "bZXBorpbsGXC9NZ1gwP3BILJ8GWzXnEcoO9WY2SSZBtFdiFRtnJJqq6FLSiTXFuGmtGKJrNuaS1yXYQq30lffg==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Client\\Client.csproj",
+  "projectFilePath": "D:\\Education\\BGUIR__LABS\\5_term\\ИиУВМ\\lab6\\Client\\Client.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\CyberFlex\\.nuget\\packages\\inthehand.net.bluetooth\\4.1.40\\inthehand.net.bluetooth.4.1.40.nupkg.sha512",
-    "C:\\Users\\CyberFlex\\.nuget\\packages\\linux.bluetooth\\5.64.0\\linux.bluetooth.5.64.0.nupkg.sha512",
-    "C:\\Users\\CyberFlex\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
-    "C:\\Users\\CyberFlex\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
-    "C:\\Users\\CyberFlex\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\CyberFlex\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
-    "C:\\Users\\CyberFlex\\.nuget\\packages\\tmds.dbus\\0.11.0\\tmds.dbus.0.11.0.nupkg.sha512"
+    "C:\\Users\\Kiryl\\.nuget\\packages\\inthehand.net.bluetooth\\4.1.40\\inthehand.net.bluetooth.4.1.40.nupkg.sha512",
+    "C:\\Users\\Kiryl\\.nuget\\packages\\linux.bluetooth\\5.64.0\\linux.bluetooth.5.64.0.nupkg.sha512",
+    "C:\\Users\\Kiryl\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\Kiryl\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\Kiryl\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\Kiryl\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Kiryl\\.nuget\\packages\\tmds.dbus\\0.11.0\\tmds.dbus.0.11.0.nupkg.sha512"
   ],
   "logs": []
 }
