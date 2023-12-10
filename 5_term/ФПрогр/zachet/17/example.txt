@@ -1,0 +1,3 @@
+hello to everybody
+this is first attemp in Spark text processing
+Be careful with people No all of them sympthatize you

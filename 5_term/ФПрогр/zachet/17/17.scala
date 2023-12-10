@@ -6,10 +6,10 @@ import java.io.PrintWriter
 object FileInputOutputExample {
     def main(args:Array[String]): Unit = {
         // Reading from a file
-        val filename "example.txt"
+        val filename = "example.txt"
         val file = Source.fromFile(filename)
 
-        for(line <- file.getlines) {
+        for(line <- file.getLines) {
             println(line)
         }
 
@@ -21,5 +21,7 @@ object FileInputOutputExample {
 
         writer.write("Hello, world!\n")
         writer.write("This is an example of writing to file")
+
+        writer.close()
     }
 }
