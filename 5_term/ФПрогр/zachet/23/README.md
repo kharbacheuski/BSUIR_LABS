@@ -1,10 +1,9 @@
 # Play framework
 
-1) Скачиваем Play https://www.playframework.com/
-2) Создаем проект через консоль: ```play new myApp2```
-3) Запускаем браузер
-4) В папке myApp2/app/views/index.html вставляем наш html-код
-5) Заходим в папку conf/routes, где прописываются связи с коннекторами
+1) делаем в консоли ```sbt new playframework/play-scala-seed.g8``` создаем проект
+2) переходим в папку проекта, делаем ```sbt run```, проект запустится на неком порте (у меня это 9000)
+3) В папке <app_name>/app/views/index.html вставляем наш html-код
+4) Заходим в папку conf/routes, где прописываются связи с коннекторами
 и прописываем там ```GET / controllers.HomeController.index()```
-6) В папке myApp2/app/controllers создаем файл HomeController.jawa
-7) Открываем окно браузера
+
+По мере надобности добавляем новые routes в папку conf/routes, новые контроллеры в папку app/controllers и html-страницы в папку /app/views. 
