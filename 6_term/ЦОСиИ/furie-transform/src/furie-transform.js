@@ -1,6 +1,10 @@
 import Complex from 'complex.js';
 import "./overrides.js";
 
+export const complexModule = (x) => {
+	return Math.sqrt(x.re*x.re + x.im*x.im);
+}
+
 function even(_, ix) {
 	return ix % 2 == 0;
 }

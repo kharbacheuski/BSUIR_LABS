@@ -1,6 +1,7 @@
-import { getAxis, FFT, IFFT } from "./furie-transform"
+import { getAxis, FFT, IFFT, complexModule } from "./furie-transform"
 import Chart from "chart.js/auto";
-import { fft, ifft } from "fft-js";
+import Complex from "complex.js";
+import { fft, ifft,  } from "fft-js";
 
 const N = 64
 const func = (x) => Math.sin(5*x) + Math.cos(x) 
@@ -12,7 +13,7 @@ new Chart(document.getElementById("initial"), {
         labels: axis.x,
         datasets: [{
             label: 'График исходной функции: sin(5x) + cos(x)',
-            data: axis.coords,
+            data: axis.y,
             borderColor: 'green',
             borderWidth: 1
         }]
@@ -21,12 +22,7 @@ new Chart(document.getElementById("initial"), {
 
 const fftRes = FFT(structuredClone(axis.y));
 
-const data1 = fftRes.map((point, ix) => {
-    return {
-        x: point.im,
-        y: point.re
-    }
-});
+console.log(fftRes)
 
 new Chart(document.getElementById("fftFunction"), {
     type: 'line',
@@ -34,7 +30,7 @@ new Chart(document.getElementById("fftFunction"), {
         labels: axis.x,
         datasets: [{
             label: 'График функции после БПФ',
-            data: data1,
+            data: fftRes.map(point => complexModule(point)),
             borderColor: 'red',
             borderWidth: 1
         }]
@@ -48,7 +44,7 @@ new Chart(document.getElementById("re-fftFunction"), {
         labels: axis.x,
         datasets: [{
             label: 'График реальной части после БПФ',
-            data: data1.map((point, ix) => point.x),
+            data: fftRes.map(point => point.re),
             borderColor: 'red',
             borderWidth: 1
         }]
@@ -61,7 +57,7 @@ new Chart(document.getElementById("im-fftFunction"), {
         labels: axis.x,
         datasets: [{
             label: 'График воображаемой части после БПФ',
-            data: data1.map((point, ix) => point.y),
+            data: fftRes.map(point => point.im),
             borderColor: 'red',
             borderWidth: 1
         }]
@@ -70,12 +66,7 @@ new Chart(document.getElementById("im-fftFunction"), {
 
 const ifftRes = IFFT(fftRes);
 
-const data4 = ifftRes.map((point, ix) => {
-    return {
-        x: point.im,
-        y: point.re
-    }
-});
+const data4 = ifftRes.map(point => point.re);
 
 new Chart(document.getElementById("ifftFunction"), {
     type: 'line',
@@ -90,12 +81,9 @@ new Chart(document.getElementById("ifftFunction"), {
     },
 });
 
-const data5 = fft(structuredClone(axis.y)).map((point, ix) => {
-    return {
-        x: point[1],
-        y: point[0]
-    }
-});
+const data5 = fft(structuredClone(axis.y));
+
+const modules = data5.map(point => complexModule(new Complex(point[0], point[1])))
 
 new Chart(document.getElementById("libfftFunction"), {
     type: 'line',
@@ -103,7 +91,7 @@ new Chart(document.getElementById("libfftFunction"), {
         labels: axis.x,
         datasets: [{
             label: 'График библиотечной БПФ функции',
-            data: data5,
+            data: modules,
             borderColor: 'blue',
             borderWidth: 1
         }]
@@ -116,7 +104,7 @@ new Chart(document.getElementById("re-libfftFunction"), {
         labels: axis.x,
         datasets: [{
             label: 'График библиотечной реальной части БПФ функции',
-            data: data5.map((point, ix) => point.x),
+            data: data5.map(point => point[0]),
             borderColor: 'blue',
             borderWidth: 1
         }]
@@ -129,19 +117,14 @@ new Chart(document.getElementById("im-libfftFunction"), {
         labels: axis.x,
         datasets: [{
             label: 'График библиотечной воображаемой части БПФ функции',
-            data: data5.map((point, ix) => point.y),
+            data: data5.map(point => point[1]),
             borderColor: 'blue',
             borderWidth: 1
         }]
     },
 });
 
-const data6 = ifft(fft(structuredClone(axis.y))).map((point, ix) => {
-    return {
-        x: point[1],
-        y: point[0]
-    }
-});
+const data6 = ifft(data5);
 
 new Chart(document.getElementById("libifftFunction"), {
     type: 'line',
@@ -149,7 +132,7 @@ new Chart(document.getElementById("libifftFunction"), {
         labels: axis.x,
         datasets: [{
             label: 'График библиотечной обратной БПФ функции',
-            data: data6,
+            data: data6.map(point => point[0]),
             borderColor: 'blue',
             borderWidth: 1
         }]
