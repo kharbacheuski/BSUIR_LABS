@@ -3,53 +3,50 @@ import "./overrides.js";
 
 const step = 2*Math.PI
 
-export const getYAxis = (func, N = 64) => {
-    const ys = [];
+export const getAxis = (func, N) => {
+	const axis = [];
 
-    for (let i = 0; i < N; i++) {
-        ys.push(func(step*(i+1)/N));
+	for (let i = 1; i <= N; i++) {
+		let arg = step*i/N;
+
+		axis.push({
+			x: Number(arg.toFixed(2)),
+			y: Number(func(arg).toFixed(3))
+		})
     }
 
-    return ys;
-}
-
-export const getXAxis = (N = 64) => {
-	const xes = [];
-
-	for (let i = 0; i < N; i++) {
-		xes.push(Number((step*(i+1)/N).toFixed(2)));
+	const x = axis.map(point => point.x);
+	const y = axis.map(point => point.y)
+	
+	return {
+		axis,
+		x,
+		y 
 	}
-
-	return xes
 }
 
 export const FFT = (signal) => {
-    const N = signal.length;
+    let N = signal.length;
 
-	if( N <= 1 ) return signal;
+	if( N == 1 ) return signal;
 	
 	let hN = N / 2;
-	let even = signal.slice(0, hN);
-	let odd = signal.slice(hN);
+	let a_even = signal.slice(0, hN);
+	let a_odd = signal.slice(hN);
 
-	even = FFT(even);
-	odd = FFT(odd);
+	let b_even = FFT(a_even);
+	let b_odd = FFT(a_odd);
 
-	let a = -step;
+	const WN = Math.exp(2*Math.PI * new Complex(0, 1)/N)
+	let w = 1;
 
-	for(let k = 0; k < hN; ++k)
-	{
-		if(!(even[k] instanceof Complex))
-			even[k] = new Complex(even[k], 0);
-		if(!(odd[k] instanceof Complex))
-			odd[k] = new Complex(odd[k], 0);
-		let p = k/N;
-		let t = new Complex(0, a * p);
-		t.cexp(t).mul(odd[k], t);
-		signal[k] = even[k].add(t, odd[k]);
-		signal[k + hN] = even[k].sub(t, even[k]);
+	let y = []
+
+	for(let j = 0; j <= hN; j++) {	
+		y[j] = b_even[j] + b_odd[j]*w;
+		y[j + hN] = b_even[j] - b_odd[j]*w
+		w = w*WN;
 	}
 
-	return signal;
+	return y
 }
-
