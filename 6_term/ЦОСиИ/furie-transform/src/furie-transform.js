@@ -9,8 +9,8 @@ function odd(_, ix) {
 	return ix % 2 == 1;
 }
 
-const getExponent = (k, N) => {
-	var x = -2 * Math.PI * (k / N);
+const getExponent = (k, N, sign = -1) => {
+	var x = sign*2 * Math.PI * (k / N);
 
 	return new Complex(Math.cos(x), Math.sin(x));
 };
@@ -67,23 +67,21 @@ export const FFT = (signal) => {
 	return y
 }
 
+
 export const IFFT = (signal) => {
-	let outputSignal = structuredClone(signal);
-    let N = outputSignal.length; // Длина вектора сигнала
-	
-	let iN = 1 / N;
+    let inverse_signal = []; 
 
-	for(let i = 0 ; i < N; ++i)
-		if(outputSignal[i] instanceof Complex)
-		outputSignal[i].im = -outputSignal[i].im;
-
-	outputSignal = FFT(outputSignal);
-
-	for(var i = 0 ; i < N; ++i) {
-		outputSignal[i].im = -outputSignal[i].im;
-		outputSignal[i].re *= iN;
-		outputSignal[i].im *= iN;
+	for(let i = 0; i < signal.length; i++){
+		inverse_signal[i] = new Complex(signal[i].im, signal[i].re); // Меняем местами мнимую и реальную части
 	}
 
-	return outputSignal
+	let ps = FFT(inverse_signal); // Выполняем БПФ на преобразованном сигнале
+
+	let res=[];
+
+	for(let j = 0; j < ps.length; j++){
+		res[j] = new Complex(ps[j].im/ps.length, ps[j].re/ps.length)
+	}
+
+	return res;
 }

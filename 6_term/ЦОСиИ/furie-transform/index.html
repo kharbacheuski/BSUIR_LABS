@@ -8,28 +8,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-    <style>
-      * {
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-    </style>
   </head>
   <body>
-    <div>
+    <div class="container">
       <h1 style="text-align: center;">Fourie Transform</h1>
       <h3 style="text-align: center;">sin(5x) + cos(x)</h3>
-      <canvas id="initial"></canvas>
 
-      <canvas id="fftFunction"></canvas>
+      <div>
+        <canvas id="initial"></canvas>
 
-      <canvas id="re-fftFunction"></canvas>
+        <div class="grid">
+          <div class="left">    
+            <canvas id="fftFunction"></canvas>
 
-      <canvas id="im-fftFunction"></canvas>
+            <canvas id="re-fftFunction"></canvas>
 
-      <canvas id="libfftFunction"></canvas>
+            <canvas id="im-fftFunction"></canvas>
+
+            <canvas id="ifftFunction"></canvas>
+          </div>
+          <div class="right">
+            <canvas id="libfftFunction"></canvas>
+
+            <canvas id="re-libfftFunction"></canvas>
+
+            <canvas id="im-libfftFunction"></canvas>
+
+            <canvas id="libifftFunction"></canvas>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
