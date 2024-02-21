@@ -13,6 +13,9 @@ Number.prototype.arrange = function() {
 Array.prototype.multiplyWithNumber = function(number) {
     return this.map((item) => item * number);
 }
+Array.prototype.sumWithNumber = function(number) {
+    return this.map((item) => item + number);
+}
 
 Complex.prototype.cexp = function(dst) {
 	var er = Math.exp(this.re);
