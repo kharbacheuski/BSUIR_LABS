@@ -10,6 +10,7 @@ const generateHtmlPlugins = () => {
 		return new HtmlWebpackPlugin({
 			template: `./views/${page}.html`,
 			filename: `${page}.html`,
+			chunks: [page],
 		});
 	});
 };
@@ -26,6 +27,7 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].built.js',
+		
 		path: path.resolve(__dirname, 'dist'),
 	},
 	resolve: {

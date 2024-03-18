@@ -31,7 +31,3 @@ export const getPoints = (N) => {
 
 	return points;
 }
-
-export const complexModule = (x) => {
-	return Math.sqrt(x.re*x.re + x.im*x.im);
-}
