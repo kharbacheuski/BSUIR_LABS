@@ -1,4 +1,5 @@
-import { getAxis, FFT, IFFT, complexModule, getPoints } from "./furie-transform"
+import { FFT, IFFT } from "../furie-transform"
+import {getAxis, getPoints, complexModule} from '../overrides'
 import Chart from "chart.js/auto";
 import Complex from "complex.js";
 import { fft, ifft,  } from "fft-js";

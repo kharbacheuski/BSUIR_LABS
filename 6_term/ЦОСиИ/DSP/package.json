@@ -3,12 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "build": "webpack"
   },
   "dependencies": {
     "@babel/core": "^7.23.9",
     "babel-loader": "^9.1.3",
     "chart.js": "^4.4.1",
+    "clean-webpack-plugin": "^4.0.0",
     "complex.js": "^2.1.1",
     "css-loader": "^6.10.0",
     "fft-js": "^0.0.12",

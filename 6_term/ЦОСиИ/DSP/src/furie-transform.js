@@ -1,20 +1,6 @@
 import Complex from 'complex.js';
 import "./overrides.js";
 
-export const getPoints = (N) => {
-	const points = [];
-	
-	for(var i = 0; i < N; i++) {
-		points.push(i);
-	}
-
-	return points;
-}
-
-export const complexModule = (x) => {
-	return Math.sqrt(x.re*x.re + x.im*x.im);
-}
-
 function even(_, ix) {
 	return ix % 2 == 0;
 }
@@ -28,28 +14,6 @@ const getExponent = (k, N, sign = -1) => {
 
 	return new Complex(Math.cos(x), Math.sin(x));
 };
-
-export const getAxis = (func, N) => {
-	const axis = [];
-
-	for (let i = 1; i <= N; i++) {
-		let arg = 2*Math.PI*i/N;
-
-		axis.push({
-			x: Number(arg.toFixed(2)),
-			y: Number(func(arg).toFixed(3))
-		})
-    }
-
-	const x = axis.map(point => point.x);
-	const y = axis.map(point => point.y)
-	
-	return {
-		coords: axis,
-		x,
-		y 
-	}
-}
 
 export const FFT = (signal) => {
     let N = signal.length; // Длина вектора сигнала

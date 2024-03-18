@@ -1,13 +1,31 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const pages = ['index', 'furie', 'correlation', 'convolution'];
+
+const generateHtmlPlugins = () => {
+	return pages.map((page) => {
+		return new HtmlWebpackPlugin({
+			template: `./views/${page}.html`,
+			filename: `${page}.html`,
+		});
+	});
+};
 
 module.exports = {
+	context: path.resolve(__dirname, './'),
 	mode: 'development',
 	watch: true,
-	entry: path.resolve(__dirname, './src/main.js'),
+	entry: {
+		main: './src/main.js',
+		convolution: './src/charts/convolution.js',
+		correlation: './src/charts/correlation.js',
+		furie: './src/charts/furie.js',
+	},
 	output: {
-		filename: 'bundle.js',
+		filename: '[name].built.js',
 		path: path.resolve(__dirname, 'dist'),
 	},
 	resolve: {
@@ -43,11 +61,9 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			filename: 'index.html',
-			template: 'index.html'
-		}),
-		new MiniCssExtractPlugin()
+		...generateHtmlPlugins(),
+		new MiniCssExtractPlugin(),
+		new CleanWebpackPlugin(),
 	],
 	devServer: {
 		open: true,

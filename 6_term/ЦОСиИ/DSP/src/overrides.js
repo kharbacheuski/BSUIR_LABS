@@ -1,25 +1,37 @@
 import Complex from 'complex.js';
 
-Number.prototype.arrange = function() {
-    let arr = [];
+export const getAxis = (func, N) => {
+	const axis = [];
 
-    for (let i = 0; i < Number(this); i += 1){
-        arr.push(i);
+	for (let i = 1; i <= N; i++) {
+		let arg = 2*Math.PI*i/N;
+
+		axis.push({
+			x: Number(arg.toFixed(2)),
+			y: Number(func(arg).toFixed(3))
+		})
     }
 
-    return arr;
+	const x = axis.map(point => point.x);
+	const y = axis.map(point => point.y)
+	
+	return {
+		coords: axis,
+		x,
+		y 
+	}
 }
 
-Array.prototype.multiplyWithNumber = function(number) {
-    return this.map((item) => item * number);
-}
-Array.prototype.sumWithNumber = function(number) {
-    return this.map((item) => item + number);
+export const getPoints = (N) => {
+	const points = [];
+	
+	for(var i = 0; i < N; i++) {
+		points.push(i);
+	}
+
+	return points;
 }
 
-Complex.prototype.cexp = function(dst) {
-	var er = Math.exp(this.re);
-	dst.re = er * Math.cos(this.im);
-	dst.im = er * Math.sin(this.im);
-	return dst;
+export const complexModule = (x) => {
+	return Math.sqrt(x.re*x.re + x.im*x.im);
 }

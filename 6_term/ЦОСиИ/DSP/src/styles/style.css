@@ -14,3 +14,30 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+
+    margin-top: 3rem;
+}
+
+nav ul a {
+    text-decoration: none;
+
+    display: block;
+    background-color: #ff8a8a;
+    color: #fff;
+
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+
+    transition: all 0.3s ease;
+}
+
+nav ul a:hover {
+    background-color: #d34e4e;
+}
