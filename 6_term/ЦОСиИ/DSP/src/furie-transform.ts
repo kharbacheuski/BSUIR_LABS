@@ -5,20 +5,6 @@ const W = (N: number, mode: number = 1) => {
 	return new Complex(Math.cos((2 * Math.PI) / N), - mode * Math.sin((2 * Math.PI) / N))
 }
 
-function even(_: any, ix: number) {
-	return ix % 2 == 0;
-}
-
-function odd(_: any, ix: number) {
-	return ix % 2 == 1;
-}
-
-const getExponent = (k: number, N: number, mode: number = 1) => {
-	var x = mode * 2 * Math.PI * ( k / N);
-
-	return new Complex(Math.cos(x), Math.sin(x));
-};
-
 const reverse_binary = (k: number, N: number) => {
 	const bits = Math.log2(N);
 	let j = 0;
@@ -32,7 +18,7 @@ const reverse_binary = (k: number, N: number) => {
 	return j
 }
 
-const swap = (x:  Complex[], i: number, j: number) => {
+const swap = (x: Complex[], i: number, j: number) => {
 	const temp = x[i];
 
 	x[i] = x[j];
@@ -97,15 +83,17 @@ export function FFT_recursive(x: Complex[], mode: number): Complex[] {
     let w = new Complex(1, 0);
 
     for (let i = 0; i < hN; i++) {
-		x = x[i] instanceof Complex ? x as Complex[] : x.map(item => new Complex(item, 0));
+		if(!(x[i] instanceof Complex)) {
+			x[i] = new Complex(x[i].re, x[i].im);
+		}
 		
         b.push(x[i].add(x[i + hN]));
         c.push((x[i].sub(x[i + hN])).mul(w));
 
         w = w.mul(W(N, mode));
     }
-
-    return [...FFT_recursive(b, mode), ...FFT_recursive(c, mode)];
+	
+    return [...FFT_recursive(b, mode), ...FFT_recursive(c, mode)]
 }
 
 
