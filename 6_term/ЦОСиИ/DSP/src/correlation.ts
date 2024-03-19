@@ -19,7 +19,7 @@ export const correlation = (x: number[], y: number[]): number[] => {
     return z
 }
 
-export const FFT_correlation = (x: number[], y: number[]): Complex[] => {
+export const FFT_correlation = (x: number[], y: number[]): number[] => {
     const N = x.length
 
     const fft_x = FFT(x, 1)
