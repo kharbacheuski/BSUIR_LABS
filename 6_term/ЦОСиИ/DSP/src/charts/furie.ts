@@ -1,4 +1,4 @@
-import { FFT, IFFT } from "../furie-transform"
+import { FFT, IFFT, FFT_recursive } from "../furie-transform"
 import { getAxis, getPoints } from '../overrides'
 import Chart, { ChartItem } from "chart.js/auto";
 import Complex from "complex.js";
@@ -9,7 +9,6 @@ type ComplexAsArray = {[0]: number, [1]: number};
 const N = 64
 const func = (arg: number) => Math.sin(5*arg) + Math.cos(arg) 
 const axis = getAxis(func, N)
-
 const points = getPoints(N)
 
 const render = () => {
@@ -41,7 +40,6 @@ const render = () => {
         },
     });
     
-    
     new Chart(document.getElementById("re-fftFunction") as ChartItem, {
         type: 'line',
         data: {
@@ -68,9 +66,7 @@ const render = () => {
         },
     });
     
-    const ifftRes = IFFT(fftRes);
-    
-    const data4 = ifftRes.map(point => point.re);
+    const ifftRes = IFFT(structuredClone(fftRes));
     
     new Chart(document.getElementById("ifftFunction") as ChartItem, {
         type: 'line',
@@ -78,7 +74,7 @@ const render = () => {
             labels: points,
             datasets: [{
                 label: 'График обратной БПФ функции',
-                data: data4,
+                data: ifftRes,
                 borderColor: 'red',
                 borderWidth: 1
             }]
