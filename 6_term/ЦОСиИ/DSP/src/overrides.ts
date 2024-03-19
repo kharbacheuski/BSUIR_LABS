@@ -1,6 +1,14 @@
-import Complex from 'complex.js';
 
-export const getAxis = (func, N) => {
+type Axis = {
+	coords: {
+		x: number,
+		y: number
+	}[],
+	x: number[],
+	y: number[]
+}
+
+export const getAxis = (func: (arg: number) => number, N: number): Axis => {
 	const axis = [];
 
 	for (let i = 1; i <= N; i++) {
@@ -22,8 +30,8 @@ export const getAxis = (func, N) => {
 	}
 }
 
-export const getPoints = (N) => {
-	const points = [];
+export const getPoints = (N: number): number[] => {
+	const points: number[] = [];
 	
 	for(var i = 0; i < N; i++) {
 		points.push(i);

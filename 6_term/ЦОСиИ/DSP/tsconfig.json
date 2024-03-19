@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      // project options
+      "lib": [
+        "ESNext",
+        "dom"
+      ], // specifies which default set of type definitions to use ("DOM", "ES6", etc)
+      "outDir": "dist", // .js (as well as .d.ts, .js.map, etc.) files will be emitted into this directory.,
+      "target": "ES6", // Target environment. Most modern browsers support ES6, but you may want to set it to newer or older. (defaults to ES3)
+      "moduleResolution": "Node",
+      // Strict Checks
+      "alwaysStrict": true, // Ensures that your files are parsed in the ECMAScript strict mode, and emit “use strict” for each source file.
+      "allowUnreachableCode": false, // pick up dead code paths
+      "noImplicitAny": true, // In some cases where no type annotations are present, TypeScript will fall back to a type of any for a variable when it cannot infer the type.
+      "strictNullChecks": false, // When strictNullChecks is true, null and undefined have their own distinct types and you’ll get a type error if you try to use them where a concrete value is expected.
+    },
+    "include": ["./**/*.ts", "webpack.config.js", "./src/*"],
+    "exclude": [
+      "node_modules/**/*"
+    ]
+  }

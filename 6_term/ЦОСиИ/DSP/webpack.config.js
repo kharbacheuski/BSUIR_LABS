@@ -20,10 +20,10 @@ module.exports = {
 	mode: 'development',
 	watch: true,
 	entry: {
-		main: './src/main.js',
-		convolution: './src/charts/convolution.js',
-		correlation: './src/charts/correlation.js',
-		furie: './src/charts/furie.js',
+		main: './src/main.ts',
+		convolution: './src/charts/convolution.ts',
+		correlation: './src/charts/correlation.ts',
+		furie: './src/charts/furie.ts',
 	},
 	output: {
 		filename: '[name].built.js',
@@ -31,13 +31,18 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 	},
 	resolve: {
-		extensions: ['.js', '.json'],
+		extensions: ['.ts', '.js', '.json']
 	},
 	module: {
 		rules: [
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
+			},
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
 			},
 			{
 				test: /\.(png|jpe?g|gif|webp|svg)(\?.*)?$/,

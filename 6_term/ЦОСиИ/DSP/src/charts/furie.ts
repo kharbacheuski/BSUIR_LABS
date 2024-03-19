@@ -1,17 +1,19 @@
 import { FFT, IFFT } from "../furie-transform"
 import { getAxis, getPoints } from '../overrides'
-import Chart from "chart.js/auto";
+import Chart, { ChartItem } from "chart.js/auto";
 import Complex from "complex.js";
-import { fft, ifft,  } from "fft-js";
+import { fft, ifft } from "fft-js";
+
+type ComplexAsArray = {[0]: number, [1]: number};
 
 const N = 64
-const func = (x) => Math.sin(5*x) + Math.cos(x) 
+const func = (arg: number) => Math.sin(5*arg) + Math.cos(arg) 
 const axis = getAxis(func, N)
 
 const points = getPoints(N)
 
 const render = () => {
-    new Chart(document.getElementById("initial"), {
+    new Chart(document.getElementById("initial") as ChartItem, {
         type: 'line',
         data: {
             labels: axis.x,
@@ -24,9 +26,9 @@ const render = () => {
         },
     });
     
-    const fftRes = FFT(structuredClone(axis.y));
+    const fftRes = FFT(structuredClone(axis.y), 1);
     
-    new Chart(document.getElementById("fftFunction"), {
+    new Chart(document.getElementById("fftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -40,7 +42,7 @@ const render = () => {
     });
     
     
-    new Chart(document.getElementById("re-fftFunction"), {
+    new Chart(document.getElementById("re-fftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -53,7 +55,7 @@ const render = () => {
         },
     });
     
-    new Chart(document.getElementById("im-fftFunction"), {
+    new Chart(document.getElementById("im-fftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -70,7 +72,7 @@ const render = () => {
     
     const data4 = ifftRes.map(point => point.re);
     
-    new Chart(document.getElementById("ifftFunction"), {
+    new Chart(document.getElementById("ifftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -83,11 +85,11 @@ const render = () => {
         },
     });
     
-    const data5 = fft(structuredClone(axis.y));
+    const data5: ComplexAsArray[] = fft(structuredClone(axis.y));
     
     const modules = data5.map(point => new Complex(point[0], point[1]).abs());
     
-    new Chart(document.getElementById("libfftFunction"), {
+    new Chart(document.getElementById("libfftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -100,7 +102,7 @@ const render = () => {
         },
     });
     
-    new Chart(document.getElementById("re-libfftFunction"), {
+    new Chart(document.getElementById("re-libfftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -113,7 +115,7 @@ const render = () => {
         },
     });
     
-    new Chart(document.getElementById("im-libfftFunction"), {
+    new Chart(document.getElementById("im-libfftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -126,9 +128,9 @@ const render = () => {
         },
     });
     
-    const data6 = ifft(data5);
+    const data6: ComplexAsArray[] = ifft(data5);
     
-    new Chart(document.getElementById("libifftFunction"), {
+    new Chart(document.getElementById("libifftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
