@@ -1,9 +1,10 @@
-import { convolution, FFT_convolution } from "../convolution"
+import { linear_convolution, curcular_convolution, FFT_convolution } from "../convolution"
 import { getAxis, getPoints } from '../overrides'
 import Chart, { ChartItem } from "chart.js/auto";
+import convolve from "convolution"
 
-const N = 64
-const x = (arg: number) => Math.sin(5*arg)
+const N = 16
+const x = (arg: number) => Math.sin(3*arg)
 const y = (arg: number) => Math.cos(arg)
 
 const axis1 = getAxis(x, N)
@@ -38,15 +39,45 @@ const render = () => {
         },
     });
     
-    const convolution_res = convolution(structuredClone(axis1.y), structuredClone(axis2.y)) 
+    const curcular_convolution_res = curcular_convolution(structuredClone(axis1.y), structuredClone(axis2.y)) 
     
-    new Chart(document.getElementById("convolution") as ChartItem, {
+    new Chart(document.getElementById("circular-convolution") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
             datasets: [{
-                label: 'Свертка',
-                data: convolution_res,
+                label: 'Циклическая свертка',
+                data: curcular_convolution_res,
+                borderColor: 'blue',
+                borderWidth: 1
+            }]
+        },
+    });
+
+    const linear_convolution_res = linear_convolution(structuredClone(axis1.y), structuredClone(axis2.y)) 
+    
+    new Chart(document.getElementById("linear-convolution") as ChartItem, {
+        type: 'line',
+        data: {
+            labels: points,
+            datasets: [{
+                label: 'Линейная свертка',
+                data: linear_convolution_res,
+                borderColor: 'blue',
+                borderWidth: 1
+            }]
+        },
+    });
+
+    const lib_convolution_res = convolve(structuredClone(axis1.y), structuredClone(axis2.y)) 
+    
+    new Chart(document.getElementById("lib-convolution") as ChartItem, {
+        type: 'line',
+        data: {
+            labels: points,
+            datasets: [{
+                label: 'Свертка библиотечная',
+                data: lib_convolution_res,
                 borderColor: 'blue',
                 borderWidth: 1
             }]

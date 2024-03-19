@@ -2,15 +2,33 @@
 import { FFT, IFFT } from "./furie-transform"
 import Complex from "complex.js";
 
-export const convolution = (x: number[], y: number[]) => {
+export const curcular_convolution = (x: number[], y: number[]) => {
     const N = x.length
     const z: number[] = []
 
-    for (let m = 0; m < N; m++) {
+    for (let n = 0; n < N; n++) {
         let sum: number = 0
 
-        for (let h = 0; h < N; h++) {
-            sum += x[h] * (y[m - h] ?? 0)
+        for (let m = 0; m < N; m++) {
+            sum += x[m] * (y[n - m] || 0)
+        }
+
+        z.push(sum)
+    }
+
+    return z
+}
+
+export const linear_convolution = (x: number[], y: number[]) => {
+    const N = x.length
+    const M = y.length
+    const z: number[] = []
+
+    for (let n = 0; n <= N+M-2; n++) {
+        let sum: number = 0
+
+        for (let m = 0; m < n; m++) {
+            sum += ((m < 0 || m > N) ? 0 : x[m]) * ((n-m < 0 || n-m > M)  ? 0 : y[n - m])
         }
 
         z.push(sum)
@@ -28,7 +46,7 @@ export const FFT_convolution = (x: number[], y: number[]) => {
     const z: Complex[] = []
 
     for (let i = 0; i < N; i++) {
-        z.push(fft_x[i].mul(fft_y[i].conjugate()))
+        z.push(fft_x[i].mul(fft_y[i]))
     }
 
     return IFFT(z)

@@ -1,6 +1,7 @@
 import { correlation, FFT_correlation } from "../correlation"
 import { getAxis, getPoints } from '../overrides'
 import Chart, { ChartItem } from "chart.js/auto";
+import {correlation as lib_correlation} from "node-correlation"
 
 const N = 16
 const x = (arg: number) => Math.sin(5*arg)
@@ -52,6 +53,9 @@ const render = () => {
             }]
         },
     });
+
+    const lib_correlation_res = lib_correlation(structuredClone(axis1.y), structuredClone(axis2.y)) 
+    console.log(lib_correlation_res)
     
     const fft_correlation_res = FFT_correlation(structuredClone(axis1.y), structuredClone(axis2.y))
     
