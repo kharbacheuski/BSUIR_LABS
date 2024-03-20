@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "types": ["vite/client"],
       // project options
       "lib": [
         "ESNext",
@@ -14,8 +15,9 @@
       "noImplicitAny": true, // In some cases where no type annotations are present, TypeScript will fall back to a type of any for a variable when it cannot infer the type.
       "strictNullChecks": false, // When strictNullChecks is true, null and undefined have their own distinct types and you’ll get a type error if you try to use them where a concrete value is expected.
     },
-    "include": ["./**/*.ts", "webpack.config.js", "./src/*"],
+    "include": ["./**/*.ts", "webpack.config.js", "./src/*", "src/vite-env.d.ts"],
     "exclude": [
       "node_modules/**/*"
-    ]
+    ],
+    "references": [{ "path": "./tsconfig.node.json" }]
   }
