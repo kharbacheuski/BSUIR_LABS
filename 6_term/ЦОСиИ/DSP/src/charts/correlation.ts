@@ -3,7 +3,7 @@ import { getAxis, getPoints } from '../overrides'
 import Chart, { ChartItem } from "chart.js/auto";
 import {correlation as lib_correlation} from "node-correlation"
 
-const N = 16
+const N = 8
 const x = (arg: number) => Math.cos(2*arg)
 const y = (arg: number) => Math.sin(5*arg)
 

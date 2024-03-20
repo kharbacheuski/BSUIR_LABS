@@ -83,15 +83,13 @@ const render = () => {
     
     const data5: ComplexAsArray[] = fft(structuredClone(axis.y));
     
-    const modules = data5.map(point => new Complex(point[0], point[1]).abs());
-    
     new Chart(document.getElementById("libfftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
             datasets: [{
                 label: 'График библиотечной БПФ функции',
-                data: modules,
+                data: data5.map(point => new Complex(point[0], point[1]).abs()),
                 borderColor: 'blue',
                 borderWidth: 1
             }]
@@ -124,7 +122,6 @@ const render = () => {
         },
     });
     
-    const data6: ComplexAsArray[] = ifft(data5);
     
     new Chart(document.getElementById("libifftFunction") as ChartItem, {
         type: 'line',
@@ -132,7 +129,7 @@ const render = () => {
             labels: points,
             datasets: [{
                 label: 'График библиотечной обратной БПФ функции',
-                data: data6.map(point => point[0]),
+                data: (ifft(structuredClone(data5)) as ComplexAsArray[]).map(point => point[0]),
                 borderColor: 'blue',
                 borderWidth: 1
             }]

@@ -27,7 +27,7 @@ const swap = (x: Complex[], i: number, j: number) => {
 	return x
 }
 
-const reverse_index = (x: Complex[]) => {
+export const reverse_index = (x: Complex[]) => {
 	const N = x.length;
 
 	for(let i = 0; i < N; i++) {
@@ -40,36 +40,6 @@ const reverse_index = (x: Complex[]) => {
 
 	return x
 }
-
-// export const FFT_recursive = (signal: number[] | Complex[], mode: number = 1): Complex[] => {
-//     const N = signal.length; // Длина вектора сигнала
-
-// 	if( N == 1 ) return signal as Complex[];
-	
-// 	let hN = N / 2;
-
-// 	let a_even = signal.filter(even) // Делим сигнал на четную часть
-// 	let a_odd = signal.filter(odd);  // и на нечетную часть
-
-// 	let b_even = FFT_recursive(a_even as Complex[], mode); // Рекурсивно применяем БПФ к четной части
-// 	let b_odd = FFT_recursive(a_odd as Complex[], mode);   // и нечетной части
-
-// 	let y = [] // массив для выходного сигнала
-
-// 	for(let k = 0; k < hN; k++) {	 // массив для выходного сигнала
-// 		if(!(b_even[k] instanceof Complex)) // проверка на то, что элемент является комплексным числом
-// 			b_even[k] = new Complex(b_even[k], 0);
-// 		if(!(b_odd[k] instanceof Complex))
-// 			b_odd[k] = new Complex(b_odd[k], 0);
-
-// 		var exponent: Complex = b_odd[k].mul(getExponent(k, N, mode)); // умножаем нечетный элемент на часть с экспонентой
-
-// 		y[k] = b_even[k].add(exponent);
-// 		y[k + hN] = b_even[k].sub(exponent);
-// 	}
-
-// 	return y
-// }
 
 export function FFT_recursive(x: Complex[], mode: number): Complex[] {
     const N: number = x.length;
@@ -110,7 +80,7 @@ export const FFT = (signal: number[], mode: number = 1): Complex[] => {
 export const IFFT = (x: Complex[]): number[] => {
 	const N = x.length;
 
-	x = FFT_recursive(x, 1)
+	x = FFT_recursive(x, -1)
 	x = reverse_index(x)
 
 	return x.map(item => item.div(N).re)

@@ -6,11 +6,12 @@ export const correlation = (x: number[], y: number[]): number[] => {
 
     const z: number[] = []
 
-    for (let m = 0; m < N; m++) {
+    for (let n = 0; n < N; n++) {
         let sum = 0
 
-        for (let h = 0; h < N; h++) {
-            sum += x[h] * (y[(m + h) % N] || 0)
+        for (let m = 0; m < N; m++) {
+            if(n + m >= N) continue
+            else sum += x[m] * (y[n + m] || 0)
         }
 
         z.push(sum)
