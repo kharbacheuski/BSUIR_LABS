@@ -51,3 +51,42 @@ export const FFT_convolution = (x: number[], y: number[]) => {
 
     return IFFT(z)
 }
+
+/*
+def reverse_binary(x, N):
+    bits = int(math.log2(N))
+    j: int = 0
+    for i in range(bits, 0, -1):
+        j = j << 1
+        j = j + (x & 1)
+        x = x >> 1
+
+    return j
+
+def swap(x: list, i: int, j: int) -> list:
+    temp = x[i]
+    x[i] = x[j]
+    x[j] = temp
+    return x
+
+
+def reverse_index(x: list) -> list:
+    N = len(x)
+    for i in range(0, N):
+        j = reverse_binary(i, N)
+        if j > i:
+            x = swap(x, i, j)
+    return x
+*/
+
+export const reverse_binary = (x: number[], N: number) => {
+    let bits = Math.log2(N)
+
+    let j = 0
+    for i in range(bits, 0, -1):
+        j = j << 1
+        j = j + (x & 1)
+        x = x >> 1
+
+    return j
+}
