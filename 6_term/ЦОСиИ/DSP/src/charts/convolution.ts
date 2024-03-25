@@ -3,12 +3,14 @@ import { getAxis, getPoints } from '../overrides'
 import Chart, { ChartItem } from "chart.js/auto";
 import convolve from "convolution"
 
-const N = 16
-const x = (arg: number) => Math.sin(3*arg)
-const y = (arg: number) => Math.cos(arg)
+const N = 8
+const x = (arg: number) => Math.cos(2*arg)
+const y = (arg: number) => Math.sin(5*arg)
 
 const axis1 = getAxis(x, N)
 const axis2 = getAxis(y, N)
+
+console.log(axis1, axis2)
 
 const points = getPoints(N)
 
@@ -92,7 +94,7 @@ const render = () => {
             labels: points,
             datasets: [{
                 label: 'БПФ свертка',
-                data: fft_convolution_res.map(point => point.re),
+                data: fft_convolution_res,
                 borderColor: 'black',
                 borderWidth: 1
             }]

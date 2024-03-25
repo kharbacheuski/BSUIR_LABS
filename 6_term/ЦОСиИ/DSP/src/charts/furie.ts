@@ -1,4 +1,4 @@
-import { FFT, IFFT } from "../furie-transform"
+import { FFT, IFFT, FFT_recursive } from "../furie-transform"
 import { getAxis, getPoints } from '../overrides'
 import Chart, { ChartItem } from "chart.js/auto";
 import Complex from "complex.js";
@@ -9,7 +9,6 @@ type ComplexAsArray = {[0]: number, [1]: number};
 const N = 64
 const func = (arg: number) => Math.sin(5*arg) + Math.cos(arg) 
 const axis = getAxis(func, N)
-
 const points = getPoints(N)
 
 const render = () => {
@@ -41,7 +40,6 @@ const render = () => {
         },
     });
     
-    
     new Chart(document.getElementById("re-fftFunction") as ChartItem, {
         type: 'line',
         data: {
@@ -68,9 +66,7 @@ const render = () => {
         },
     });
     
-    const ifftRes = IFFT(fftRes);
-    
-    const data4 = ifftRes.map(point => point.re);
+    const ifftRes = IFFT(structuredClone(fftRes));
     
     new Chart(document.getElementById("ifftFunction") as ChartItem, {
         type: 'line',
@@ -78,7 +74,7 @@ const render = () => {
             labels: points,
             datasets: [{
                 label: 'График обратной БПФ функции',
-                data: data4,
+                data: ifftRes,
                 borderColor: 'red',
                 borderWidth: 1
             }]
@@ -87,15 +83,13 @@ const render = () => {
     
     const data5: ComplexAsArray[] = fft(structuredClone(axis.y));
     
-    const modules = data5.map(point => new Complex(point[0], point[1]).abs());
-    
     new Chart(document.getElementById("libfftFunction") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
             datasets: [{
                 label: 'График библиотечной БПФ функции',
-                data: modules,
+                data: data5.map(point => new Complex(point[0], point[1]).abs()),
                 borderColor: 'blue',
                 borderWidth: 1
             }]
@@ -128,7 +122,6 @@ const render = () => {
         },
     });
     
-    const data6: ComplexAsArray[] = ifft(data5);
     
     new Chart(document.getElementById("libifftFunction") as ChartItem, {
         type: 'line',
@@ -136,7 +129,7 @@ const render = () => {
             labels: points,
             datasets: [{
                 label: 'График библиотечной обратной БПФ функции',
-                data: data6.map(point => point[0]),
+                data: (ifft(structuredClone(data5)) as ComplexAsArray[]).map(point => point[0]),
                 borderColor: 'blue',
                 borderWidth: 1
             }]
