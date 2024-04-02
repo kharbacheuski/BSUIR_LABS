@@ -1,0 +1,20 @@
+DHCP (PC):
+
+ip dhcp excluded-address 192.168.1.1
+ip dhcp excluded-address 192.168.1.255
+ip dhcp pool MY_DHCP
+default-router 192.168.1.1
+network 192.168.1.0 255.255.255.0
+dns-server 192.168.1.1
+do wr
+
+
+NAT(laptop):
+
+ip nat inside source static 192.168.2.1 192.168.2.100
+interface fastEthernet 0/1
+ip nat inside
+
+interface fa0/0
+ip nat outside
+do wr
