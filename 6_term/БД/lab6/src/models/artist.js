@@ -1,14 +1,14 @@
 const {sequelize} = require("../db/connect")
 const { DataTypes } = require("sequelize");
 
-const User = sequelize.define('users', {
+const Artist = sequelize.define('Artist', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
-    username: DataTypes.STRING,
+    name: DataTypes.STRING,
     age: DataTypes.INTEGER,
 }, {timestamps: false});
 
-module.exports = { User }
+module.exports = Artist
