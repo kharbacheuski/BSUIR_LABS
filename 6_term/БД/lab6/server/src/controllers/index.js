@@ -343,7 +343,7 @@ app.get('/api/having-avg', async (req, res) => {
             INNER JOIN "Sound-Studio"."RecordType" 
             ON "Record"."recordTypeId" = "RecordType"."id"
             GROUP BY "Artist"."name"
-            HAVING Price > 4
+            HAVING AVG("Sound-Studio"."Record"."totalPrice") > 4
             ORDER BY "Artist"."name"
         `)
         res.send(rows)
@@ -375,7 +375,7 @@ app.get('/api/union-any', async (req, res) => {
             SELECT * FROM "Sound-Studio"."Record" 
             INNER JOIN "Sound-Studio"."Employee"
             ON "Employee"."workShift" = 3 AND "Record"."employeeId" = "Employee"."id"
-            WHERE "Record"."artistId" = ANY(SELECT MAX("id") FROM "Sound-Studio"."Artist")
+            WHERE "Record"."artistId" = ANY(SELECT "id" FROM "Sound-Studio"."Artist")
         `)
         res.send(rows)
     }
@@ -389,7 +389,7 @@ app.get('/api/intersect', async (req, res) => {
         const {rows} = await client.query(`
             SELECT name FROM "Sound-Studio"."Artist" 
             INTERSECT
-            SELECT name FROM "Sound-Studio"."Empoloyee"
+            SELECT name FROM "Sound-Studio"."Employee"
         `)
         res.send(rows)
     }

@@ -1,8 +1,7 @@
-import React,{ Fragment }  from "react"
-import { Box, Button, Typography } from "@mui/material"
-import DeleteIcon from '@mui/icons-material/Delete';
+import React,{ Fragment, useState }  from "react"
+import { Button, Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material"
 
-const Table: React.FC<{
+const TableComponent: React.FC<{
     rows: any[]
     setRows: React.Dispatch<React.SetStateAction<any[]>>
 }> = ({rows, setRows}) => {
@@ -10,20 +9,33 @@ const Table: React.FC<{
     const clearTable = () => {
         setRows([])
     }
-    
+
     return <Fragment>
-        <Box>
-            {rows.length ? (
-                    <Box sx={{display: "flex", flexDirection: "row", gap: ".5rem"}}>
-                        <Typography></Typography>
-                        <Box><DeleteIcon /></Box>
-                    </Box>
-                )
-                : <Typography>Данные не найдены</Typography>
-            }
-        </Box>
+        <Table sx={{ maxWidth: 1200 }}>
+            <TableHead>
+                <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                    {rows.length ? Object.keys(rows[0]).map((header: string, index: number) => (
+                        <TableCell key={header} width={"100px"}>{header.toUpperCase()}</TableCell>
+                    )) : null}
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                {rows.length ? rows.map((row: any, index: number) => (
+                        <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                            {Object.values(row).map(v => (
+                                <TableCell key={v as string} width={"100"}>{v as string}</TableCell>
+                            ))}
+                        </TableRow>
+                    ))
+                    : <TableRow key={1}>
+                        <TableCell align="center">Тут пусто</TableCell>
+                    </TableRow>
+                }
+            </TableBody>
+        </Table>
+
         {rows.length ? <Button variant="contained" onClick={clearTable}>Очистить таблицу</Button> : null}
     </Fragment>
 }
 
-export default Table
+export default TableComponent
