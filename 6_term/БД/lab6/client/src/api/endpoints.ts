@@ -11,7 +11,7 @@ export const endpoints = {
     1: "where",
     2: "where-orderBy",
     3: "orderBy",
-    4: "select",
+    4: "select-instr",
     5: "select-where",
     6: "crossJoin",
     7: "crossJoin-2",

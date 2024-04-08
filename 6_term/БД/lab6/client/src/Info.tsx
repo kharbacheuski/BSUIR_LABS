@@ -4,7 +4,7 @@ const Info = () => {
     return <Box>
         <Typography align="center" variant="h2">Info</Typography>
 
-        <Box sx={{display: "flex", gap: "10rem", mt: "5rem"}}>
+        <Box sx={{display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10rem", mt: "5rem"}}>
             <Box >
                 <Typography sx={{mb: "1rem"}} variant="h4">Запросы из 4 ЛР</Typography>
 
