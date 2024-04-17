@@ -39,6 +39,13 @@ export const endpoints = {
     28: "intersect-where",
     29: "except-exists",
     30: "except-all",
+
+
+    31: "select",
+    32: "delete"
 }
 
-export const query = (number: number) => api.get<any>(`/${endpoints[number]}/`)
+export const queryGet = (number: number, params?: any) => api.get<any>(`/${endpoints[number]}/`, {params})
+export const queryDelete = (number: number, params?: any) => api.delete<any>(`/${endpoints[number]}/`, {params})
+export const queryUpdate = (number: number, params?: any) => api.put<any>(`/${endpoints[number]}/`, {params})
+export const queryInsert = (number: number, params?: any) => api.post<any>(`/${endpoints[number]}/`, params)

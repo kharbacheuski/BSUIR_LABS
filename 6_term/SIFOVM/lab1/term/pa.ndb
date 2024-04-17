@@ -1,0 +1,81 @@
+NDB006
+The number of symbol table entries is: 10
+The length of the symbol table is: 208
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+.	|bus5mux21:1|21mux:8|
+D	|bus5mux21:1|21mux:13|
+[	|bus5mux21:1|21mux:7|
+q	|bus5mux21:1|21mux:6|
+")	|bus5mux21:1|21mux:5|
+"?	|busmux21:2|21mux:1|
+"T	|busmux21:2|21mux:4|
+"i	|busmux21:2|21mux:3|
+"~	|busmux21:2|21mux:2|
+
+The number of name info structs is : 60
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	IGdq	!	A0	q
+#	Kx(k	!	1	"	A0~1	%!
+$	IGdq	!	A1	p
+%	Kx(k	!	1	$	A1~1	%$
+&	IGdq	!	A2	o
+'	Kx(k	!	1	&	A2~1	%'
+(	IGdq	!	A3	n
+)	Kx(k	!	1	(	A3~1	%*
+*	IGdq	!	A4	m
++	Kx(k	!	1	*	A4~1	%-
+,	Ky&|	!	1	#	BUF0	v
+-	Ky&|	!	1	%	P0	u
+.	Ky&|	!	1	'	P1	t
+/	Ky&|	!	1	)	P2	s
+0	Ky&|	!	1	+	P3	r
+1	IVOQ	D	5	:5	#(
+2	IGdW	D	:6	#'
+3	IGdW	D	:7	#&
+4	IGdW	D	:8	#%
+5	INu}	D	1	Y	#(
+6	IVOQ	")	:	:5	#L
+7	IGdW	")	:6	#K
+8	IGdW	")	:7	#J
+9	IGdW	")	:8	#I
+:	INu}	")	6	Y	#L
+;	IVOQ	q	?	:5	#@
+<	IGdW	q	:6	#?
+=	IGdW	q	:7	#>
+>	IGdW	q	:8	#=
+?	INu}	q	;	Y	#@
+@	IVOQ	[	D	:5	#4
+A	IGdW	[	:6	#3
+B	IGdW	[	:7	#2
+C	IGdW	[	:8	#1
+D	INu}	[	@	Y	#4
+E	IVOQ	.	I	:5	"y
+F	IGdW	.	:6	"x
+G	IGdW	.	:7	"w
+H	IGdW	.	:8	"v
+I	INu}	.	E	Y	"y
+J	IVOQ	"?	N	:5	$#
+K	IGdW	"?	:6	$"
+L	IGdW	"?	:7	$!
+M	IGdW	"?	:8	#~
+N	INu}	"?	J	Y	$#
+O	IVOQ	"~	S	:5	$G
+P	IGdW	"~	:6	$F
+Q	IGdW	"~	:7	$E
+R	IGdW	"~	:8	$D
+S	INu}	"~	O	Y	$G
+T	IVOQ	"i	X	:5	$;
+U	IGdW	"i	:6	$:
+V	IGdW	"i	:7	$9
+W	IGdW	"i	:8	$8
+X	INu}	"i	T	Y	$;
+Y	IVOQ	"T	]	:5	$/
+Z	IGdW	"T	:6	$.
+[	IGdW	"T	:7	$-
+\	IGdW	"T	:8	$,
+]	INu}	"T	Y	Y	$/

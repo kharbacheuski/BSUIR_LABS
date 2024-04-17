@@ -1,0 +1,40 @@
+NDB006
+The number of symbol table entries is: 3
+The length of the symbol table is: 49
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+.	|LPM_ROM:1|
+:	|LPM_ROM:1|altrom:srom|
+
+The number of name info structs is : 26
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	Ky&|	!	7	.	/	0	1	2	3	4	IN0	p
+#	Ky&|	!	7	.	/	0	1	2	3	4	IN1	o
+$	Ky&|	!	7	.	/	0	1	2	3	4	IN2	n
+%	Ky&|	!	7	.	/	0	1	2	3	4	IN3	m
+&	IGdq	!	OUT0	w
+'	IGdq	!	OUT1	v
+(	IGdq	!	OUT2	u
+)	IGdq	!	OUT3	t
+*	IGdq	!	OUT4	s
++	IGdq	!	OUT5	r
+,	IGdq	!	OUT6	q
+-	#/?91	:	82	3	content	0	"p
+.	#1pY}	:	92	11	1	&	segment0_0	1	"w
+/	#1pY}	:	92	11	1	'	segment0_1	1	"v
+0	#1pY}	:	92	11	1	(	segment0_2	1	"u
+1	#1pY}	:	92	11	1	)	segment0_3	1	"t
+2	#1pY}	:	92	11	1	*	segment0_4	1	"s
+3	#1pY}	:	92	11	1	+	segment0_5	1	"r
+4	#1pY}	:	92	11	1	,	segment0_6	1	"q
+5	IeEA	.	70	6	otri0	"Z
+6	IeEA	.	70	6	otri1	"Y
+7	IeEA	.	70	6	otri2	"X
+8	IeEA	.	70	6	otri3	"W
+9	IeEA	.	70	6	otri4	"V
+:	IeEA	.	70	6	otri5	"U
+;	IeEA	.	70	6	otri6	"T

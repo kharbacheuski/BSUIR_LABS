@@ -48,6 +48,17 @@ const Info = () => {
                     <Typography>30) except-all</Typography>
                 </Box>
             </Box>
+
+            <Box>
+                <Typography sx={{mb: "1rem"}} variant="h4">Другие запросы</Typography>
+
+                <Box>
+                    <Typography>31) select</Typography>
+                    <Typography>32) delete</Typography>
+                    {/* <Typography>33) create</Typography>
+                    <Typography>34) update</Typography> */}
+                </Box>
+            </Box>
         </Box>
     </Box>
 }

@@ -18,7 +18,7 @@ app.get('/api/select', async (req, res) => {
 
 app.delete('/api/delete', async (req, res) => {
     try {
-        const {table, id} = req.body;
+        const {table, id} = req.query;
 
         if(table === "Record") {
             const {rows} = await client.query(`
