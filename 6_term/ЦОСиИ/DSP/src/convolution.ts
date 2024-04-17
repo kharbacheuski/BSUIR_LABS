@@ -54,3 +54,16 @@ export const FFT_convolution = (x: number[], y: number[]) => {
 
     return IFFT(z)
 }
+
+export const convolution = (y: number[], h: number[], M: number) => {
+    const result = structuredClone(y)
+
+    for (let i = M; i <= Math.floor(y.length / 2) + 1; i++) {
+        result[i] = 0
+        for (let j = 0; j < M; j++) {
+            result[i] = result[i] + y[i - j] * h[j]
+            result[y.length - i] = result[i]
+        }
+    }
+    return result
+}

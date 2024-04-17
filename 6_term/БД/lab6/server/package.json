@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "server": "nodemon --env-file=.env ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.4.0",
+    "pg": "^8.11.4",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

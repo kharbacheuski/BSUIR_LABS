@@ -11,6 +11,7 @@ export default defineConfig({
                 correlation: join(__dirname, './views/correlation.html'),
                 convolution: join(__dirname, './views/convolution.html'),
                 furie: join(__dirname, './views/furie.html'),
+                reject_filter: join(__dirname, './views/reject_filter.html'),
             },
         },
     },

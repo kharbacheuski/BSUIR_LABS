@@ -1,0 +1,11 @@
+
+require("./artist")
+require("./employee")
+require("./instrument")
+require("./record")
+require("./recordType")
+require("./room")
+require("./instr-rec")
+require("./lab-4")
+require("./lab-5")
+require("./others")
