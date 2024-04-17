@@ -1,6 +1,6 @@
-import { FFT, IFFT, FFT_recursive } from "../furie-transform"
+import { FFT, IFFT } from "../furie-transform"
 import { getAxis, getPoints } from '../overrides'
-import Chart, { ChartItem } from "chart.js/auto";
+import Chart from "chart.js/auto";
 import Complex from "complex.js";
 import { fft, ifft } from "fft-js";
 
@@ -12,7 +12,7 @@ const axis = getAxis(func, N)
 const points = getPoints(N)
 
 const render = () => {
-    new Chart(document.getElementById("initial") as ChartItem, {
+    new Chart(document.getElementById("initial"), {
         type: 'line',
         data: {
             labels: axis.x,
@@ -27,7 +27,7 @@ const render = () => {
     
     const fftRes = FFT(structuredClone(axis.y), 1);
     
-    new Chart(document.getElementById("fftFunction") as ChartItem, {
+    new Chart(document.getElementById("fftFunction"), {
         type: 'line',
         data: {
             labels: points,
@@ -40,7 +40,7 @@ const render = () => {
         },
     });
     
-    new Chart(document.getElementById("re-fftFunction") as ChartItem, {
+    new Chart(document.getElementById("re-fftFunction"), {
         type: 'line',
         data: {
             labels: points,
@@ -53,7 +53,7 @@ const render = () => {
         },
     });
     
-    new Chart(document.getElementById("im-fftFunction") as ChartItem, {
+    new Chart(document.getElementById("im-fftFunction"), {
         type: 'line',
         data: {
             labels: points,
@@ -68,7 +68,7 @@ const render = () => {
     
     const ifftRes = IFFT(structuredClone(fftRes));
     
-    new Chart(document.getElementById("ifftFunction") as ChartItem, {
+    new Chart(document.getElementById("ifftFunction"), {
         type: 'line',
         data: {
             labels: points,
@@ -83,7 +83,7 @@ const render = () => {
     
     const data5: ComplexAsArray[] = fft(structuredClone(axis.y));
     
-    new Chart(document.getElementById("libfftFunction") as ChartItem, {
+    new Chart(document.getElementById("libfftFunction"), {
         type: 'line',
         data: {
             labels: points,
@@ -96,7 +96,7 @@ const render = () => {
         },
     });
     
-    new Chart(document.getElementById("re-libfftFunction") as ChartItem, {
+    new Chart(document.getElementById("re-libfftFunction"), {
         type: 'line',
         data: {
             labels: points,
@@ -109,7 +109,7 @@ const render = () => {
         },
     });
     
-    new Chart(document.getElementById("im-libfftFunction") as ChartItem, {
+    new Chart(document.getElementById("im-libfftFunction"), {
         type: 'line',
         data: {
             labels: points,
@@ -123,7 +123,7 @@ const render = () => {
     });
     
     
-    new Chart(document.getElementById("libifftFunction") as ChartItem, {
+    new Chart(document.getElementById("libifftFunction"), {
         type: 'line',
         data: {
             labels: points,
