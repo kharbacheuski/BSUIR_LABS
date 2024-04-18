@@ -1,6 +1,6 @@
 import { correlation, FFT_correlation } from "../correlation"
 import { getAxis, getPoints } from '../overrides'
-import Chart from "chart.js/auto";
+import Chart, {ChartItem} from "chart.js/auto";
 import {correlation as lib_correlation} from "node-correlation"
 
 const N = 8
@@ -13,7 +13,7 @@ const axis2 = getAxis(y, N)
 const points = getPoints(N)
 
 const render = () => {
-    new Chart(document.getElementById("initial-x"), {
+    new Chart(document.getElementById("initial-x") as ChartItem, {
         type: 'line',
         data: {
             labels: axis1.x,
@@ -26,7 +26,7 @@ const render = () => {
         },
     });
     
-    new Chart(document.getElementById("initial-y"), {
+    new Chart(document.getElementById("initial-y") as ChartItem, {
         type: 'line',
         data: {
             labels: axis2.x,
@@ -41,7 +41,7 @@ const render = () => {
     
     const correlation_res = correlation(structuredClone(axis1.y), structuredClone(axis2.y)) 
     
-    new Chart(document.getElementById("correlation"), {
+    new Chart(document.getElementById("correlation") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -59,7 +59,7 @@ const render = () => {
     
     const fft_correlation_res = FFT_correlation(structuredClone(axis1.y), structuredClone(axis2.y))
     
-    new Chart(document.getElementById("fft-correlation"), {
+    new Chart(document.getElementById("fft-correlation") as ChartItem, {
         type: 'line',
         data: {
             labels: points,

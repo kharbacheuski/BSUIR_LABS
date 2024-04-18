@@ -1,24 +1,22 @@
-import { linear_convolution, curcular_convolution, FFT_convolution } from "../convolution"
 import { reject_filter } from "../filter";
 import { FFT } from "../furie-transform";
 import { getAxis, getPoints } from '../overrides'
-import Chart from "chart.js/auto";
-import convolve from "convolution"
+import Chart, { ChartItem } from "chart.js/auto";
 
-const filter_window_length = 16
 const N = 64
 
 const func = (arg: number) => Math.sin(5*arg) + Math.cos(arg) 
 const funcAxis = getAxis(func, N)
 
-const noise = (arg: number) => Math.cos(15*2*Math.PI*arg)
+const noise = (arg: number) => Math.cos(10*Math.PI*arg)
 const noiseAxis = getAxis(noise, N)
 
 const noisedfuncY = noiseAxis.y.map((noisePoint, index) => funcAxis.y[index] + noisePoint)
 
+const points = getPoints(N)
 
 const render = () => {
-    new Chart(document.getElementById("initial"), {
+    new Chart(document.getElementById("initial") as ChartItem, {
         type: 'line',
         data: {
             labels: funcAxis.x,
@@ -33,10 +31,10 @@ const render = () => {
 
     const fftRes = FFT(structuredClone(funcAxis.y), 1);
     
-    new Chart(document.getElementById("initial-ach"), {
+    new Chart(document.getElementById("initial-ach") as ChartItem, {
         type: 'line',
         data: {
-            labels: funcAxis.x,
+            labels: points,
             datasets: [{
                 label: 'АЧХ входного сигнала',
                 data: fftRes.map(point => point.abs()),
@@ -46,7 +44,7 @@ const render = () => {
         },
     });
 
-    new Chart(document.getElementById("noise"), {
+    new Chart(document.getElementById("noise") as ChartItem, {
         type: 'line',
         data: {
             labels: noiseAxis.x,
@@ -61,10 +59,10 @@ const render = () => {
 
     const fftResNoise = FFT(structuredClone(noiseAxis.y), 1);
 
-    new Chart(document.getElementById("noise-ach"), {
+    new Chart(document.getElementById("noise-ach") as ChartItem, {
         type: 'line',
         data: {
-            labels: noiseAxis.x,
+            labels: points,
             datasets: [{
                 label: 'АЧХ шума',
                 data: fftResNoise.map(point => point.abs()),
@@ -74,7 +72,7 @@ const render = () => {
         },
     });
 
-    new Chart(document.getElementById("noised-signal"), {
+    new Chart(document.getElementById("noised-signal") as ChartItem, {
         type: 'line',
         data: {
             labels: noiseAxis.x,
@@ -89,10 +87,10 @@ const render = () => {
 
     const fftResNoisedFuncY = FFT(structuredClone(noisedfuncY), 1);
 
-    new Chart(document.getElementById("noised-signal-ach"), {
+    new Chart(document.getElementById("noised-signal-ach") as ChartItem, {
         type: 'line',
         data: {
-            labels: noiseAxis.x,
+            labels: points,
             datasets: [{
                 label: 'АЧХ сигнала с шумом',
                 data: fftResNoisedFuncY.map(point => point.abs()),
@@ -102,9 +100,9 @@ const render = () => {
         },
     });
 
-    const kih = reject_filter(structuredClone(noisedfuncY), filter_window_length, N)
+    const kih = reject_filter(structuredClone(noisedfuncY))
 
-    new Chart(document.getElementById("kih"), {
+    new Chart(document.getElementById("kih") as ChartItem, {
         type: 'line',
         data: {
             labels: noiseAxis.x,
@@ -117,12 +115,12 @@ const render = () => {
         },
     });
 
-    const fftReskih = FFT(reject_filter(structuredClone(noisedfuncY), filter_window_length, N), 1)
+    const fftReskih = FFT(structuredClone(kih), 1)
 
-    new Chart(document.getElementById("kih-ach"), {
+    new Chart(document.getElementById("kih-ach") as ChartItem, {
         type: 'line',
         data: {
-            labels: noiseAxis.x,
+            labels: points,
             datasets: [{
                 label: 'АЧХ cигнала с шумом после КИХ фильтра',
                 data: fftReskih.map(point => point.abs()),
