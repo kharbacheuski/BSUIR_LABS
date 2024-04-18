@@ -1,6 +1,6 @@
 import { linear_convolution, curcular_convolution, FFT_convolution } from "../convolution"
 import { getAxis, getPoints } from '../overrides'
-import Chart from "chart.js/auto";
+import Chart, {ChartItem} from "chart.js/auto";
 import convolve from "convolution"
 
 const N = 8
@@ -15,7 +15,7 @@ console.log(axis1, axis2)
 const points = getPoints(N)
 
 const render = () => {
-    new Chart(document.getElementById("initial-x"), {
+    new Chart(document.getElementById("initial-x") as ChartItem, {
         type: 'line',
         data: {
             labels: axis1.x,
@@ -28,7 +28,7 @@ const render = () => {
         },
     });
     
-    new Chart(document.getElementById("initial-y"), {
+    new Chart(document.getElementById("initial-y") as ChartItem, {
         type: 'line',
         data: {
             labels: axis2.x,
@@ -43,7 +43,7 @@ const render = () => {
     
     const curcular_convolution_res = curcular_convolution(structuredClone(axis1.y), structuredClone(axis2.y)) 
     
-    new Chart(document.getElementById("circular-convolution"), {
+    new Chart(document.getElementById("circular-convolution") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -58,7 +58,7 @@ const render = () => {
 
     const linear_convolution_res = linear_convolution(structuredClone(axis1.y), structuredClone(axis2.y)) 
     
-    new Chart(document.getElementById("linear-convolution"), {
+    new Chart(document.getElementById("linear-convolution") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -73,7 +73,7 @@ const render = () => {
 
     const lib_convolution_res = convolve(structuredClone(axis1.y), structuredClone(axis2.y)) 
     
-    new Chart(document.getElementById("lib-convolution"), {
+    new Chart(document.getElementById("lib-convolution") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
@@ -88,7 +88,7 @@ const render = () => {
     
     const fft_convolution_res = FFT_convolution(structuredClone(axis1.y), structuredClone(axis2.y))
     
-    new Chart(document.getElementById("fft-convolution"), {
+    new Chart(document.getElementById("fft-convolution") as ChartItem, {
         type: 'line',
         data: {
             labels: points,
