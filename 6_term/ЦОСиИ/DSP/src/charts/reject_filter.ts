@@ -8,7 +8,7 @@ const N = 64
 const func = (arg: number) => Math.sin(5*arg) + Math.cos(arg) 
 const funcAxis = getAxis(func, N)
 
-const noise = (arg: number) => Math.cos(10*Math.PI*arg)
+const noise = (arg: number) => Math.cos(100*Math.PI*arg)
 const noiseAxis = getAxis(noise, N)
 
 const noisedfuncY = noiseAxis.y.map((noisePoint, index) => funcAxis.y[index] + noisePoint)
