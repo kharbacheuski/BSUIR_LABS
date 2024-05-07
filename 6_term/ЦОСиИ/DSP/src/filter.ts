@@ -17,7 +17,10 @@ export const reject_filter = (y: number[], filter_window_length: number = 9, sig
         filter.push(coefficient * hamming);
     }
 
-    const conv = convolution(spectrum, filter, filter_window_length);
+    const sum = filter.reduce((a, b) => a + b, 0);
+    const normal_filter = filter.map(point => point / sum);
+
+    const conv = convolution(spectrum, normal_filter, Math.floor(filter_window_length));
 
     return IFFT(conv);
 }

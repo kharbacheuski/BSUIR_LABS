@@ -12,6 +12,7 @@ export default defineConfig({
                 convolution: join(__dirname, './views/convolution.html'),
                 furie: join(__dirname, './views/furie.html'),
                 reject_filter: join(__dirname, './views/reject_filter.html'),
+                wavelet_transform: join(__dirname, './views/wavelet-transform.html'),
             },
         },
     },
