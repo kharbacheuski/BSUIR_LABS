@@ -31,6 +31,7 @@
 - [ЦОСиИ](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/6_term/%D0%A6%D0%9E%D0%A1%D0%B8%D0%98) (Перцев Д.Ю.)
 - [ССПОиРС](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/6_term/%D0%A1%D0%A1%D0%9F%D0%9E%D0%B8%D0%A0%D0%A1) (Смирнов Ю.В. / Жалейко Д.А.)
 - [БД](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/6_term/%D0%91%D0%94) ( Поденок Л.П. / Куприянова Д.В)
+- [Производственная практика](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/6_term/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0) (Куприянова Д.В.)
 ### [Седьмой семестр (2024)](https://github.com/kharbacheuski/BSUIR_LABS/tree/main/7_term)
 - [ЦОСиИ](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%A6%D0%9E%D0%A1%D0%B8%D0%98) (Перцев Д.Ю.)
 - [ССПОиРС](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%A1%D0%A1%D0%9F%D0%9E%D0%B8%D0%A0%D0%A1) (Смирнов Ю.В. / Богдан Е.В.)
@@ -40,5 +41,3 @@
 - [МПСиС](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%9C%D0%9F%D0%A1%D0%B8%D0%A1) ( Селезнёв И.Л. / Шеменков В.В.)
 - [ОбКС](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%9E%D0%B1%D0%9A%D0%A1) ( Глецевич И.И. / Марцинкевич В.А.)
 - [ХиУД](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%A5%D0%B8%D0%A3%D0%94) ( Фролов И.И. / Куприянова Д.В)
-
-- [Производственная практика](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/6_term/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0) (Куприянова Д.В.)
