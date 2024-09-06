@@ -40,4 +40,5 @@
 - [АПЦУ](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%90%D0%9F%D0%A6%D0%A3) ( Байрак С.А. / Шеменков В.В.)
 - [МПСиС](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%9C%D0%9F%D0%A1%D0%B8%D0%A1) ( Селезнёв И.Л. / Шеменков В.В.)
 - [ОбКС](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%9E%D0%B1%D0%9A%D0%A1) ( Глецевич И.И. / Марцинкевич В.А.)
+- [ОбКС, КП](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%9E%D0%B1%D0%9A%D0%A1%2C%20%D0%9A%D0%9F) ( Глецевич И.И. / Марцинкевич В.А.)
 - [ХиУД](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%A5%D0%B8%D0%A3%D0%94) ( Фролов И.И. / Куприянова Д.В)
