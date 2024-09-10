@@ -11,3 +11,6 @@
 DHCP и NAT
 ## [Лабораторная работа № 5](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/6_term/%D0%90%D0%9A%D0%A1/lab5)
 Настройка IPv6 маршрутизации (в GNS)
+
+
+Версия Cisco Packet Tracer - 8.2.1
