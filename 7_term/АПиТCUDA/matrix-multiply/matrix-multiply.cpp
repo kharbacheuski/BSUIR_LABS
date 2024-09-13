@@ -38,49 +38,79 @@ class Timer {
         bool                                               m_bRunning = false;
 };
 
-template<std::size_t R1, std::size_t C1, std::size_t R2, std::size_t C2>
-void variant1(float(&A)[R1][C1], float(&B)[R2][C2]) {
+bool isMultiplying(int C1, int R2) {
+    return C1 == R2;
+}
+
+float** fillMatrix(float** matrix, int R, int C) {
+    for (int i = 0; i < R; i++) {
+        for (int j = 0; j < C; j++) {
+            matrix[i][j] = (float)(rand() % 10);
+        }
+    }
+
+    return matrix;
+}
+
+float** createMatrix(int R, int C) {
+    float** matrix = new float* [R];
+
+    for (int i = 0; i < R; i++) {
+        matrix[i] = new float[C];
+    }
+
+    return matrix;
+}
+
+void variant1(float** A, float** B, int R1, int R2, int C1, int C2, bool writeConsole = false) {
     auto timer = new Timer();
 
     timer->start();
 
-    float result[R1][C2] {};
+    float** result = createMatrix(R1, C2);
 
     for (int row = 0; row < R1; row++) {
         for (int col = 0; col < C2; col++) {
             for (int inner = 0; inner < C1; inner++) {
                 result[row][col] += A[row][inner] * B[inner][col];
             }
-            std::cout << result[row][col] << "  ";
         }
-        std::cout << "\n";
     }
 
     timer->stop();
-    std::cout << "\nBasic matrix multiplication took: " << timer->elapsedMilliseconds() << " nanoseconds.\n\n\n";
+
+    // Вывод матрицы в консоль
+    if(writeConsole)
+        for (int row = 0; row < R1; ++row) {
+            for (int col = 0; col < C2; ++col) {
+                std::cout << result[row][col] << " ";
+            }
+            std::cout << "\n";
+        }
+
+    std::cout << "\nMatrix multiplication time: " << timer->elapsedMilliseconds() << " nanoseconds.\n\n\n";
 }
 
-template<std::size_t R1, std::size_t C1, std::size_t R2, std::size_t C2>
-void variant2(float(&A)[R1][C1], float(&B)[R2][C2], int block_size) {
+void variant2(float ** A, float** B, int R1, int R2, int C1, int C2, int block_size, bool writeConsole = false) {
     auto timer2 = new Timer();
 
     timer2->start();
 
-    float result[R1][C2] {};
+    float** result = createMatrix(R1, C2);
 
     // Итерируемся по блокам
-    for (std::size_t block_row = 0; block_row < R1; block_row += block_size) {
-        for (std::size_t block_col = 0; block_col < C2; block_col += block_size) {
-            for (std::size_t inner_block = 0; inner_block < C1; inner_block += block_size) {
+    for (int block_row = 0; block_row < R1; block_row += block_size) {
+        for (int block_col = 0; block_col < C2; block_col += block_size) {
+            for (int inner_block = 0; inner_block < C1; inner_block += block_size) {
                 // Высчитываем размер текущего блока
-                std::size_t block_row_end = std::min(block_row + block_size, R1);
-                std::size_t block_col_end = std::min(block_col + block_size, C2);
-                std::size_t inner_block_end = std::min(inner_block + block_size, C1);
+                int block_row_end = std::min(block_row + block_size, R1);
+                int block_col_end = std::min(block_col + block_size, C2);
+                int inner_block_end = std::min(inner_block + block_size, C1);
 
                 // Перемножаем блоки
-                for (std::size_t i = block_row; i < block_row_end; ++i) {
-                    for (std::size_t j = block_col; j < block_col_end; ++j) {
-                        for (std::size_t k = inner_block; k < inner_block_end; ++k) {
+                for (int i = block_row; i < block_row_end; ++i) {
+                    for (int j = block_col; j < block_col_end; ++j) {
+                        for (int k = inner_block; k < inner_block_end; ++k) {
                             result[i][j] += A[i][k] * B[k][j];
                         }
                     }
@@ -92,109 +122,47 @@ void variant2(float(&A)[R1][C1], float(&B)[R2][C2], int block_size) {
     timer2->stop();
 
     // Вывод матрицы в консоль
-    for (std::size_t row = 0; row < R1; ++row) {
-        for (std::size_t col = 0; col < C2; ++col) {
-            std::cout << result[row][col] << " ";
+    if (writeConsole)
+        for (int row = 0; row < R1; ++row) {
+            for (int col = 0; col < C2; ++col) {
+                std::cout << result[row][col] << " ";
+            }
+            std::cout << "\n";
         }
-        std::cout << "\n";
-    }
 
-    std::cout << "\nBasic matrix multiplication took: " << timer2->elapsedMilliseconds() << " nanoseconds.\n\n\n";
-}
-
-bool isMultiplying(int C1, int R2) {
-    return C1 == R2;
+    std::cout << "\nMatrix multiplication time: " << timer2->elapsedMilliseconds() << " nanoseconds.\n\n\n";
 }
 
 void MultiplyWithOutAMP() {
-    const int R1 = 6;
-    const int C1 = 5;
+    const int R1 = 150; 
+    const int C1 = 150;
 
-    const int R2 = 5;
-    const int C2 = 3;
+    const int R2 = 150;
+    const int C2 = 150; 
 
-    // L1 кеш - 64 КБ
-    // L2 кеш - 512 КБ
-    // L3 кеш - 16МБ
-
-    int L1 = 32; // 32 ячейки - тоесть 32*32*4 байта - 4КБ
-    int L2 = 256; // 256 ячеек - тоесть 256*256*4 байта - 256КБ
-    int L3 = 1024; // 1024 ячеек - тоесть 1024*1024*4 байта - 4МБ
+    int L1 = 32; // 32 ячейки - тоесть 32*32*4 байта - 4КБ.  L1 кеш - 64 КБ
+    int L2 = 256; // 256 ячеек - тоесть 256*256*4 байта - 256КБ. L2 кеш - 512 КБ
+    int L3 = 1024; // 1024 ячеек - тоесть 1024*1024*4 байта - 4МБ.  L3 кеш - 16МБ
     int OUT_OF_CASH = 4096; // 4096 ячеек - тоесть 4096*4096*4 байта - 67МБ
 
-    //int block_size = (L3 / 3) * 0.9;
+    int block_size = (int)((L3 / 3) * 0.9);
+
     //std::cout << "\nBlock size " << block_size << std::endl << std::endl;
 
-    float A[R1][C1] = { 
-        { 700.2f, 2.5f, 3.0f, 4.57f, 0.12f },
-        { 11.89f, 23.345f, 30.13f, 19.0f, 5.9f },
-        { 90.0f, 45.0f, 102.0f, 4.114f, 45.8f },
-        { 200.78f, 2.5f, 3.89f, 8.4f, 0.0f },
-        { 5.012f, 2.1f, 3.6f, 4.0f, 7.78f },
-        { 67.04f, 2.2f, 31.5f, 4.0f, 5.111f }
-    };
+    float** A = createMatrix(R1, C1);
+    A = fillMatrix(A, R1, C1);
 
-    float B[R2][C2] = {
-        {7.012f, 114.11f, 9.0f},
-        {12.0f, 2.78f, 3.99f},
-        {7.2f, 8.5f, 9.11f},
-        {90.3f, 67.5f, 9.5f},
-        {7.4f, 80.65f, 92.3f},
-    };
+    float** B = createMatrix(R2, C2);
+    B = fillMatrix(B, R2, C2);
 
-    /*float A[R1][C1] = {
-        { 700.2f, 2.5f, 3.0f, 4.57f, 0.12f },
-        { 11.89f, 23.345f, 30.13f, 19.0f, 5.9f },
-        { 90.0f, 45.0f, 102.0f, 4.114f, 45.8f },
-        { 200.78f, 2.5f, 3.89f, 8.4f, 0.0f },
-        { 5.012f, 2.1f, 3.6f, 4.0f, 7.78f },
-        { 67.04f, 2.2f, 31.5f, 4.0f, 5.111f },
-        { 700.2f, 2.5f, 3.0f, 4.57f, 0.12f },
-        { 11.89f, 23.345f, 30.13f, 19.0f, 5.9f },
-        { 90.0f, 45.0f, 102.0f, 4.114f, 45.8f },
-        { 200.78f, 2.5f, 3.89f, 8.4f, 0.0f },
-        { 5.012f, 2.1f, 3.6f, 4.0f, 7.78f },
-        { 67.04f, 2.2f, 31.5f, 4.0f, 5.111f },
-        { 700.2f, 2.5f, 3.0f, 4.57f, 0.12f },
-        { 11.89f, 23.345f, 30.13f, 19.0f, 5.9f },
-        { 90.0f, 45.0f, 102.0f, 4.114f, 45.8f },
-        { 200.78f, 2.5f, 3.89f, 8.4f, 0.0f },
-        { 5.012f, 2.1f, 3.6f, 4.0f, 7.78f },
-        { 67.04f, 2.2f, 31.5f, 4.0f, 5.111f },
-        { 700.2f, 2.5f, 3.0f, 4.57f, 0.12f },
-        { 11.89f, 23.345f, 30.13f, 19.0f, 5.9f },
-        { 90.0f, 45.0f, 102.0f, 4.114f, 45.8f },
-        { 200.78f, 2.5f, 3.89f, 8.4f, 0.0f },
-        { 5.012f, 2.1f, 3.6f, 4.0f, 7.78f },
-        { 67.04f, 2.2f, 31.5f, 4.0f, 5.111f },
-        { 700.2f, 2.5f, 3.0f, 4.57f, 0.12f },
-        { 11.89f, 23.345f, 30.13f, 19.0f, 5.9f },
-        { 90.0f, 45.0f, 102.0f, 4.114f, 45.8f },
-        { 200.78f, 2.5f, 3.89f, 8.4f, 0.0f },
-        { 5.012f, 2.1f, 3.6f, 4.0f, 7.78f },
-        { 67.04f, 2.2f, 31.5f, 4.0f, 5.111f },
-        { 700.2f, 2.5f, 3.0f, 4.57f, 0.12f },
-        { 11.89f, 23.345f, 30.13f, 19.0f, 5.9f },
-        { 90.0f, 45.0f, 102.0f, 4.114f, 45.8f },
-        { 200.78f, 2.5f, 3.89f, 8.4f, 0.0f },
-        { 5.012f, 2.1f, 3.6f, 4.0f, 7.78f },
-        { 67.04f, 2.2f, 31.5f, 4.0f, 5.111f }
-    };
-
-    float B[R2][C2] = {
-        {7.012f, 114.11f, 9.0f, 7.012f, 114.11f, 9.0f, 7.012f, 114.11f, 9.0f, 7.012f, 114.11f, 9.0f, 7.012f, 114.11f, 9.0f, 7.012f, 114.11f, 9.0f},
-        {12.0f, 2.78f, 3.99f, 7.012f, 114.11f, 9.0f, 7.012f, 114.11f, 9.0f, 7.012f, 114.11f, 9.0f, 7.012f, 114.11f, 9.0f, 7.012f, 114.11f, 9.0f},
-        {7.2f, 8.5f, 9.11f, 7.4f, 80.65f, 92.3f, 7.4f, 80.65f, 92.3f, 7.4f, 80.65f, 92.3f, 7.4f, 80.65f, 92.3f, 7.4f, 80.65f, 92.3f},
-        {90.3f, 67.5f, 9.5f, 7.2f, 8.5f, 9.11f, 7.2f, 8.5f, 9.11f, 7.2f, 8.5f, 9.11f, 7.2f, 8.5f, 9.11f, 7.2f, 8.5f, 9.11f},
-        {7.4f, 80.65f, 92.3f, 7.2f, 8.5f, 9.11f, 7.2f, 8.5f, 9.11f, 7.2f, 8.5f, 9.11f, 7.2f, 8.5f, 9.11f, 7.2f, 8.5f, 9.11f}
-    };*/
+    bool isConsoleOutput = false;
 
     if (isMultiplying(C1, R2)) {
-        variant1(A, B);
-        variant2(A, B, L1);
-        variant2(A, B, L2);
-        variant2(A, B, L3);
-        variant2(A, B, OUT_OF_CASH);
+        variant1(A, B, R1, R2, C1, C2, isConsoleOutput);
+        variant2(A, B, R1, R2, C1, C2, L1, isConsoleOutput);
+        //variant2(A, B, R1, R2, C1, C2, L2);
+        //variant2(A, B, R1, R2, C1, C2, L3);
+        //variant2(A, B, R1, R2, C1, C2, OUT_OF_CASH);
     }
     else {
         std::cout << "\nMatrix CAN'T be multiplying" << std::endl;
