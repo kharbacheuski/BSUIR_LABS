@@ -13,6 +13,7 @@ export default defineConfig({
                 furie: join(__dirname, './views/furie.html'),
                 reject_filter: join(__dirname, './views/reject_filter.html'),
                 wavelet_transform: join(__dirname, './views/wavelet-transform.html'),
+                outline: join(__dirname, './views/outline.html'),
             },
         },
     },

@@ -45,7 +45,7 @@ bool isMultiplying(int C1, int R2) {
 float** fillMatrix(float** matrix, int R, int C) {
     for (int i = 0; i < R; i++) {
         for (int j = 0; j < C; j++) {
-            matrix[i][j] = (float)(rand() % 10);
+            matrix[i][j] = (float)(rand());
         }
     }
 
@@ -62,7 +62,7 @@ float** createMatrix(int R, int C) {
     return matrix;
 }
 
-void variant1(float** A, float** B, int R1, int R2, int C1, int C2, bool writeConsole = false) {
+float** variant1(float** A, float** B, int R1, int R2, int C1, int C2, bool writeConsole = false) {
     auto timer = new Timer();
 
     timer->start();
@@ -89,9 +89,11 @@ void variant1(float** A, float** B, int R1, int R2, int C1, int C2, bool writeCo
         }
 
     std::cout << "\nMatrix multiplication time: " << timer->elapsedMilliseconds() << " nanoseconds.\n\n\n";
+
+    return result;
 }
 
-void variant2(float ** A, float** B, int R1, int R2, int C1, int C2, int block_size, bool writeConsole = false) {
+float** variant2(float** A, float** B, int R1, int R2, int C1, int C2, int block_size, bool writeConsole = false) {
     auto timer2 = new Timer();
 
     timer2->start();
@@ -108,9 +110,9 @@ void variant2(float ** A, float** B, int R1, int R2, int C1, int C2, int block_s
                 int inner_block_end = std::min(inner_block + block_size, C1);
 
                 // Перемножаем блоки
-                for (int i = block_row; i < block_row_end; ++i) {
-                    for (int j = block_col; j < block_col_end; ++j) {
-                        for (int k = inner_block; k < inner_block_end; ++k) {
+                for (int i = block_row; i < block_row_end; i++) {
+                    for (int j = block_col; j < block_col_end; j++) {
+                        for (int k = inner_block; k < inner_block_end; k++) {
                             result[i][j] += A[i][k] * B[k][j];
                         }
                     }
@@ -131,14 +133,30 @@ void variant2(float ** A, float** B, int R1, int R2, int C1, int C2, int block_s
         }
 
     std::cout << "\nMatrix multiplication time: " << timer2->elapsedMilliseconds() << " nanoseconds.\n\n\n";
+
+    return result;
+}
+
+bool isMatrixCompare(float** A, float** B, int R, int C) {
+    for (int row = 0; row < R; row++) {
+        for (int col = 0; col < C; col++) {
+            if (A[row][col] != B[row][col]) {
+                std::cout << "\nMatrix error: " << A[row][col] << "  " << B[row][col] << "\n\n\n";
+
+                return false;
+            }
+        }
+    }
+
+    return true;
 }
 
 void MultiplyWithOutAMP() {
-    const int R1 = 150; 
-    const int C1 = 150;
+    const int R1 = 1280;
+    const int C1 = 640;
 
-    const int R2 = 150;
-    const int C2 = 150; 
+    const int R2 = 640;
+    const int C2 = 1600;
 
     int L1 = 32; // 32 ячейки - тоесть 32*32*4 байта - 4КБ.  L1 кеш - 64 КБ
     int L2 = 256; // 256 ячеек - тоесть 256*256*4 байта - 256КБ. L2 кеш - 512 КБ
@@ -158,11 +176,16 @@ void MultiplyWithOutAMP() {
     bool isConsoleOutput = false;
 
     if (isMultiplying(C1, R2)) {
-        variant1(A, B, R1, R2, C1, C2, isConsoleOutput);
-        variant2(A, B, R1, R2, C1, C2, L1, isConsoleOutput);
+        float** one = variant1(A, B, R1, R2, C1, C2, isConsoleOutput);
+        float** two = variant2(A, B, R1, R2, C1, C2, L1, isConsoleOutput);
+
         //variant2(A, B, R1, R2, C1, C2, L2);
         //variant2(A, B, R1, R2, C1, C2, L3);
         //variant2(A, B, R1, R2, C1, C2, OUT_OF_CASH);
+
+        bool equal = isMatrixCompare(one, two, R1, C2);
+
+        std::cout << "\nIs matrix equal: " << equal << std::endl;
     }
     else {
         std::cout << "\nMatrix CAN'T be multiplying" << std::endl;

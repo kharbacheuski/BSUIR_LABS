@@ -25,7 +25,7 @@ nav ul {
     margin-top: 3rem;
 }
 
-nav ul a {
+nav ul a, .btn {
     text-decoration: none;
 
     display: block;
@@ -38,6 +38,6 @@ nav ul a {
     transition: all 0.3s ease;
 }
 
-nav ul a:hover {
+nav ul a:hover, .btn:hover {
     background-color: #d34e4e;
 }
