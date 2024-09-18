@@ -1,47 +1,23 @@
-import { getPixelRGB } from "./utils";
+import { getPixelRGB, hexToRGB, colorInRange, getDistinctColors } from "./utils";
 
 function isColorShouldBeChanged(color1, color2) {
-    const accurace = 24;
-
-    const inRange = (color, basis) => {
-        return color >= basis - accurace && color <= basis + accurace
-    };
-
-    if(inRange(color1.red, color2.red) && inRange(color1.green, color2.green) && inRange(color1.blue, color2.blue)) {
+    if(colorInRange(color1, color2)) {
         return false;
     }
 
     return true;
 }
 
-const changePixel = (pixel) => {
-    const color = [
-        {
-            red: 18,
-            green: 70,
-            blue: 130
-        },
-        {
-            red: 56,
-            green: 134,
-            blue: 14
-        },
-        {
-            red: 9,
-            green: 143,
-            blue: 255
-        }
-    ]
-
+const changePixel = (pixel, colors) => {
     let count = 0;
 
-    for(let i = 0; i < color.length; i++) {
-        if(isColorShouldBeChanged(pixel, color[i])) {
+    for(let i = 0; i < colors.length; i++) {
+        if(isColorShouldBeChanged(pixel, colors[i])) {
             count++;
         }
     }
 
-    if(count == color.length) {
+    if(count == colors.length) {
         return {...pixel, alpha: 0};
     }
 
@@ -63,19 +39,26 @@ const handleOnload = (img) => {
     const width = imageData.width;
     const height = imageData.height;
 
-    // const matrix = convertTo2DArray(imageData.data, width);
-                    
+    const badColors = [
+        {red: 135, green: 113, blue: 100},
+        {red: 185, green: 185, blue: 185}, 
+        {red: 194, green: 192, blue: 194}
+    ]
+
+    const cols = getDistinctColors(imageData, 7, 180).filter(color => {
+        return !badColors.some(colorInRange.bind(null, color));
+    });
+
+    
     for (let i = 0; i < imageData.data.length; i += 4) {
         const pixel = getPixelRGB(imageData.data, i);
-        let newPixel = changePixel(pixel);
+        let newPixel = changePixel(pixel, cols);
 
         output[i] = newPixel.red;
         output[i + 1] = newPixel.green;
         output[i + 2] = newPixel.blue;
         output[i + 3] = newPixel.alpha;
     }   
-
-    // output = new Uint8ClampedArray(convertTo1DArray(output));
 
     const newImage = new ImageData(output, width, height);
 

@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
       "types": ["vite/client"],
+      "esModuleInterop": true,
       // project options
       "lib": [
         "ESNext",
