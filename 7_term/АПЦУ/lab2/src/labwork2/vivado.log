@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Sep 20 17:14:54 2024
+# Process ID: 16552
+# Current directory: D:/Education/BSUIR_LABS/7_term/老钟/lab2/src/labwork2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3948 D:\Education\BSUIR_LABS\7_term\老钟\lab2\src\labwork2\labwork2.xpr
+# Log file: D:/Education/BSUIR_LABS/7_term/老钟/lab2/src/labwork2/vivado.log
+# Journal file: D:/Education/BSUIR_LABS/7_term/老钟/lab2/src/labwork2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Education/BSUIR_LABS/7_term/老钟/lab2/src/labwork2/labwork2.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Education/BSUIR_LABS/7_term/lab2/src/labwork2' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Education/VivadoSDK18.2/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 730.758 ; gain = 51.168
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 20 17:15:44 2024...

@@ -205,10 +205,10 @@ int getBlockSize(int cache_level) {
 int main() {
     srand(time(0));
 
-    const int R1 = 1500;
-    const int C1 = 1500;
+    const int R1 = 300;
+    const int C1 = 300;
 
-    const int R2 = 1500;
+    const int R2 = 300;
     const int C2 = 600;
 
     int L1 = 32; // 32 ячейки - тоесть 32*32*4 байта - 4КБ.  L1 кеш - 64 КБ

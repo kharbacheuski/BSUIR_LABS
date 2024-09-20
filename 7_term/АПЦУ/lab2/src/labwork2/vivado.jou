@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Sep 20 17:14:54 2024
+# Process ID: 16552
+# Current directory: D:/Education/BSUIR_LABS/7_term/老钟/lab2/src/labwork2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3948 D:\Education\BSUIR_LABS\7_term\老钟\lab2\src\labwork2\labwork2.xpr
+# Log file: D:/Education/BSUIR_LABS/7_term/老钟/lab2/src/labwork2/vivado.log
+# Journal file: D:/Education/BSUIR_LABS/7_term/老钟/lab2/src/labwork2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Education/BSUIR_LABS/7_term/老钟/lab2/src/labwork2/labwork2.xpr
+update_compile_order -fileset sources_1
