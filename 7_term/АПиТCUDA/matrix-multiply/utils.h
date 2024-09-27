@@ -95,7 +95,7 @@ T** createMatrix(int R, int C, bool isEmpty = false) {
 bool isMatrixCompare(float** A, float** B, int R, int C) {
     for (int row = 0; row < R; row++) {
         for (int col = 0; col < C; col++) {
-            if (A[row][col] != B[row][col]) {
+            if (fabs(A[row][col] - B[row][col]) > 0.01) {
                 std::cout << "\nMatrix error: " << A[row][col] << "  " << B[row][col] << "\n\n\n";
 
                 return false;
@@ -104,4 +104,14 @@ bool isMatrixCompare(float** A, float** B, int R, int C) {
     }
 
     return true;
+}
+
+template <typename T>
+void printMatrix(T** matrix, int R, int C) {
+    for (int row = 0; row < R; ++row) {
+        for (int col = 0; col < C; ++col) {
+            std::cout << matrix[row][col] << " ";
+        }
+        std::cout << "\n";
+    }
 }

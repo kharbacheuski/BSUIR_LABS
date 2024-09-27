@@ -23,12 +23,7 @@ float** non_cache(float** A, float** B, int R1, int R2, int C1, int C2, bool wri
 
     // Вывод матрицы в консоль
     if(writeConsole)
-        for (int row = 0; row < R1; ++row) {
-            for (int col = 0; col < C2; ++col) {
-                std::cout << result[row][col] << " ";
-            }
-            std::cout << "\n";
-        }
+        printMatrix(result, R1, C2);
 
     std::cout << "\nNon cache matrix multiplication time: " << timer->elapsedMilliseconds() << " nanoseconds.\n\n\n";
 
@@ -74,12 +69,7 @@ float** with_cache(float** A, float** B, int R1, int R2, int C1, int C2, int blo
 
     // Вывод матрицы в консоль
     if (writeConsole)
-        for (int row = 0; row < R1; ++row) {
-            for (int col = 0; col < C2; ++col) {
-                std::cout << result[row][col] << " ";
-            }
-            std::cout << "\n";
-        }
+        printMatrix<float>(result, R1, C2);
 
     std::cout << "\nWith cache matrix multiplication time: " << timer2->elapsedMilliseconds() << " nanoseconds.\n\n\n";
 
@@ -103,10 +93,11 @@ double** avx_intrinsics(double** A, double** B, int R1, int R2, int C1, int C2, 
 
                 for (int i = block_row; i < block_row_end; i++) {
                     for (int k = inner_block; k < inner_block_end; k++) {
-                        __m256d a_vec = _mm256_set1_pd(A[i][k]);  // Загружаем элемент из A в каждый элемент регистра (заполняем первый вектор элементами A)
+                        __m256d a_vec = _mm256_set1_pd(A[i][k]);  // Загружаем элемент из A в каждый элемент регистра
 
                         // Цикл по столбцам текущего блока матрицы B
-                        for (int j = block_col; j < block_col_end; j += 4) { // AVX способны делать операции сразу с четырьмя последовательно расположенными элементами
+                        int j;
+                        for (j = block_col; j <= block_col_end - 4; j += 4) {
                             // Загружаем четыре элемента из матрицы B
                             __m256d b_vec = _mm256_loadu_pd(&B[k][j]);
                             // Загружаем четыре элемента результата
@@ -115,8 +106,13 @@ double** avx_intrinsics(double** A, double** B, int R1, int R2, int C1, int C2, 
                             // Умножаем и суммируем четыре элемента
                             __m256d res_vec = _mm256_add_pd(c_vec, _mm256_mul_pd(a_vec, b_vec));
 
-                            // Записываем результат обратно в регистр результата
+                            // Записываем результат обратно в результат
                             _mm256_storeu_pd(&result[i][j], res_vec);
+                        }
+
+                        // Обрабатываем оставшиеся элементы
+                        for (; j < block_col_end; ++j) {
+                            result[i][j] += A[i][k] * B[k][j];
                         }
                     }
                 }
@@ -128,12 +124,7 @@ double** avx_intrinsics(double** A, double** B, int R1, int R2, int C1, int C2, 
 
     // Вывод матрицы в консоль
     if (writeConsole)
-        for (int row = 0; row < R1; ++row) {
-            for (int col = 0; col < C2; ++col) {
-                std::cout << result[row][col] << " ";
-            }
-            std::cout << "\n";
-        }
+        printMatrix(result, R1, C2);
 
     std::cout << "\nIntrinsics matrix multiplication time: " << timer->elapsedMilliseconds() << " nanoseconds.\n\n\n";
 
@@ -162,7 +153,8 @@ double** avx_intrinsics_openMP(double** A, double** B, int R1, int R2, int C1, i
                             __m256d a_vec = _mm256_set1_pd(A[i][k]);  // Загружаем элемент из A в каждый элемент регистра
 
                             // Цикл по столбцам текущего блока матрицы B
-                            for (int j = block_col; j < block_col_end; j += 4) {
+                            int j;
+                            for (j = block_col; j <= block_col_end - 4; j += 4) {
                                 // Загружаем четыре элемента из матрицы B
                                 __m256d b_vec = _mm256_loadu_pd(&B[k][j]);
                                 // Загружаем четыре элемента результата
@@ -171,8 +163,13 @@ double** avx_intrinsics_openMP(double** A, double** B, int R1, int R2, int C1, i
                                 // Умножаем и суммируем четыре элемента
                                 __m256d res_vec = _mm256_add_pd(c_vec, _mm256_mul_pd(a_vec, b_vec));
 
-                                // Записываем результат обратно в регистр результата
+                                // Записываем результат обратно в результат
                                 _mm256_storeu_pd(&result[i][j], res_vec);
+                            }
+
+                            // Обрабатываем оставшиеся элементы
+                            for (; j < block_col_end; ++j) {
+                                result[i][j] += A[i][k] * B[k][j];
                             }
                         }
                     }
@@ -185,12 +182,7 @@ double** avx_intrinsics_openMP(double** A, double** B, int R1, int R2, int C1, i
 
     // Вывод матрицы в консоль
     if (writeConsole) {
-        for (int row = 0; row < R1; ++row) {
-            for (int col = 0; col < C2; ++col) {
-                std::cout << result[row][col] << " ";
-            }
-            std::cout << "\n";
-        }
+        printMatrix(result, R1, C2);
     }
 
     std::cout << "\nOpenMP Intrinsics matrix multiplication time: " << timer->elapsedMilliseconds() << " nanoseconds.\n\n\n";
@@ -205,11 +197,11 @@ int getBlockSize(int cache_level) {
 int main() {
     srand(time(0));
 
-    const int R1 = 300;
-    const int C1 = 300;
+    const int R1 = 600; // должно быть кратно block_size
+    const int C1 = 1600;
 
-    const int R2 = 300;
-    const int C2 = 600;
+    const int R2 = 1600;
+    const int C2 = 1800;// должно быть кратно block_size
 
     int L1 = 32; // 32 ячейки - тоесть 32*32*4 байта - 4КБ.  L1 кеш - 64 КБ
     int L2 = 256; // 256 ячеек - тоесть 256*256*4 байта - 256КБ. L2 кеш - 512 КБ
@@ -224,7 +216,7 @@ int main() {
     if (isMultiplying(C1, R2)) {
         float** one = non_cache(A, B, R1, R2, C1, C2, isConsoleOutput);
 
-        float** two = with_cache(A, B, R1, R2, C1, C2, L1, isConsoleOutput);
+        //float** two = with_cache(A, B, R1, R2, C1, C2, L1, isConsoleOutput);
 
         double** Acopy = convertFloatMatrixToDouble(A, R1, C1);
         double** Bcopy = convertFloatMatrixToDouble(B, R2, C2);
@@ -233,10 +225,10 @@ int main() {
 
         double** four = avx_intrinsics_openMP(Acopy, Bcopy, R1, R2, C1, C2, L1, isConsoleOutput);
 
-        //float** threeCopy = convertDoubleMatrixToFloat(three, R1, C2);
+        float** fourCopy = convertDoubleMatrixToFloat(four, R1, C2);
 
-        //bool equal = isMatrixCompare(one, threeCopy, R1, C2);
-        //std::cout << "\nIs matrix equal: " << equal << std::endl;
+        bool equal = isMatrixCompare(one, fourCopy, R1, C2);
+        std::cout << "\nIs matrix equal: " << equal << std::endl;
     }
     else {
         std::cout << "\nMatrix CAN'T be multiplying" << std::endl;
