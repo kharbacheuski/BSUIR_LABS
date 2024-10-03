@@ -1,0 +1,28 @@
+// breakpoints
+$breakpoint-extra-sm: 420px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 767px;
+$breakpoint-lg: 991px;
+$breakpoint-header-mobile: 991px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.container {
+    overflow-x: hidden;
+    min-height: calc(100vh - 100px);
+}
+
+#root {
+    position: relative;
+    height: 100vh;
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Home",
+        "link": "/"
+    },
+    {
+        "name": "Type",
+        "link": "/type"
+    },
+    {
+        "name": "Tariff",
+        "link": "/tariff"
+    },
+    {
+        "name": "Service",
+        "link": "/service"
+    },
+    {
+        "name": "Speed",
+        "link": "/speed"
+    },
+    {
+        "name": "Provider",
+        "link": "/provider"
+    }
+]
