@@ -57,4 +57,4 @@ type Type = {
     bySale: boolean
 }
 type CreateTypeParams = Type
-type DeleteTypeParams = Type
+type DeleteTypeParams = Pick<Type, "name">

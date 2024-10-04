@@ -8,6 +8,7 @@ import {
 import { AlertStateType, } from "./Alert";
 import { methods } from "../api/methods";
 import { getAxiosErrorMessage } from "@/utilities/get-axios-error-message";
+import { randomId } from "@mui/x-data-grid-generator";
 
 enum RowActions {
     create,
@@ -61,7 +62,11 @@ const Buttons: React.FC<{
                 case RowActions.create: {
                     handleSaveClick(params.id);
 
-                    let newRow = await methods[apiName].create(params.row);
+                    let {data: newRow} = await methods[apiName].create(params.row);
+
+                    handleDeleteClick(params.id)
+
+                    newRow.id = params.id;
 
                     setRows((prev) => [...prev, newRow]);
                 }; break;

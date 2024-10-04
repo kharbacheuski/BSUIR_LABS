@@ -2,9 +2,13 @@ import { Box, useMediaQuery } from "@mui/material";
 import type { Theme } from '@mui/material/styles/createTheme';
 import Navigation from "./Navigation";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "@/providers/auth-provider";
 
 const Header = () => {
-    return (
+    const {isAuth} = useContext(AuthContext)
+
+    return isAuth && (
         <Box component={"header"} sx={(theme) => ({
             width: "100%",
             padding: "15px 20px",

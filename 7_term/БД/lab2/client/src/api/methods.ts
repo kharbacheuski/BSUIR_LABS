@@ -85,7 +85,7 @@ export const methods = {
             return api.post('/type', data);
         },
         delete(data: DeleteTypeParams) {
-            return api.delete('/type', { data });
+            return api.delete(`/type`, { data });
         }
     }
 };

@@ -1,16 +1,15 @@
 import ThemeProvider from './theme-provider';
-import { Suspense } from 'react';
-import Loading from "@/components/Loader"
 import { Container } from '@mui/material';
+import AuthProvider from './auth-provider';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
     return (
-        <Suspense fallback={<Loading isLoading={true} />}>
+        <AuthProvider>
             <ThemeProvider>
                 <Container maxWidth="lg">
                     {children}
                 </Container>
             </ThemeProvider> 
-        </Suspense>
+        </AuthProvider>
     )
 }

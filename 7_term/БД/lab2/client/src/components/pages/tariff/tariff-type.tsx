@@ -149,8 +149,6 @@ const TariffTypeConfigurationTable: React.FC<{}> = ({}) => {
                 state={error}
                 setState={setError}
             />
-
-            <CustomLoader isLoading={loading} />
         </Box>
     )
 }

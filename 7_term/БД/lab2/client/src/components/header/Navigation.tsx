@@ -8,10 +8,11 @@ import Paper from '@mui/material/Paper';
 import CloseIcon from '@mui/icons-material/Close';
 import { NavLink } from "react-router-dom";
 import "./styles.scss";
+import { AuthContext } from "@/providers/auth-provider";
 
 const Navigation = () => {
     const mdUp = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
-    const theme = useTheme()
+    const { isAuth, setIsAuth } = useContext(AuthContext);
 
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
@@ -22,6 +23,7 @@ const Navigation = () => {
     const exitHandle = () => {
         handleMenu(false)
         localStorage.clear()
+        setIsAuth(false)
     }
 
     return (
@@ -49,6 +51,17 @@ const Navigation = () => {
             </Box> : <IconButton className="header_burger" onClick={() => handleMenu(true)}>
                 <MenuIcon sx={{width: 30, height: 30}} />
             </IconButton>}
+
+            {isAuth && 
+                <LogoutIcon className="header_actions-logout" sx={{
+                    cursor: "pointer",
+                    transition: "all .1s",
+                    
+                    "&:hover": {
+                        transform: "scale(1.1)"
+                    }
+                }} onClick={exitHandle} />
+            }
 
             <Modal
                 open={isMenuOpen}
