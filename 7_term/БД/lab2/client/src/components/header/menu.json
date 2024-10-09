@@ -1,26 +1,22 @@
 [
     {
-        "name": "Home",
+        "name": "Главная",
         "link": "/"
     },
     {
-        "name": "Type",
-        "link": "/type"
+        "name": "Жанры",
+        "link": "/genre"
     },
     {
-        "name": "Tariff",
-        "link": "/tariff"
+        "name": "Группы",
+        "link": "/group"
     },
     {
-        "name": "Service",
-        "link": "/service"
+        "name": "Записи",
+        "link": "/record"
     },
     {
-        "name": "Speed",
-        "link": "/speed"
-    },
-    {
-        "name": "Provider",
-        "link": "/provider"
+        "name": "Комнаты",
+        "link": "/room"
     }
 ]

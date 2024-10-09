@@ -1,12 +1,12 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { FC, useContext } from "react";
 import Home from "./components/pages/page";
-import TypeconfigurationTable from "./components/pages/type/page";
-import TariffConfigurationTable from "./components/pages/tariff/page";
+import Genre from "./components/pages/genre/page";
+import Group from "./components/pages/group/page";
+import Record from "./components/pages/record/page";
+import Room from "./components/pages/room/page";
 import Page404 from "./components/pages/404";
-import SpeedConfigurationTable from "./components/pages/speed/page";
-import ProviderConfigurationTable from "./components/pages/provider/page";
-import ServiceConfigurationTable from "./components/pages/service/page";
+
 import { AuthContext } from "./providers/auth-provider";
 import AuthPage from "./components/pages/auth/page";
 
@@ -23,11 +23,10 @@ export const Element = () => {
 
     const routes = useRoutes([
         {path: '/', element: <ProtectedRoute isAuth={isAuth} children={<Home />} />},
-        {path: '/type', element: <ProtectedRoute isAuth={isAuth} children={<TypeconfigurationTable />} />},
-        {path: '/tariff', element: <ProtectedRoute isAuth={isAuth} children={<TariffConfigurationTable />} />},
-        {path: '/service', element: <ProtectedRoute isAuth={isAuth} children={<ServiceConfigurationTable />} />},
-        {path: '/provider', element: <ProtectedRoute isAuth={isAuth} children={<ProviderConfigurationTable />} />},
-        {path: '/speed', element: <ProtectedRoute isAuth={isAuth} children={<SpeedConfigurationTable />} />},
+        {path: '/genre', element: <ProtectedRoute isAuth={isAuth} children={<Genre />} />},
+        {path: '/group', element: <ProtectedRoute isAuth={isAuth} children={<Group />} />},
+        {path: '/record', element: <ProtectedRoute isAuth={isAuth} children={<Record />} />},
+        {path: '/room', element: <ProtectedRoute isAuth={isAuth} children={<Room />} />},
         {path: '*', element: <Navigate to="404" />},
         {path: '/404', element: <ProtectedRoute isAuth={isAuth} children={<Page404 />} />},
         {path: '/sign-in', element: <AuthPage />},

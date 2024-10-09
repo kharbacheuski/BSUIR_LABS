@@ -1,91 +1,77 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://10.9.3.24:5198",
+    baseURL: "http://localhost:5198/",
     headers: {
         'Content-Type': "application/json; charset=utf8",
     }
 });
 
 export const methods = {
-    provider: {
+    genre: {
         get() {
-            return api.get<Provider[]>('/provider');
+            return api.get<Genre[]>('/genre');
         },
-        create(data: CreatedProviderParams) {
-            return api.post('/provider', data);
+        create(data: CreatedGenreParams) {
+            return api.post('/genre', data);
         },
-        delete(data: DeleteProviderParams) {
-            return api.delete(`/provider/${data.name}`);
+        delete(data: DeleteGenreParams) {
+            return api.delete(`/genre/${data.name}`);
         }
     },
-    service: {
+    group: {
         get() {
-            return api.get<Service[]>('/service');
+            return api.get<Group[]>('/group');
         },
-        create(data: CreateServiceParams) {
-            return api.post('/service', data);
+        create(data: CreateGroupParams) {
+            return api.post('/group', data);
         },
-        delete(data: DeleteServiceParams) {
-            return api.delete(`/service/${data.name}`);
+        delete(data: DeleteGroupParams) {
+            return api.delete(`/group/${data.name}`);
         }
     },
-    speed: {
+    groupGenre: {
         get() {
-            return api.get<Speed[]>('/speed');
+            return api.get<GroupGenre[]>('/group/genre');
         },
-        create(data: CreateSpeedParams) {
-            return api.post('/speed', data);
+        create(data: CreateGroupGenreParams) {
+            return api.post('/group/genre', data);
         },
-        delete(data: DeleteSpeedParams) {
-            return api.delete('/speed', { data });
+        delete(data: DeleteGroupGenreParams) {
+            return api.delete(`/group/genre`, { data });
         }
     },
-    tariff: {
+    record: {
         get() {
-            return api.get<Tariff[]>('/tariff');
+            return api.get<MusicRecord[]>('/record');
         },
-        create(data: CreateTariffParams) {
-            return api.post('/tariff', data);
+        create(data: CreateMusicRecordParams) {
+            return api.post('/record', data);
         },
-        update(data: UpdateTariffParams) {
-            return api.put(`/tariff`, data);
-        },
-        delete(data: DeleteTariffParams) {
-            return api.delete(`/tariff/${data.name}`);
+        delete(data: DeleteMusicRecordParams) {
+            return api.delete('/record', { data });
         }
     },
-    tariffService: {
+    recordGenre: {
         get() {
-            return api.get<TariffService[]>('/tariff/service');
+            return api.get<RecordGenre[]>('/record/genre');
         },
-        create(data: CreateTariffServiceParams) {
-            return api.post('/tariff/service', data);
+        create(data: CreateRecordGenreParams) {
+            return api.post('/record/genre', data);
         },
-        delete(data: DeleteTariffServiceParams) {
-            return api.delete('/tariff/service', { data });
+        delete(data: DeleteRecordGenreParams) {
+            return api.delete(`/record/genre/`, { data });
         }
     },
-    tariffType: {
+    room: {
         get() {
-            return api.get<TariffType[]>('/tariff/type');
+            return api.get<Room[]>('/room');
         },
-        create(data: CreateTariffTypeParams) {
-            return api.post('/tariff/type', data);
+        create(data: CreateRoomParams) {
+            return api.post('/room', data);
         },
-        delete(data: DeleteTariffTypeParams) {
-            return api.delete('/tariff/type', { data });
+        delete(data: DeleteRoomParams) {
+            return api.delete(`/room/${data.number}`);
         }
     },
-    type: {
-        get() {
-            return api.get<Type[]>('/type');
-        },
-        create(data: CreateTypeParams) {
-            return api.post('/type', data);
-        },
-        delete(data: DeleteTypeParams) {
-            return api.delete(`/type`, { data });
-        }
-    }
 };

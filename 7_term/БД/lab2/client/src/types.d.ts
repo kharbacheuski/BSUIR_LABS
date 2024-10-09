@@ -1,60 +1,49 @@
-type Provider = {
+type Genre = {
     name: string
+    instruments: string
+}
+type CreatedGenreParams = Genre
+type DeleteGenreParams = Pick<Genre, "name">
+
+type Group = {
+    name: string
+    personsCount: number
     popularity: number
-    coverage: number
 }
-type CreatedProviderParams = Provider
-type DeleteProviderParams = Pick<Provider, "name">
+type CreateGroupParams = Group
+type DeleteGroupParams = Pick<Group, "name">
 
-type Service = {
-    name: string
-    price: number
-    period: number
+type Room = {
+    number: string
+    square: number
+    personsCount: number
+    rent: number
 }
-type CreateServiceParams = {
-    name: string
-    price: number
-    periodInDays: number
+type CreateRoomParams = Room
+type DeleteRoomParams = Pick<Room, "number">
+
+
+type MusicRecord = {
+    number: string
+    date: string
+    hours: number
+    roomNumber: string
+    groupName: string
 }
-type DeleteServiceParams = Pick<Service, "name">
+type CreateMusicRecordParams = MusicRecord
+type DeleteMusicRecordParams = Pick<MusicRecord, "name">
 
 
-type Speed = {
-    incoming: number
-    outgoing: number
+type RecordGenre = {
+    recordNumber: string
+    genreName: string
 }
-type CreateSpeedParams = Speed
-type DeleteSpeedParams = Speed
+type CreateRecordGenreParams = RecordGenre
+type DeleteRecordGenreParams = RecordGenre
 
-
-type Tariff = {
-    name: string
-    speed: string
-    providerName: string
+type GroupGenre = {
+    groupName: string
+    genreName: string
 }
-type CreateTariffParams = Pick<Tariff, ["name","providerName"]> & Speed
-type UpdateTariffParams = CreateTariffParams
-type DeleteTariffParams = Pick<Tariff, "name">
-
-
-type TariffService = {
-    tariffName: string
-    serviceName: string
-}
-type CreateTariffServiceParams = TariffService
-type DeleteTariffServiceParams = TariffService
-
-type TariffType = {
-    tariffName: string
-    typeName: string
-}
-type CreateTariffTypeParams = TariffType
-type DeleteTariffTypeParams = TariffType
-
-type Type = {
-    name: string
-    isPremium: boolean
-    bySale: boolean
-}
-type CreateTypeParams = Type
-type DeleteTypeParams = Pick<Type, "name">
+type CreateGroupGenreParams = GroupGenre
+type DeleteGroupGenreParams = GroupGenre

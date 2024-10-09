@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.18" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Core.Berkeley\Domain.Core.Berkeley.csproj" />
+    <ProjectReference Include="..\Domain.Core.Postgres\Domain.Core.Postgres.csproj" />
+    <ProjectReference Include="..\Domain.Interfaces\Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\Insfrastructure.Data.Berkeley\Insfrastructure.Data.Berkeley.csproj" />
+    <ProjectReference Include="..\Insfrastructure.Data.Postgres\Insfrastructure.Data.Postgres.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="libdb_dotnet181">
+      <HintPath>..\lib\libdb_dotnet181.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
