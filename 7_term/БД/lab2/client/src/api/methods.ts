@@ -16,7 +16,7 @@ export const methods = {
             return api.post('/genre', data);
         },
         delete(data: DeleteGenreParams) {
-            return api.delete(`/genre/${data.name}`);
+            return api.delete(`/genre/`, { data });
         }
     },
     group: {
@@ -27,7 +27,7 @@ export const methods = {
             return api.post('/group', data);
         },
         delete(data: DeleteGroupParams) {
-            return api.delete(`/group/${data.name}`);
+            return api.delete(`/group/`, { data });
         }
     },
     groupGenre: {
@@ -71,7 +71,7 @@ export const methods = {
             return api.post('/room', data);
         },
         delete(data: DeleteRoomParams) {
-            return api.delete(`/room/${data.number}`);
+            return api.delete(`/room/`, { data });
         }
     },
 };
