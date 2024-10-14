@@ -62,6 +62,22 @@ std::vector<std::vector<float>> flip_horizontally(const std::vector<std::vector<
     return flipped;
 }
 
+// Функция для замера времени выполнения на CPU
+void measure_cpu(const std::vector<std::vector<float>>& matrix, std::vector<std::vector<float>>& result) {
+    auto start = std::chrono::high_resolution_clock::now();
+
+    // Отражение по вертикали
+    auto vertically_flipped = flip_vertically(matrix);
+
+    // Отражение по горизонтали
+    result = flip_horizontally(vertically_flipped);
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<float> duration = end - start;
+
+    std::cout << "CPU Time: " << duration.count() << " seconds" << std::endl;
+}
+
 // Функция для замера времени выполнения на GPU
 void measure_gpu(float* d_matrix, float* d_temp_matrix, float* d_result_matrix, int rows, int cols) {
     int total_size = rows * cols;
@@ -75,11 +91,11 @@ void measure_gpu(float* d_matrix, float* d_temp_matrix, float* d_result_matrix, 
     cudaEventRecord(start);
 
     // Отражение по вертикали
-    flip_vertically_gpu<< <blocks, threads_per_block> >>(d_matrix, d_temp_matrix, rows, cols);
+    flip_vertically_gpu<<<blocks, threads_per_block>>>(d_matrix, d_temp_matrix, rows, cols);
     cudaDeviceSynchronize();
 
     // Отражение по горизонтали
-    flip_horizontally_gpu<< <blocks, threads_per_block> >>(d_temp_matrix, d_result_matrix, rows, cols);
+    flip_horizontally_gpu<<<blocks, threads_per_block>>>(d_temp_matrix, d_result_matrix, rows, cols);
     cudaDeviceSynchronize();
 
     cudaEventRecord(stop);
@@ -93,23 +109,16 @@ void measure_gpu(float* d_matrix, float* d_temp_matrix, float* d_result_matrix, 
     cudaEventDestroy(stop);
 }
 
-// Сравнение CPU и GPU результатов
-void compare_results(const std::vector<std::vector<float>>& cpu_matrix, float* gpu_matrix, int rows, int cols) {
-    bool equal = true;
-    for (int i = 0; i < rows && equal; ++i) {
+// Полное поэлементное сравнение матриц
+bool compare_results(const std::vector<std::vector<float>>& cpu_matrix, const std::vector<float>& gpu_matrix, int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             if (fabsf(cpu_matrix[i][j] - gpu_matrix[i * cols + j]) > 1e-5) {
-                equal = false;
-                break;
+                return false; // Результаты различаются
             }
         }
     }
-    if (equal) {
-        std::cout << "CPU and GPU results match!" << std::endl;
-    }
-    else {
-        std::cout << "Results differ!" << std::endl;
-    }
+    return true; // Результаты совпадают
 }
 
 int main() {
@@ -135,6 +144,10 @@ int main() {
     // Копирование данных на GPU
     cudaMemcpy(d_matrix, flat_cpu_matrix.data(), matrix_size, cudaMemcpyHostToDevice);
 
+    // Замер времени на CPU
+    std::vector<std::vector<float>> cpu_result(rows, std::vector<float>(cols));
+    measure_cpu(cpu_matrix, cpu_result);
+
     // Замер времени на GPU
     measure_gpu(d_matrix, d_temp_matrix, d_result_matrix, rows, cols);
 
@@ -142,11 +155,12 @@ int main() {
     std::vector<float> gpu_result(rows * cols);
     cudaMemcpy(gpu_result.data(), d_result_matrix, matrix_size, cudaMemcpyDeviceToHost);
 
-    // Отражение и сравнение с CPU
-    auto vertically_flipped = flip_vertically(cpu_matrix);
-    auto horizontally_flipped = flip_horizontally(vertically_flipped);
-
-    compare_results(horizontally_flipped, gpu_result.data(), rows, cols);
+    // Сравнение результатов
+    if (compare_results(cpu_result, gpu_result, rows, cols)) {
+        std::cout << "CPU and GPU results match!" << std::endl;
+    } else {
+        std::cout << "Results differ!" << std::endl;
+    }
 
     // Освобождение памяти
     cudaFree(d_matrix);
