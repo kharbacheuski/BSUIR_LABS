@@ -1,28 +1,44 @@
 import { getPixelRGB, hexToRGB, colorInRange, getDistinctColors } from "./utils";
 
-function isColorShouldBeChanged(color1, color2) {
-    if(colorInRange(color1, color2)) {
-        return false;
+// function isColorShouldBeChanged(color1, color2) {
+//     if(colorInRange(color1, color2)) {
+//         return false;
+//     }
+
+//     return true;
+// }
+
+function isPixelIsBright(pixel) {
+    const avg = (pixel.red + pixel.green + pixel.blue) / 3;
+    const accurace  = 0.6
+    if(avg == 0)
+        return false
+
+    if(Math.abs((avg - pixel.red) / avg) > accurace 
+    || Math.abs((avg - pixel.green) / avg) > accurace 
+    || Math.abs((avg - pixel.blue) / avg) > accurace
+    ) {
+        return true
     }
 
-    return true;
+    return false
 }
 
-const changePixel = (pixel, colors) => {
-    let count = 0;
+// const changePixel = (pixel, colors) => {
+//     let count = 0;
 
-    for(let i = 0; i < colors.length; i++) {
-        if(isColorShouldBeChanged(pixel, colors[i])) {
-            count++;
-        }
-    }
+//     for(let i = 0; i < colors.length; i++) {
+//         if(isColorShouldBeChanged(pixel, colors[i])) {
+//             count++;
+//         }
+//     }
 
-    if(count == colors.length) {
-        return {...pixel, alpha: 0};
-    }
+//     if(count == colors.length) {
+//         return {...pixel, alpha: 0};
+//     }
 
-    return pixel;
-}
+//     return pixel;
+// }
 
 const handleOnload = (img) => {
     const canvas = document.getElementById("canvas") as HTMLCanvasElement;
@@ -39,20 +55,24 @@ const handleOnload = (img) => {
     const width = imageData.width;
     const height = imageData.height;
 
-    const badColors = [
-        {red: 135, green: 113, blue: 100},
-        {red: 185, green: 185, blue: 185}, 
-        {red: 194, green: 192, blue: 194}
-    ]
+    // const badColors = [
+    //     {red: 135, green: 113, blue: 100},
+    //     {red: 185, green: 185, blue: 185}, 
+    //     {red: 194, green: 192, blue: 194}
+    // ]
 
-    const cols = getDistinctColors(imageData, 7, 180).filter(color => {
-        return !badColors.some(colorInRange.bind(null, color));
-    });
+    // const cols = getDistinctColors(imageData, 7, 180).filter(color => {
+    //     return !badColors.some(colorInRange.bind(null, color));
+    // });
 
-    
     for (let i = 0; i < imageData.data.length; i += 4) {
         const pixel = getPixelRGB(imageData.data, i);
-        let newPixel = changePixel(pixel, cols);
+        // let newPixel = changePixel(pixel, cols);
+        let newPixel = {...pixel};
+
+        if(!isPixelIsBright(pixel)) {
+            newPixel = {...pixel, alpha: 0};
+        }
 
         output[i] = newPixel.red;
         output[i + 1] = newPixel.green;

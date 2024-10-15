@@ -20,7 +20,7 @@ uploadInput.addEventListener('change', (event: any) => {
 });
 
 // Функция обработки изображения с использованием OpenCV.js
-function processImage(image) {
+function processImageStrong(image) {
     // Ждем загрузки OpenCV
  
     let src = cv.imread(canvas);  // Чтение изображения с canvas
@@ -36,7 +36,7 @@ function processImage(image) {
 
     // Применение оператора Canny для выделения контуров с более мягкими порогами
     const lowThreshold = 100;  // Более низкий порог
-    const highThreshold = 1; // Более высокий порог
+    const highThreshold = 200; // Более высокий порог
     cv.Canny(blurred, edges, lowThreshold, highThreshold, 3, false);
 
     // Вывод контуров на canvas
@@ -47,5 +47,24 @@ function processImage(image) {
     gray.delete();
     blurred.delete();
     edges.delete();
+}
 
+function processImage(image) {
+    let src = cv.imread(canvas);  // Чтение изображения с canvas
+    let gray = new cv.Mat();      // Матрица для серого изображения
+    let edges = new cv.Mat();     // Матрица для контуров
+
+    // Преобразование в оттенки серого
+    cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0);
+
+    // Применение алгоритма Canny для выделения контуров
+    cv.Canny(gray, edges, 150, 250, 3, false);
+
+    // Вывод контуров на canvas
+    cv.imshow('canvas', edges);
+
+    // Освобождение ресурсов
+    src.delete();
+    gray.delete();
+    edges.delete();
 }
