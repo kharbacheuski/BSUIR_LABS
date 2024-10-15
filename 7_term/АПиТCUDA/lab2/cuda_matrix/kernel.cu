@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <random>
 #include <chrono>
-#include <cmath> // для fabsf
 
 // Функция для создания матрицы с случайными значениями
 std::vector<std::vector<float>> create_random_matrix(int rows, int cols) {
@@ -22,7 +21,7 @@ std::vector<std::vector<float>> create_random_matrix(int rows, int cols) {
 }
 
 // Ядро CUDA для отражения по вертикали
-__global__ void flip_vertically_gpu(float* matrix, float* result, int rows, int cols) {
+__global__ void flip_gpu(float* matrix, float* result, int rows, int cols) {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     int total_size = rows * cols;
 
@@ -30,36 +29,29 @@ __global__ void flip_vertically_gpu(float* matrix, float* result, int rows, int 
         int row = idx / cols;
         int col = idx % cols;
         int new_row = rows - 1 - row;
-        result[new_row * cols + col] = matrix[row * cols + col];
-    }
-}
-
-// Ядро CUDA для отражения по горизонтали
-__global__ void flip_horizontally_gpu(float* matrix, float* result, int rows, int cols) {
-    int idx = blockIdx.x * blockDim.x + threadIdx.x;
-    int total_size = rows * cols;
-
-    if (idx < total_size) {
-        int row = idx / cols;
-        int col = idx % cols;
         int new_col = cols - 1 - col;
-        result[row * cols + new_col] = matrix[row * cols + col];
+        result[new_row * rows + new_col] = matrix[row * cols + col];
     }
 }
 
-// Функция для отражения по вертикали на CPU
-std::vector<std::vector<float>> flip_vertically(const std::vector<std::vector<float>>& matrix) {
-    std::vector<std::vector<float>> flipped(matrix);
-    std::reverse(flipped.begin(), flipped.end());
-    return flipped;
+// Функция для вывода части матрицы (N элементов)
+void print_partial_matrix(const std::vector<std::vector<float>>& matrix, int N) {
+    for (int i = 0; i < matrix.size() && i < N; ++i) {
+        for (int j = 0; j < matrix[0].size() && j < N; ++j) {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
 }
 
-// Функция для отражения по горизонтали на CPU
-std::vector<std::vector<float>> flip_horizontally(const std::vector<std::vector<float>>& matrix) {
-    std::vector<std::vector<float>> flipped(matrix);
-    for (auto& row : flipped)
-        std::reverse(row.begin(), row.end());
-    return flipped;
+// Функция для вывода части одномерного массива как двумерной матрицы
+void print_partial_flat_matrix(const std::vector<float>& matrix, int rows, int cols, int N) {
+    for (int i = 0; i < rows && i < N; ++i) {
+        for (int j = 0; j < cols && j < N; ++j) {
+            std::cout << matrix[i * cols + j] << " ";
+        }
+        std::cout << std::endl;
+    }
 }
 
 // Функция для замера времени выполнения на CPU
@@ -67,10 +59,13 @@ void measure_cpu(const std::vector<std::vector<float>>& matrix, std::vector<std:
     auto start = std::chrono::high_resolution_clock::now();
 
     // Отражение по вертикали
-    auto vertically_flipped = flip_vertically(matrix);
+    auto vertically_flipped = matrix;
+    std::reverse(vertically_flipped.begin(), vertically_flipped.end());
 
     // Отражение по горизонтали
-    result = flip_horizontally(vertically_flipped);
+    result = vertically_flipped;
+    for (auto& row : result)
+        std::reverse(row.begin(), row.end());
 
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<float> duration = end - start;
@@ -79,7 +74,7 @@ void measure_cpu(const std::vector<std::vector<float>>& matrix, std::vector<std:
 }
 
 // Функция для замера времени выполнения на GPU
-void measure_gpu(float* d_matrix, float* d_temp_matrix, float* d_result_matrix, int rows, int cols) {
+void measure_gpu(float* d_matrix, float* d_result_matrix, int rows, int cols) {
     int total_size = rows * cols;
     int threads_per_block = 256;
     int blocks = (total_size + threads_per_block - 1) / threads_per_block;
@@ -91,11 +86,7 @@ void measure_gpu(float* d_matrix, float* d_temp_matrix, float* d_result_matrix, 
     cudaEventRecord(start);
 
     // Отражение по вертикали
-    flip_vertically_gpu<<<blocks, threads_per_block>>>(d_matrix, d_temp_matrix, rows, cols);
-    cudaDeviceSynchronize();
-
-    // Отражение по горизонтали
-    flip_horizontally_gpu<<<blocks, threads_per_block>>>(d_temp_matrix, d_result_matrix, rows, cols);
+    flip_gpu << <blocks, threads_per_block >> > (d_matrix, d_result_matrix, rows, cols);
     cudaDeviceSynchronize();
 
     cudaEventRecord(stop);
@@ -114,11 +105,11 @@ bool compare_results(const std::vector<std::vector<float>>& cpu_matrix, const st
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             if (fabsf(cpu_matrix[i][j] - gpu_matrix[i * cols + j]) > 1e-5) {
-                return false; // Результаты различаются
+                return false;
             }
         }
     }
-    return true; // Результаты совпадают
+    return true;
 }
 
 int main() {
@@ -135,11 +126,9 @@ int main() {
 
     // Выделение памяти на GPU
     float* d_matrix;
-    float* d_temp_matrix;
-    float* d_result_matrix;
+    float* d_matrix_res;
     cudaMalloc(&d_matrix, matrix_size);
-    cudaMalloc(&d_temp_matrix, matrix_size);
-    cudaMalloc(&d_result_matrix, matrix_size);
+    cudaMalloc(&d_matrix_res, matrix_size);
 
     // Копирование данных на GPU
     cudaMemcpy(d_matrix, flat_cpu_matrix.data(), matrix_size, cudaMemcpyHostToDevice);
@@ -149,23 +138,31 @@ int main() {
     measure_cpu(cpu_matrix, cpu_result);
 
     // Замер времени на GPU
-    measure_gpu(d_matrix, d_temp_matrix, d_result_matrix, rows, cols);
+    measure_gpu(d_matrix, d_matrix_res, rows, cols);
 
     // Получение результатов с GPU
     std::vector<float> gpu_result(rows * cols);
-    cudaMemcpy(gpu_result.data(), d_result_matrix, matrix_size, cudaMemcpyDeviceToHost);
+    cudaMemcpy(gpu_result.data(), d_matrix_res, matrix_size, cudaMemcpyDeviceToHost);
 
     // Сравнение результатов
     if (compare_results(cpu_result, gpu_result, rows, cols)) {
         std::cout << "CPU and GPU results match!" << std::endl;
-    } else {
+    }
+    else {
         std::cout << "Results differ!" << std::endl;
     }
 
+    // Вывод части матрицы с CPU
+    std::cout << "Partial Matrix CPU:" << std::endl;
+    print_partial_matrix(cpu_result, 10);
+
+    // Вывод части матрицы с GPU
+    std::cout << "\n\nPartial Matrix GPU:" << std::endl;
+    print_partial_flat_matrix(gpu_result, rows, cols, 10);
+
     // Освобождение памяти
     cudaFree(d_matrix);
-    cudaFree(d_temp_matrix);
-    cudaFree(d_result_matrix);
+    cudaFree(d_matrix_res);
 
     return 0;
 }
