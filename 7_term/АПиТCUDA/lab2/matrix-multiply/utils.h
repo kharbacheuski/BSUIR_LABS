@@ -44,14 +44,14 @@ bool isMultiplying(int C1, int R2) {
 }
 
 double** convertFloatMatrixToDouble(float** floatMatrix, int R, int C) {
-    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ float**
+    // Создаем новую матрицу типа float**
     double** doubleMatrix = new double* [R];
 
     for (int i = 0; i < R; i++) {
         doubleMatrix[i] = new double[C];
 
         for (int j = 0; j < C; j++) {
-            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ double пїЅ float
+            // Преобразуем каждый элемент из double в float
             doubleMatrix[i][j] = static_cast<float>(floatMatrix[i][j]);
         }
     }
@@ -60,14 +60,14 @@ double** convertFloatMatrixToDouble(float** floatMatrix, int R, int C) {
 }
 
 float** convertDoubleMatrixToFloat(double** doubleMatrix, int R, int C) {
-    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ float**
+    // Создаем новую матрицу типа float**
     float** floatMatrix = new float* [R];
 
     for (int i = 0; i < R; i++) {
         floatMatrix[i] = new float[C];
 
         for (int j = 0; j < C; j++) {
-            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ double пїЅ float
+            // Преобразуем каждый элемент из double в float
             floatMatrix[i][j] = static_cast<float>(doubleMatrix[i][j]);
         }
     }
