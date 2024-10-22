@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cpu.cpp">
+    <ClCompile Include="matrix-multiply.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="gpu.cu">
+    <ClInclude Include="utils.h">
       <Filter>Source Files</Filter>
-    </CudaCompile>
+    </ClInclude>
   </ItemGroup>
 </Project>
