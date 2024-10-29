@@ -134,3 +134,62 @@ export const getDistinctColors = (imageData, numColors, threshold = 100) => {
 
     return distinctColors; // Возвращаем массив RGB объектов
 };
+
+export function sobelFilter(pixels: ImageData) {
+    const width = pixels.width;
+    const height = pixels.height;
+
+    const output = new Uint8ClampedArray(pixels.data.length);
+    const gradientX = new Uint8Array(width * height);
+    const gradientY = new Uint8Array(width * height);
+
+    // Применяем оператор Собеля
+    const kernelX = [
+        [-1, 0, 1],
+        [-2, 0, 2],
+        [-1, 0, 1]
+    ];
+
+    const kernelY = [
+        [1, 2, 1],
+        [0, 0, 0],
+        [-1, -2, -1]
+    ];
+
+    for (let y = 1; y < height - 1; y++) {
+        for (let x = 1; x < width - 1; x++) {
+            let sumX = 0;
+            let sumY = 0;
+
+            // Применяем ядро Собеля
+            for (let ky = -1; ky <= 1; ky++) {
+                for (let kx = -1; kx <= 1; kx++) {
+                    const idx = ((y + ky) * width + (x + kx)) * 4;
+                    const grayscale = 0.299 * pixels.data[idx] + 0.587 * pixels.data[idx + 1] + 0.114 * pixels.data[idx + 2]; // Преобразуем в оттенки серого
+                    sumX += grayscale * kernelX[ky + 1][kx + 1];
+                    sumY += grayscale * kernelY[ky + 1][kx + 1];
+                }
+            }
+
+            const magnitude = Math.sqrt(sumX * sumX + sumY * sumY);
+            const idx = (y * width + x) * 4;
+            gradientX[y * width + x] = magnitude; // Сохраняем величину градиента
+        }
+    }
+
+    // Создание нового изображения на основе градиентов
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            const idx = (y * width + x) * 4;
+            const gradValue = gradientX[y * width + x];
+
+            // Используем градиенты для окраски
+            output[idx] = gradValue > 100 ? 255 : 0; // Красный
+            output[idx + 1] = gradValue > 100 ? 255 : 0; // Зеленый
+            output[idx + 2] = gradValue > 100 ? 255 : 0; // Синий
+            output[idx + 3] = 255; // Полная непрозрачность
+        }
+    }
+
+    return new ImageData(output, width, height);
+}

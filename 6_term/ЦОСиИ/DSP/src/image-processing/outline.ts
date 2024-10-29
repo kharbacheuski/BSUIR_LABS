@@ -1,16 +1,7 @@
-import { getPixelRGB, hexToRGB, colorInRange, getDistinctColors } from "./utils";
+import { getPixelRGB } from "./utils";
 
-// function isColorShouldBeChanged(color1, color2) {
-//     if(colorInRange(color1, color2)) {
-//         return false;
-//     }
-
-//     return true;
-// }
-
-function isPixelIsBright(pixel) {
+export function isPixelIsBright(pixel, accurace = 0.6) {
     const avg = (pixel.red + pixel.green + pixel.blue) / 3;
-    const accurace  = 0.6
     if(avg == 0)
         return false
 
@@ -24,29 +15,7 @@ function isPixelIsBright(pixel) {
     return false
 }
 
-// const changePixel = (pixel, colors) => {
-//     let count = 0;
-
-//     for(let i = 0; i < colors.length; i++) {
-//         if(isColorShouldBeChanged(pixel, colors[i])) {
-//             count++;
-//         }
-//     }
-
-//     if(count == colors.length) {
-//         return {...pixel, alpha: 0};
-//     }
-
-//     return pixel;
-// }
-
-const handleOnload = (img) => {
-    const canvas = document.getElementById("canvas") as HTMLCanvasElement;
-    const context = canvas.getContext("2d");
-
-    canvas.width = img.width;
-    canvas.height = img.height;
-
+export function removeBackground(img, context) {
     context.drawImage(img, 0, 0);
 
     const imageData = context.getImageData(0, 0, img.width, img.height);
@@ -55,19 +24,8 @@ const handleOnload = (img) => {
     const width = imageData.width;
     const height = imageData.height;
 
-    // const badColors = [
-    //     {red: 135, green: 113, blue: 100},
-    //     {red: 185, green: 185, blue: 185}, 
-    //     {red: 194, green: 192, blue: 194}
-    // ]
-
-    // const cols = getDistinctColors(imageData, 7, 180).filter(color => {
-    //     return !badColors.some(colorInRange.bind(null, color));
-    // });
-
     for (let i = 0; i < imageData.data.length; i += 4) {
         const pixel = getPixelRGB(imageData.data, i);
-        // let newPixel = changePixel(pixel, cols);
         let newPixel = {...pixel};
 
         if(!isPixelIsBright(pixel)) {
@@ -82,7 +40,7 @@ const handleOnload = (img) => {
 
     const newImage = new ImageData(output, width, height);
 
-    context.putImageData(newImage, 0, 0);
+    return newImage
 }
 
 document.getElementById('fileInput').addEventListener('change', function(event) {
@@ -94,7 +52,15 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     reader.onload = function(e) {
         const img = new Image();
         img.onload = () => {
-            handleOnload(img)
+            const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+            const context = canvas.getContext("2d");
+
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            const newImage = removeBackground(img, context);
+            
+            context.putImageData(newImage, 0, 0);
         };
 
         img.src = e.target.result as string;

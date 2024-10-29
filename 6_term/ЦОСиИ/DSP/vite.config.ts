@@ -14,6 +14,7 @@ export default defineConfig({
                 reject_filter: join(__dirname, './views/reject_filter.html'),
                 wavelet_transform: join(__dirname, './views/wavelet-transform.html'),
                 outline: join(__dirname, './views/outline.html'),
+                overlay: join(__dirname, './views/overlay.html'),
             },
         },
     },
