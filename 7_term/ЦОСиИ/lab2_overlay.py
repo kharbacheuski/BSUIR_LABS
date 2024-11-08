@@ -12,6 +12,14 @@ def manual_area_calculation(contour):
         area += (x1 * y2) - (x2 * y1)
     return abs(area) / 2
 
+def manual_perimeter_calculation(contour):
+    perimeter = 0
+    for i in range(len(contour)):
+        x1, y1 = contour[i][0]
+        x2, y2 = contour[(i + 1) % len(contour)][0]
+        perimeter += np.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)  # Расстояние между двумя точками
+    return perimeter
+
 # Загрузка изображения
 image = cv2.imread('./images/1.jpg')
 remove_bright_background(image)
@@ -37,7 +45,7 @@ contours, _ = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMP
 areas = [manual_area_calculation(contour) for contour in contours]
 n_clusters = 3  # Количество кластеров
 kmeans = KMeans(n_clusters=n_clusters, random_state=0)
-labels = kmeans.fit_predict(np.array(areas).reshape(-1, 1))
+labels = kmeans.fit_predict(np.array(areas).reshape(-1, 1), )
 
 # Генерация случайных цветов для каждого кластера
 cluster_colors = {i: (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) for i in range(n_clusters)}
@@ -52,7 +60,7 @@ for i, contour in enumerate(contours):
 
     # Вычисление площади и периметра
     area = areas[i]
-    perimeter = cv2.arcLength(contour, True)
+    perimeter = manual_perimeter_calculation(contour)  # Используем свой алгоритм
     print(f'Фигура {i + 1}: площадь = {area:.2f}, периметр = {perimeter:.2f}')
 
 # Изменение размера результата для отображения
