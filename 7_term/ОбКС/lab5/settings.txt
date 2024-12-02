@@ -1,0 +1,27 @@
+https://websistent.com/cisco-packet-tracer-dial-up/
+https://www.slideshare.net/slideshow/uccn1003-may10lab04introtolayer1networkdevicesupdated30june20102/6124853#17
+
+isp router:
+	modules: HWIC-2T, WIC-2AM
+	hostname isp
+	username office password 123456789
+	int serial0/3/0
+	encapsulation ppp
+	ip address 10.0.17.1 255.255.255.252
+	ppp authentication chap
+	
+	#dial up
+	username pc3 password 1234
+	
+	ip route 192.168.0.0 255.255.0.0 10.0.17.2
+	
+router:
+	modules: HWIC-2T
+	hostname office
+	username isp password 123456789
+	int serial0/1/0
+	encapsulation ppp
+	ip address 10.0.17.2 255.255.255.252
+	ppp authentication chap
+	
+	ip route 0.0.0.0 0.0.0.0 10.0.17.1 (to ISP)
