@@ -42,3 +42,5 @@
 - [ОбКС](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%9E%D0%B1%D0%9A%D0%A1) ( Глецевич И.И. / Марцинкевич В.А.)
 - [ОбКС, КП](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%9E%D0%B1%D0%9A%D0%A1%2C%20%D0%9A%D0%9F) ( Глецевич И.И. / Марцинкевич В.А.)
 - [ХиУД](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/7_term/%D0%A5%D0%B8%D0%A3%D0%94) ( Фролов И.И. / Куприянова Д.В)
+### [Восьмой семестр (2025)](https://github.com/kharbacheuski/BSUIR_LABS/tree/main/8_term)
+- [Дипломное проектирование](https://github.com/kharbacheuski/BSUIR_LABS/tree/master/8_term/%D0%94%D0%9F) (Куприянова Д.В.)
